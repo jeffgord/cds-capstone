@@ -1,0 +1,50 @@
+{
+  "gutenberg_id": 57289,
+  "title": "Studies in Irish history, 1603-1649, second series",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "O'Brien, R. Barry (Richard Barry), 1847-1918",
+      "role": "Editor",
+      "order": 1
+    },
+    {
+      "name": "Cox, S. A.",
+      "role": "Contributor",
+      "order": 2
+    },
+    {
+      "name": "Donelan, James, -1922",
+      "role": "Contributor",
+      "order": 3
+    },
+    {
+      "name": "Houston, Arthur, 1833-1914",
+      "role": "Contributor",
+      "order": 4
+    },
+    {
+      "name": "Wilson, Philip",
+      "role": "Contributor",
+      "order": 5
+    }
+  ],
+  "language": "en",
+  "issued": "2018-06-08",
+  "description": "\"Studies in Irish History, 1603-1649\" by O'Brien, Cox, Donelan, Houston, and Wilson is a collection of historical lectures delivered before the Irish Literary Society of London, likely compiled in the early 20th century. The text delves into pivotal events and socio-political dynamics of early modern Ireland, particularly focusing on the period following the flight of the Earls and the subsequent establishment of English governance, culminating in the Confederation of Kilkenny.  The opening of the book recounts the tumultuous backdrop of early 17th century Ireland, highlighting the significant executions, imprisonments, and land confiscations that ensued after the flight of the Earls of Tyrone and Tyrconnell. It addresses the plight of native Irish landowners and the severe implications of the Plantation policy introduced under King James I, illustrating both resistance and acquiescence among Irish magnates. Through the lens of key figures like Sir Donnell O'Kahan and the political machinations of the English crown, readers are introduced to the profound challenges faced by Ireland during this transformative and often oppressive era.",
+  "subjects": [
+    "History - British",
+    "History - European",
+    "History - Early Modern (c. 1450-1750)"
+  ],
+  "topic_subjects": [
+    "Strafford, Thomas Wentworth, Earl of, 1593-1641",
+    "Irish Confederation, 1642-1648",
+    "Ulster (Northern Ireland and Ireland) -- History",
+    "Ireland -- History -- Rebellion of 1641"
+  ],
+  "locc": [
+    "DA"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/57289"
+}

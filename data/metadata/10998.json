@@ -1,0 +1,28 @@
+{
+  "gutenberg_id": 10998,
+  "title": "A Catechism of the Steam Engine",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Bourne, John, C. E.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2004-02-01",
+  "description": "\"A Catechism of the Steam Engine\" by John Bourne is a technical guide written in the mid-19th century that serves as an extensive reference on steam engines and their applications. The book covers various uses of steam technology in mines, mills, transportation, and agriculture, providing practical instructions for the manufacture and management of different types of engines. Through its systematic approach, the text intends to educate both novices and experienced engineers, taking readers from fundamental concepts to advanced technical details.  At the start of the work, the author introduces his intention behind the book, expressing the need for a revised and corrected edition that reflects advancements in steam engine technology. He aims to bridge the knowledge gap for young engineers while maintaining practical relevance. The opening also discusses the book's organization into chapters for clarity and outlines essential elements relating to steam engines, such as the classifications, principles of heat and steam, and the many nuances involved in engine construction and operation. By addressing both theory and practical instruction, the opening establishes a foundation for a comprehensive understanding of steam engines that the rest of the work will build upon.",
+  "subjects": [
+    "Technology",
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Steam engineering",
+    "Steam-engines"
+  ],
+  "locc": [
+    "TJ"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/10998"
+}

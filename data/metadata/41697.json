@@ -1,0 +1,30 @@
+{
+  "gutenberg_id": 41697,
+  "title": "Merck's 1899 Manual of the Materia Medica",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Merck & Co.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-12-24",
+  "description": "\"Merck's 1899 Manual of the Materia Medica\" by Merck & Co. is a scientific publication written in the late 19th century. This manual serves as a comprehensive resource for practicing physicians, providing essential information about various drugs and chemicals commonly used in medical practice. It encompasses the names, therapeutic uses, modes of administration, dosages, and potential antidotes of these substances within the scope of modern medicine.  The opening of the manual introduces its purpose, emphasizing the need for a ready-reference guide to assist physicians in recalling medicinal options during patient care. It outlines the structure of the manual, which includes a complete survey of the Materia Medica, therapeutic indications arranged by pathologic conditions, and a classification of medicaments according to their physiological actions. The introduction assures physicians that this resource is curated from authoritative sources, intending to refresh their memories and streamline decision-making, thus aiming to improve patient care through better access to medicinal knowledge.",
+  "subjects": [
+    "Health & Medicine",
+    "Drugs/Alcohol/Pharmacology",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Materia medica -- Handbooks, manuals, etc.",
+    "Therapeutics -- Handbooks, manuals, etc.",
+    "Pharmacology -- Handbooks, manuals, etc.",
+    "Drugs -- Handbooks, manuals, etc."
+  ],
+  "locc": [
+    "RC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/41697"
+}

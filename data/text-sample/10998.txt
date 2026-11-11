@@ -1,0 +1,93 @@
+Classification of Engines
+Nature and uses of a Vacuum
+Velocity of falling Bodies and Momentum of moving Bodies
+Central Forces
+Centres of Gravity, Gyration, and Oscillation
+The Pendulum and Governor
+The Mechanical Powers
+Friction
+Strength of materials and Strains subsisting in Machines
+GENERAL DESCRIPTION OF THE STEAM ENGINE
+The Boiler
+The Engine
+The Marine Engine
+Screw Engines
+The Locomotive Engine
+HEAT, COMBUSTION, AND STEAM
+Heat
+Combustion
+Steam
+EXPANSION OF STEAM AND ACTION OF THE VALVES
+MODES OF ESTIMATING THE POWER AND PERFORMANCE OF
+ENGINES AND BOILERS
+Horses Power
+Duty of Engines and Boilers
+The Indicator
+Dynamometer, Gauges, and Cataract
+PROPORTIONS OF BOILERS
+Heating and Fire Grate Surface
+Calorimeter and Vent
+Evaporative Power of Boilers
+Modern Marine and Locomotive Boilers
+The Blast in Locomotives
+Boiler Chimneys
+Steam Room and Priming
+Strength of Boilers
+Boiler Explosions
+PROPORTIONS OF ENGINES
+Steam Passages
+Air Pump, Condenser, and Hot and Cold Water Pumps
+Fly Wheel
+Strengths of Land Engines
+Strengths of Marine and Locomotive Engines
+CONSTRUCTIVE DETAILS OF BOILERS
+Land and Marine Boilers
+Incrustation and Corrosion of Boilers
+Locomotive Boilers
+CONSTRUCTIVE DETAILS OF ENGINES
+Pumping Engines
+Various forms of Marine Engines
+Cylinders, Pistons, and Valves
+Air Pump and Condenser
+Pumps, Cocks, and Pipes
+Details of the Screw and Screw Shaft
+Details of the Paddles and Paddle Shaft
+The Locomotive Engine
+STEAM NAVIGATION
+Resistance of Vessels in Water
+Experiments on the Resistance of Vessels
+Influence of the size of Vessels upon their Speed
+Structure and Operation of Paddle Wheels
+Configuration and Action of the Screw
+Comparative Advantages of Paddle and Screw Vessels
+Comparative Advantages of different kinds of Screws
+Proportions of Screws
+Screw Vessels with full and auxiliary Power
+Screw and Paddles combined
+EXAMPLES OF ENGINES OF RECENT CONSTRUCTION
+Oscillating Paddle Engines
+Direct acting Screw Engine
+Locomotive Engine
+ON VARIOUS FORMS AND APPLICATIONS OF THE STEAM ENGINE
+Governor
+Donkey Pumps
+Portable Steam Engines
+Stationary Engines
+Steam Fire Engines
+Steam Excavator
+MANUFACTURE AND MANAGEMENT OF STEAM ENGINES
+Construction of Engines
+Erection of Engines
+Management of Marine Boilers
+Management of Marine Engines
+Management of Locomotives
+
+A.--A vacuum means an empty space; a space in which there is neither water nor air, nor anything else that we know of.
+
+A.--In a high pressure engine the steam, after having pushed the piston to the end of the stroke, escapes into the atmosphere, and the impelling force is therefore that due to the difference between the pressure of the steam and the pressure of the atmosphere. In the condensing engine the steam, after having pressed the piston to the end of the stroke, passes into the condenser, in which a vacuum is maintained, and the impelling force is that due to the difference between the pressure of the steam above the piston, and the pressure of the vacuum beneath it, which is nothing; or, in other words, you have then the whole pressure of the steam urging the piston, consisting of the pressure shown by the safety-valve on the boiler, and the pressure of the atmosphere besides.
+
+A.--Into single acting, rotative, and rotatory engines. Single acting engines are engines without a crank, such as are used for pumping water. Rotative engines are engines provided with a crank, by means of which a rotative motion is produced; and in this important class stand marine and mill engines, and all engines, indeed, in which the rectilinear motion of the piston is changed into a circular motion. In rotatory engines the steam acts at once in the production of circular motion, either upon a revolving piston or otherwise, but without the use of any intermediate mechanism, such as the crank, for deriving a circular from a rectilinear motion. Rotatory engines have not hitherto been very successful, so that only the single acting or pumping engine, and the double acting or rotative engine can be said to be in actual use. For some purposes, such, for example, as forcing air into furnaces for smelting iron, double acting engines are employed, which are nevertheless unfurnished with a crank; but engines of this kind are not sufficiently numerous to justify their classification as a distinct species, and, in general, those engines may be considered to be single acting, by which no rotatory motion is imparted.
+
+4. Q.--Is not the circular motion derived from a cylinder engine very irregular, in consequence of the unequal leverage of the crank at the different parts of its revolution?
+
+A.--No; rotative engines are generally provided with a fly-wheel to correct such irregularities by its momentum; but where two engines with their respective cranks set at right angles are employed, the
