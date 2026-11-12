@@ -26,7 +26,16 @@ python ingestion/ingest.py --limit 50 # a quick sample
 It writes, for each book:
 
 - `data/metadata/{id}.json`: bibliographic metadata (title, contributors, Gutenberg summary, subject headings), keyed by `gutenberg_id`
-- `data/text-sample/{id}.txt`: sections extracted from the book itself: the table of contents (one chapter title per line), then about a page of the introduction (or of the opening, if there's no introduction), then a page of the conclusion when there is one. Sections are separated by a blank line and have no labels. Prose is unwrapped to one paragraph per line, and title pages, digitization credits, page markers and page numbers are removed. No metadata is repeated here; combine it with the JSON however your embedding approach needs.
+- `data/text-sample/{id}.json`: text extracted from the book itself, split into fields so the embedding side can choose what to use. Missing parts are `null` or `[]`. Prose is unwrapped to one paragraph per line, with title pages, digitization credits, page markers and page numbers removed. No metadata is repeated here; combine it with the metadata JSON (e.g. its `description`, Gutenberg's auto-generated summary) however your embedding approach needs.
+
+  | Field | Contents |
+  |---|---|
+  | `gutenberg_id` | Same ID as the metadata file |
+  | `table_of_contents` | List of chapter titles, without page numbers or "Chapter 1." labels |
+  | `introduction` | About a page from the introduction, preface or foreword, if the book has one |
+  | `passages` | Up to 6 short passages (~400 characters) from evenly spaced points through the book |
+  | `conclusion` | About a page from a conclusion, afterword or epilogue, if the book has one (rare) |
+  | `index_terms` | Top-level entries from the back-of-book index, sampled evenly across the alphabet, if there is one |
 
 The two catalog files are cached in `data/raw/`. Full book texts aren't saved by `ingest.py`; it downloads them each run and keeps only the extracts.
 

@@ -2,7 +2,8 @@
 
 For a random subset of English nonfiction books, writes:
   data/metadata/{id}.json      bibliographic metadata, including Gutenberg's summary and subject headings
-  data/text-sample/{id}.txt    sections extracted from the book: ToC, intro (or opening page), conclusion
+  data/text-sample/{id}.json   parts extracted from the book as separate fields: ToC, introduction,
+                               passages from across the book, conclusion, index terms
 
 Which books are used, and how their texts are fetched, lives in download_full_texts.py. Texts saved
 in data/raw/full-texts/ by that script are reused; others are downloaded and processed in memory
@@ -30,22 +31,38 @@ END_MARKER = re.compile(r"\*{3,} ?END OF TH(E|IS) PROJECT GUTENBERG", re.M)
 
 
 def heading(names):
-    """Regex for a line containing only one of `names` (any case, optional trailing period)."""
-    return re.compile(rf"^[ \t]*({names})\.?[ \t]*$", re.M | re.I)
+    """Regex for a heading line with one of `names`. Either the line is only that word (any case,
+    optional trailing period, optionally in _italics_), or it's an all-caps line containing it, like
+    "AUTHOR'S PREFACE." or "V. CONCLUSION--BENEFITS OF SUNDAY-SCHOOLS." All-caps title-page credits
+    ending in "BY" ("WITH AN INTRODUCTION BY") don't count."""
+    exact = rf"^[ \t]*_?(?:{names})\.?_?\.?[ \t]*$"
+    all_caps = rf"^(?=[^\n]*\b(?:{names})\b)(?![^\n]*\bBY[ \t]*$)[^a-z\n]{{1,70}}$"
+    return re.compile(rf"(?i:{exact})|{all_caps}", re.M)
 
 
 TOC_HEADING = heading("CONTENTS|TABLE OF CONTENTS")
-INTRO_HEADING = heading("INTRODUCTION|PREFACE|FOREWORD|PROLOGUE")
-CONCLUSION_HEADING = heading("CONCLUSION|AFTERWORD|EPILOGUE|FINAL THOUGHTS")
+INTRO_HEADING = heading("INTRODUCTION|INTRODUCTORY|PREFACE|PREFATORY|FOREWORD|PROLOGUE")
+CONCLUSION_HEADING = heading("CONCLUSION|CONCLUDING|AFTERWORD|EPILOGUE|FINALE|FINAL THOUGHTS")
+INDEX_HEADING = heading("INDEX")
+MIN_INDEX_TERMS = 10  # fewer means the "index" heading was something else, like a table column
+
+SPREAD_POINTS = 6  # evenly spaced points through the body to take a short passage from
+SPREAD_CHARS = 400  # size of each of those passages
 
 INLINE_MARKERS = re.compile(r"\[(?:Illustration|Page|Pg\.?|Footnote|Sidenote)[^\]]*\]", re.I)
-# Paragraphs crediting the people who digitized the book, rather than the book itself.
-CREDITS = re.compile(r"produced by|transcribed|transcriber|proofread|scanned|e-?text|@|www\.|https?:", re.I)
+# Paragraphs that aren't the book's own text: digitization credits, transcriber's notes, and lists of
+# illustrations.
+CREDITS = re.compile(
+    r"produced by|transcribed|transcriber|proofread|scanned|e-?text|@|www\.|https?:|italic|frontispiece|to face page",
+    re.I,
+)
+MAX_DIGIT_SHARE = 0.05  # paragraphs with more digits than this are tables, errata or lists of page numbers
 MIN_WORDS = 20  # shorter paragraphs are title-page lines, headings or separators
 # "Chapter 1.", "CHAP. II.--", "10." at the start of a ToC entry. Roman numerals are uppercase only, so
 # words like "Mill." aren't mistaken for one.
 TOC_LABEL = re.compile(r"^(?:(?i:chapter|chap\.?|part|book|lecture|section|letter)\s+)?(?:[IVXLCDM]+|\d+)\s*[.:)\]—-]+\s*")
-TOC_PAGE_NUMBER = re.compile(r"(?:\s+|\s*\.{2,}\s*)\d+$")  # trailing page number, with padding or dot leaders
+# Trailing page number or range, with padding, dot leaders or a colon, sometimes labelled ("Page 1", "pp. 1-5").
+TOC_PAGE_NUMBER = re.compile(r"(?:\s+|\s*\.{2,}\s*|\s*[:,]\s*)(?:page\s+|pp?\.\s*)?\d+(?:\s*[-–]\s*\d+)?$", re.I)
 TOC_JUNK = re.compile(r"(?:chapter|chap|part|book|lecture|section|letter|page|contents)?\.?\s*[\dIVXLCDM.]*", re.I)
 
 
@@ -108,7 +125,10 @@ def strip_boilerplate(text):
     start, end = START_MARKER.search(text), END_MARKER.search(text)
     if not start or not end:
         return None
-    return text[start.end() : end.start()].strip()
+    body = text[start.end() : end.start()]
+    # Older files also have an "End of the Project Gutenberg EBook of ..." line before the END marker.
+    footer = re.search(r"^End of (the )?Project Gutenberg", body, re.M | re.I)
+    return body[: footer.start() if footer else None].strip()
 
 
 def clean(text):
@@ -117,20 +137,54 @@ def clean(text):
     return re.sub(r"_([^_]+?)_", r"\1", text)
 
 
-def prose(text):
-    """About a page of real paragraphs from the start of `text`, each unwrapped onto one line.
-    Skips title-page lines, headings, separators and digitization credits."""
+def truncate(text, limit):
+    """Cut `text` to at most `limit` characters, at a sentence end if there's one in the second half."""
+    if len(text) <= limit:
+        return text
+    text = text[:limit]
+    sentence_end = text.rfind(". ")
+    return text[: sentence_end + 1] if sentence_end > limit // 2 else text.rsplit(" ", 1)[0]
+
+
+def prose(text, limit=PAGE):
+    """About `limit` characters of real paragraphs from the start of `text`, each unwrapped onto one line.
+    Skips title-page lines, headings, separators, credits and digit-heavy tables or lists."""
     out, size = [], 0
     for para in re.split(r"\n\s*\n", clean(text)):
         para = " ".join(para.split())
         if len(para.split()) < MIN_WORDS or CREDITS.search(para):
             continue
-        if size + len(para) > PAGE:
-            out.append(para[: PAGE - size].rsplit(" ", 1)[0])
+        if sum(ch.isdigit() for ch in para) > len(para) * MAX_DIGIT_SHARE:
+            continue
+        if out and size + len(para) > limit:
             break
-        out.append(para)
+        out.append(truncate(para, limit))  # only the first paragraph can be cut short
         size += len(para)
     return "\n\n".join(out)
+
+
+def index_terms(block):
+    """Top-level index entries without page numbers, picked evenly across the alphabet up to about a page.
+    Indented sub-entries ("pressure of", "description of") are dropped: they mean little without their entry."""
+    lines = [line for line in clean(block).splitlines() if line.strip()]
+    indent = lambda line: len(line) - len(line.lstrip())
+    top_indent = indent(lines[0]) if lines else 0  # an index starts with a top-level entry
+    entries = []
+    for line in lines:
+        if indent(line) < top_indent:
+            break  # the index is over: what follows is ads, transcriber's notes, etc.
+        if indent(line) > top_indent:
+            continue
+        line = re.sub(r"[\d\-–]+", "", line)  # page numbers and ranges
+        line = re.sub(r"\bff?\b\.?", "", line)  # "23 f." / "23ff." (and following pages)
+        line = re.sub(r"\s*[,;]\s*(?=[,;.]|$)", "", " ".join(line.split())).strip(" ,;.:")
+        if len(line) > 2:
+            entries.append(line)
+    entries = list(dict.fromkeys(entries))
+    if len(entries) < MIN_INDEX_TERMS:
+        return []
+    step = max(1, sum(len(e) for e in entries) // PAGE + 1)
+    return entries[::step]
 
 
 def toc_entries(block):
@@ -139,38 +193,69 @@ def toc_entries(block):
     for line in clean(block).splitlines():
         line = " ".join(line.split())
         line = TOC_PAGE_NUMBER.sub("", TOC_LABEL.sub("", line)).strip(" .-—")
-        if not TOC_JUNK.fullmatch(line):
+        # Skip bare labels/numbers, and lines with no word in them ("______", "pp. 128-131").
+        if not TOC_JUNK.fullmatch(line) and re.search(r"[^\W\d_]{3}", line) and not line.lower().startswith("pp."):
             entries.append(line)
-    return "\n".join(entries)[: 2 * PAGE]
+    kept, size = [], 0
+    for entry in entries:  # up to about two pages
+        size += len(entry)
+        if size > 2 * PAGE:
+            break
+        kept.append(entry)
+    return kept
 
 
 def extract_sample(body):
-    """Mirror OpenSquare's PDF extraction: table of contents, introduction, conclusion.
+    """Parts of the book that represent its content, as separate fields (empty/None when not found):
+    table of contents, introduction, short passages from evenly spaced points through the book,
+    conclusion, and terms from the back-of-book index.
 
-    OpenSquare looked for the ToC and intro in the first 30 pages and the conclusion in the last 50.
-    Unlike OpenSquare, when no intro heading exists we fall back to the opening page, and we leave out
-    missing sections instead of writing "No ... found." placeholders. There is no fallback for the
-    conclusion: the last page of a nonfiction book is usually footnotes, an index or a bibliography.
-    Sections are separated by a blank line, with no labels.
+    The ToC/intro/conclusion part follows OpenSquare's PDF extraction, which looked for the ToC and
+    intro in the first 30 pages and the conclusion in the last 50. There is no fallback for a missing
+    introduction or conclusion: a book's first page of prose is often a catalogue heading or a
+    dedication, and its last page is usually footnotes, an index or a bibliography.
     """
-    sections = []
+    toc_list = []
     after_toc = 0
-
     toc = TOC_HEADING.search(body, 0, 30 * PAGE)
     if toc:
-        # The ToC ends at the first run of 3+ blank lines, or a separator line like "* * * * *".
-        block = re.split(r"\n(?:[ \t]*\n){3,}|\n[ \t]*(?:\* *){3,}\n", body[toc.end() :], maxsplit=1)[0]
-        sections.append(toc_entries(block))
-        after_toc = toc.end() + len(block)
+        # The ToC ends at the first run of 3+ blank lines, or a separator line like "* * * * *", not
+        # counting blank lines right after the heading. Capped at 10 pages for ToCs that run straight
+        # into the text (Summa Theologica).
+        toc_start = toc.end() + len(re.match(r"\s*", body[toc.end() :]).group())
+        block = re.split(r"\n(?:[ \t]*\n){3,}|\n[ \t]*(?:\* *){3,}\n", body[toc_start:], maxsplit=1)[0][: 10 * PAGE]
+        toc_list = toc_entries(block)
+        after_toc = toc_start + len(block)
 
-    intro = INTRO_HEADING.search(body, after_toc, max(after_toc, 30 * PAGE))
-    sections.append(prose(body[intro.end() :] if intro else body[after_toc:]))
+    # A preface often comes before the ToC, so search from the start, skipping headings inside the ToC.
+    intro = next(
+        (m for m in INTRO_HEADING.finditer(body, 0, 30 * PAGE) if not toc or not toc.start() <= m.start() < after_toc),
+        None,
+    )
+    introduction = prose(body[intro.end() :]) if intro else ""
 
-    conclusions = list(CONCLUSION_HEADING.finditer(body, max(after_toc, len(body) - 50 * PAGE)))
-    if conclusions:
-        sections.append(prose(body[conclusions[-1].end() :]))
+    # The body ends at the index if there is one, otherwise skip the last 10% (notes, appendices, etc.).
+    indexes = list(INDEX_HEADING.finditer(body, int(len(body) * 0.7)))
+    body_end = indexes[-1].start() if indexes else int(len(body) * 0.9)
+    passages = []
+    for i in range(1, SPREAD_POINTS + 1):
+        point = after_toc + (body_end - after_toc) * i // (SPREAD_POINTS + 1)
+        paragraph_start = body.find("\n\n", point)  # don't start mid-paragraph
+        if 0 <= paragraph_start < body_end:
+            passages.append(prose(body[paragraph_start : paragraph_start + 10 * PAGE], SPREAD_CHARS))
 
-    return "\n\n".join(s for s in sections if s)
+    # Unlike the passages, the conclusion can be in the last 10%; it just has to come before any index.
+    text_end = indexes[-1].start() if indexes else len(body)
+    conclusions = list(CONCLUSION_HEADING.finditer(body, max(after_toc, text_end - 50 * PAGE), text_end))
+    conclusion = prose(body[conclusions[-1].end() : text_end]) if conclusions else ""
+
+    return {
+        "table_of_contents": toc_list,
+        "introduction": introduction or None,
+        "passages": [p for p in passages if p],
+        "conclusion": conclusion or None,
+        "index_terms": index_terms(body[indexes[-1].end() :]) if indexes else [],
+    }
 
 
 def main():
@@ -200,10 +285,11 @@ def main():
             continue
 
         meta = build_metadata(row, summaries.get(book_id, ""))
-        (DATA / "metadata" / f"{book_id}.json").write_text(
-            json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8"
-        )
-        (DATA / "text-sample" / f"{book_id}.txt").write_text(f"{extract_sample(body)}\n", encoding="utf-8")
+        sample = {"gutenberg_id": book_id, **extract_sample(body)}
+        for folder, record in (("metadata", meta), ("text-sample", sample)):
+            (DATA / folder / f"{book_id}.json").write_text(
+                json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+            )
         written += 1
         print(f"[Written] {book_id}: {meta['title'][:70]}", flush=True)
 

@@ -1,0 +1,37 @@
+{
+  "gutenberg_id": 70907,
+  "title": "Catalogue of the dipterous insects collected at Singapore and Malacca",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Wallace, Alfred Russel, 1823-1913",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Saunders, W. Wilson (William Wilson), 1809-1879",
+      "role": "Author of introduction, etc.",
+      "order": 2
+    },
+    {
+      "name": "Walker, Francis, 1809-1874",
+      "role": "Contributor",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2023-06-04",
+  "description": "\"Catalogue of the Dipterous Insects Collected at Singapore and Malacca by Wallace\" by Francis Walker is a scientific publication written in the mid-19th century. This work documents the various species of dipterous insects discovered by Alfred Russel Wallace during his research in Singapore and Malacca. The publication not only catalogs these insects but also provides detailed descriptions of new species found in the region, contributing to the scientific understanding of fauna in Southeast Asia.  The opening of the book provides a context for Wallace's entomological work as he transitions from his studies in South America to the East Indian Islands. It outlines the scientific aims of gathering these specimens and emphasizes the role of Wallace's collections in understanding the geographical distribution of dipterous insects in this biodiverse region. The text introduces William Wilson Saunders, who presents Walker's detailed observations and newly identified species, setting the stage for an extensive catalog that will aid future entomological research.",
+  "subjects": [
+    "Science - Biology",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Diptera -- Singapore",
+    "Diptera -- Malacca"
+  ],
+  "locc": [
+    "QL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70907"
+}

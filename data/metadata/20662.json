@@ -1,0 +1,34 @@
+{
+  "gutenberg_id": 20662,
+  "title": "The measurement of intelligence",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Terman, Lewis M. (Lewis Madison), 1877-1956",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Cubberley, Ellwood Patterson, 1868-1941",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2007-02-25",
+  "description": "\"The Measurement of Intelligence: An Explanation of and a Complete Guide for the Use of the Stanford Revision and Extension of the Binet-Simon Intelligence Scale\" by Lewis M. Terman is a scientific publication written in the early 20th century. This work serves as both an exposition on intelligence measurement and a practical guide to applying the Stanford revision of the Binet-Simon Scale, which evaluates the intelligence of children and adults. The book discusses various applications of intelligence testing in educational contexts, highlighting its significance for diagnosing learning disabilities, identifying giftedness, and aiding in the proper placement of students within the educational system.  The opening of this book introduces its critical topic—the measurement of intelligence and its implications for education—by emphasizing the necessity of using standardized intelligence tests for accurate assessment. Terman discusses the historical context of intelligence testing, highlighting how educational practices often failed to acknowledge varying levels of intelligence among students, which resulted in many children falling behind or being poorly evaluated. He outlines the objective of the Binet-Simon Scale and its revision to provide educators and psychologists with reliable methods for understanding a child's mental abilities, advocating for a scientific approach in evaluating and addressing individual educational needs.",
+  "subjects": [
+    "Research Methods/Statistics/Information Sys",
+    "Psychiatry/Psychology",
+    "Teaching & Education"
+  ],
+  "topic_subjects": [
+    "Psychophysiology",
+    "Child development",
+    "Intelligence tests"
+  ],
+  "locc": [
+    "LB"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/20662"
+}
