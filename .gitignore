@@ -1,3 +1,4 @@
 data/raw/
 __pycache__/
 .venv/
+gutenberg_faiss_test/
