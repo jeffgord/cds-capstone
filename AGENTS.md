@@ -2,6 +2,7 @@
 
 ## Layout
 
+- Docs: keep the root `README.md` to the bare minimum teammates need (what the repo is, setup, where the data is). Detail goes in a README in the relevant folder, e.g. `ingestion/README.md` for the field reference and how to build the dataset.
 - `opensquare-reference/` — git submodule pointing at https://github.com/NYULibraries/KA-opensquare-research-project. Use it as a guide for this project; don't edit it.
 - `ingestion/ingest.py` — script that builds the Gutenberg dataset in OpenSquare's shape: one flat `data/books/{id}.json` per book combining catalog metadata (`title`, `description` = Gutenberg summary, `topic_subjects`, ...) and extracted text fields (`table_of_contents`, `introduction`, `passages`, `conclusion`, `index_terms`). OpenSquare kept metadata JSON and one text blob (`textual_information/`) separately; the user chose one file per book over one big file. ID field is `gutenberg_id` (OpenSquare's was `isbnLibrary`). Run `python ingestion/ingest.py [--limit N]`.
 - `ingestion/download_full_texts.py [--limit 25]` — saves full texts for the first N books of the same subset to `data/raw/full-texts/`, for inspecting the data. `ingest.py` reads from there when a text exists, otherwise downloads in memory without saving (user doesn't want all ~0.5 GB of texts locally, but does want some to look at). `download_full_texts.py` owns book selection (`wanted()`, `load_subset()`) and text fetching (`download_text()`); `ingest.py` imports them, so imports go one way only.
