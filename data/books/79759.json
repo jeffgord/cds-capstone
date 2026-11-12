@@ -1,0 +1,51 @@
+{
+  "gutenberg_id": 79759,
+  "title": "Medieval cities",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Pirenne, Henri, 1862-1935",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Halsey, Frank D. (Frank Davis), 1891-1941",
+      "role": "Translator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2026-10-10",
+  "description": "",
+  "subjects": [],
+  "topic_subjects": [
+    "Cities and towns, Medieval",
+    "Commerce -- History -- Medieval, 500-1500"
+  ],
+  "locc": [
+    "JS"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/79759",
+  "table_of_contents": [
+    "THE MEDITERRANEAN",
+    "THE NINTH CENTURY",
+    "CITY ORIGINS",
+    "THE REVIVAL OF COMMERCE",
+    "THE MERCHANT CLASS",
+    "THE MIDDLE CLASS",
+    "MUNICIPAL INSTITUTIONS",
+    "CITIES AND EUROPEAN CIVILIZATION",
+    "BIBLIOGRAPHY"
+  ],
+  "introduction": "This little volume contains the substance of lectures which I delivered from October to December 1922 in several American universities. It is an attempt to expound, in a general way, the economic awakening and the birth of urban civilization in Western Europe during the Middle Ages.\n\nThe bibliography placed at the end of the volume will permit the reader, who may be interested in the subject discussed herein, to inform himself more precisely of the details and to verify my assertions. It would be obviously impossible, in a general outline such as this, to go into particulars or take up exceptions and anomalies, and still more so to give way to controversy. Here, then, will be found only a synthesis, the result of long years of study and research.\n\nIt is particularly gratifying to me to see this book published by the Press of a University which showed me so cordial a sympathy during the war, and to which I am very happy to dedicate the work as a mark of my profound gratitude.\n\nThe Roman Empire, at the end of the third century, had one outstanding general characteristic: it was an essentially Mediterranean commonwealth. Virtually all of its territory lay within the watershed of that great land-locked sea; the distant frontiers of the Rhine, the Danube, the Euphrates and the Sahara, may be regarded merely as an advanced circle of outer defences protecting the approaches.\n\nThe Mediterranean was, without question, the bulwark of both its political and economic unity. Its very existence depended on sea mastery. Without that great trade route, neither the government, nor the defence, nor the administration of the orbis romanus would have been possible.\n\nAs the Empire grew old this fundamentally maritime character was, interestingly enough, not only preserved but was still more sharply defined. When the former inland capital, Rome, was abandoned, its place was taken by a city which not only served as a capital but which was at the same time an admirable port--Constantinople.",
+  "passages": [
+    "If it is admitted, and it must be admitted, that the reappearance of gold coinage, with the florins of Florence and the ducats of Venice in the thirteenth century, characterised the economic renaissance of Europe, the inverse is also true: the abandoning of gold coinage in the eighth century was the manifestation of a profound decline.",
+    "The episcopal cities naturally served as a refuge for the populations of their neighborhood upon the approach of the barbarians. There monks came, even from very far away, to seek an asylum, as did, for example, those from St. Vaast in 887 at Beauvais and those from St. Quentin at Laon.[55]",
+    "From two quarters, trade made use of the resources which Nature had placed at its disposal. It dominated the two inland seas which between them bounded the admirably indented coast line of the continent of Europe.",
+    "As much might be said of the fairs (fora), and yet the fairs in contrast to the markets do not show a strictly local character; they were instituted to serve as a periodic meeting place for the professional merchants, to put them in touch with each other, and to get them to gather there at fixed seasons. In fact, the importance of many of these fairs was very great.",
+    "All of this was very far from forming a coherent whole and being justified on theoretical principles. Nothing was further from the mind of the original middle classes than any conception of the rights of man and citizen. Personal liberty itself was not claimed as a natural right. It was sought only for the advantages it conferred.",
+    "Other causes naturally contributed to the birth of city communes. The most potent among them was the need, early felt by the burghers, of a tax system. Funds were necessary for public works of the most pressing nature, and, above all, for the construction of the city wall. Everywhere the need of building this protecting rampart was the point of departure for city finances."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

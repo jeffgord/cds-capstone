@@ -1,0 +1,41 @@
+{
+  "gutenberg_id": 71934,
+  "title": "Balloon observation, and instructions on the subject of work in the basket",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "United States. War Department. Division of Military Aeronautics",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2023-10-23",
+  "description": "\"Balloon Observation, and Instructions on the Subject of Work in the Basket\" is a military instruction manual issued by the Division of Military Aeronautics, U.S. Army, in August 1918. This scientific publication, likely written during the late stages of World War I, focuses on the principles and techniques of balloon observation, particularly in the context of artillery support and reconnaissance. The book provides a comprehensive look at how to effectively utilize balloons for military observation tasks, detailing procedures, communication protocols, and the importance of understanding the terrain.  The manual is divided into sections that address balloon observation principles, tactical coordination with artillery units, and specific work methods for observers while in the basket. It emphasizes the need for precision in spotting targets and reporting fire, including techniques for orientation, reconnaissance, and the identification of key terrain features. By outlining the relationship between balloon observers and artillery commanders, the text aims to improve the effectiveness of military operations through careful observation and communication. Detailed methodologies are provided for tasks such as marking target locations, assessing artillery impacts, and employing visual aids like maps and photographs to ensure accuracy in observations.",
+  "subjects": [
+    "History - Warfare",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Balloons",
+    "Aerial observation (Military science)",
+    "Military reconnaissance",
+    "Aerial reconnaissance"
+  ],
+  "locc": [
+    "UG"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/71934",
+  "table_of_contents": [],
+  "introduction": "In this pamphlet will be laid down the general principles and also the limitations which govern observation from balloons. Balloon observation includes more than actual artillery observation. (See “Employment of Balloons.”)\n\nThe details of cooperation between balloons and artillery are issued from time to time by the General Staff in the form of pamphlets. Whatever the system ordered at the time, there are certain principles which do not change.\n\nDistance from the target is inevitable, but can be lessened by advanced positions and winch tracks. During active operation it has sometimes been possible to approach balloons within 4,500 meters (4,921 yards) of the line.\n\nThe low height of the balloon compared with an aeroplane is a drawback, as it brings a question of dead ground and exaggerated perspective.\n\nVisibility is the determining factor of the balloon’s usefulness. In very high winds, very misty or cloudy weather, observation is impossible, and owing to its stationary nature the balloon can not, by any special effort on the part of its observers, overcome unfavorable conditions in the same way as is possible in the case of aeroplane observation.\n\nIn the first place, glasses can be used. Secondly, the balloon observer can converse direct with the battery commander by telephone. Apart, therefore, from ease and certainty in reporting observations, the telephone system enables an elastic program of work to be drawn up and admits of personal conversation between the battery commander and the observer, often permitting mistakes or misunderstandings to be cleared up during shoot instead of afterwards.\n\nFinally, owing to the continuous nature of his observation from the same spot, the balloon observer is able to learn his country in the greatest detail and can keep a close watch on suspected roads or areas of country.\n\nThe work of balloons is principally with the artillery, and close liaison between these two branches is indispensable if the best results are to be obtained. This close liaison should be promoted on the following lines:\n\n(a) Balloon companies should each, as far as possible, be allotted specific artillery organizations. This facilitates telephone communication, prevents duplication of liaison work, and leads to a far more intimate and personal liaison than does any other method.",
+  "passages": [
+    "The work of balloons is principally with the artillery, and close liaison between these two branches is indispensable if the best results are to be obtained. This close liaison should be promoted on the following lines:",
+    "The observer may know already the winch position, but the balloon is carried off horizontally from the winch sometimes as much as 400 or 500 meters (436 to 545 yards). Thus it is essential not to confuse the winch position with the horizontal projection of the balloon. If this is done, errors will be made in the operations which we are going to discuss later, where we make use of this known point.",
+    "The best method of work will be, then, that which suppresses as quickly as possible one of these dimensions and to conduct the research on a straight line.",
+    "EXAMPLE (fig. 3).--On the map C is the objective, A and B two points so situated that the line AB passes through C, and EF the direct alignment, or the line balloon objective. The line AB coincided on the terrain, with the trace of the vertical plane passing through A and B. In oblique vision (fig. 4) it is different.",
+    "Therefore, =when you are obliged to take the two reference points between you and the objective, choose one as near the objective as possible and the other as near as possible to the balloon=.",
+    "The delicate part of the operation consists in seeing the shot at the moment of burst. One must try to spot the apex of the inverted cone formed by the burst, without paying any attention to the more or less considerable cloud of smoke which follows and which will cause mistakes if the burst was not seen immediately. The method of situating the point is the same as that described above."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

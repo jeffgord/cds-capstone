@@ -1,0 +1,40 @@
+{
+  "gutenberg_id": 78196,
+  "title": "A dictionary of geographical names",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Markun, Leo, 1901-1932",
+      "role": "Compiler",
+      "order": 1
+    },
+    {
+      "name": "Haldeman-Julius, E. (Emanuel), 1888-1951",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2026-03-12",
+  "description": "A dictionary of geographical names by Leo Markun and E. Haldeman-Julius is a concise reference gazetteer compiled in the early 20th century. It presents an alphabetical guide to world place-names, identifying locations and their significance while noting alternative forms and historical associations.\n\nArranged from Aachen to Zurich, the entries cover continents, countries, provinces, cities, islands, rivers, seas, and mountain ranges. Each item provides brief, telegraphic facts—capital status, trade importance, geographic position—along with classical and foreign-language variants, cross-references, and snapshots of historical context, from Homeric sites and biblical towns to notable battlefields and colonial outposts. The book frequently flags post–World War I changes (free cities, protectorates, mandates, and new borders) and clarifies disputed regions and renamed places. Its tone is brisk and occasionally sardonic, mixing clear definitions with wry asides. Overall it functions as a quick-reading gazetteer and mini-encyclopedia of place-names, linking geography to history and nomenclature in compact notes.",
+  "subjects": [],
+  "topic_subjects": [
+    "Geography -- Dictionaries"
+  ],
+  "locc": [
+    "G"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/78196",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "Belgium. In French: Belgique. Kingdom of western Europe, part of the Low Countries. Anciently, the territory of the Bellovaci, part of the Belgae, a Germanic people.\n\nBerlin. Capital of Prussia and German Republic. One of the great cities of the world, of historical as well as present importance.",
+    "Chersonesus. Greek word for peninsula. Without qualifications, it meant for the Greeks Gallipoli, peninsula of the Dardanelles. C. Taurica or Scythica was Crimea. Gallipoli is also called Chersonese.",
+    "Flanders. Country of Europe divided among Netherlands, Belgium, and France. The language of F., Flemish, is a dialect of Dutch. It has recently been revived for literary purposes.\n\nFlodden. Hill in England. At the Battle of Flodden Field, 1513, King James IV of Scotland was defeated and killed.",
+    "Kiel. City of Holstein, Prussia, Germany. Formerly a great German naval station. University. Eastern terminus of K. or Kaiser Wilhelm Canal, connecting Baltic and North Seas.\n\nLeipzig or Leipsic. City of Saxony, Germany. Publishing center. At Battle of L. or of the Nations, 1813, Napoleon was badly defeated.",
+    "Oxus. Modern: Amu Darya. River of central Asia, the usual boundary between the great empires of southwestern Asia and wandering hordes.\n\nPacific. Ocean, between North and South America and Asia and Australia. Sometimes divided into two oceans, North and South P.",
+    "Sarajevo. Capital of Bosnia, Jugo-Slavia. Here took place the murder of Archduke Francis Ferdinand of Austria, the direct cause of the World War.\n\nSardinia. Italian: Sardegna. Large island in the Mediterranean, part of Italy. It was the king of Sardinia (who had possessions also on the mainland) that became the first monarch of the kingdom of Italy."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

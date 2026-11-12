@@ -1,0 +1,55 @@
+{
+  "gutenberg_id": 75849,
+  "title": "Aggravating ladies",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Hamst, Olphar, 1840-1926",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2025-04-13",
+  "description": "\"Aggravating Ladies: Being a List of Works Published Under the Pseudonym of 'a Lady,' with Preliminary Suggestions on the Art of Describing Books Bibliographically\" by Olphar Hamst is a bibliographical reference work from the late 19th century. The book explores the challenge of attributing and cataloguing works published anonymously or pseudonymously—specifically those authored by women using the generic credit \"a lady.\" Alongside the extensive list, Hamst offers insightful guidance on establishing standards for bibliographical description, highlighting the obstacles and importance of accuracy in cataloguing literature.  The opening of \"Aggravating Ladies\" features a detailed preface in which the author explains his motivation for compiling the list, lamenting the stubborn anonymity of women writers who published under the evasive title \"a lady.\" This section is followed by thorough preliminary remarks on cataloguing, which emphasize the necessity of systematic, accurate rules for describing books, and discuss distinctions between anonymous, pseudonymous, autonymous, and polyonymous works. The introductory chapters serve as both a critique and a methodological guide, exploring issues such as the importance of titles, author names, publication data, and physical format in bibliographic practice, while also addressing broader difficulties in tracing and correctly attributing literary works when authors opt for diffuse or concealed identities. The book then leads directly into its main attraction: a meticulously annotated and expansive list of such anonymous or pseudonymous titles.",
+  "subjects": [
+    "Encyclopedias/Dictionaries/Reference",
+    "Journalism/Media/Writing"
+  ],
+  "topic_subjects": [
+    "Anonyms and pseudonyms",
+    "Women authors"
+  ],
+  "locc": [
+    "Z"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/75849",
+  "table_of_contents": [
+    "Preface",
+    "Preliminary Remarks",
+    "How to describe a Book",
+    "Cataloguing",
+    "Of different descriptions of books",
+    "Matters to be attended to in Cataloguing",
+    "Style of Printing",
+    "Punctuation",
+    "The beginning and the end",
+    "Of errors",
+    "On the means of identifying the authors of",
+    "anonymous and pseudonymous publications",
+    "List of Works by a Lady",
+    "Advertisements",
+    "Index"
+  ],
+  "introduction": "In the course of collecting materials for my “Handbook of Fictitious Names of Authors of the Nineteenth Century,” I came across the titles of a number of works purporting to be written by “A Lady,” the authorship of which appeared to be unknown.\n\nIt occurred to me that I might probably ascertain the names of many of the authors, and also proper descriptions of such of the books as I had not seen, and was unable to see, if I printed a list of them. As however, the essential points to be attended to, in the proper description of a book, are little understood, I thought it would be desirable to prefix to the list a few suggestions on the way to supply correct information. These gradually developed, so that I soon found the subject required more space, more time, and more consideration than I at first imagined.\n\nIn the hope that I might obtain assistance from others, and with a view to getting hints and exciting discussion, I wrote an article for “Notes and Queries,” which was printed in the numbers for January and April of 1872, entitled, “How to describe a Book.” I now go more fully into the matters that I consider require attention in the proper description of a book.\n\nAn explanation of the title of this essay will no doubt be looked for in the preface. It is very simple. In my searches for the Authors’ names, the ladies in this list have resisted all enquiry in the most aggravating manner. Therefore I took the title of Aggravating Ladies as being concise and appropriate.\n\nThe information asked for relates only to English Literature of the 19th century, to which period I confine myself entirely. The anonymous and pseudonymous writers during this century being more than sufficient to occupy a whole life of laborious application.\n\nI have not included in the list any phrases such as:—A Lady of Rank—A Lady of Distinction—A Lady of Hebrew faith—A Banished Lady—A Young Lady—A too generous Young Lady—nor, A Lady of distinction, who has witnessed and attentively studied what is esteemed truly graceful and elegant amongst the most refined nations of Europe (!) The pseudonym of the author of The Mirror of the Graces, or an English lady’s costume [treating of] ... taste ... grace; modesty ... dress ...; rank ... in life; ... of accomplishments; ... the mind ... means of preserving beauty ...; by a lady, &c. London, Crosby & Co., 1811.",
+  "passages": [
+    "Another bad practice is cutting short the title page and explaining in a note what the book is about almost in the words of the author, so that all the necessary information is given, only incorrectly instead of correctly, an example of which, taken from Lowndes, will be found in my list.",
+    "Arithmetical books ... being brief notices of a large number of works drawn up from actual inspection by Augustus de Morgan ... London, 1847. See the preface and introduction to this valuable and interesting work. The English catalogue of books, 1864, makes an edition of this work with the date 1853, at 2s 6d.",
+    "Always count from the very first printed page belonging to the book, excluding advertisements. Give the paging as printed, that is, in the same characters. If leaves occur unpaged, either before those paged or after, use arabian numerals to denote those unpaged.",
+    "There is a large class of errors arising from the habit of one writer copying another, instead of each going to original sources.",
+    "13. The boy’s own text book, containing a text from the old and new Testaments ... selected by a lady [motto] Lond. J. F. Shaw 1857.\n\nOne of a series called Dolman’s [Catholic] catechisms. The history of France and Germany in the same series are written by A. M. S., and are attributed, with a query, at the British Museum, to Agnes M. Stewart.",
+    "94. Lines addressed to prince Leopold of Saxe-Cobourg on the death of his consort the princess Charlotte of Wales, by a lady. Colchester, printed and sold by Swinborne and Walter; Hatchard, London 1817, 8o, pp. 7."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,56 @@
+{
+  "gutenberg_id": 66616,
+  "title": "Elementary Course in Woodwork",
+  "subtitle": "Designed for use in high and technical schools, with one hundred and thirty-four illustrations: First Edition",
+  "contributors": [
+    {
+      "name": "Ross, George Alexander",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-10-26",
+  "description": "\"Elementary Course in Woodwork\" by George Alexander Ross is a technical manual written in the early 20th century. The book is designed to serve as a guide for students studying elementary woodwork in high and technical schools, specifically tailored for those at the Lewis Institute in Chicago. It addresses essential woodworking skills, covering various techniques and tools used in carpentry, joinery, and pattern making.  The opening of the manual sets the stage for a structured learning path, outlining the course's objectives and timeline. Ross emphasizes a systematic approach to woodworking, gradually moving from simpler to more complex operations. The preface details the practical exercises included in the course, the necessary tools and equipment, and the foundational knowledge students must acquire to succeed. The text features detailed information about the care and use of saws, alongside rules for safe and efficient woodworking practices, thereby equipping students with the essential skills for their future endeavors in this craft.",
+  "subjects": [
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Woodwork (Manual training)"
+  ],
+  "locc": [
+    "TT"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/66616",
+  "table_of_contents": [
+    "CARE OF SAWS AND EQUIPMENT",
+    "EXERCISE IN SAWING AND PLANING",
+    "THE HALVED JOINT",
+    "THE MORTISE AND TENON JOINT",
+    "KEYED MORTISE AND TENON WITH BRACE",
+    "EXERCISE WITH THE BENCH, BEAD, RABBET, AND MOLDING PLANES",
+    "BLIND MORTISES AND TENONS WITH BEADING AND RABBETING",
+    "DOVETAIL CORNER JOINT (COMMON)",
+    "GLASS PANEL DOOR FRAME",
+    "BENCH HOOK. USE OF SHELLAC",
+    "BOX WITH SLIDING TOP",
+    "PROBLEM IN TRUSS WORK",
+    "PROBLEM IN STAIR BUILDING",
+    "PROBLEM IN STAIR RAILING",
+    "TO PREPARE SHELLAC",
+    "TO PREPARE GLUE AND HOW TO USE IT",
+    "TO TRUE OIL STONES"
+  ],
+  "introduction": "The character and object of this book is set forth on its title page. It is a manual designed principally for the practical assistance of students in elementary woodwork in the Lewis Institute.\n\nThe author has endeavored to present the subject in such a manner as to make simple the transition from the easier to the more difficult operations; the exercises have been selected after having had a thorough test covering a period of three years, and will be found practical in their application to the students in High and Technical Schools in elementary woodwork and turning.\n\nPart one, the bench work, is intended to cover a period of eight weeks, two hours per day, and part two, wood turning, four weeks, two hours per day, thus making a course which will be found to touch the principal points in elementary work, at the same time giving practice in the uses of the tools most commonly used in carpentry, joinery and wood turning. Disston & Sons’ Handbook for Lumbermen has furnished many of the facts presented under “Care of Saws.”\n\nIt has been the author’s aim in this course to give just enough instruction in the work so that the student might be led to study out the problems for himself; by this means he is able to study the course of work that follows the second part of this book, i. e., Pattern Making.\n\nA cursory perusal of the work will disclose many features which the author feels sure will commend themselves to instructors and others interested in this department of school work, and with the hope that these pages may prove a valuable aid to students and teachers alike, this work is presented to the public.\n\nElementary woodwork can be more readily learned from small pieces of wood than from large; so the exercises that are here given are of such dimensions that they can be easily handled in working out the problems.\n\nSince it is by what we study and learn that we are able to do something else, the student in beginning this work should thoroughly familiarize himself with the tools, their names and uses, so that he may more readily understand their application in the work that follows.\n\n1 Number 5 Bailey Iron Plane (Jack-Plane). 1 Number 4 Bailey Iron Plane (Smooth-Plane). 1 Marking Gauge. 1 ¼-inch, ½-inch, ¾-inch, and 1-inch Bevel Edge Paring Chisel. 1 ¼-inch and ¾-inch Skew Turning Chisel. 1 ¼-inch and ¾-inch Turning Gouge.\n\nTools, such as molding, beading, rabbeting, and plow planes are found in the tool room, and are issued to students on check when required.",
+  "passages": [
+    "Much useful information on saws can be obtained from a small book published and issued by Disston & Sons, Philadelphia, entitled “Hand Book for Lumbermen,” which, I believe, can be obtained on application.\n\nThe other tools used in this course will be taken up in order as they are used in the work.",
+    "The lining on the exercise is made with the gauge for the lines running parallel with the edge, with the square and the knife for the lines at right angles to the edge, and with the bevel, Fig. 57, and the knife for the oblique lines. Figs. 58 and 59 give methods for finding the angle of 45 degrees, which is the angle that is used for the oblique lines.",
+    "Saw the tenon as previously directed, and after the sides have been cut off, mark the splay on the lower side of the tenon and cut it off with a paring chisel.\n\nThe method of finding the length of the brace is of importance, as it will give the student some idea of the application of square root to practical work of this kind.",
+    "The stock can be prepared in one piece (having it long enough so that if a poor joining is made, the dovetails can be cut off and new ones cut on this piece). After planing, cut in two, square one end of each piece (the ends to be joined). To lay out the work, it is advisable to lay out the piece with the pins or tenons first.",
+    "The extremities of the end pieces are to be planed perfectly square to insure a close fit against the sides. The method of planing the ends is to plane half way through from the edge, then plane from the other edge, being careful not to let the plane go all the way across, as the corner will be liable to break off.",
+    "The piece F, which is to form the well-hole, is built up of pieces, then planed out with a round bottom plane. The method of fastening this piece to the stringer is to halve the stringer and to cut out the well-hole piece to receive it; then glue and screw together."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

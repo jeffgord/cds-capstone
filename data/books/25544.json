@@ -1,0 +1,42 @@
+{
+  "gutenberg_id": 25544,
+  "title": "The Pioneer Steamship Savannah: A Study for a Scale Model",
+  "subtitle": "United States National Museum Bulletin 228, 1961, pages 61-80",
+  "contributors": [
+    {
+      "name": "Chapelle, Howard Irving, 1901-1975",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2008-05-20",
+  "description": "\"The Pioneer Steamship Savannah: A Study for a Scale Model\" by Howard Irving Chapelle is a scientific publication likely written in the mid-20th century. This book discusses the reconstruction of the plans for the historic steamship Savannah, the first vessel to successfully cross the Atlantic Ocean under steam power. It details the inaccuracies found in previous models and illustrations, aiming to provide an authentic representation based on available historical documentation.  The content focuses on the meticulous research undertaken to correct previous misconceptions about the design and specifications of the Savannah. Chapelle utilizes primary sources, including the ship's logbook and a contemporary French report, to reconstruct the ship's dimensions, sailing capabilities, and structural features. The book is highly technical, highlighting the evolution of steam technology and maritime engineering in the early 19th century while emphasizing the historical significance of the Savannah's voyages and her role in advancing transatlantic steam travel. The overall aim is to create an accurate scale model that pays homage to this pioneering vessel’s contributions to maritime history.",
+  "subjects": [
+    "Technology",
+    "History - American",
+    "History - European",
+    "History - Modern (1750+)",
+    "Engineering & Technology"
+  ],
+  "topic_subjects": [
+    "Savannah (Steamship)",
+    "Ship models"
+  ],
+  "locc": [
+    "VM"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/25544",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "Withington's translation states that the Savannah measured 30.48 meters (100 feet) in length and 7.92 meters (26 feet) in beam and that she drew 3.66 meters (12 feet) in port and 4.27 meters (14 feet) loaded. Marestier's sketch (see fig.",
+    "Partington[14] estimated coal consumption to be nearly 10 tons a day; remarked on the uneconomical arrangement of the ship, with the engine and boiler occupying the greater part of the space amidships, between fore and main masts; and located the axle of the paddle wheel \"above the bends,\" that is, in the topsides above the wale.",
+    "The Ohio was two-decked, with the upper deck flush. She had rather straight sheer, 27-inch bulwarks, a moderately full but easy entrance, a fine, long run, and little drag to the keel. The midsection was formed with moderately short and rising floor, round and easy bilge, and some tumble-home in the topside. The stem raked a good deal for a ship-rigged vessel; the post raked slightly.",
+    "The width of the boilers might be particularly important because it would determine the deadrise at floor in the hull. The apparently precise dimensions of the boilers given in the Russian description were utilized to arrive at a suitable hull form. Both a single boiler and a double boiler (as described in the Russian accounts) were placed in the hull to assure the correct space estimates.",
+    "The bearings of the paddle wheel axle were perhaps four in number. Two, one either side of the crank, may have been secured to the engine frame just inside the deckhouse walls. Two were certainly outboard, one on each side, fastened to the topsides, as shown in Marestier's sketch of the wheel construction. The axle, probably square in cross section, turned only at the bearings and wrist pin.",
+    "Using the Ohio as a guide, the midsection was formed to comply with the dimensions of the boilers and with due regard to the small dimensions of the Savannah. The result was a section having very moderate rise of straight floor, carried farther out in proportion to beam than in the Ohio, but with rather easy turn of the bilge and moderate tumble-home in the upper topsides."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

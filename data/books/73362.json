@@ -1,0 +1,64 @@
+{
+  "gutenberg_id": 73362,
+  "title": "Stars and atoms",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Eddington, Arthur Stanley, Sir, 1882-1944",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2024-04-08",
+  "description": "\"Stars and Atoms\" by A. S. Eddington is a scientific publication written in the late 1920s. The book expands on Eddington's lectures that explore the intricate relationship between the atomic world and the cosmos, focusing on how advancements in understanding stellar structures have enriched our knowledge of atomic physics. It delves deeply into the physical principles governing stars, their interiors, and the atomic processes at play, making it suitable for readers interested in astrophysics and the fundamentals of matter.  The opening of \"Stars and Atoms\" sets the stage for a thorough examination of the immense scale of both celestial bodies and atomic structures. Eddington begins by contrasting the vastness of stars, drawing a picture of a universe filled with enormous, distant celestial spheres, and the minuscule scale of atoms that make up physical matter. He emphasizes the continuous scientific inquiry that links the behavior of atoms to the processes occurring inside stars, particularly highlighting the intricate calculations used to infer the temperature and composition of stars' interiors. Eddington's narrative invites readers to appreciate the beauty and complexity of the universe, blending rigorous mathematical theories with accessible descriptions, thus laying a solid foundation for the more detailed explorations that follow in subsequent lectures.",
+  "subjects": [
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Stars",
+    "Atoms"
+  ],
+  "locc": [
+    "QB"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/73362",
+  "table_of_contents": [
+    "THE INTERIOR OF A STAR",
+    "Temperature in the Interior",
+    "Ionization of Atoms",
+    "Radiation Pressure and Mass",
+    "The Interior of a Star",
+    "Opacity of Stellar Matter",
+    "The Relation of Brightness to Mass",
+    "Dense Stars",
+    "SOME RECENT INVESTIGATIONS",
+    "The Story of Algol",
+    "The Story of the Companion of Sirius",
+    "Unknown Atoms and Interpretation of Spectra",
+    "Spectral Series",
+    "The Cloud in Space",
+    "The Sun’s Chromosphere",
+    "The Story of Betelgeuse",
+    "THE AGE OF THE STARS",
+    "Pulsating Stars",
+    "The Cepheid as a ‘Standard Candle’",
+    "The Contraction Hypothesis",
+    "Subatomic Energy",
+    "Evolution of the Stars",
+    "Radiation of Mass",
+    "APPENDIX",
+    "Further Remarks on the Companion of Sirius"
+  ],
+  "introduction": "‘STARS and Atoms’ was the title of an Evening Discourse given at the meeting of the British Association in Oxford in August 1926. In adapting it for publication the restrictions of a time limit are removed, and accordingly it appears in this book as three lectures. Earlier in the year I had given a course of three lectures in King’s College, London, on the same topics; these have been combined with the Oxford lecture and are the origin of most of the additions.\n\nA full account of the subject, including the mathematical theory, is given in my larger book, The Internal Constitution of the Stars (Camb. Univ. Press, 1926). Here I only aim at exposition of some of the leading ideas and results.\n\nThe advance in our knowledge of atoms and radiation has led to many interesting developments in astronomy; and reciprocally the study of matter in the extreme conditions prevailing in stars and nebulae has played no mean part in the progress of atomic physics. This is the general theme of the lectures. Selection has been made of the advances and discoveries which admit of comparatively elementary exposition; but it is often necessary to demand from the reader a concentration of thought which, it is hoped, will be repaid by the fascination of the subject. The treatment was meant to be discursive rather than systematic; but habits of mind refuse to be suppressed entirely and a certain amount of system has crept in. In these problems where our thought fluctuates continually from the excessively great to the excessively small, from the star to the atom and back to the star, the story of progress is rich in variety; if it has not lost too much in the telling, it should convey in full measure the delights--and the troubles--of scientific investigation in all its phases.\n\nTHE sun belongs to a system containing some 3,000 million stars. The stars are globes comparable in size with the sun, that is to say, of the order of a million miles in diameter. The space for their accommodation is on the most lavish scale. Imagine thirty cricket balls roaming the whole interior of the earth; the stars roaming the heavens are just as little crowded and run as little risk of collision as the cricket balls. We marvel at the grandeur of the stellar system. But this probably is not the limit. Evidence is growing that the spiral nebulae are ‘island universes’ outside our own stellar system. It may well be that our survey covers only one unit of a vaster organization.",
+  "passages": [
+    "The stars differ from one another in mass, that is to say, in the quantity of material gathered together to form them; but the differences are not so large as we might have expected from the great variety in brightness. We cannot always find out the mass of a star, but there are a fair number of stars for which the mass has been determined by astronomical measurements.",
+    "IT will help us to appreciate the astronomical significance of what we have learnt in the previous lecture if we turn from the general to the particular and see how it applies to individual stars. I will take two stars round which centre stories of special interest, and relate the history of our knowledge of them.",
+    "We commonly use the method of spectrum analysis when we wish to determine which elements are present in a given mineral on the earth. It is equally trustworthy in examining the stars since it can make no difference whether the light we are studying comes from a body close at hand or has travelled to us for hundreds of years across space.",
+    "Perhaps this is a piece of information that you were not particularly burning to know. I do not think it can be called interesting except to those who make a hobby of atoms. But it does seem to me interesting that we should have to turn a telescope and spectroscope on the sun to find out this homely property of a substance which we handle daily.",
+    "Cepheid variables of the same period are closely similar to one another. A Cepheid of period 5⅓ days found in any part of the universe will be practically a replica of δ Cephei; in particular it will be a star of the same absolute brightness. This is a fact discovered by observation, and is not predicted by any part of the theory yet explored.",
+    "Ten years ago more knowledge had been gained of the densities of stars. It seemed likely that density would be a more direct criterion of evolutionary development than temperature. Granted that a star condenses out of nebulous material, it must in the youngest stage be very diffuse; from that stage it will contract and steadily increase in density."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

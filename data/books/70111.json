@@ -1,0 +1,47 @@
+{
+  "gutenberg_id": 70111,
+  "title": "New-England's rarities discovered",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Josselyn, John, active 1630-1675",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Tuckerman, Edward, 1817-1886",
+      "role": "Annotator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2023-02-23",
+  "description": "\"New-England's Rarities Discovered: In Birds, Beasts, Fishes, Serpents, and Plants\" by John Josselyn is a natural history account written in the late 17th century. This work details Josselyn's observations from his explorations in New England, specifically focusing on the diverse wildlife and plants he encountered, along with their medicinal uses as noted by the indigenous peoples. The book serves as one of the earliest comprehensive examinations of New England's natural history, blending scientific inquiry with personal narrative.  At the start of the text, the author introduces himself and describes his journey from London to Boston and Black Point, where he spent significant time documenting the region's flora and fauna. He paints a vivid picture of the landscape, noting the mountainous terrains, the varied climates, and the unique animals and plants that thrive in this new environment. The opening also hints at the cultural interactions he had, especially with the Native Americans who also utilized these resources for their medicinal practices. It sets the stage for a blend of scientific observation with anecdotal accounts of Josselyn's experiences and the knowledge shared with him by the local inhabitants.",
+  "subjects": [
+    "Travel Writing",
+    "History - American",
+    "Science - Biology",
+    "Nature/Gardening/Animals"
+  ],
+  "topic_subjects": [
+    "Indians of North America -- Medicine",
+    "Natural history -- New England -- Pre-Linnean works",
+    "Materia medica -- New England"
+  ],
+  "locc": [
+    "QH"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70111",
+  "table_of_contents": [],
+  "introduction": "Mr. John Josselyn, the writer of this book, was only brother, as he says, to Henry Josselyn, Esq., many years of Black Point in Scarborough, Me.; and both were sons to Sir Thomas Josselyn, Knt., of Kent, whose name is at the head of the new charter obtained by Sir Ferdinando Gorges for his Province in 1639, but who did not come to this country. Mr. Henry Josselyn was at Piscataqua, in the interest of Capt. John Mason, at least as early as 1634; but, in 1636, he is one of the Council of Gorges’s Province in Maine, and continued in that part of the country the rest of his life. He succeeded in 1643, by the will of Capt. Thomas Cammock, to his patent at Black Point, and soon after married his widow. He is afterwards Deputy-Governor of the Province; and until 1676, when the Indians attacked and compelled him to surrender his fort, he was, says Mr. Willis,—whose valuable papers are cited below,—“one of the most active and influential men in it;” holding, “during all the changes of proprietorship and government, the most important offices.” He is then a magistrate of the Duke of York’s Province of Cornwall, and, as late as 1680, a resident of Pemaquid; when he is spoken of, in a letter of Gov. Andros to the commander of the fort at Pemaquid, as one “whom I would have you use with all fitting respect, considering what he hath been and his age.” He is living in 1682; but had died before the 10th of May, 1683,[1] leaving no descendants.[2]",
+  "passages": [
+    "After Cutler, there appeared nothing of importance[25] on our botany, till the present elder school of New-England botanists—a school characterized by the names of an Oakes, a Boott, and an Emerson—was founded, now more than forty years ago, by the classical Florula of Bigelow.",
+    "The Scarlet Muscle, at Paschatawey a Plantation about fifty leagues by Sea Eastward from Boston, in a small Cove called Bakers Cove there is found this kind of Muscle which hath a purple Vein, which being prickt with a Needle yieldeth a perfect purple or scarlet juice, dying Linnen so that no washing will wear it out, but keeps its lustre many years: We mark our Handkerchiefs and Shirts with",
+    "This Plant I take for a varigated Herb Paris, True Love or One Berry, or rather One Flower, which is milk white, and made up with four Leaves, with many black threads in the middle, upon every thread grows a Berry (when the Leaves of the Flower are fallen) as big as a white pease, of a light red colour when they are ripe, and clustering together in a round form as big as a Pullets Egg, which at",
+    "[28] Mr. Henry Josselyn was probably living at Black Point in 1638, when his brother first visited it (Voyages, p. 20). It was then the estate (by grant from the council at Plymouth) and residence of Captain Thomas Cammock; but he, dying in 1643, bequeathed it, except five hundred acres which were reserved to his wife, to Josselyn, who, marrying the widow, succeeded to the whole property, which",
+    "[89] See p. 96. It appears to be the mollusk, the shell of which is well known as the razor-shell (Solen ensis, L.).—Gould, Report, p. 28.",
+    "[183] Except the small white birch (B. populifolia, Ait.), which Mr. Spach reduces to a variety of the European B. alba, L.,—in which he is sustained by Prof. Gray (Man., p. 411),—and the dwarf-birch (B. nana, L.) of our alpine regions, all our species are peculiar to this continent.—See the author’s Voyages, p. 69, for another mention of the birches."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 18911,
+  "title": "Biology",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Wilson, Edmund B. (Edmund Beecher), 1856-1939",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2006-07-26",
+  "description": "\"Biology: A lecture delivered at Columbia University in the series on Science, Philosophy and Art\" by Edmund Beecher Wilson is a scientific publication written in the early 20th century. This lecture serves as an introduction to various biological sciences, emphasizing the importance of understanding the phenomena of life through both a morphological and physiological lens. The book explores the challenges and methodologies of biological research, including the impact of Darwinian evolutionary theory on contemporary biology.  In this lecture, Wilson discusses the dual nature of biology, focusing on both the structure (morphology) and function (physiology) of living organisms. He outlines how these aspects are interconnected and stress the importance of evolutionary history in understanding organisms. Wilson also tackles significant philosophical questions regarding the mechanistic interpretation of life, considering both the physical processes involved and the complexities of adaptation and evolution. He presents specific examples from genetics, such as Mendel's law of heredity, while also addressing unresolved questions in biology, such as the mechanisms behind regeneration in certain species. Overall, the lecture emphasizes the ongoing pursuit of knowledge in biology and the necessity of inquiry for future discoveries.",
+  "subjects": [
+    "Biology",
+    "Science - Biology",
+    "Philosophy & Ethics"
+  ],
+  "topic_subjects": [
+    "Biology"
+  ],
+  "locc": [
+    "QH301"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/18911",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "If I have the temerity to ask your attention to the fundamental problem towards which all lines of biological inquiry sooner or later lead us it is not with the delusion that I can contribute anything new to the prolonged discussions and controversies to which it has given rise.",
+    "I shall introduce it to your attention by asking a very simple question. We may admit that digestion, for example, is a purely chemical operation, and one that may be exactly imitated outside the living body in a glass flask.",
+    "What is the actual working attitude of naturalists towards the general problem that I have endeavored to outline? It would be a piece of presumption for me to speak for the body of working biologists, and I will therefore speak for only one of them.",
+    "Now, the point that I desire to emphasize is that one or two very simple mechanistic assumptions give a luminously clear explanation of the behavior of the hereditary characters according to Mendel's law, and at one stroke bring order out of the chaos in which facts of this kind at first sight seem to be.",
+    "Now, the point that I desire to emphasize is that one or two very simple mechanistic assumptions give a luminously clear explanation of the behavior of the hereditary characters according to Mendel's law, and at one stroke bring order out of the chaos in which facts of this kind at first sight seem to be.",
+    "When we turn, finally, to the genetic or historical part of our task, we find ourselves confronted with precisely the same general problem as in case of the existing organism. Biological investigators have long since ceased to regard the fact of organic evolution as open to serious discussion."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

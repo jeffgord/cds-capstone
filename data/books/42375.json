@@ -1,0 +1,53 @@
+{
+  "gutenberg_id": 42375,
+  "title": "Chincha Plain-Weave Cloths",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "O'Neale, Lila M. (Lila Morris), 1886-1948",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2013-03-19",
+  "description": "\"Chincha Plain-Weave Cloths\" by Lila M. O'Neale, along with other contributors, is a scientific publication in the field of anthropology, specifically focusing on textile analysis. Written in the mid-20th century, this study highlights the findings related to ancient Peruvian textiles, particularly those excavated from the Chincha region. The book explores various aspects of these textiles, including their dimensions, techniques, colors, and uses, offering valuable insights into the historical significance of cloth-making in the Chincha culture.  The content of the book primarily revolves around the analysis of over a hundred plain-weave cloths collected from various Chincha sites. The authors meticulously document the materials, measurements, and craftsmanship of these fabrics, noting their utilitarian characteristics and the techniques used in their creation. The study finds that while most cloths served practical purposes, a few may have originated as garments. The investigation also uncovers information about stitching, mending practices, and the patterns present within the textiles, predominantly stripes. Overall, this publication serves as a detailed record of the technical and cultural aspects of Chincha plain-weave textiles, contributing to the broader understanding of pre-Columbian Peruvian crafts.",
+  "subjects": [
+    "Art",
+    "Archaeology & Anthropology"
+  ],
+  "topic_subjects": [
+    "Textile fabrics -- Peru",
+    "Indian textile fabrics -- Peru"
+  ],
+  "locc": [
+    "E011"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/42375",
+  "table_of_contents": [
+    "Introduction",
+    "The material",
+    "Dimensions of the Chincha cloths",
+    "Lengths",
+    "Widths",
+    "Yarns",
+    "Textures and weaving techniques",
+    "Stitchery",
+    "Patching and mending",
+    "Pattern",
+    "Color",
+    "Summary",
+    "Plates"
+  ],
+  "introduction": "The Board greatly regrets that this outstanding contribution will not be followed by others produced under the direction and guidance of a highly esteemed colleague.\n\nL. M. O'NEALE, E. BACON, C. W. GEMMER, R. V. HALL, I. W. JOHNSON, C. M. OSBORNE, M. B. ROSS\n\nThis study of the Chincha plain-weave materials in the Max Uhle collection of the University of California has been part of the work of a Senior course in technical analysis. Six members of the class, whose names appear as joint authors, are responsible for the data collected and for the initial organization.\n\nThe Chincha collection, excavated in 1900 by Dr. Max Uhle during the Peruvian expedition financed by Mrs. Phoebe Apperson Hearst, is catalogued under two lot prefixes: 4- and 16-. Specimen numbers with the prefix 4- indicate that the precise provenience as to site and grave is known. The cloths in this lot have been previously analyzed and a preliminary report has been published.[1] The cloths in the 16- lot, as is explained in the report on the pottery,[2] did not identify perfectly with entries in the collector's field catalogue or their identification was dubious.\n\nSix Chincha sites described in Uhle's field catalogue[3] are shown on map 1. The number of cloth specimens representing each of these sites varies from 2 to 52 (table 1). Briefly, the time periods indicated by finds forming the basis of this report are as follows.\n\nSite A (2 specimens). \"On the declivities of the valley towards the sea, 5 km. from Tambo de Mora to the north.\" Late Chincha period.\n\nSite D, and \"near\" site D (52 specimens). \"Chamberlike tombs, which had been dug out in a mound-like older huaca.\" Late Chincha period.\n\nSite E, and \"near\" site E (20 specimens). \"The dry natural terrace ... in front of the ruins of La Centinela.\" Several graves at this site held European articles. Late Chincha period, in part after the Spanish Conquest.\n\nSite F (2 specimens). \"The natural terraces with slopes directed to the sea north of La Cumbe (circa Las Palmas).\"[4] Late Chincha period.",
+  "passages": [
+    "One hundred twelve cloths in the plain-weave group were measured. Because some of the specimens could not be placed under tension, the forefinger was drawn along the cloth beside a steel tape to smooth out wrinkles. Measurements taken by this method approximate those on a cloth stretched between the bars of a loom.",
+    "Group 3, as listed in table 2, comprises breadths falling within a range of 21 inches through 29 inches. These widths reduce weaving speed and bring about problems in manipulation of the loom parts. The twelve widest complete breadths in the Chincha lot range from 30 inches to 35 inches with a single specimen measuring 41 inches.",
+    "In the Chincha 4- specimens, where congestion of edge yarns occurs, its extent in from the edge varies from 5 threads (in 3 specimens) to 24 threads (1 specimen); in the majority of these specimens, the congestion ranges from 6 to 12 threads (8 specimens). Textures in plate 4,a, c are comparable to those in which maximum congestion occurs.",
+    "Two specimens in lot 4- (3890a and 4056) are poor in quality of craftsmanship. Careless weaving resulted in the breaking of several warps, uneven shedding, and puckering in the center of the web. A three-inch difference in the length between the two side edges of specimen 4-4056 was probably due to slanting of the warping stakes (fig. 6).",
+    "Certain generalizations are pertinent to all the mended fragments. There is no evidence of the use of a cutting tool; the edges of the patching pieces were torn or snagged along a thread. If the selvages were somewhat worn, the seamstress did not remove them but made a deep turn to fold the worn part to the underside.",
+    "The edge stripes with two exceptions (16-1260, a kerchief, and full breadth 16-1287) border only one of the selvages on the complete widths analyzed for this section. The opposite selvages have hanging threads, remnants of the stitchery which originally seamed two breadths together. The stripes decorated the outside edges of this seamed rectangle."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

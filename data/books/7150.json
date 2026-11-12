@@ -1,0 +1,76 @@
+{
+  "gutenberg_id": 7150,
+  "title": "Science & Education: Essays",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Huxley, Thomas Henry, 1825-1895",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2004-12-01",
+  "description": "\"Science & Education: Essays\" by Thomas Henry Huxley is a collection of essays written in the late 19th century, encompassing various topics related to the philosophy of science and education. The essays illustrate Huxley's views on the importance of empirical science and rational thought in education, emphasizing how they can enhance understanding and engage learners in a meaningful way.  At the start of this compilation, Huxley discusses the legacy of Joseph Priestley, highlighting his contributions to both science and theology. The opening piece reflects on Priestley's dedication to rational investigation and his promotion of scientific inquiry as an integral part of education. Huxley underscores the transformative potential of physiology and biology, arguing for their inclusion in educational curriculums to foster critical thinking and a deeper comprehension of the natural world. This sets the tone for exploring broader themes within the collection concerning the intersection of science, philosophy, and educational practice.",
+  "subjects": [
+    "Essays, Letters & Speeches",
+    "Science - Biology",
+    "Philosophy & Ethics",
+    "Teaching & Education"
+  ],
+  "topic_subjects": [
+    "Education",
+    "Priestley, Joseph, 1733-1804",
+    "Science -- Study and teaching"
+  ],
+  "locc": [
+    "Q"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/7150",
+  "table_of_contents": [
+    "I JOSEPH PRIESTLEY [1874]",
+    "(An Address delivered on the occasion of the presentation of a statue",
+    "of Priestley to the town of Birmingham)",
+    "II ON THE EDUCATIONAL VALUE OF THE NATURAL HISTORY SCIENCES [1854]",
+    "(An Address delivered in S. Martin's Hall)",
+    "III EMANCIPATION--BLACK AND WHITE [1865]",
+    "IV A LIBERAL EDUCATION; AND WHERE TO FIND IT [1868]",
+    "(An Address to the South London Working Men's College)",
+    "V SCIENTIFIC EDUCATION: NOTES OF AN AFTER-DINNER SPEECH [1869]",
+    "(Liverpool Philomathic Society)",
+    "VI SCIENCE AND CULTURE [1880]",
+    "(An Address delivered at the opening of Sir Josiah Mason's Science",
+    "College, Birmingham)",
+    "VII ON SCIENCE AND ART IN RELATION TO EDUCATION [1882]",
+    "(An Address to the members of the Liverpool Institution)",
+    "VIII UNIVERSITIES: ACTUAL AND IDEAL [1874]",
+    "(Rectorial Address, Aberdeen)",
+    "IX ADDRESS ON UNIVERSITY EDUCATION [1876]",
+    "(Delivered at the opening of the Johns Hopkins University, Baltimore)",
+    "X ON THE STUDY OF BIOLOGY [1876]",
+    "(A Lecture in connection with the Loan Collection of Scientific",
+    "Apparatus, South Kensington Museum)",
+    "XI ON ELEMENTARY INSTRUCTION IN PHYSIOLOGY [1877]",
+    "XII ON MEDICAL EDUCATION [1870]",
+    "(An Address to the students of the Faculty of Medicine in University",
+    "College, London)",
+    "XIII THE STATE AND THE MEDICAL PROFESSION [1884]",
+    "XIV THE CONNECTION OF THE BIOLOGICAL SCIENCES WITH MEDICINE [1881]",
+    "(An Address to the International Medical Congress)",
+    "XV THE SCHOOL BOARDS: WHAT THEY CAN DO, AND WHAT THEY MAY DO [1870]",
+    "XVI TECHNICAL EDUCATION [1877]",
+    "XVII ADDRESS ON BEHALF OF THE NATIONAL ASSOCIATION FOR THE PROMOTION OF",
+    "TECHNICAL EDUCATION [1887]"
+  ],
+  "introduction": "The apology offered in the Preface to the first volume of this series for the occurrence of repetitions, is even more needful here I am afraid. But it could hardly be otherwise with speeches and essays, on the same topic, addressed at intervals, during more than thirty years, to widely distant and different hearers and readers. The oldest piece, that \"On the Educational Value of the Natural History Sciences,\" contains some crudities, which I repudiated when the lecture was first reprinted, more than twenty years ago; but it will be seen that much of what I have had to say, later on in life, is merely a development of the propositions enunciated in this early and sadly-imperfect piece of work.\n\nIn view of the recent attempt to disturb the compromise about the teaching of dogmatic theology, solemnly agreed to by the first School Board for London, the fifteenth Essay; and, more particularly, the note n. 3, may be found interesting.\n\nI JOSEPH PRIESTLEY [1874] (An Address delivered on the occasion of the presentation of a statue of Priestley to the town of Birmingham)\n\nX ON THE STUDY OF BIOLOGY [1876] (A Lecture in connection with the Loan Collection of Scientific Apparatus, South Kensington Museum)\n\nIf the man to perpetuate whose memory we have this day raised a statue had been asked on what part of his busy life's work he set the highest value, he would undoubtedly have pointed to his voluminous contributions to theology. In season and out of season, he was the steadfast champion of that hypothesis respecting the Divine nature which is termed Unitarianism by its friends and Socinianism by its foes. Regardless of odds, he was ready to do battle with all comers in that cause; and if no adversaries entered the lists, he would sally forth to seek them.",
+  "passages": [
+    "I think it is one of the grandest features of Biology, that it occupies this central position in human knowledge. There is no side of the human mind which physiological study leaves uncultivated. Connected by innumerable ties with abstract science, Physiology is yet in the most intimate relation with humanity; and by teaching us that law and order, and a definite scheme of development, regulate",
+    "There is another profession, to the members of which, I think, a certain preliminary knowledge of physical science might be quite as valuable as to the medical man. The practitioner of medicine sets before himself the noble object of taking care of man's bodily welfare; but the members of this other profession undertake to \"minister to minds diseased,\" and, so far as may be, to diminish sin and",
+    "I take it that the whole object of education is, in the first place, to train the faculties of the young in such a manner as to give their possessors the best chance of being happy and useful in their generation; and, in the second place, to furnish them with the most important portions of that immense capitalised experience of the human race which we call knowledge of various kinds.",
+    "Your present responsibility is of another, though not less serious, kind. Institutions do not make men, any more than organisation makes life; and even the ideal University we have been dreaming about will be but a superior piece of mechanism, unless each student strive after the ideal of the Scholar.",
+    "While, lastly, to all those who are studying biological science with a view to their own edification merely, or with the intention of becoming zoologists or botanists; to all those who intend to pursue physiology--and especially to those who propose to employ the working years of their lives in the practice of medicine--I say that there is no training so fitted, or which may be of such important",
+    "The history of medicine is more complete and fuller than that of any other science, except, perhaps, astronomy; and, if we follow back the long record as far as clear evidence lights us, we find ourselves taken to the early stages of the civilisation of Greece."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

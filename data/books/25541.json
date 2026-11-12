@@ -1,0 +1,45 @@
+{
+  "gutenberg_id": 25541,
+  "title": "American Eloquence, an Index of the Four Volumes",
+  "subtitle": "Studies In American Political History - 1896",
+  "contributors": [
+    {
+      "name": "Johnston, Alexander, 1849-1889",
+      "role": "Editor",
+      "order": 1
+    },
+    {
+      "name": "Woodburn, James Albert, 1856-1943",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2008-05-20",
+  "description": "\"American Eloquence, an Index of the Four Volumes by Johnston and Woodburn\" is a historical compilation edited by Alexander Johnston and re-edited by James Albert Woodburn. This book falls into the category of a scholarly publication that examines significant speeches and writings in American political history. It was likely written during the late 19th century and aims to provide insight into the eloquent debates and the political landscape that shaped early American governance and society.  The content of the book is structured around key figures and events in American political history, featuring notable politicians and orators such as John Quincy Adams, Abraham Lincoln, and Daniel Webster. The text is organized into sections that cover critical themes, including colonialism, the rise of democracy, the anti-slavery struggle, secession, and civil war, highlighting influential speeches and legislative milestones. Each section offers a glimpse into how these historical figures articulated their thoughts on governance, civil rights, and national identity, ultimately painting a comprehensive portrait of the evolution of American eloquence in political discourse.",
+  "subjects": [
+    "Essays, Letters & Speeches",
+    "History - American"
+  ],
+  "topic_subjects": [
+    "United States -- Politics and government",
+    "United States -- History",
+    "Speeches, addresses, etc., American",
+    "Indexes"
+  ],
+  "locc": [
+    "E151"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/25541",
+  "table_of_contents": [
+    "cover (76K)",
+    "hamilton (92K)",
+    "titlepage1 (73K)"
+  ],
+  "introduction": null,
+  "passages": [
+    "John Q. Adams Samuel Adams Fisher Ames Enry Ward Beecher James G. Blaine John C. Breckenridge John C. Calhoun Almon Portland Chase Henry Clay George Curtis Jefferson Davis Stephen Douglas Edward Everett Alexander Hamilton Patrick Henry Thomas Jefferson Rufus King Abraham Lincoln James Madison John Randolph William H. Steward Daniel Webster"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

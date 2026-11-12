@@ -1,0 +1,82 @@
+{
+  "gutenberg_id": 46448,
+  "title": "Cyclopedia of Commerce, Accountancy, Business Administration, v. 02 (of 10)",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "American School of Correspondence",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2014-07-30",
+  "description": "\"Cyclopedia of Commerce, Accountancy, Business Administration, v. 02 (of 10)\" is a comprehensive reference work on various aspects of business practices, written in the early 20th century. This volume focuses specifically on accounting, auditing, purchasing, and the management of manufacturing processes. It is designed for students and professionals alike, aiming to compile essential knowledge and methods related to modern business operations.  The opening of this volume outlines the necessity for better business methods in a rapidly evolving commercial landscape, highlighting the gaps in existing literature on business practices at the time. It discusses the increasing demand for efficient and systematic approaches to various administrative processes, emphasizing practical experience over theoretical knowledge. The introduction also touches on the collaborative effort of a team of auditors, accountants, and specialists who have contributed to the text, which includes detailed procedures and organized systems for managing aspects such as purchasing, inventory, and manufacturing records.",
+  "subjects": [
+    "Business/Management",
+    "Economics",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Business",
+    "Commerce",
+    "Accounting"
+  ],
+  "locc": [
+    "HF"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/46448",
+  "table_of_contents": [
+    "(For professional standing of authors, see list of Authors and",
+    "Collaborators at front of volume.)",
+    "VOLUME II",
+    "PURCHASING AND STORES DEPARTMENT By James B. Griffith",
+    "Lists of Dealers──Catalogue Filing and Indexing──Special",
+    "Quotations──Department Routine──Requisitions──Purchase Orders──",
+    "Receipts and Invoices──The Stores Department──Organization──Taking",
+    "Inventory──Installing a Stores System──Record Files──Materials and",
+    "Supplies──Parts and Finished Stores──Machinery and Equipment Records",
+    "RECORDS OF LABOR AND MANUFACTURING ORDERS By James B. Griffith",
+    "Labor Records──Wage Systems──Day Wage──Piece Rates──Premium",
+    "Systems──Efficiency Systems──Time─Keeping Systems──Time",
+    "Clocks──Production Time Records──Time Cards──Mechanical Time",
+    "Recorders──Piece─Work Records──Production Orders──Shop Orders──Order",
+    "Register──Tracing the Order",
+    "GENERAL EXPENSE By Chas. E. Hathaway",
+    "Expense Distribution──True Cost──Selling Expense──Methods of",
+    "Distribution──The Man─Hour─Rate Method──The Machine─Hour─Rate",
+    "Method──The Percentage Method──Productive and Non─Productive",
+    "Labor──Expense and Production Cost Ledgers──Departmental",
+    "Expenses──General Expense──How to Use Percentages──Operating",
+    "Expense Statements──What the Statement Should Show──Comparative",
+    "Figures──General Expense Statements──Charts",
+    "COST SUMMARIES By James B. Griffith",
+    "Collecting Cost Data──Material Cost Records──Labor Cost──Job",
+    "Cost──Comparative Cost Records──By─Products──Production",
+    "Records──Controlling Accounts",
+    "MACHINE─SHOP MANAGEMENT By Oscar E. Perrigo",
+    "Methods of Modern Manufacturing──Organization of Manufacturing",
+    "Plant──Official Communications──Successful Management──Shop Methods",
+    "and Records──The Employment Agency──Time Keeping──Time Cards──Paying",
+    "Employes──Production Orders──Plant Orders──Storing and Issuing Stock",
+    "and Materials",
+    "COST─ANALYSIS ENGINEERING By R. T. Dana and H. P. Gillette",
+    "The Science of Management──Subdivision of Duties──Cost",
+    "Getting──Punch─Cards──Cost Distribution──Process Cost",
+    "Subdivision──Output──Checking up Charts──Cost Reduction──Bonus",
+    "System──Labor Saving Devices──Chronological Charts",
+    "REVIEW QUESTIONS",
+    "INDEX"
+  ],
+  "introduction": "With the unprecedented increase in our commercial activities has come a demand for better business methods. Methods which were adequate for the business of a less active commercial era, have given way to systems and labor─saving ideas in keeping with the financial and industrial progress of the world.\n\nOut of this progress has risen a new literature──the literature of business. But with the rapid advancement in the science of business, its literature can scarcely be said to have kept pace, at least, not to the same extent as in other sciences and professions. Much excellent material dealing with special phases of business activity has been prepared, but this is so scattered that the student desiring to acquire a comprehensive business library has found himself confronted by serious difficulties. He has been obliged, to a great extent, to make his selections blindly, resulting in many duplications of material without securing needed information on important phases of the subject.\n\nIn the belief that a demand exists for a library which shall embrace the best practice in all branches of business──from buying to selling, from simple bookkeeping to the administration of the financial affairs of a great corporation──these volumes have been prepared. Prepared primarily for use as instruction books for the American School of Correspondence, the material from which the Cyclopedia has been compiled embraces the latest ideas with explanations of the most approved methods of modern business.\n\nEditors and writers have been selected because of their familiarity with, and experience in handling various subjects pertaining to Commerce, Accountancy, and Business Administration. Writers with practical business experience have received preference over those with theoretical training; practicability has been considered of greater importance than literary excellence.\n\nIn addition to covering the entire general field of business, this Cyclopedia contains much specialized information not heretofore published in any form. This specialization is particularly apparent in those sections which treat of accounting and methods of management for Department Stores, Contractors, Publishers and Printers, Insurance, and Real Estate. The value of this information will be recognized by every student of business.",
+  "passages": [
+    "=2.= Wage systems, as applied to manufacturing industries, may be divided into the general classifications of day wage, piece rate, and premium systems. Besides these three, there are a number of systems, bearing the names of their originators, which are the result of a combination of certain features found in two or more of the three general methods.",
+    "=25. Work Orders.= The work order is the written instruction of the foreman to the workman to do certain work. As a rule, this order is made on the production time card, as shown in preceding pages. Sometimes, however, it is unnecessary to give more explicit directions than can be written on a small card, which makes it advisable to issue a special order.",
+    "Jobs 2, 3, 4, and so on down the list, can cover the various subdivisions of shop expense, such as new small tools, repairs to tools, repairs to machinery, and as many detailed items as may be considered desirable.",
+    "The General Office of the concern is of course understood; but, as it cannot properly be classed with departments of the plant, it is not included in the above enumeration.\n\nIn addition to the above list of principal departments, there will be the following──quite as necessary, but secondary in importance:",
+    "=Devising Ways of Dispensing with Gang Work.= Simply because it has always been the custom to do certain classes of work by gangs, should not deter a manager from endeavoring to devise a way of splitting the gang up into individual units.",
+    "Within the last score of years it has been found that cost─analysis applied to shop work problems gives most amazing results. When the piece─work system was introduced, it was believed that the final solution of the problem had been attained. The men were then placed upon the footing of contractors."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,49 @@
+{
+  "gutenberg_id": 70907,
+  "title": "Catalogue of the dipterous insects collected at Singapore and Malacca",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Wallace, Alfred Russel, 1823-1913",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Saunders, W. Wilson (William Wilson), 1809-1879",
+      "role": "Author of introduction, etc.",
+      "order": 2
+    },
+    {
+      "name": "Walker, Francis, 1809-1874",
+      "role": "Contributor",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2023-06-04",
+  "description": "\"Catalogue of the Dipterous Insects Collected at Singapore and Malacca by Wallace\" by Francis Walker is a scientific publication written in the mid-19th century. This work documents the various species of dipterous insects discovered by Alfred Russel Wallace during his research in Singapore and Malacca. The publication not only catalogs these insects but also provides detailed descriptions of new species found in the region, contributing to the scientific understanding of fauna in Southeast Asia.  The opening of the book provides a context for Wallace's entomological work as he transitions from his studies in South America to the East Indian Islands. It outlines the scientific aims of gathering these specimens and emphasizes the role of Wallace's collections in understanding the geographical distribution of dipterous insects in this biodiverse region. The text introduces William Wilson Saunders, who presents Walker's detailed observations and newly identified species, setting the stage for an extensive catalog that will aid future entomological research.",
+  "subjects": [
+    "Science - Biology",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Diptera -- Singapore",
+    "Diptera -- Malacca"
+  ],
+  "locc": [
+    "QL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70907",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "Female. Blackish; underside and head behind with whitish tomentum. Antennæ dull tawny, black towards the tips; angle of the 3rd joint minute and obtuse. Thorax greyish, with four hoary stripes. Abdomen piceous, with three whitish stripes. Legs testaceous; tarsi and tips of the femora and of the tibiæ blackish.",
+    "41. ASILUS DEBILIS, n. s., mas. Cinereus, capite flavido-albo, mystace testaceo nigroque, antennis fulvis, thorace fusco-bivittato, abdominis segmentis canofasciatis, pedibus testaceis, femoribus tibiisque apice tarsisque nigricantibus, alis sublimpidis apice nigricantibus.",
+    "63. SYRPHUS CONSEQUENS, n. s., mas et fœm. Luteus, vertice nigro, antennis nigro-vittatis, thoracis disco chalybeo, abdominis fasciis quatuor atris, femoribus posticis apice necnon tibiis tarsisque posticis nigris, alis subcinereis apud costam subfuscis.",
+    "76. IDIA TENEBROSA, n. s., fœm. Obscurè viridis punctata, capite pedibus halteribusque nigris, antennis piceis, alis fusco-cinereis apud costam nigris.",
+    "92. ARICIA ARGENTATA, n. s., mas. Cana, capite argenteo, palpis antennis pedibusque nigris, thoracis vittis duabus nigricantibus, scutelli apice testaceo, abdominis maculis quatuor nigris dorsalibus basi testaceo, femoribus testaceis, alis subcinereis.",
+    "106. LAMPROGASTER TRUNCATULA, n. s., fœm. Nigra robusta, abdominis apice compresso lanceolato, tarsis albis, alis subcinereis lituris transversis fuscescentibus fasciisque duabus nigro-fuscis."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 68465,
+  "title": "A collection of Latin maxims and phrases literally translated",
+  "subtitle": "Intended for the use of students for all legal examinations",
+  "contributors": [
+    {
+      "name": "Cotterell, John N.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2022-07-06",
+  "description": "\"A Collection of Latin Maxims and Phrases Literally Translated\" by John N. Cotterell is a legal reference work written in the early 20th century. This collection serves as a study aid for law students preparing for legal examinations, providing a comprehensive list of important Latin maxims often cited in legal texts. The content is aimed primarily at those pursuing a legal career, encapsulating fundamental legal principles that are essential for understanding various aspects of law.\"  \"The opening of this collection presents an introduction and preface, where the author, John N. Cotterell, emphasizes the significance of familiarizing oneself with Latin legal maxims as they frequently appear in legal discussions and examinations. Cotterell shares his conviction that these maxims represent widely accepted legal truths and principles that can greatly benefit students. He explains that they will be useful for students to memorize, as questions concerning these maxims are common on legal exams, making them crucial for academic success in the field of law.\"",
+  "subjects": [
+    "Law & Criminology",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Latin language",
+    "Legal maxims"
+  ],
+  "locc": [
+    "K"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/68465",
+  "table_of_contents": [],
+  "introduction": "The Author, from the commencement of his study of the law, and more especially during his course of reading for the intermediate and final examinations, became convinced of the very great advantage to be reaped from a knowledge of the leading Latin Maxims, now so frequently quoted in all legal works; those given hereafter will be found to comprise all that occur in the recognised examination text-books, having been collected from such works.\n\nIt will be remembered that a maxim is a general principle and universally approved leading truth; therefore, even the most elementary student cannot do better than store away in his memory some of the more important of these rules as a foundation for future study. At every law examination questions are to be found that bear directly on some one or other of the principles contained in these maxims, and they are often quoted, the student being required to translate and explain their meaning and application—they are, in fact, equally important with Leading Cases.\n\nThose maxims only have been selected which are constantly met with by the student, and which he would do well to commit to memory; leading cases are also referred to. The explanations have been made as brief as possible, and for deeper research the student is referred to Broom’s Legal Maxims.\n\nAfter a busy and practical experience of many years the writer can now in all earnestness—as during the days of studentship he did in all distrust and doubtfulness—emulate the writer of old who said—\n\nOur greatest writers of more recent years have also recognised the intricate and ever-changing study of the Law. The late Lord Tennyson, in that most beautiful poem, “Aylmer’s Field,” tells us—\n\n“So Leolin went; and as we task ourselves To learn a language known but smatteringly In phrases here and there at random—toiled Mastering the lawless science of our law, That codeless myriad of precedent, That wilderness of single instances, Thro’ which a few, by wit or fortune led, May beat a pathway out to wealth and fame.”\n\nThose who wish to follow successfully the law as a profession must remain students to the last, and the leading truths and time-honoured legal principles, as defined by the maxims hereafter contained, will ever serve alike as safe landmarks, and sheet anchors, in times of doubt and uncertainty.",
+  "passages": [
+    "See hereon Roe v. Tranmarr, 2 Sm. L. C. 556, which is a most important case for reference with regard to the construction and interpretation of written instruments. The facts as quoted from Smith were as follows.",
+    "=* 65. Donationes sint stricti juris, ne quis plus donasse praesumatur quam in donatione expressit.= Gifts are to be construed strictly according to law, lest any one be presumed to have given more than he may actually have set forth in the gift or grant.\n\nSee Stat. De Donis Conditionalibus, 13 Ed. I. c. 1, which by its enactments laid the foundation of our present Estates Tail.",
+    "=97. Frater fratri uterino non succedat in haereditate paternâ.= A brother shall not succeed a brother of the half blood in the father’s estate.",
+    "Statutes may repeal prior ones, either by express provision or by implication. Every statute impliedly repeals an earlier one, so far as the latter is contrary thereto. Unless otherwise expressed, a statute must be construed as prospective in its operation. (See Steph. Comm. I. p. 43, and Max. No. 233.)",
+    "=185. Odiosa et inhonesta non sunt praesumunda in lege.= Odious and dishonest things are not to be presumed in law.",
+    "A person who has been guilty of such gross negligence as to court deception will obtain no relief from the Court. (See Maxs. Nos. 47 and 61.)\n\n=* 224. Quicquid plantatur solo solo cedit.= Whatever is planted in (or affixed to the soil) belongs to the soil."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

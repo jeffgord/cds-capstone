@@ -1,0 +1,55 @@
+{
+  "gutenberg_id": 17607,
+  "title": "Superstition in all ages",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Holbach, Paul Henri Thiry, baron d', 1723-1789",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Voltaire, 1694-1778",
+      "role": "Commentator",
+      "order": 2
+    },
+    {
+      "name": "Knoop, Anna, -1889",
+      "role": "Translator",
+      "order": 3
+    },
+    {
+      "name": "Meslier, Jean, 1664-1729",
+      "role": "Unknown role",
+      "order": 4
+    }
+  ],
+  "language": "en",
+  "issued": "2006-01-25",
+  "description": "\"Superstition in All Ages\" by Baron d' Paul Henri Thiry Holbach is a philosophical treatise written in the early 18th century. The work critically examines the origins and implications of superstition and religious dogmas through a historical and rational lens. It reflects the author's conviction that superstitions arise from ignorance and fear, and it argues for a rational inquiry into the beliefs that govern human behavior.  The beginning of the text introduces Jean Meslier, a Roman Catholic priest who renounced religion after decades of service and left behind a manuscript arguing against religious dogmas, titled \"Common Sense.\" The opening details Meslier's life, his pious actions, and the conflicts he faced with church authorities, establishing the foundation of his philosophical views. It highlights his intent to expose the contradictions of theology and the irrationality of faith, setting the stage for a critique of superstitions that persist throughout history.",
+  "subjects": [
+    "Atheism",
+    "History - Religious",
+    "Philosophy & Ethics",
+    "Religion/Spirituality"
+  ],
+  "topic_subjects": [
+    "Atheism"
+  ],
+  "locc": [
+    "BL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/17607",
+  "table_of_contents": [],
+  "introduction": "When we wish to examine in a cool, calm way the opinions of men, we are very much surprised to find that in those which we consider the most essential, nothing is more rare than to find them using common sense; that is to say, the portion of judgment sufficient to know the most simple truths, to reject the most striking absurdities, and to be shocked by palpable contradictions. We have an example of this in Theology, a science revered in all times, in all countries, by the greatest number of mortals; an object considered the most important, the most useful, and the most indispensable to the happiness of society. If they would but take the trouble to sound the principles upon which this pretended science rests itself, they would be compelled to admit that the principles which were considered incontestable, are but hazardous suppositions, conceived in ignorance, propagated by enthusiasm or bad intention, adopted by timid credulity, preserved by habit, which never reasons, and revered solely because it is not comprehended. Some, says Montaigne, make the world believe that which they do not themselves believe; a greater number of others make themselves believe, not comprehending what it is to believe. In a word, whoever will consult common sense upon religious opinions, and will carry into this examination the attention given to objects of ordinary interest, will easily perceive that these opinions have no solid foundation; that all religion is but a castle in the air; that Theology is but ignorance of natural causes reduced to a system; that it is but a long tissue of chimeras and contradictions; that it presents to all the different nations of the earth only romances devoid of probability, of which the hero himself is made up of qualities impossible to reconcile, his name having the power to excite in all hearts respect and fear, is found to be but a vague word, which men continually utter, being able to attach to it only such ideas or qualities as are belied by the facts, or which evidently contradict each other. The notion of this imaginary being, or rather the word by which we designate him, would be of no consequence did it not cause ravages without number upon the earth.",
+  "passages": [
+    "Nature follows constantly the same progress; that is to say, the same causes produce the same effects, as long as their action is not interrupted by other causes which occasion the first ones to produce different effects.",
+    "If everything is necessary, if errors, opinions, and ideas of men are fated, how or why can we pretend to reform them? The errors of men are the necessary results of their ignorance; their ignorance, their obstinacy, their credulity, are the necessary results of their inexperience, of their indifference, of their lack of reflection; the same as congestion of the brain or lethargy are the natural",
+    "Did not a famous theologian recognize the absurdity of admitting the existence of a God and arresting His course? \"To us,\" he said, \"who believe through faith in a true God, an individual substance, there ought to be no trouble in believing everything else. This first mystery, which is no small matter of itself, once admitted, our reason can not suffer violence in admitting all the rest.",
+    "It is from Heaven that the chains have come to fetter the minds of mortals. Why is the Mohammedan everywhere a slave? It is because his Prophet subdued him in the name of the Deity, just as Moses before him subjugated the Jews. In all parts of the world we see that priests were the first law-givers and the first sovereigns of the savages whom they governed.",
+    "Nothing is more onerous and more ruinous for the greatest part of the nations than the worship of their Gods! Everywhere their ministers not only rank as the first order in the State, but also enjoy the greater portion of society's benefits, and have the right to levy continual taxes upon their fellow-citizens.",
+    "Every man who has the boldness to announce truths to the world, is sure to receive the hatred of the priests; the latter loudly call upon the powers that be, for assistance; they need the assistance of kings to sustain their arguments and their Gods. These clamors show the weakness of their cause."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

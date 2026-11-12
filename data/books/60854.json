@@ -1,0 +1,84 @@
+{
+  "gutenberg_id": 60854,
+  "title": "The Jeffersonians, 1801-1829",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Morris, Richard B. (Richard Brandon), 1904-1989",
+      "role": "Editor",
+      "order": 1
+    },
+    {
+      "name": "Woodress, James Leslie, 1916-2011",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2019-12-06",
+  "description": "\"The Jeffersonians, 1801-1829\" by Richard B. Morris and James Leslie Woodress is a historical account written in the early 20th century. The book focuses on the significant political events and social changes in America during the Jeffersonian era, exploring themes such as democracy, expansion, and national identity. Through primary documents and narratives, it captures the essence of early 19th-century America, particularly the presidency of Thomas Jefferson, the War of 1812, and the subsequent rise of new political ideologies.  The opening of \"The Jeffersonians\" sets the stage for a dynamic period in American history, highlighting the transition from the Founding Fathers’ generation to a new era that saw the establishment of the Republic taking shape. It describes the intense political crisis surrounding the election of 1800, when Thomas Jefferson's victory became a poignant moment for the nation, emphasizing the threats of civil unrest and the integrity of democracy. The section introduces key figures, including Jefferson, and uses historical accounts to illustrate the atmosphere of tension and hope as the nation navigated challenges like the Louisiana Purchase and political rivalries of the time, ultimately providing a foundation for understanding the complexities of the Jeffersonian presidency and its enduring impact on the United States.",
+  "subjects": [
+    "History - American",
+    "History - Modern (1750+)",
+    "History - Royalty"
+  ],
+  "topic_subjects": [
+    "United States -- History -- 1783-1865 -- Sources"
+  ],
+  "locc": [
+    "E300"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/60854",
+  "table_of_contents": [
+    "Preface v",
+    "I Jefferson’s Administration",
+    "The Election and Inauguration",
+    "Margaret Bayard Smith Describes the Election and Inauguration",
+    "Jefferson’s First Inaugural Address",
+    "Burr Kills Hamilton",
+    "David Hosack Describes Hamilton’s Last Hours",
+    "Marbury vs. Madison",
+    "Excerpts from John Marshall’s Decision",
+    "The Louisiana Purchase",
+    "Jefferson Writes to Robert Livingston",
+    "The Lewis and Clark Expedition: Lewis’ Journal",
+    "The Embargo Act",
+    "Washington Irving Satirizes the Embargo Act",
+    "II Madison’s Administration",
+    "Madison’s Inauguration",
+    "Mrs. Smith’s Report",
+    "The War of 1812",
+    "The Constitution Defeats the Guerrière: Isaac Hull",
+    "Commodore Perry Wins a Victory on Lake Erie: Oliver Perry",
+    "The British Burn Washington: Dolly Madison",
+    "The British Burn Washington: George Gleig",
+    "The Battle of New Orleans: George Gleig",
+    "The Battle of New Orleans: Andrew Jackson",
+    "III James Monroe’s Administration",
+    "Early Days in the Mississippi Valley",
+    "A Husking Bee in Ohio: William Cooper Howells",
+    "Religion in Tennessee: Lorenzo Dow",
+    "Davy Crockett Runs for Office",
+    "Early Days in Illinois: Morris Birkbeck",
+    "Ominous Loomings: The Missouri Compromise, 1820",
+    "Representative Arthur Livermore Argues Against Extending Slavery",
+    "Senator James Barbour Defends Slavery",
+    "Representative James Stevens Argues for the Compromise",
+    "The Monroe Doctrine",
+    "Excerpts from the Monroe Doctrine",
+    "IV John Quincy Adams",
+    "Lighthouses in the Sky",
+    "Excerpts from Adams’ First Message to Congress"
+  ],
+  "introduction": "The early part of the last century was an exciting time to live in America. The signers of the Declaration of Independence and the framers of the Constitution, mostly old men by now, saw that their experiment in republican government had turned out to be a success. The nation was flourishing in these years like a healthy adolescent. There were growing pains, to be sure, but no one doubted now that the youngster would reach manhood. The question was: What is he going to be like?\n\nThe party battles of John Adams’ administration left the Federalist Party in ruins, and Thomas Jefferson succeeded to the presidency with an overwhelming popular mandate. During his first term, Jefferson increased his popularity through buying from France the enormous Louisiana Territory which doubled the size of the United States. By the time the Lewis and Clark Expedition returned from exploring the new land, people began to realize the immense possibilities that the Louisiana Purchase held for the future of the United States.\n\nJefferson’s second term was beset by foreign problems that culminated eventually in the War of 1812, during James Madison’s administration. Despite George Washington’s advice in his Farewell Address to stay out of entangling foreign alliances, America could not avoid being affected by events abroad. She was caught between the hammer and the anvil during Napoleon’s wars with the rest of Europe. The War of 1812 settled no issues but, soon afterward, the main Anglo-American problems left over from the Revolution were adjusted. Napoleon’s downfall at Waterloo removed France as an obstacle to American development.\n\nThe period known as the “Era of Good Feeling” followed the War of 1812. During the two terms of James Monroe, internal matters were the main concern of the country: tariffs, banking, domestic improvements, the admission of new states into the Union. With the Monroe Doctrine, which warned Europe to respect the independence of Latin America, the United States began to emerge as a power in the world. Even more important was the appearance of storm warnings heralding the eventual coming of the Civil War. The Missouri Compromise, which drew a line between slave and free territory, established an uneasy truce between the North and the South.",
+  "passages": [
+    "With all these blessings, what more is necessary to make us a happy and a prosperous people? Still one thing more, fellow citizens, a wise and frugal government, which shall restrain men from injuring one another, shall leave them otherwise free to regulate their own pursuits of industry and improvement, and shall not take from the mouth of labor the bread it has earned.",
+    "Exploring the Missouri River Valley and the Rocky Mountain area long had been a cherished project of President Jefferson. He had talked about it periodically since the Revolution, and when he became President he set about to make his dream come true. Even before the United States owned the Louisiana Territory, Capt.",
+    "Despite the unpopularity of the Embargo Act, James Madison, Jefferson’s choice to succeed him in the presidency, was elected by a large margin. Madison had served a long career in public life, beginning with the Continental Congress and the Constitutional Convention and more recently serving as Secretary of State under Jefferson.",
+    "British General Robert Ross landed with about four thousand men and marched into Washington without much opposition. The scene that took place during the burning is vividly described by a British officer, George Gleig, in A Narrative of the Campaigns of the British Army.",
+    "William Cooper Howells, the author of the next selection, was the father of a famous magazine editor and novelist, William Dean Howells. The elder Howells was taken to Ohio from England as a child and grew up on a farm while Ohio was a new state. His memories come from Recollections of Life in Ohio from 1813 to 1840.",
+    "The company had every thing to eat and drink that could be furnished in so new a country, and much fun and good humor prevailed. But before the regular frolic commenced, I mean the dancing, I was called on to make a speech as a candidate; which was a business I was as ignorant of as an outlandish Negro."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

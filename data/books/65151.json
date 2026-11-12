@@ -1,0 +1,50 @@
+{
+  "gutenberg_id": 65151,
+  "title": "How Old Is It? The Story of Dating in Archeaology",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Schoenwetter, James, 1935-2015",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Hughes, Phyllis, 1908-1994",
+      "role": "Illustrator",
+      "order": 2
+    },
+    {
+      "name": "Spencer, Mary",
+      "role": "Illustrator",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2021-04-24",
+  "description": "\"How Old Is It? The Story of Dating in Archaeology\" by James Schoenwetter is a scientific publication written in the mid-20th century. The book explores the various methods used in archaeology to determine the age of artifacts and sites, focusing on the field of geochronology—the science of dating events. It aims to educate readers about the principles and techniques that archaeologists employ to establish timelines, using both absolute and relative dating methods.  The content of the book delves deeply into specific dating techniques such as dendrochronology (tree ring dating), radiocarbon dating (C-14 method), and stratigraphy, which is the study of sediment layers. Schoenwetter describes how archaeologists utilize natural “clocks” to derive accurate dating for archaeological findings, detailing the methods by which these scientific approaches can cross-validate one another to create coherent historical records. With clear explanations and examples, the book elucidates complex concepts in an accessible manner, making it ideal for readers interested in archaeology, geology, and the science behind dating ancient artifacts.",
+  "subjects": [
+    "Science - Earth/Agricultural/Farming",
+    "Archaeology & Anthropology"
+  ],
+  "topic_subjects": [
+    "Radiocarbon dating",
+    "Archaeological dating",
+    "Dendrochronology"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/65151",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "At present we have a tree ring calendar for certain species of trees extending back to about 100 B.C. This is called a master tree ring chronology. A log from an archaeological site may contain only one or two signatures and be, in itself, a floating chronology, but by comparison with the master chronology one can determine the cutting date.",
+    "The carbon-14 isotope is about average in life span. It has been determined that in any group of C-14 isotopes half of them will lose two of their ping-pong balls and become C-12 isotopes in 5,730 years, plus or minus 40. This is known as the half-life of the C-14 isotope. The “plus or minus 40” allows for laboratory error in terms of years.",
+    "In the case of Piltdown, a group of bones was discovered at a site, and was said to contain those of one individual who lived about 60,000 years ago. Almost 100 years after they were discovered, these bones were put to the fluorine test.",
+    "Black earth Brown dust Caliche Black earth Eroded layer Caliche Cobbles Yellow silt Soil Brown silt Brown silt Eroded layer Cobbles",
+    "The geologic-climatic method of dating combines the principle of stratigraphy with an interpretation of the meaning of natural occurrences. When geologists demonstrated that the earth had recently gone through a period when enormous glaciers advanced and retreated across the northern and southern hemispheres, they began to speculate on the effects of such conditions on the landscape.",
+    "If the arrowhead is not of a type which has been reliably dated, the archaeologist may rely upon the method of dating known as seriation. This method depends on the second assumption basic to the principle of stratigraphy, that similar objects tend to be about the same age."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

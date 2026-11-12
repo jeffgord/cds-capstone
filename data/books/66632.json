@@ -1,0 +1,48 @@
+{
+  "gutenberg_id": 66632,
+  "title": "The Game of Go: The National Game of Japan",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Smith, Arthur, 1870-1929",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-10-30",
+  "description": "\"The Game of Go: The National Game of Japan\" by Arthur Smith is a practical guide and instructional manual on the ancient board game Go, written in the early 20th century. The book aims to educate readers—particularly Western audiences—about the intricacies of Go, which is deeply rooted in Japanese culture and regarded as a game of skill and strategy rather than chance. It encompasses not only the rules and techniques required to play but also delves into the historical significance and development of the game in Japan.  The opening of the text lays the groundwork for the reader by providing context and outlining the book's intent as a resource for learners who already have some familiarity with Go. Smith discusses the lack of comprehensive literature available in English about the Japanese version of Go and mentions his sources for information, including notable players and experts in the field. He emphasizes the game's esteemed status, its difficulty, and the commitment required to master it, setting up the stage for a deeper exploration into its rules, strategies, and cultural relevance as the book progresses.",
+  "subjects": [
+    "How To ...",
+    "Sports/Hobbies"
+  ],
+  "topic_subjects": [
+    "Go (Game)"
+  ],
+  "locc": [
+    "GV"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/66632",
+  "table_of_contents": [
+    "Introduction vii",
+    "History of the Game",
+    "Description of the Board and Stones",
+    "Rules of Play",
+    "General Methods of Play and Terminology of the Game",
+    "Illustrative Games",
+    "“Joseki” and Openings",
+    "The End Game",
+    "Problems"
+  ],
+  "introduction": "This book is intended as a practical guide to the game of Go. It is especially designed to assist students of the game who have acquired a smattering of it in some way and who wish to investigate it further at their leisure.\n\nAs far as I know there is no work in the English language on the game of Go as played in Japan. There is an article on the Chinese game by Z. Volpicelli, in Vol. XXVI of the “Journal of the China Branch of the Royal Asiatic Society.” This article I have not consulted. There is also a short description of the Japanese game in a work on “Korean Games with Notes on the Corresponding Games of China and Japan,” by Stewart Culin, but this description would be of little practical use in learning to play the game.\n\nThere is, however, an exhaustive treatise on the game in German by O. Korschelt. This can be found in Parts 21–24 of the “Mittheilungen der deutschen Gesellschaft für Natur- und Völkerkunde Ostasiens.” The student could readily learn the game from Herr Korschelt’s article if it were available, but his work has not been translated, and it is obtainable only in a few libraries in this country. In the preparation of this book I have borrowed freely from Herr Korschelt’s work, especially in the chapter devoted to the history of the game, and I have also adopted many of his illustrative games and problems.\n\nHerr Korschelt was an excellent player, and acquired his knowledge of the game from Murase Shuho, who was the best player in Japan at the time his article was written (about 1880).\n\nMy acquaintance with the game has been acquired from Mr. Mokichi Nakamura, a Japanese resident of this country, who is an excellent player, and whose enthusiasm for the game led me to attempt this book. Mr. Nakamura has also supplied much of the material which I have used in it. Toward the end I have had the expert assistance of Mr. Jihei Hashiguchi, with whom readers of the New York Sun are already acquainted.\n\nWherever possible I have given the Japanese words and phrases which are used in playing the game, and for those who are not familiar with the system of writing Japanese with Roman characters, I may say that the consonants have the sounds used in English, and the vowels the sounds that are used in Italian, all the final vowels being sounded. Thus, “dame” is pronounced as though spelled “dahmay.”",
+  "passages": [
+    "The players play alternately, and the weaker player has the black stones and plays first, unless a handicap has been given, in which case the player using the white stones has the first move. (In the olden times this was just reversed.) They place the stones on the vacant points of intersection on the board, or “Me,” and they may place them wherever they please, with the single exception of the",
+    "Assuming that we have advanced far enough to avoid premature encounters or “Ji dori Go,” and are placing our stones in advantageous positions, decently and in order, the question arises, how many spaces can be safely skipped from stone to stone in advancing our frontiers; that is to say, how far can stones be separated and yet be potentially connected, and therefore safe against attack? The",
+    "and White has the advantage. 69. D 14. 70. C 14. 71. R 5. 72. R 6. 73. E 15. It is of the utmost 74. Q 5. Murase Shuho thought importance to Black to that 74 was a bad move and occupy this point, for that S 5 would have been otherwise White would better. The game would press far into his then have continued as territory through this follows: opening. He goes first, however, on his B. 73.",
+    "Black wins, the report says, by “Ichi ban,” which means anything up to ten “Me.” According to my continuation, Black won by seven “Me.”",
+    "1. O 3. 2. R 7. 3. Q 3. This variation is 4. R 3. called “Kiri Kaeshi.” This move does not attack the corner so aggressively as the preceding examples. 5. R 4. This is the 6. Q 5. This is an important characteristic move of move for Black; if he this variation. plays elsewhere, he will get a bad position. 7. R 2. White threatens the 8. S 3. black stone.",
+    "Black’s third stone at H 3 is now called “Uke ishi,” or a “floating stone.” White has the better position.\n\nWe will now insert ten examples of openings, as distinguished from “Joseki.” As already stated, these are by Murase Shuho. In these examples Black is supposed to make the best possible moves, and therefore White always finds himself at a disadvantage."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

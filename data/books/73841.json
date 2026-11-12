@@ -1,0 +1,44 @@
+{
+  "gutenberg_id": 73841,
+  "title": "Experimental glass blowing for boys",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Lynde, Carleton John, 1872-1971",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Gilbert, A. C. (Alfred Carlton), 1884-1961",
+      "role": "Contributor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2024-06-16",
+  "description": "\"Experimental Glass Blowing for Boys\" by Carleton John Lynde is a scientific publication written in the early 20th century. This instructional book is geared towards young readers, particularly boys, guiding them through a variety of hands-on experiments involving glass blowing techniques. The work explores the properties of glass and its manipulation in an educational context.  The book presents a series of experiments that demonstrate the processes of heating, bending, cutting, and shaping glass tubing. Each experiment provides detailed instructions and encourages practical engagement, allowing boys to create items such as balloons, submarines, siphons, and even simple air guns from glass. The text emphasizes the scientific principles underpinning these techniques, explaining concepts like atmospheric pressure, buoyancy, and the nature of materials. The blend of hands-on activities and scientific inquiry fosters curiosity and learning about both physics and artistry in glasswork.",
+  "subjects": [
+    "Science - Physics",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Glass blowing and working -- Handbooks, manuals, etc.",
+    "Glass blowing and working -- Juvenile literature"
+  ],
+  "locc": [
+    "TP"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/73841",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "Insert the stopper and press down hard. Do the balloons sink (Fig. 15), and does one sink more quickly than the other?",
+    "Optical glass is made in much the same way as ordinary glass, but great care is taken: first, to see that the materials are pure; second, to stir the glass constantly, as it cools from the molten to the viscous state, to make it as uniform as possible; and third, to cool it very slowly in the annealing process, to avoid strains.",
+    "Finally arrange them so that they are on the bottom, facing each other bow to bow, two or three inches apart (1, Fig. 35), and release the stopper quickly. Do the submarines try to ram each other (2, Fig. 35) in a most realistic manner?",
+    "Arrange a siphon (Fig. 54), start the water flowing, and then pour sand or mud into the upper tumbler. Is the sand of mud siphoned over into the lower tumbler?\n\nAttach a long tube to the outer arm of the siphon and repeat the experiment. Is the sand or mud siphoned more rapidly and more thoroughly?",
+    "Heat a piece of No. 6 in the blowpipe flame at a length of 7½ inches and draw it out into a nozzle; smooth the other end in the lamp flame. Use the same plunger as in Experiment 48, and your syringe is made (Fig. 69). Try it out with water.\n\nHeat a piece of No. 6 tube in the blowpipe flame at a length of 7½ inches, draw it out, and close the end, then smooth the other end.",
+    "Place the tumblers on the table, make one tube slanting, and repeat the experiment (Fig. 82). Are the levels again the same?\n\nWhen you suck air out of the tee, you decrease the air pressure in the two tubes, and the atmospheric pressure on the water in the tumblers lifts the water into the tubes."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,38 @@
+{
+  "gutenberg_id": 42951,
+  "title": "A New Century of Inventions",
+  "subtitle": "Being Designs & Descriptions of One Hundred Machines, Relating to Arts, Manufactures, & Domestic Life",
+  "contributors": [
+    {
+      "name": "White, James (Civil engineer)",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2013-06-15",
+  "description": "\"A New Century of Inventions\" by James White is a scientific publication written in the early 19th century. The work presents a collection of designs and descriptions for one hundred machines that pertain to various aspects of arts, manufacturing, and domestic life. Each invention aims to offer practical applications and insights that could significantly enhance mechanical efficiency and utility for society.  The opening of the book begins with the author reflecting on his long interest in mechanical subjects and his desire to document and share his inventions. White introduces the reader to the theme of the work: providing practical mechanical solutions rather than theoretical discussions. He shares anecdotes from his childhood about his early experimentation with simple machines, such as water-wheels and mouse traps, setting a personal tone and establishing his lifelong passion for engineering. The narrative highlights his commitment to making knowledge accessible and useful, emphasizing a hands-on approach to understanding mechanics.",
+  "subjects": [
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Machinery"
+  ],
+  "locc": [
+    "TJ"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/42951",
+  "table_of_contents": [],
+  "introduction": "It has been my lot, during a long and eventful passage through life, to have my attention forcibly drawn to a multitude of Mechanical Subjects; the present review of which permits me to hope, that in making them publicly known, I should render an important service to the Arts and to Society. But the manner of doing this has been so long a question with me, that I have sometimes feared my ability would be extinct before I could do it at all. The reasons, however, that urge me to make the attempt acquire strength with the lapse of time: and whenever my declining health bespeaks the approach of that “night in which no man can work,” I feel deep regret, that this tribute should not have been thrown into the treasury of human knowledge while yet, by the favour of a good Providence, the means of doing it were more fully at my disposal.\n\nI have determined therefore to publish these Inventions. Not because they have been matured into a regular System of Mechanical truth; but because they consist of many distinct objects of immediate application:--coupled with some ideas of a more comprehensive nature, that may probably extend the usefulness of this admirable study, in the hands of Artists yet unborn.\n\nThe form, or rather the title of this work, has but one example, that of the illustrious Marquis of Worcester; whose name may, perhaps, prolong the remembrance of mine: an event the rightful anticipation of which, I confess, would give me pleasure. Not that I either covet or regard what is commonly called popular applause: but the approbation of the wise and good I do regard, and aspire to obtain; since that alone seems to fulfil the adage--“Vox populi vox dei.”\n\nOn the subject of our respective Inventions, my views are somewhat different from those of the Noble Marquis; whose description of his labours, as the custom then was, seems chiefly calculated to excite the desire of knowing them better: whereas my wish is to infuse, at once, the knowledge of my subjects into every head capable of receiving it.",
+  "passages": [
+    "“The supposed properties of this Crane, (says Dr. Gregory) for which the premium of forty guineas was adjudged by the society to the Inventor, are as follows:”\n\n“‘4. It is safe: for it cannot move but during the pleasure of the man, and while he is actually pressing on the gripe lever:",
+    "Hitherto nothing has been said of wheels in the conical form, usually denominated mitre and bevel geer. But my models will prove, that they are both comprehended in the system. The only condition of this unity of principle is, that the axes of two wheels, instead of being parallel to each other, be always found in the same plane.",
+    "The effect which this Machine is intended to produce, is analogous to several culinary or officinal processes that might be named. It is called rolling: but not in the same sense in which that word is used in manufactories, where rollers form or modify the body acted on.",
+    "It may be of use to observe, that the effect of this Machine is not confined to square bars: since with unequal rollers K L, it will produce flat bars; and with rollers properly grooved, (the piece M being formed accordingly) it will produce round iron or steel of better texture (I presume) than when taken from the slitting-mill, and merely passed through grooved rollers.",
+    "To form a true estimate of the value of any new machine, it is necessary to examine the nature and operation of those that have been used before for similar purposes. And this is the more needful here, because the present Dash-wheel is essentially good, both in it’s properties and effects.",
+    "I may just add, that the facility with which the revolutions of this Machine are counted, has induced some persons to dispense with the rack movement: but for small patterns with numerous impressions, it is doubtless better to use it--especially when employing the rapid and light pressures just alluded to; and these will become additionally interesting when the punches themselves acquire a more"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

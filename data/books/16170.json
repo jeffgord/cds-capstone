@@ -1,0 +1,82 @@
+{
+  "gutenberg_id": 16170,
+  "title": "Elements of Military Art and Science",
+  "subtitle": "Or, Course Of Instruction In Strategy, Fortification, Tactics Of Battles, &C.; Embracing The Duties Of Staff, Infantry, Cavalry, Artillery, And Engineers; Adapted To The Use Of Volunteers And Militia; Third Edition; With Critical Notes On The Mexican And Crimean Wars.",
+  "contributors": [
+    {
+      "name": "Halleck, H. W. (Henry Wager), 1815-1872",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2005-07-01",
+  "description": "\"Elements of Military Art and Science\" by H. W. Halleck is a treatise on military strategy and tactics written in the mid-19th century. This instructional work encompasses various aspects of military operations including strategy, fortifications, tactics of battles, and the organization of different military branches such as infantry, cavalry, and artillery. The book aims to provide valuable insights for military officers, particularly those in volunteer and militia roles, drawing on historical examples and established military principles.  The opening of the text introduces the author’s rationale for writing a course on military art and science, emphasizing the long-standing pacific policies of the United States prior to the ongoing civil conflict. Halleck addresses the moral arguments against war, summarizing the views of various ethical writers, including Dr. Wayland, and provides justifications for the necessity of war in cases of self-defense and national security. This initial portion sets the tone for a serious exploration of military ethics and principles, establishing the groundwork for the following discussions on strategy and tactics that will unfold throughout the work.",
+  "subjects": [
+    "History - Warfare",
+    "Philosophy & Ethics"
+  ],
+  "topic_subjects": [
+    "Military art and science"
+  ],
+  "locc": [
+    "U"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/16170",
+  "table_of_contents": [
+    "INTRODUCTION.--Dr. Wayland's Arguments on the Justifiableness of War",
+    "briefly examined",
+    "STRATEGY.--General Divisions of the Art.--Rules for planning a",
+    "Campaign.--Analysis of the Military Operations of Napoleon",
+    "FORTIFICATIONS.--Their importance in the Defence of States proved",
+    "by numerous Historical Examples",
+    "LOGISTICS.--Subsistence.--Forage.--Marches.--Convoys",
+    "Castrametation",
+    "TACTICS.--The Twelve Orders of Battle, with Examples of",
+    "each.--Different Formations of Infantry, Cavalry, Artillery, and",
+    "Engineers on the Field of Battle, with the Modes of bringing Troops into",
+    "action",
+    "MILITARY POLITY.--The Means of National Defence best suited to the",
+    "character and condition of a Country, with a brief Account of those",
+    "adopted by the several European Powers",
+    "DEFENCE OF OUR SEA-COAST.--Brief Description of our Maritime",
+    "Fortifications, with an Examination of the several Contests that have",
+    "taken place between Ships and Forts, including the Attack on San Juan",
+    "d'Ulloa, and on St. Jean d'Acre",
+    "OUR NORTHERN FRONTIER DEFENCES.--Brief Description of the",
+    "Fortifications on the Frontier, and an analysis of our Northern",
+    "Campaigns",
+    "ARMY ORGANIZATION.--Staff and Administrative Corps.--Their History,",
+    "Duties, Numbers, and Organization",
+    "ARMY ORGANIZATION.--Infantry and Cavalry.--Their History, Duties,",
+    "Numbers, and Organization",
+    "ARMY ORGANIZATION.--Artillery.--Its History and Organization, with a",
+    "Brief Notice of the different kinds of Ordnance, the Manufacture of",
+    "Projectiles, &c",
+    "ARMY ORGANIZATION.--Engineers.--Their History, Duties, and",
+    "Organization,--with a Brief Discussion, showing their importance as a",
+    "part of a modern Army Organization",
+    "PERMANENT FORTIFICATIONS. Historical Notice of the progress of",
+    "this Art.--Description of the several parts of a Fortress, and the",
+    "various Methods of fortifying a Position",
+    "FIELD ENGINEERING.--Field Fortifications.--Military",
+    "Communications.--Military Bridges.--Sapping, Mining, and the Attack and",
+    "Defence of a Fortified Place",
+    "MILITARY EDUCATION.--Military Schools of France, Prussia, Austria,",
+    "Russia, England, &c.--Washington's Reasons for establishing the West",
+    "Point Academy.--Rules of Appointment and Promotion in Foreign",
+    "Services.--Absurdity and Injustice of our own System",
+    "EXPLANATION OF PLATES"
+  ],
+  "introduction": "The following pages were hastily thrown together in the form of lectures, and delivered, during, the past winter, before the Lowell Institute of Boston. They were written without the slightest intention of ever publishing them; but several officers of militia, who heard them delivered, or afterwards read them in manuscript, desire their publication, on the ground of their being useful to a class of officers now likely to be called into military service. It is with this view alone that they are placed in the hands of the printer. No pretension is made to originality in any part of the work; the sole object having been to embody, in a small compass, well established military principles, and to illustrate these by reference to the events of past history, and the opinions and practice of the best generals.\n\nSmall portions of two or three of the following chapters have already appeared, in articles furnished by the author to the New York and Democratic Reviews, and in a \"Report on the Means of National Defence,\" published by order of Congress.\n\nOur distance from the old world, and the favorable circumstances in which we have been placed with respect to the other nations of the new world, have made it so easy for our government to adhere to a pacific policy, that, in the sixty-two years that have elapsed since the acknowledgment of our national independence, we have enjoyed more than fifty-eight of general peace; our Indian border wars have been too limited and local in their character to seriously affect the other parts of the country, or to disturb the general conditions of peace. This fortunate state of things has done much to diffuse knowledge, promote commerce, agriculture, and manufactures; in fine, to increase the greatness of the nation and the happiness of the individual. Under these circumstances our people have grown up with habits and dispositions essentially pacific, and it is to be hoped that these feelings may not soon be changed. But in all communities opinions sometimes run into extremes; and there are not a few among us who, dazzled by the beneficial results of a long peace, have adopted the opinion that war in any case is not only useless, but actually immoral; nay, more, that to engage in war is wicked in the highest degree, and even brutish.",
+  "passages": [
+    "To a defensive army fortifications are valuable as points of repose, upon which the troops, if beaten, may fall back, and shelter their sick and wounded, collect their scattered forces, repair their materials, and draw together a new supply of stores and provisions; and as rallying points, where new troops may be assembled with safety, and the army, in a few days, be prepared to again meet the",
+    "All offensive operations on the field of battle require mobility, solidity, and impulsion; while, on the other hand, all defensive operations should combine solidity with the greatest possible amount of fire.",
+    "Such was the effect produced on the British fleet, sailing with a favorable wind and strong current past the half-armed and half-manned forts of the Dardanelles. Duckforth himself says, that \"had he remained before Constantinople much longer--till the forts had been completely put in order--no return would have been open to him, and the unavoidable sacrifice of the squadron must have been the",
+    "The following is the composition of a regularly organized general staff in the French service, for an army of forty or fifty thousand men divided into two corps d'armee and a reserve.\n\n1st. The marshal (or general) commanding-in-chief; and one colonel or lieutenant-colonel, one major, three captains and three subalterns, as aides-de-camp.",
+    "Experiences sur la fabrication et la duree des bouches a feu en fer et bronze, (traduit de l'Allemand par Peretsdorff.) Meyer.\n\nExperiences comparatives entre des bouches a feu en fonte de fer, d'origine Franzaise, Anglaise et Suedoise, faites a Gavres, en 1836.",
+    "In the case of a retreat the bridge should be covered by field intrenchments, called a tete de pont, and defended by a strong guard. If the river be of moderate width, the enemy may be kept at a distance by heavy batteries on the opposite shore."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

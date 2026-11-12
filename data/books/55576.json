@@ -1,0 +1,34 @@
+{
+  "gutenberg_id": 55576,
+  "title": "Mogg's Cab Fare Distance Map and London Guide.",
+  "subtitle": "Index to the Streets, Squares, and Cab Stands.",
+  "contributors": [
+    {
+      "name": "Mogg, Edward S.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2017-09-18",
+  "description": "\"Mogg's Cab Fare Distance Map and London Guide\" by Edward S. Mogg is a practical guidebook written in the mid-19th century. The book serves as an extensive reference for navigating London, featuring detailed fare information, a distance map, and an index of three thousand locations throughout the city. It is likely aimed at both locals and visitors, helping them to easily find their way around the bustling metropolis and understand the cab fare system.  The opening portion of the guide introduces the structure of the book, emphasizing its usability through an index that corresponds places with a grid system on the accompanying map. It explains the method for locating streets, squares, and cab stands, making it easier for readers to navigate the streets of London efficiently. The first few pages contain various entries that are systematically organized, illustrating the comprehensive nature of the guide and indicating its focus on practical navigation rather than storytelling or character development.",
+  "subjects": [
+    "Travel Writing",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "London (England) -- Description and travel",
+    "London (England) -- Maps"
+  ],
+  "locc": [
+    "DA"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/55576",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "But if discharged beyond four miles from Charing Cross, for every mile and part of a mile beyond such distance, 1s.\n\nIf the Driver is required to drive more than four miles an hour, for every mile or beyond four miles, 6d.\n\nWhen hired by distance, the driver is not compelled to drive at a rate of more than six miles per hour, and when hired by time at more than four."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

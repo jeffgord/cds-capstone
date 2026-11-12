@@ -1,0 +1,38 @@
+{
+  "gutenberg_id": 23300,
+  "title": "Half-Hours with the Stars",
+  "subtitle": "A Plain and Easy Guide to the Knowledge of the Constellations",
+  "contributors": [
+    {
+      "name": "Proctor, Richard A. (Richard Anthony), 1837-1888",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2007-11-03",
+  "description": "\"Half-Hours with the Stars\" by Richard A. Proctor is a scientific publication written in the early 20th century. This book serves as a plain and easy guide for learners interested in the knowledge of constellations, presenting detailed maps intended specifically for American students. The primary topic is astronomy, particularly the identification and understanding of star groups visible in the night sky throughout the year.  The content includes twelve maps that show the positions of the principal constellations as seen from the United States on specific nights and times of the year. Each map is designed for practical use, allowing beginners to locate various star groups and understand their changes in appearance as the seasons progress. Proctor provides explanations of how to use the maps effectively, guiding readers through key constellations and significant stars, while also emphasizing the importance of certain reference points like the Pole Star for navigation in the night sky. Overall, the book aims to demystify the heavens, making the vast realm of stars accessible to amateur astronomers and enthusiasts alike.",
+  "subjects": [
+    "Science - Earth/Agricultural/Farming",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Stars -- Atlases"
+  ],
+  "locc": [
+    "QB"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/23300",
+  "table_of_contents": [],
+  "introduction": "AUTHOR OF \"HALF HOURS WITH THE TELESCOPE,\" \"EASY STAR LESSONS,\" \"A LARGER STAR ATLAS,\" AND THE ARTICLE ON ASTRONOMY IN THE \"AMERICAN CYCLOPAEDIA\" AND THE \"CYCLOPAEDIA BRITTANICA.\" ETC., ETC.\n\nIt is very easy to gain a knowledge of the stars, if the learner sets to work in the proper manner. But he commonly meets with a difficulty at the outset of his task. He provides himself with a set of the ordinary star-maps, and then finds himself at a loss how to make use of them. Such maps tell him nothing of the position of the constellations on the sky. If he happen to recognize a constellation, then indeed his maps, if properly constructed, will tell him the names of the stars forming the constellation, and also he may be able to recognize a few of the neighboring constellations. But when he has done this he may meet with a new difficulty, even as respects this very constellation. For if he look for it again some months later, he will neither find it in its former place nor will it present the same aspect,--if indeed it happen to be above the horizon at all.\n\nIt is clear, then, that what the learner wants is a set of maps specially constructed to show him in what part of the sky the constellations are to be looked for. He ought on any night of the year to be able to turn at once to the proper map, and in that map he ought to see at once what to look for, toward what point of the compass each visible constellation lies, and how high it is above the horizon. And, if possible (as the present work shows is the case), one map ought to suffice to exhibit the aspect of the whole heavens, in order that the beginner may not be confused by turning from map to map, and trying to find out how each fits in with the others.\n\nIt is to fulfil these requirements that the present maps have been constructed. Each exhibits the aspect of the whole sky at a given day and hour. The circumference of the map represents the natural horizon, the middle of the map representing the part of the sky which lies immediately overhead. If the learner hold one of these maps over his head, so as to look vertically upwards at it, the different parts of the horizon marked in round the circumference being turned towards the proper compass points, he will see the same view of the heavens as he would if he were to lie on his back and look upwards at the sky, only that the map is a planisphere and the sky a hemisphere.",
+  "passages": [
+    "Perhaps nothing further is required; but if the observer prefer it he can determine the north point conveniently at noon by setting up a vertical stick in the sunlight and noting the direction in which the shadow lies.",
+    "The Great Bear (Ursa Major) is now rising well above the horizon, in the northeast, the Pointers about midway between north and northeast. A line from the Pole Star to the Guardians of the Pole is now in the position of the minute hand of a clock about 28 minutes past an hour. The Dragon (Draco) lies due north, curving round under the Little Bear, its head close to the horizon.",
+    "The Great Bear (Ursa Major), with its Dipper and Pointers, is now high up in the northeastern sky. The Pointers direct us to the Pole Star, (a of the Little Bear Ursa Minor). A line from the Pole Star to the Guardians of the Pole (b and g) lies in the position of the minute hand of a clock 18 minutes after an hour.",
+    "Below the Little Bear we find Cepheus low down to the east of north, and Cassiopeia low down to the west of north. Perseus, the Rescuer, is setting in the northwest; the Camelopard is above, trying to get on his feet.",
+    "Low down between the south and southwest we find the head and shoulders of the Centaur (Centaurus), who holds the Wolf (Lupus) due south. Above the Wolf are the Scales (Libra), and above these the Serpent (Serpens), his head in the south, stretching toward the Crown. In the mid-sky, toward the southeast, we find the Serpent Bearer (Ophiuchus--one star of the Serpent lies east of him).",
+    "Due south, and high up, is the Eagle (Aquila), its tail at z and e, its head at th, the bright steel-blue Altair marking its body. On the left, or east, of the Eagle lies the neat little Dolphin (Delphinus). Midway between the Dolphin and the horizon is the tip of the tail of the Sea Goat (Capricornus), whose head lies nearly due south."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,40 @@
+{
+  "gutenberg_id": 39690,
+  "title": "Harpsichords and Clavichords",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Hoover, Cynthia A. (Cynthia Adams)",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-05-13",
+  "description": "\"Harpsichords and Clavichords\" by Cynthia A. Hoover is a scientific publication written in the late 20th century. This book serves as an informative guide detailing the history, construction, and significance of two essential stringed keyboard instruments prevalent from the 15th through the 18th centuries. The content likely aims to explore the evolution of harpsichords and clavichords while highlighting examples from the Smithsonian's collection.  The book provides an in-depth examination of both harpsichords and clavichords, detailing their design, function, and the unique characteristics that distinguish them from other keyboard instruments. Hoover presents various historical models and discusses different regional styles, including Flemish, Italian, English, and French influences on harpsichord construction. Through clear descriptions and illustrations, readers learn about the mechanics of sound production, tuning practices, and the cultural significance of these instruments during their peak popularity, providing context for their eventual decline and revival in the modern era.",
+  "subjects": [
+    "History - Early Modern (c. 1450-1750)",
+    "Art",
+    "Music"
+  ],
+  "topic_subjects": [
+    "Harpsichord",
+    "Clavichord"
+  ],
+  "locc": [
+    "ML"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/39690",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "The tone of a keyboard instrument is also affected by its general outline, the material and thickness of the soundboard, the length and material of the strings, and the type of case construction. The case must be strong enough to counteract the tension of the strings and yet light enough to allow the sound to resonate.",
+    "A typical short-octave instrument of the 16th and 17th centuries would be tuned in the following manner: E (1) is tuned down to C (I); F♯ (2) tuned to D (II); and G♯ (3) tuned to E (III).",
+    "Figure 15 shows the instrument before restoration; Figures 14 and 16 show the restored harpsichord removed from its heavy outer case and details of the handsome keyboard and moldings typical of Italian instruments.",
+    "The spinet, a member of the harpsichord family, was a popular domestic keyboard instrument in England and America during the 18th century and was mentioned in many American diaries and inventories of that time. The spinet often served as the keyboard instrument for the household that could not afford or did not have room for the harpsichord or organ.",
+    "Housed in elegantly painted cases supported by cabriole or fluted legs, typical French harpsichords had two manuals and were praised for their lightness of touch. Later 18th-century developments included a fourth register called peau de buffle (plectra of soft chamois-type leather) and knee levers to operate the registers.",
+    "Figure 31 shows a player depressing a clavichord key (middle c). The tangent at the far end of the key lever has been raised so that it has struck the strings and has lifted them above rest position. The damping cloth on the left of this raised string can also be seen."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 77910,
+  "title": "In the day's work",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Updike, Daniel Berkeley, 1860-1941",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2026-02-10",
+  "description": "In the day's work by Daniel Berkeley Updike is a collection of craft essays on typography and printing written in the early 20th century. It is a practitioner’s treatise that blends design theory with shop-floor guidance, focusing on how to plan, compose, and present printed work so it is both useful and beautiful; in short, it is about the principles and practice of good typography.\n\nThe book first explains how to plan printing: organizing specimen books, guiding clients toward appropriate choices, and designing pages by starting from purpose, reader, and constraints, then testing the “normal” page against special elements like tables, verse, and illustrations. It argues that suitability, simplicity, and proportion are the heart of style, drawing lessons from Renaissance books and warning against archaic affectation or fussy decoration. The closing essay turns practical and prescriptive, naming the essentials that determine a page’s success—even word spacing and sensible hyphenation, modest paragraph indents and sentence spacing, thoughtful leading, truly black ink, paper whose tone and surface suit the type, and correct imposition with balanced margins—while insisting that the conscientious printer’s judgment is the final champion that makes the work “right.”",
+  "subjects": [],
+  "topic_subjects": [
+    "Printing -- United States"
+  ],
+  "locc": [
+    "Z"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/77910",
+  "table_of_contents": [
+    "ON THE PLANNING OF PRINTING",
+    "STYLE IN THE USE OF TYPE",
+    "THE SEVEN CHAMPIONS OF TYPOGRAPHY"
+  ],
+  "introduction": null,
+  "passages": [
+    "As customers fall into many different classes, they have to be met in many different ways. They certainly sometimes bring difficult typographical problems to the printer, for which they suggest or dictate ridiculous solutions. But a printer cannot be of use to typography by dismissing their views and them.",
+    "The man who has to plan or lay out a piece of printing should pause a few moments before he attacks his problem, and his plan is best made alone in a quiet room (from which examples of other people’s work are banished) wherein is a large table, and on it nothing but the manuscript of the work to be arranged and a book of specimens of types.",
+    "The subject-matter of a book should, as has been suggested, furnish a clue to its appropriate treatment. If you are to design a modern book like Vernon Lee’s Studies of the Eighteenth Century in Italy, you will not produce a suitable or agreeable effect if you use black-letter headlines or a modern German aesthetic roman type for its text, both of which connote an entirely different order of",
+    "Style, said Sir Walter Raleigh, is an index to persons. “Write, and after you have attained to some control over the instrument, you write yourself down whether you will or no. There is no vice, however unconscious, no virtue, however shy, no touch of meanness or of generosity in your character, that will not pass on to the paper.” This is as true of printing as it is of writing.",
+    "Again, “manner” may be used with charm, and by this I mean a local and characteristic variant of a real style, which has come to have a literary and historical association of its own. What we call colonial (or Georgian) printing is nothing more than a rendering (often an overstatement) of certain features of seventeenth and eighteenth century English printing.",
+    "The general solidity of a page is much to be sought for: modern printers generally overdo the ‘whites’ in the spacing, a defect probably forced on them by the characterless quality of the letters. For where these are boldly and carefully designed, and each letter is thoroughly individual in form, the words may be set much closer together, without loss of clearness."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

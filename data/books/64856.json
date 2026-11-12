@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 64856,
+  "title": "The Fireless Locomotive",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Anonymous",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-03-18",
+  "description": "\"The Fireless Locomotive\" by Anonymous is a historical account written during the early 1960s. The book details the story of the fireless locomotives, particularly focusing on the \"Rubicon,\" a steam-storage locomotive that served the National Cash Register Company in Dayton, Ohio, at the turn of the 20th century. The narrative explores the development and operational advantages of fireless locomotives in industrial settings, particularly their roles in enhancing factory environments by reducing smoke and risks associated with traditional steam engines.  The content primarily revolves around the Rubicon and its two sister engines, the Dayton and the South Park, outlining their construction, usage, and eventual retirement. The book highlights how their design allowed them to operate safely in flammable environments without the danger of sparks or explosions, which was critical in factories. It contrasts the old steam-storage technology with the newer Diesel-electric locomotives that replaced them, emphasizing their significance in America's industrial evolution. The narrative concludes with the Rubicon's preservation as a historical artifact, underscoring its importance to industrial heritage and the transition from steam to modern power.",
+  "subjects": [
+    "History - American",
+    "Engineering & Technology"
+  ],
+  "topic_subjects": [
+    "Steam locomotives -- History",
+    "Corliss steam-engine"
+  ],
+  "locc": [
+    "TJ"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/64856",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "The newcomer is the “Rubicon,” one of three fireless locomotives which were purchased by The National Cash Register Company in the early years of this enterprising century. The Rubicon, however, did not come to the Park from a rusty and forgotten limbo—as, for instance, the Grasshopper locomotive did.",
+    "The neighborhood adjacent to the factory also concerned John H. Patterson; he offered annual prizes to householders who kept the best yards and flower beds. An early NCR machinist who looked up from his lathe and glanced out the spacious window—by way of resting his eyes—saw lovely suburban gardens instead of the grimy clutter that bordered most factories of the era.",
+    "Tanks under the locomotive running boards furnished compressed air for ringing the bell and sanding the rails in icy weather. They were replenished at the roundhouse, for the engine carried no air compressor. Neither was there a generator; the storage battery which operated the headlights had to be recharged regularly.",
+    "Lima steam storage locomotives consist essentially of a large tank, large cylinders, the other machinery being similar to that of regular locomotives.\n\nThe tank is filled about half full of water, and is then connected with a stationary boiler until the pressure equalizes.",
+    "The fireless “locos” were undeniably safe, in that steam pressure was always on the decrease and never ran wild. On the other hand, the brakes were so primitive that fast emergency stops were impossible with a string of heavy coal cars. Visibility from the cab was limited, too—an added hazard with increased auto and pedestrian traffic in the NCR factory area in recent years.",
+    "With the Diesel-electric, no time is lost re-charging the tank. The engineer’s cab is comfortably heated in winter. Automatic couplers, front and rear, increase employee safety. Powerful air brakes control the engine itself and air hoses can also be coupled to towed cars. Operating cost is only a fraction of that required for the old “chuffers.”"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

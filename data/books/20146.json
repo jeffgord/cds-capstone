@@ -1,0 +1,40 @@
+{
+  "gutenberg_id": 20146,
+  "title": "Engineering Bulletin No 1: Boiler and Furnace Testing",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Strohm, Rufus T. (Rufus Tracy), 1877-",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2006-12-20",
+  "description": "\"Engineering Bulletin No 1: Boiler and Furnace Testing\" by Rufus T. Strohm is a scientific publication released in the early 20th century. This informative document serves as a guide for engineers and technicians involved in the operation and testing of boilers and furnaces, focusing specifically on practical methods for determining their efficiency and performance. The work originates during a period characterized by industrial growth and a heightened awareness of resource conservation in the wake of World War I.  In this bulletin, Strohm outlines the crucial need for regular boiler testing to establish how effectively the equipment operates while minimizing waste. He provides detailed procedures for weighing coal and measuring water, steam pressure, and temperature, all essential data for calculating the boiler's efficiency. The text includes step-by-step instructions for conducting these tests and emphasizes the significance of accurate record-keeping and evaluation of results to enhance boiler operation and fuel economy. Overall, it aims to support technicians in achieving maximum production efficiency with minimum waste of fuel in steam-power plants.",
+  "subjects": [
+    "Technology",
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Furnaces",
+    "Steam-boilers -- Testing"
+  ],
+  "locc": [
+    "TN"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/20146",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "The quantity of water fed to the boiler during the test may be found by metering or by weighing. A reliable water meter is recommended for this work. There are a number of good makes, of different types, such as:",
+    "After the boiler test has been made, so as to find the weight of coal burned, weight of feed water used, feed-water temperature and steam pressure, the efficiency, the horsepower, and the economy must be obtained by calculation from the test results. The process of figuring the desired results from the test data is called \"working up the test.\"",
+    "In other words, the efficiency of the boiler is 0.54, or 54 per cent, which means that only a little more than half of the heat in the coal is usefully employed in making steam.",
+    "The object of working up a test is to obtain a clear idea as to the efficiency of operation of the boiler or its operating cost. Consequently, after the calculations have been made, they should be used as a basis for study with the idea of improving the boiler performance.",
+    "Make a boiler test under the conditions of operation as they now exist in your plant. Then make all possible improvements as suggested in this bulletin, make another test afterwards and note the increase in the equivalent evaporation per pound of coal used.\n\nRemember that the firing line in the boiler room can be just as patriotic and helpful as the firing line at the front.",
+    "A limited supply of the following publications of the Bureau of Mines has been printed and is available for free distribution until the edition is exhausted. Requests for all publications can not be granted, and to insure equitable distribution applicants are requested to limit their selection to publications that may be of especial interest to them."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

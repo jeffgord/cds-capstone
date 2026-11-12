@@ -1,0 +1,57 @@
+{
+  "gutenberg_id": 32505,
+  "title": "The Systematics of the Frogs of the Hyla Rubra Group in Middle America",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "León, Juan R.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2010-05-24",
+  "description": "\"The Systematics of the Frogs of the Hyla Rubra Group in Middle America\" by Juan R. León is a scientific publication written in the late 20th century. This work delves into the taxonomy, distribution, and natural history of the tree frogs belonging to the Hyla rubra group, primarily found across Middle America and extending to parts of South America. The publication aims to synthesize previous research while contributing new findings about species variations, ecology, and their evolutionary history.   The opening of the text provides essential background on the Hyla rubra group, discussing its presence from lowland México to Argentina, with the highest diversity located in southeastern Brazil. León outlines the historical context of the group, citing various researchers who have contributed to its classification over the years. He highlights the importance of the study by noting the lack of published data regarding the ecology and life history of these frogs, thereby establishing the aim of his report: to detail the species within the group as they appear in Middle America, including key physical descriptions, behavioral data, and anatomical analyses that underlie their systematic classification.",
+  "subjects": [
+    "Animal",
+    "Animals-Wild-Reptiles and Amphibians",
+    "Science - Biology"
+  ],
+  "topic_subjects": [
+    "Hyla rubra",
+    "Frogs -- Central America"
+  ],
+  "locc": [
+    "QH"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/32505",
+  "table_of_contents": [
+    "INTRODUCTION",
+    "Acknowledgments",
+    "Materials and Methods",
+    "THE HYLA RUBRA GROUP",
+    "Key to Species and Subspecies",
+    "Key to Known Tadpoles",
+    "ACCOUNTS OF SPECIES AND SUBSPECIES",
+    "Hyla boulengeri (Cope)",
+    "Hyla foliamorta Fouquette",
+    "Hyla rubra Laurenti",
+    "Hyla elaeochroa Cope",
+    "Hyla staufferi Cope",
+    "Hyla staufferi staufferi Cope",
+    "Hyla staufferi altae Dunn",
+    "EVOLUTIONARY HISTORY",
+    "LITERATURE CITED"
+  ],
+  "introduction": "The tree frogs of the Hyla rubra group are abundant and form a conspicuous element of the Neotropical frog fauna. Representatives of the group occur from lowland Mexico to Argentina; the greatest diversity is reached in the lowlands of southeastern Brazil (Cochran, 1955). The group apparently originated in South America; the endemic Central American species evolved from stocks that invaded Middle America after the closure of the Colombian Portal in the late Pliocene.\n\nLittle has been published concerning the ecology, life history, osteology, and mating calls of the Middle American species of this group. The purpose of the present report is to describe the species occurring in Middle America and to comment on their distributions, ecology, cranial osteology, and mating calls, and in so doing provide evidence for the evolutionary history of the species inhabiting Middle America.\n\nFor permission to examine specimens in their care, I am grateful to Drs. Richard G. Zweifel, American Museum of Natural History (AMNH); Robert F. Inger, Field Museum of Natural History (FMNH); Ernest E. Williams, Museum of Comparative Zoology (MCZ); Hobart M. Smith, University of Illinois Museum of Natural History (UIMNH); Charles F. Walker, University of Michigan Museum of Zoology (UMMZ); Jay M. Savage, University of Southern California (USC); James A. Peters, United States National Museum (USNM); Richard J. Baldauf, Texas Cooperative Wildlife Collection (TCWC); and W. Frank Blair, Texas Natural History Collection (TNHC). KU refers to specimens in the Museum of Natural History, University of Kansas. For the loan of tape-recordings of mating calls I thank Drs. W. Frank Blair, University of Texas, and Richard G. Zweifel, American Museum of Natural History.\n\nI am indebted to the Ford Foundation-Universidad de Oriente (Venezuela) Science Project for a scholarship which enabled me to study for two years at The University of Kansas, foster institution of the project. I have benefited by being able to work in the Museum of Natural History at The University of Kansas and I am grateful to Dr. E. Raymond Hall, Director, for providing space and equipment.",
+  "passages": [
+    "Variation.--Geographic variation is evident in the snout-vent length, tibia length, and foot length, all in relation to snout-vent length, and the relative size of the tympanum to the eye (Table 1). The largest specimens are from the humid Pacific lowlands of Costa Rica; individuals from the Caribbean lowlands of Costa Rica, Canal Zone, and South America are smaller.",
+    "In Central America, Hyla boulengeri can be confused only with Hyla foliamorta; the latter is restricted to central and eastern Panama and northern Colombia. The snout of foliamorta is more pointed and protruding, and the vocal sac is darker than in boulengeri; the groin of foliamorta usually is creamy white, whereas boulengeri usually has a dark spot.",
+    "Distribution.--Hyla foliamorta inhabits the subhumid Pacific lowlands (elevations of less than 100 meters) of Central Panama and Caribbean lowlands of northern Colombia (Fig. 4).\n\nDiagnosis.--Size medium; skull longer than wide; frontoparietal fontanelle absent in adults; snout subovoid; choanae rounded; dorsal stripes present; black vermiculations on posterior surfaces of thighs.",
+    "The entire distal surface of the prooetic is in contact with the posterior arm of the squamosal. A narrow cartilaginous crista parotica is visible dorsally in some specimens. The squamosal is broad posteriorly but its anterior arm is slender and not in contact with the maxillary.",
+    "Diagnosis.--Small frogs (Male to 29 mm., Female to 31.6 mm.); skull longer than wide; palatine absent; large cartilaginous crista parotica present; snout flat, elongate and protruding; dark interorbital bar and dorsal stripes usually present.",
+    "In life, body pale olive-tan, belly silvery white with pinkish-orange reticulations in some specimens; tail creamy white with silvery flecks and black or brown reticulations. In preservative, tan and pinkish-orange coloration lost; body transparent, reticulations on tail present."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

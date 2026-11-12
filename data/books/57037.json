@@ -1,0 +1,81 @@
+{
+  "gutenberg_id": 57037,
+  "title": "The Prince",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Machiavelli, Niccolò, 1469-1527",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Ricci, Luigi, 1842-1915",
+      "role": "Translator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2018-04-23",
+  "description": "\"The Prince\" by Niccolò Machiavelli is a political treatise written in 1513. Designed as an instruction guide for new rulers, it boldly argues that immoral acts may sometimes be necessary to achieve political power and glory. Written in Italian rather than Latin, this controversial work breaks from traditional advice literature by focusing on practical effectiveness over abstract ideals. Its unflinching examination of power and leadership challenged the dominant Catholic doctrines of its time and gave birth to the term \"Machiavellian.\"",
+  "subjects": [
+    "History - Early Modern (c. 1450-1750)",
+    "Philosophy & Ethics",
+    "Politics"
+  ],
+  "topic_subjects": [
+    "State, The -- Early works to 1800",
+    "Political science -- Philosophy -- Early works to 1800",
+    "Political ethics -- Early works to 1800"
+  ],
+  "locc": [
+    "JC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/57037",
+  "table_of_contents": [
+    "NICCOLÒ MACHIAVELLI TO LORENZO THE MAGNIFICENT",
+    "The various kinds of Government and the ways by which they are",
+    "established",
+    "Of Hereditary Monarchies",
+    "Of Mixed Monarchies",
+    "Why the Kingdom of Darius, occupied by Alexander, did not rebel",
+    "against the successors of the latter after his death",
+    "The way to govern Cities or Dominions that, previous to being",
+    "occupied, lived under their own Laws",
+    "Of New Dominions which have been acquired by one's own Arms and",
+    "Powers",
+    "Of New Dominions acquired by the Power of others or by Fortune",
+    "Of those who have attained the position of Prince by villainy",
+    "Of the Civic Principality",
+    "How the strength of all States should be measured",
+    "Of Ecclesiastical Principalities",
+    "The different kinds of Militia and Mercenary Soldiers",
+    "Of Auxiliary, Mixed, and Native Troops",
+    "What the duties of a Prince are with regard to the Militia",
+    "Of the things for which Men, and especially Princes, are praised or",
+    "blamed",
+    "Of Liberality and Niggardliness",
+    "Of Cruelty and Clemency, and whether it is better to be loved or",
+    "feared",
+    "In what way Princes must keep faith",
+    "That we must avoid being despised and hated",
+    "Whether Fortresses and other things which Princes often make are",
+    "useful or injurious",
+    "How a Prince must act in order to gain reputation",
+    "Of the Secretaries of Princes",
+    "How Flatterers must be shunned",
+    "Why the Princes of Italy have lost their States",
+    "How much Fortune can do in human affairs, and how it may be opposed",
+    "Exhortation to liberate Italy from the Barbarians"
+  ],
+  "introduction": "Of all Machiavelli's works The Prince is undoubtedly the greatest; and a new English edition of it is likely to be welcome to all those who have not the advantage of reading it in the classical Italian original.\n\nFor a true appreciation of Machiavelli, impossible in a brief Preface, I must refer the English reader to Macaulay's Essay on the Italian historian and statesman.[1] In it he will see how our Author's ideas and work were wrongfully and wilfully misinterpreted by the very men who, while profiting by his wisdom, have with great ingratitude criticised the statesman and defamed his name, as that of the inventor of the worst political system ever imagined. Yet, as his whole life was an indefatigable and unremitting endeavour to secure for his native Florence a good and popular government, and as he lost his great office of Secretary to the Florentine Republic on account of his avowed liberal opinions, it is not only unjust but ridiculous to accuse him of helping tyrants to enslave the people. What he did was to show in the most deliberate and in the plainest way the arts by which free peoples were made slaves; and, had his words of advice been always heeded, no tyrant in Italy or elsewhere could have been successful in his policy. That he was not listened to, and his advice scorned and spurned, was not Machiavelli's fault.\n\nThose who still share the opinion of his interested detractors should read his private correspondence with the leaders of liberal ideas in Italy--many of his letters being still left unpublished in the MS. Collection of Giuliano Ricci in the National Library, in the Riccardiana Library (No. 2467), in the Government Archives (Strozzi, Nos. 133 and 1028) of Florence, in the Barberini Library, and in the Collezione Gonnelli of the Palatine Library in Rome.\n\n[1] \"Machiavelli\" by Thomas Babington Macaulay is available at Project Gutenberg in Critical, Historical, and Miscellaneous Essays; Vol. 1, ebook 55901.\n\n4. Why the Kingdom of Darius, occupied by Alexander, did not rebel against the successors of the latter after his death.",
+  "passages": [
+    "I reply that the kingdoms known to history have been governed in two ways: either by a prince and his servants, who, as ministers by his grace and permission, assist in governing the realm; or by a prince and by barons, who hold their positions not by favour of the ruler but by antiquity of blood.",
+    "The duke being now powerful and partly secured against present perils, being armed himself, and having in a great measure put down those neighbouring forces which might injure him, had now to get the respect of France, if he wished to proceed with his acquisitions, for he knew that the king, who had lately discovered his error, would not give him any help.",
+    "It is the nature of men to be as much bound by the benefits that they confer as by those they receive. From which it follows that, everything considered, a prudent prince will not find it difficult to uphold the courage of his subjects both at the commencement and during a state of siege, if he possesses provisions and means to defend himself.",
+    "A Prince should therefore have no other aim or thought, nor take up any other thing for his study, but war and its order and discipline, for that is the only art that is necessary to one who commands, and it is of such virtue that it not only maintains those who are born princes, but often enables men of private fortune to attain to that rank.",
+    "Let a prince therefore aim at living and maintaining state the state, the means will always be judged honourable and praised by every one, for the vulgar is always taken by appearances and the result of things; and the world consists only of the vulgar, and the few find a place when the many have nothing to rest upon.",
+    "Some princes, in order to securely hold their possessions, have disarmed their subjects, some others have kept their subject lands divided into parts, others have fomented enmities against themselves, others have endeavoured to win over those whom they suspected at the commencement of their rule: some have constructed fortresses, others have ruined and destroyed them."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

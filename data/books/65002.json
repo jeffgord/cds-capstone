@@ -1,0 +1,38 @@
+{
+  "gutenberg_id": 65002,
+  "title": "The Birds of Australia, Vol. 1 of 7",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Gould, John, 1804-1881",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-04-05",
+  "description": "\"The Birds of Australia, Vol. 1 of 7\" by John Gould is a comprehensive ornithological survey published between 1840 and 1848. This groundbreaking work presented the first complete examination of Australian birds, documenting 681 species—328 previously unknown to Western science. Created through specimens collected during Gould's travels across Australia, the volumes feature hand-colored lithographic plates, many drawn by his wife Elizabeth. With only 250 original sets printed for subscribers, it remains a landmark achievement in natural history illustration and scientific documentation.",
+  "subjects": [
+    "Science - Biology",
+    "Nature/Gardening/Animals",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Birds -- Australia -- Pictorial works"
+  ],
+  "locc": [
+    "QL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/65002",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "At the commencement of the work it was not expected that it would prove so extensive as it has become, since not more than about 300 species were then known, which number has now been increased, by the united efforts of myself and those who have so kindly aided my views, to upwards of 600 species, among which are comprised many forms remarkable for their novelty, the anomalous character of their",
+    "The two birds described by me in the Proceedings of the Zoological Society, Part V. p. 164, as P. xanthoprocta and P. longirostris, are both immature birds, and are, I believe, from Norfolk Island.",
+    "If they be not local varieties of each other, there are two birds confounded under this name, one having yellow and the other scarlet under tail-coverts; it will be necessary, however, to see other examples before we can decide whether they are or are not distinct. Captain Sturt brought specimens with yellow under tail-coverts from the Depôt in the interior of South Australia.",
+    "Although I have figured one of the two Australian birds of this genus under the above appellation, rather than run the risk of unnecessarily adding to the number of species, I have no doubt it will prove to be distinct from the American bird.",
+    "The great excess in the number of species inhabiting New South Wales is doubtless attributable to the singular belt of luxuriant vegetation, termed brushes, which stretches along the southern and south-eastern coasts between the ranges and the sea, and which is tenanted by a fauna peculiarly its own."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

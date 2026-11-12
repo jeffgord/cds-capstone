@@ -1,0 +1,46 @@
+{
+  "gutenberg_id": 48981,
+  "title": "Dissection of the Platana and the Frog",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Gilchrist, J. D. F. (John Dow Fisher), 1866-1926",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Bonde, Cecil von, 1895-1983",
+      "role": "Author",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2015-05-17",
+  "description": "\"Dissection of the Platana and the Frog\" by J. D. F. Gilchrist and Cecil von Bonde is a scientific publication written in the early 20th century. This textbook is primarily aimed at students of zoology at the University of Cape Town and is designed to aid in the dissection of two specific amphibian species: the Platana or Clawed Toad (\"Xenopus lævis\") and the Frog (\"Rana fuscigula\"). The book addresses the specific anatomical features of these animals, which differ from those commonly referenced in textbooks from other regions.  The content of the book provides a comprehensive guide for students engaging in anatomical dissection, outlining step-by-step procedures and observations for examining external and internal structures, including muscular, vascular, skeletal, and nervous systems. Each section emphasizes hands-on practice, with instructions for making accurate sketches of the dissections. The text draws comparisons between the two species, highlighting notable differences in anatomy, such as the absence of specific structures in the Platana, to deepen the student’s understanding of vertebrate zoology. Overall, the work serves as an educational resource that combines detailed anatomical knowledge with practical dissection skills tailored to the unique fauna of South Africa.",
+  "subjects": [
+    "Science - Biology",
+    "How To ...",
+    "Teaching & Education"
+  ],
+  "topic_subjects": [
+    "Frogs -- Physiology",
+    "Xenopus laevis -- Dissection",
+    "Amietia fuscigula -- Dissection"
+  ],
+  "locc": [
+    "QL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/48981",
+  "table_of_contents": [],
+  "introduction": "Owing to the fact that some of the types of animals available for the study of Zoology in South Africa differ from those described in text books for students in other countries, it has been found necessary to draw up special directions and diagrams for laboratory use in this country. These are now put in the more convenient form of a text book, which, though intended primarily for the use of the students of the University of Cape Town, may, it is hoped, prove useful to others engaged in the teaching and study of Zoology in South Africa.\n\nThe general plan of the course intended to be followed is first an introductory study of a type of vertebrate. The Platana or Clawed Toad, Xenopus lævis, is the most convenient type for this in South Africa and in some respects is more instructive than the Frog.\n\nOnly these two types are dealt with here, but may be followed by descriptions of other South African types, such as the South African Crawfish, Dogfish, Earthworm, etc.\n\nIt is intended that the student should make drawings of his dissections on the blank page. He should not copy the diagrams, but draw what he actually sees, and be prepared to demonstrate the parts to the teacher.\n\nThe instruments required are a large and a small pair of scissors, a large and a small scalpel, moderately fine forceps, a seeker, and pins.\n\nName the parts of these limbs, and number the digits from within outwards, noting that the first is absent in the fore-limb. Mouth Cavity.\n\nOwing to the complexity of the Eustachian tubes and the bony form of the ear cavity, it is not possible to pass a seeker from the Eustachian aperture through the tympanic membrane. [In the Frog the Eustachian tubes are short and straight and permit of this being done.]\n\n1. Pin the Platana on its back in water, and cut through the skin with scissors along the middle line, throughout the whole length of the body. Pin back the skin on each side, and make a drawing showing:--\n\n(i) Two pectoralis muscles passing from the base of the arm, the one to the middle line of the body, and the other over the abdominal region to the posterior part of the body. Cut through this latter muscle at its anterior end, and fold it backwards to expose the underlying brachial vein.\n\n(ii) The rectus-abdominis muscles passing along the mid-ventral line of the body, with the white line (linea alba) in the centre.",
+  "passages": [
+    "1. Pin the Platana on its back in water, and cut through the skin with scissors along the middle line, throughout the whole length of the body. Pin back the skin on each side, and make a drawing showing:--",
+    "Make a sketch showing:--The heart, lungs, liver, gall bladder and bile duct going to the duodenum, exposed parts of the stomach, duodenum, small intestine (or ileum), large intestine, urinary bladder, pancreas, and spleen.\n\n(a) The heart lying in the thin pericardium, the two auricles, the single ventricle, the truncus arteriosus which divides into two branches.",
+    "[In the Frog the abdominal vein is also formed by the union of the two pelvic veins. The pelvic veins, however, lie more superficially than in the Platana. The femoral vein which passes along the front of the thigh divides into two branches, the one branch forming the pelvic vein, the other, joined by the sciatic vein from the muscles and skin of the back of the thigh, forming the renal portal",
+    "(b) A cutaneous artery, which at first runs forwards and upwards, and then turns backwards, supplying the skin of the back and the sides of the head.]\n\nMake a section through the auricles and ventricle noting the thick muscular walls of the ventricle and the valves between it and the auricles.",
+    "Make a preparation and a sketch showing the femur, tibia-fibula, astragalus, calcaneum and the other bones of the tarsal region, five metatarsals, and digits. Number the digits from the inner side.",
+    "[In the Frog there are a pair of vomers bearing the vomerine teeth, palatines, and quadrato-jugals. The pro-otics, which are not seen in a ventral view of the skull in the Platana, being covered over by the pterygoids, are shown in the Frog.]"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

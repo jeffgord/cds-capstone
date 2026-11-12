@@ -1,0 +1,64 @@
+{
+  "gutenberg_id": 42073,
+  "title": "Electric Gas Lighting: How to Install Electric Gas Ignition Apparatus",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Norrie, H. S.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2013-02-11",
+  "description": "\"Electric Gas Lighting: How to Install Electric Gas Ignition Apparatus\" by H.S. Norrie is a technical publication written in the early 20th century. This manual provides detailed instructions on the installation and maintenance of electric gas lighting systems, including various ignition methods such as jump spark systems and multiple burner setups. The book aims to guide individuals with basic mechanical skills in constructing and operating electric gas lighting systems safely and effectively, particularly in larger buildings like houses, churches, and theaters.  At the start of the text, Norrie discusses the advantages of electric gas ignition over traditional methods using matches, noting the associated dangers and inconveniences. He introduces basic principles of electricity and induction, explaining how different types of coils and batteries can be utilized to produce sparks for igniting gas. The opening serves as a primer for subsequent chapters that elaborate on specific components, wiring configurations, and safety measures necessary for successful installation and operation of electric gas lighting. Norrie emphasizes a hands-on approach to creating reliable electric ignition systems while aiming to empower readers to tackle their own projects with confidence.",
+  "subjects": [
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Gas -- Electric ignition"
+  ],
+  "locc": [
+    "TK"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/42073",
+  "table_of_contents": [
+    "INTRODUCTORY REMARKS",
+    "Introduction; means of producing sparks; Induction--Simple",
+    "induction coils--Ruhmkorff Coils",
+    "MULTIPLE GAS LIGHTING",
+    "Application of induction coils to gas-lighting--Forms of burners",
+    "used--Pendant Burners--Ratchet Burners--Stem Burners--Welsbach",
+    "Burners--Burners for Acetylene Gas--Burners for",
+    "Gasolene--Automatic Burners",
+    "CONNECTIONS AND WIRING",
+    "How to connect up apparatus--Wiring a house--Locating breaks or",
+    "short-circuits--Wiring in finished houses--General remarks",
+    "PRIMARY COILS AND SAFETY DEVICES",
+    "How to make a simple induction coil--Automatic Cut-outs--The",
+    "Syracuse Cut-out--Boston Cut-out--Edwards’ Cut-out",
+    "LIGHTING OF LARGE BUILDINGS",
+    "Series or Jump Spark System--Burners used--How to Wire--Edwards’",
+    "Condenser System--Switches for series lighting--How to make a",
+    "inch spark, Ruhmkorff Coil",
+    "HOW TO SELECT BATTERIES FOR GAS LIGHTING",
+    "Electrical Rules--Electromotive",
+    "force--Amperes--Resistance--Selecting a battery--Arrangement of",
+    "battery--Series--Multiple--How to get high voltage or large",
+    "current--The Leclanche Cell--The Samson Cell--The Dry Cell and",
+    "how to make one--The Edison-Lalande Cell--The Fuller Cell--Care",
+    "and maintenance of batteries"
+  ],
+  "introduction": "The Electric Light possesses the great advantage over gas, in that it can be turned on or lighted from a distance. The customary means of igniting gas with a match or taper is both dangerous and often inconvenient. The inventive genius of modern times has evolved a means of lighting gas by electricity which is both reliable and easy of application. It requires no very complicated devices, nor does it necessitate a deep knowledge of electrical matters for its installation. The object of the following pages is to enable any one possessing ordinary mechanical ability to construct much of the apparatus used, or at least to successfully erect it and keep it in operation.\n\nWe beg to thank the following firms for the use of illustrations: Edwards & Co., Mott Haven, New York; A. L. Bogart, New York; Wm. Roche, New York; The Electric Gas-Lighting Co., Boston, Mass., and The Manhattan Electrical Supply Co., New York.\n\nApplication of induction coils to gas-lighting--Forms of burners used--Pendant Burners--Ratchet Burners--Stem Burners--Welsbach Burners--Burners for Acetylene Gas--Burners for Gasolene--Automatic Burners 7\n\nSeries or Jump Spark System--Burners used--How to Wire--Edwards’ Condenser System--Switches for series lighting--How to make a 2-inch spark, Ruhmkorff Coil 55\n\nElectrical Rules--Electromotive force--Amperes--Resistance--Selecting a battery--Arrangement of battery--Series--Multiple--How to get high voltage or large current--The Leclanche Cell--The Samson Cell--The Dry Cell and how to make one--The Edison-Lalande Cell--The Fuller Cell--Care and maintenance of batteries 78\n\nThe enormous number of fires arising from the use of matches, and the great convenience and freedom from danger of the electric method of gas lighting, are alone sufficient reasons for the issue of these pages.\n\nOf batteries there are many kinds, and although all will produce sparks, yet for electric gas lighting those made for intermittent work and classed as open circuit cells are to be preferred. Open circuit batteries, which will be fully described in a subsequent chapter, include the Leclanche, and most of the so-called “dry” cells.",
+  "passages": [
+    "Now it has heretofore been necessary to turn on the gas before pulling the chain of a pendant burner, but as this is not always desirable the ratchet burner is made. Fig. 10 shows burner carrying a toothed wheel, which is partly rotated when the arm is pulled down.",
+    "In fitting a house with electric lighting burners, the question of selection is best solved as follows: For the main hall and foot of the cellar-stairs, use the automatic burner. For other hallways, dining-room, drawing-room, and bathroom use ratchet burners which turn on and light gas when chain is pulled.",
+    "In wiring up wall-fixtures, push-buttons, etc., it is often possible to fish the wire up from the floor by punching a hole at the fixture and inserting a piece of chain (made for the purpose), attached to a long and stout thread. Then drill into the skirting near the floor plumb underneath the first hole and fish for the chain with a piece of wire having a hook on the end of it.",
+    "Fig. 35 shows a burner intended for the stage of a theatre, or where the lights are located in dangerous and inaccessible places. The burner is made of porcelain upon which are spun the metal top and bottom. One electrode is also clamped around it, allowing of adjustment and better insulation.",
+    "When the primary coil is finished off, cut three pieces of hard rubber four inches square, with a central hole just big enough that they may be slipped on over the primary coil to form divisions into which the secondary wire goes. These can be fixed equal distances apart by means of removable wooden blocks, which are taken off as each section is wound.",
+    "To set up a Leclanche cell, proceed as follows: Put six ounces of sal ammoniac into the glass jar; fill the jar one-third full of clear water and stir. Put in the porous cup and fill the jar with water up to its neck, pouring a few teaspoonfuls of water into the hole in porous cup."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

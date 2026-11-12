@@ -17,6 +17,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from tqdm import tqdm
+
 CATALOG_URL = "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv"
 # Gutenberg asks bulk downloaders to use mirrors rather than gutenberg.org.
 MIRROR = "https://mirrors.xmission.com/gutenberg"
@@ -94,6 +96,7 @@ def main():
 
     FULL_TEXTS.mkdir(parents=True, exist_ok=True)
     saved = 0
+    progress = tqdm(total=args.limit, unit="book")
     for row in load_subset():
         if saved >= args.limit:
             break
@@ -102,13 +105,14 @@ def main():
         if not path.exists():
             text = download_text(book_id)
             if text is None:
-                print(f"[Skipped] {book_id}: no plain text on mirror")
+                tqdm.write(f"[Skipped] {book_id}: no plain text on mirror")
                 continue
             path.write_text(text, encoding="utf-8")
         saved += 1
-        print(f"[Saved] {book_id}: {row['Title'].partition(chr(10))[0][:70]}", flush=True)
+        progress.update()
+    progress.close()
 
-    print(f"\nDone. {saved} full texts in {FULL_TEXTS}")
+    print(f"Done. {saved} full texts in {FULL_TEXTS}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 14873,
+  "title": "Instructions on Modern American Bridge Building",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Tower, G. B. N. (George Bates Nichols), 1834-1889",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2005-02-02",
+  "description": "\"Instructions on Modern American Bridge Building\" by G. B. N. Tower is a scientific publication written in the mid-19th century. This treatise serves as a practical guide for engineers entering the field of bridge construction, focusing on the principles and methodologies of designing wooden bridges. The book addresses the strains on bridge components and offers calculations, designs, and tables essential for the construction process.  The content of the book is structured to assist young engineers in understanding the physical principles governing bridge design. It discusses the various materials used, such as wood and iron, detailing their strengths under different strains: tension, compression, and detrusion. Tower provides formulas for calculating weights, dimensions of bridge members, and helpful tables for estimating quantities. He outlines different truss designs, explaining the importance of structural integrity and offering practical examples of building practices. Through these detailed instructions, the book emphasizes the importance of adhering to safety standards and thorough design methodologies in bridge engineering.",
+  "subjects": [
+    "Technology",
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Bridges"
+  ],
+  "locc": [
+    "TG"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/14873",
+  "table_of_contents": [],
+  "introduction": "This little treatise was written for the purpose of supplying a want felt by the author while giving instruction upon the subject. It was intended for an aid to the young Engineer, and is not to be considered as a complete substitute for the more elaborate works on the subject.\n\nThe first portion of this work mentions the various strains to which beams are subjected, and gives the formulae used in determining the amount of those strains, together with a few examples to illustrate their application, and also the method of calculating a simple truss.\n\nThe second portion names and explains the various members of a Bridge Truss, and, by means of examples, shows the method of calculating the strains upon the various timbers, bolts, etc., as well as their proper dimensions; and gives, in addition, several useful tables.\n\nThe explanatory plates, which are referred to freely throughout the work, are believed to be amply sufficient for the purpose intended.\n\nSo much has been written on this subject that it is next to impossible to be wholly original, and no claim of that nature is preferred. It is simply an arrangement of ideas, gleaned from the various works of standard authorities, and modified by the author's practice, embodied in book form. To give a correct list of all the books consulted would be simply impossible;--but it is well to state that the Hand-book of Railroad Construction, by Prof. G.L. Vose, under whom the author served as an Engineer, has been used as authority in many cases where there has been a difference of opinions among other authors. Some parts have been quoted entirely; but due credit has been given, it is believed, wherever such is the case.\n\nIt is not claimed that this little work covers the whole ground, but it is intended to describe, and explain thoroughly, three or four of the more prominent styles of Truss, leaving the other forms of Wooden Bridges to a subsequent volume.\n\nAbutments and Piers, as well as Box and Arch Culverts, belonging more properly to masonry, will be treated of hereafter under that head.\n\nIf this small volume should lead the student of Engineering to examine carefully the best Bridges of modern practice, and study the larger scientific works on this art, the author will feel satisfied that his efforts have not been entirely in vain.",
+  "passages": [
+    "Thus we see that the resistance of a beam to a cross strain, as well as to tension and compression, is affected by the incompressibility and inextensibility of the material.\n\nS = the ultimate strength in lbs. b = the breadth in inches. d = the depth in inches. l = the length in inches.",
+    "The simplest bridge, consisting of a single stick, to span openings of 20 feet and under, is calculated according to the formula\n\nThe following Table was calculated by the above rule--and the dimensions altered according to the actual practice of the writer.",
+    "In any case that may arise, we must determine approximately the gross weight of the bridge and its load--as a basis, and then we can proceed as follows--in case of a Howe, Pratt, or Arch Brace Truss.",
+    "=Shoes.= Formerly it was the custom to foot the braces and counters on hard wood blocks on one side of the chord, the vertical rods passing through and screwing against a block on the other side--thus the whole strain tended to crush the chord across its fibres.",
+    "Referring to the Table for bolts, we find that 2-1/8 gives a strength a little in excess, and will be the proper size. The next set of rods bear the weight of the whole load, less that due to the two end panels, and so on. Fig. 2, Pl. III, shows the manner of applying the rods. The bevel block should be so fitted to the chord that it will not have a crushing action.",
+    "The weights fouud show the compressional strains on the several braces;--and, were the pieces to be proportioned for compression only, their Scantling would be quite small--but on account of their elasticity, they require larger dimensions."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

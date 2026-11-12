@@ -1,0 +1,48 @@
+{
+  "gutenberg_id": 25000,
+  "title": "English Book Collectors",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Fletcher, William Younger, 1830-1913",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Graves, Walter Stanley",
+      "role": "Contributor",
+      "order": 2
+    },
+    {
+      "name": "Pollard, Alfred W. (Alfred William), 1859-1944",
+      "role": "Editor",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2008-04-06",
+  "description": "\"English Book Collectors\" by William Younger Fletcher is a historical account written in the early 20th century. The book examines the lives and libraries of notable English book collectors, shedding light on their contributions to preservation and scholarship. Fletcher aims to compile scattered information about these individuals and highlight their unique personalities alongside their collections.  The opening portion of the book introduces the author's intention to present the histories of significant English book collectors from the period after Henry VII's reign, offering insights into their lives, the rarity of their collections, and the impact they had on preserving literary heritage during turbulent times. Fletcher emphasizes the importance of these collectors in rescuing valuable manuscripts and printed works from loss or destruction, particularly during the Reformation period. He notes that the current bibliophiles owe a debt of gratitude to these early collectors for their efforts and establishes a foundational understanding of the tradition of book collecting that the subsequent chapters will explore in detail.",
+  "subjects": [
+    "History - British"
+  ],
+  "topic_subjects": [
+    "Book collectors -- Great Britain",
+    "Books -- Prices"
+  ],
+  "locc": [
+    "Z"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/25000",
+  "table_of_contents": [],
+  "introduction": "My principal object in compiling this work on English Book Collectors has been to bring together in a compact and convenient form the information respecting them which is to be found scattered in the works of many writers, both old and new. While giving short histories of the lives of the collectors, and some description of their libraries, I have also endeavoured to show what manner of men the owners of these collections were. In doing this I have sought, where practicable, to let the accounts be told as much as possible in the words of their biographers, as their narratives are often not only full of interest, but are also couched in delightfully quaint language. As it would not be possible in a volume of this size to furnish satisfactory notices of all the Englishmen who have formed large libraries, I have selected some of those who appear to possess special claims to notice, either on the ground of their interesting personality, or the exceptional importance of their collections. I have not given any account of the collectors who lived prior to the reign of Henry VII., for until that time libraries consisted almost entirely of manuscripts; and I have also excluded men who, like Sir Thomas Bodley, collected books for the express purpose of forming, or adding to, public libraries.\n\nMy friend, Mr. Walter Stanley Graves, has in an appendix to this volume compiled a list of the principal sales of libraries in this country from an early period to the present time, which will be found to supply useful information about many of those collectors who are not otherwise mentioned in the book.",
+  "passages": [
+    "Dee wrote a large number of works, but comparatively few of them have been printed. No fewer than seventy-nine are enumerated in Coopers' Athenae Cantabrigienses. A catalogue of his writings, printed and unprinted, is given in his Compendious Rehearsal. Many of his manuscripts came into the possession of Elias Ashmole, the eminent antiquary.",
+    "Ralph Sheldon, who was born on the 1st of August 1623, at Beoley in Worcestershire, was the eldest son of William Sheldon of Beoley and Elizabeth, daughter of William, second Lord Petre. He was privately educated, and at the age of nineteen he paid a visit to France and Italy, and resided at Rome for some time, returning home about 1647, after an absence of four years from his native country.",
+    "Brian Fairfax's pictures, statues, urns, and other antiquities were sold by auction on April the 6th and 7th, and the prints and drawings on May the 4th and 5th, 1756.",
+    "The second sale of the Towneley library took place in June 1883. The printed books were sold on the 18th and seven following days, and the manuscripts on the 27th and following day, by Sotheby, Wilkinson and Hodge.",
+    "'By the bequest of Mr. Grenville's library, the collection of books printed on vellum now at the Museum, and comprising those formerly presented by George II., George III., and Mr. Cracherode, is believed to surpass that of any other National Library, except the King's Library at Paris, of which Van Praet justly speaks with pride, and all foreign competent and intelligent judges with envy and",
+    "John Bellingham Inglis was born in London on the 14th of February 1780. His father, a partner in the firm of Inglis, Ellice and Co., merchants, Mark Lane, London, was a Director of the East India Company, and was at one time its Chairman."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

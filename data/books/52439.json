@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 52439,
+  "title": "An Essay to Shew the Cause of Electricity; and Why Some Things are Non-Electricable.",
+  "subtitle": "In Which Is Also Consider'd Its Influence in the Blasts on Human Bodies, in the Blights on Trees, in the Damps in Mines; And as It May Affect the Sensitive Plant, &c.",
+  "contributors": [
+    {
+      "name": "Freke, John, 1688-1756",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2016-06-30",
+  "description": "\"An Essay to Shew the Cause of Electricity; and Why Some Things are Non-…\", written by John Freke, is a scientific publication from the mid-18th century. In this work, Freke explores the phenomenon of electricity, articulating his theories about its causes, effects, and the nature of materials that can or cannot conduct electricity. The treatise is notable for addressing the relationship between electricity and natural elements, as well as its impacts on living organisms and the environment.  In his essay, Freke posits that electricity arises from \"universal Fire\" dispersed in the air, arguing against the notion that it originates solely from the apparatus used in experiments. He discusses various aspects of electricity, including how it can cause certain materials to become electrified and the implications of non-electricable substances like silk and wax. Freke also connects electricity to broader concepts in nature, such as the vitality of living organisms and the effects of air quality on human health. Through experiments and observations, he endeavors to offer explanations for electrical phenomena, aiming to illuminate understanding of this mysterious force that was not well comprehended at the time.",
+  "subjects": [
+    "History - Early Modern (c. 1450-1750)",
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Electricity -- Early works to 1850",
+    "Martin, Benjamin, 1705-1782. Essay on electricity"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/52439",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "To begin then: In order to shew whence this electrical Fire and Force is produc’d, I will first endeavour to prove, that it arises not from any of the Apparatus itself; not either from the glass Ball, nor the Leather, nor from the Tube, or Hand that rubs it: Because nothing we know of can send out of it a Quantity of Matter, but there must be less of that Matter remaining, after it has been so",
+    "For Instance, the chief Use of Water seems intended, when descending in warm and gentle Showers, or flowing in kind and easy Streams, to chear and nourish all Kinds of Vegetation, as well in Trees and Plants, as in Herbs and Flowers: But suppose, by the Contrivance of Man, or by the Accidents of Nature, a large Quantity of it lodged on the Tops of high Hills, if it breaks its Bank, it will never",
+    "The Cure of this Evil is performed in Mines by a Horse-Mill, which works large Bellows, that drive fresh Air down a Shaft made for that Purpose.",
+    "But it may be asked, What causes these attractive and repulsive Faculties? I answer, The Attraction of fiery Particles one to another: For, if all Nature be agitated by this Fire, all Things have it in the common Proportion, as it was intended they should stand in Nature.",
+    "Now, from this my Conjecture on Electricity, if you will suppose with me, that as all Things, which stand in the common Nature of this lower World, have this Fire equally dispersed, and have more or less of it only as they are in this or that Place, where more or less of it is offer’d to be received by them, or as they are in their own Natures more capable of receiving more of it than others are,",
+    "As a Proof of this, I would recommend the following Experiment: Fill a Bladder with this clean Air; then press it with a Weight just sufficient to make it give way; and you will find, that, by reason of its Elasticity, it will yield much further, than if it were fill’d with the other Air, which is impregnated with foggy and aqueous Particles."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,59 @@
+{
+  "gutenberg_id": 77859,
+  "title": "The starry skies",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Giberne, Agnes, 1845-1939",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2026-02-04",
+  "description": "\"The starry skies\" by Agnes Giberne is a children's astronomy primer written in the late 19th century. Aimed at beginners, it explains the Earth, Moon, Sun, and stars through clear analogies, simple experiments, and short Q&A sections, emphasizing basic ideas like the Earth’s shape, gravity, day and night, lunar phases, and the Sun’s nature.\n\nThe opening of the book moves from first principles to sky-watching essentials. It starts by proving the Earth is a sphere using travel-and-spider analogies, the horizon, poles, equator, and hemispheres, then explains gravity (attraction) as the reason people don’t “fall off” on the far side of the globe and frames Earth as a bright world in space. It describes the Sun’s apparent daily path, equinoxes and solstices, the zenith, and the stars’ east‑to‑west drift, before showing that these motions are illusions caused by Earth’s rotation on its axis. Next it introduces the Moon’s size and distance with scale models (Earth a 4‑inch ball, Moon 1‑inch, 10 feet apart), the Moon’s phases and synchronous rotation (one side always facing us), and its fortnight-long day and night. Through the telescope it portrays a stark, airless Moon marked by mountains and vast volcanic craters, extreme temperatures, a black daytime sky, and lower gravity. It then outlines the Sun’s enormous size and distance, why it and the Moon look similar in apparent size, distinguishes reflected light from self-luminous stars, and begins a discussion of sunspots and the Sun’s rotation.",
+  "subjects": [],
+  "topic_subjects": [
+    "Astronomy -- Juvenile literature"
+  ],
+  "locc": [
+    "QB"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/77859",
+  "table_of_contents": [
+    "This Earth of Ours",
+    "Why Men Do Not Fall Off",
+    "By Day and by Night",
+    "How the World Spins",
+    "The Moon by Night",
+    "The Moon’s Changes",
+    "The Moon through a Telescope",
+    "The Sun by Day",
+    "Storms on the Sun",
+    "How the World Journeys",
+    "Other Worlds",
+    "What is Meant by an Eclipse",
+    "Mercury and Venus",
+    "The Planet Mars",
+    "The Planet Jupiter",
+    "Saturn, Uranus, and Neptune",
+    "Long-Tailed Comets",
+    "Little Meteors",
+    "The Sun’s Kingdom",
+    "A Starry Universe",
+    "Star-Groups",
+    "Giant-Suns and Clusters",
+    "How to Study the Sky"
+  ],
+  "introduction": null,
+  "passages": [
+    "Each tiny star, bright or dim, takes its daily journey, like the sun, once in twenty-four hours. No matter whether it has to go right round the whole Earth or whether it only has to creep in a small circle round the Pole-star--still the journey is always the same in length: always close upon twenty-four hours.",
+    "Then still the Moon has a bright round face; only we on Earth cannot see it. For her bright side is, as always, towards the Sun; and her dark side is towards us.",
+    "I do not mean such hollows and caves as are found on the earth, but more like the holes that may be seen in a mass of stormy clouds. They seem to be huge rents in glowing Sun-clouds. Usually they have a black centre, with a gray border round the blackness. Now and then, as in the picture of a sun-spot given in this book, the gray part is wanting.",
+    "If you are in a room with a lamp on the table, and somebody holds a big ball just between your eyes and the lamp, what happens?\n\nThe lamp is eclipsed. It does not leave off shining, but to you it is eclipsed, or hidden. You see the dark ball, not the bright globe of the lamp beyond it.",
+    "Vesta, the largest of them all, is perhaps over three hundred miles through, and three others come rather near Vesta in size. The greater number are under one hundred miles through; some being mere balls, about the size of Mars’ moons.\n\nNobody can tell. It does not seem to be quite impossible, so far as we understand what Mars is like.",
+    "About once in every thirty-three years our Earth plunges into the very thick of one of these Meteor-Rings. And then indeed we may have a splendid sight!\n\nTens of thousands of meteors can be seen flashing through the air, each with its little train of light behind. Fast as they appear and vanish tens of thousands more follow; and for hours this goes on."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

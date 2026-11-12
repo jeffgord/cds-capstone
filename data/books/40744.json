@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 40744,
+  "title": "Psychology and Social Practice",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Dewey, John, 1859-1952",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-09-13",
+  "description": "\"Psychology and Social Practice\" by John Dewey is a scientific publication written in the early 20th century. This book discusses the intricate relationship between psychology and education, emphasizing how psychological principles should inform educational practices. Dewey explores how educational methods have been shaped by psychological assumptions, outlining the need for a more cohesive understanding of psychology as it relates to social practices, particularly in the context of education.  In this work, Dewey argues that the traditional educational system often misapplies psychological concepts, particularly by treating children as \"little adults\" rather than as individuals in a state of growth. He highlights the importance of understanding the fundamental distinctions between child and adult psychology, specifically the need for education to facilitate the flexible formation of habits in children. Dewey believes that recognizing these psychological realities can lead to the development of more effective educational practices that cater to the personal and social needs of students, ultimately allowing them to grow into responsible members of society. The book advocates for an organic connection between psychological theory and educational practice to foster a deeper understanding of the ethical implications involved in teaching and learning.",
+  "subjects": [
+    "Psychiatry/Psychology",
+    "Teaching & Education"
+  ],
+  "topic_subjects": [
+    "Sociology",
+    "Psychology"
+  ],
+  "locc": [
+    "BF"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/40744",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "The narrow scope of the traditional elementary curriculum, the premature and excessive use of logical analytic methods, the assumption of ready-made faculties of observation, memory, attention, etc., which can be brought into play if only the child chooses to do so, the ideal of formal discipline--all these find a large measure of their explanation in neglect of just this psychological",
+    "I quote a passage that seems of significance: \"Do we not lay a special linking science everywhere else between the theory and practical work? We have engineering between physics and the practical workingmen in the mills; we have a scientific medicine between the natural science and the physician\" (p. 138).",
+    "I repeat, it is the fundamental weakness of our teaching force today (putting aside teachers who are actually incompetent by reason either of wrong motives or inadequate preparation) that they react in gross to the child's exhibitions in gross without analyzing them into their detailed and constituent elements.",
+    "This suggests the admission made by writers, in many respects as far apart as Dr. Harris and Dr. Münsterberg, that scientific psychology is of use on the pathological side, where questions of \"physical and mental health\" are concerned.",
+    "The proposition that a description and explanation of stones, iron, and mortar, as an absolutely necessary causal nexus of mechanical conditions, makes the results of physical science unavailable for purposes of practical life, would hardly receive attention today. Every sky-scraper, every railway bridge, is a refutation, compared with which oceans of talk are futile.",
+    "The school is an especially favorable place in which to study the availability of psychology for social practice; because in the school the formation of a certain type of social personality, with a certain attitude and equipment of working powers, is the express aim. In idea, at least, no other purpose restricts or compromises the dominance of the single purpose."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

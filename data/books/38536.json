@@ -1,0 +1,65 @@
+{
+  "gutenberg_id": 38536,
+  "title": "A Review of Algebra",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Rivenburg, Romeyn Henry",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-01-09",
+  "description": "\"A Review of Algebra\" by Romeyn Henry Rivenburg is a mathematical publication written in the early 20th century. This work serves as a comprehensive guide for high school students revisiting algebra concepts to prepare for college entrance examinations. It presents a structured outline of essential algebraic principles and includes numerous examples and exercises for practice.  The opening portion of the book provides a preface that emphasizes the importance of reviewing algebraic concepts that students may have forgotten by their senior year. Rivenburg outlines the purpose of the book, which is to streamline the review process for both teachers and students, allowing for an effective class structure with a problem set for each session. The author discusses the importance of using a regular textbook in conjunction with this review guide for reference, allowing students to reinforce their understanding of algebraic principles as they tackle various problems.",
+  "subjects": [
+    "Mathematics",
+    "Teaching & Education"
+  ],
+  "topic_subjects": [
+    "Algebra -- Problems, exercises, etc."
+  ],
+  "locc": [
+    "QA"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/38536",
+  "table_of_contents": [
+    "PAGES",
+    "OUTLINE OF ELEMENTARY AND INTERMEDIATE ALGEBRA",
+    "ORDER OF OPERATIONS, EVALUATION, PARENTHESES",
+    "SPECIAL RULES OF MULTIPLICATION AND DIVISION",
+    "CASES IN FACTORING 16",
+    "FACTORING",
+    "HIGHEST COMMON FACTOR AND LOWEST COMMON MULTIPLE",
+    "FRACTIONS",
+    "COMPLEX FRACTIONS AND FRACTIONAL EQUATIONS 21",
+    "SIMULTANEOUS EQUATIONS AND INVOLUTION 23",
+    "SQUARE ROOT",
+    "THEORY OF EXPONENTS",
+    "RADICALS 29",
+    "MISCELLANEOUS EXAMPLES, ALGEBRA TO QUADRATICS",
+    "QUADRATIC EQUATIONS 36",
+    "THE THEORY OF QUADRATIC EQUATIONS",
+    "OUTLINE OF SIMULTANEOUS QUADRATICS 42",
+    "SIMULTANEOUS QUADRATICS",
+    "RATIO AND PROPORTION 45",
+    "ARITHMETICAL PROGRESSION",
+    "GEOMETRICAL PROGRESSION",
+    "THE BINOMIAL THEOREM",
+    "MISCELLANEOUS EXAMPLES, QUADRATICS AND BEYOND",
+    "PROBLEMS--LINEAR EQUATIONS, SIMULTANEOUS EQUATIONS,",
+    "QUADRATIC EQUATIONS, SIMULTANEOUS QUADRATICS",
+    "COLLEGE ENTRANCE EXAMINATIONS"
+  ],
+  "introduction": "In most high schools the course in Elementary Algebra is finished by the end of the second year. By the senior year, most students have forgotten many of the principles, and a thorough review is necessary in order to prepare college candidates for the entrance examinations and for effective work in the freshman year in college. Recognizing this need, many schools are devoting at least two periods a week for part of the senior year to a review of algebra.\n\nFor such a review the regular textbook is inadequate. From an embarrassment of riches the teacher finds it laborious to select the proper examples, while the student wastes time in searching for scattered assignments. The object of this book is to conserve the time and effort of both teacher and student, by providing a thorough and effective review that can readily be completed, if need be, in two periods a week for a half year.\n\nEach student is expected to use his regular textbook in algebra for reference, as he would use a dictionary,--to recall a definition, a rule, or a process that he has forgotten. He should be encouraged to think his way out wherever possible, however, and to refer to the textbook only when forced to do so as a last resort.\n\nThe definitions given in the General Outline should be reviewed as occasion arises for their use. The whole Outline can be profitably employed for rapid class reviews, by covering the part of the Outline that indicates the answer, the method, the example, or the formula, as the case may be.\n\nThe whole scheme of the book is ordinarily to have a page of problems represent a day's work. This, of course, does not apply to the Outlines or the few pages of theory, which can be covered more rapidly. By this plan, making only a part of the omissions indicated in the next paragraph, the essentials of the algebra can be readily covered, if need be, in from thirty to thirty-two lessons, thus leaving time for tests, even if only eighteen weeks, of two periods each, are allotted to the course.\n\nIf a brief course is desired, the Miscellaneous Examples (pp. 31 to 35, 50 to 52), many of the problems at the end of the book, and the College Entrance Examinations may be omitted without marring the continuity or the comprehensiveness of the review.",
+  "passages": [
+    "Look up the law of signs as it applies to fractions. Except for this, fractions in algebra are treated exactly the same as they are in arithmetic.\n\n6. At what time between 8 and 9 o'clock are the hands of a watch (a) opposite each other? (b) at right angles? (c) together?",
+    "1. Review all definitions in Radicals, also the methods of transforming and simplifying radicals. When is a radical in its simplest form?\n\n11. A and B each shoot thirty arrows at a target. B makes twice as many hits as A, and A makes three times as many misses as B. Find the number of hits and misses of each. (Univ. of Cal.)",
+    "13. I have $6 in dimes, quarters, and half-dollars, there being 33 coins in all. The number of dimes and quarters together is ten times the number of half-dollars. How many coins of each kind are there? (College Entrance Board.)\n\nWhen the coefficient of x^2 is unity, the sum of the roots is the coefficient of x with the sign changed; the product of the roots is the independent term.",
+    "6. The second of three numbers is a mean proportional between the other two. The third number exceeds the sum of the other two by 20; and the sum of the first and third exceeds three times the second by 4. Find the numbers.",
+    "2. A quantity of water, sufficient to fill three jars of different sizes, will fill the smallest jar 4 times, or the largest jar twice with 4 gallons to spare, or the second jar three times with 2 gallons to spare. What is the capacity of each jar? (Case.)",
+    "4. The weight of an object varies directly as its distance from the center of the earth when it is below the earth's surface, and inversely as the square of its distance from the center when it is above the surface. If an object weighs 10 pounds at the surface, how far above, and how far below the surface will it weigh 9 pounds? (The radius of the earth may be taken as 4000 miles.)"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

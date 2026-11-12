@@ -1,0 +1,57 @@
+{
+  "gutenberg_id": 74614,
+  "title": "Japan",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Dickson, Walter G.",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Willets, Gilson, 1869-1922",
+      "role": "Contributor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2024-10-21",
+  "description": "\"Japan\" by Walter Dickson is a historical account written in the late 19th century. The book aims to provide a comprehensive overview of Japan's imperial family, court system, and governmental structure while exploring the nation's rich history and cultural evolution leading up to its modern era. It serves as a resource for understanding the complexities of Japanese society and politics, particularly during a time of significant change.  The opening of the text introduces readers to the concept of Japan's transition from isolation to a more interconnected global presence, driven by advancements in technology and trade. Dickson reflects on the historical perception of Japan and the impact of foreign interactions, particularly with Western nations. He emphasizes the importance of understanding Japan's imperial structure and its historical context, laying the groundwork for a detailed exploration of its governance, societal ranks, and the pivotal role of the emperor within this intricate framework. The author acknowledges the contributions of Japanese scholars in enriching historical knowledge, setting the stage for readers to appreciate the depth and nuances of Japanese history.",
+  "subjects": [],
+  "topic_subjects": [
+    "Japan -- History",
+    "Japan -- Politics and government"
+  ],
+  "locc": [
+    "DS"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/74614",
+  "table_of_contents": [
+    "THE IMPERIAL FAMILY AND COURT",
+    "THE EIGHT BOARDS OF GOVERNMENT",
+    "HISTORY OF THE EMPIRE TO THE DEATH OF NOBU NANGA",
+    "GOVERNMENT OF TAIKOSAMA",
+    "GOVERNMENT OF IYEYAS",
+    "HISTORY TO THE EXPULSION OF CHRISTIANITY",
+    "THE LAWS OF IYEYAS",
+    "THE POSITION AND COURT OF THE SHIOGOON",
+    "THE DAIMIOS",
+    "THE DAIMIO CLASS",
+    "THE HISTORY OF THE EMPIRE CONTINUED",
+    "EVENTS FOLLOWING THE ABOLITION OF THE SHIOGOONATE",
+    "THE FOREIGN POLICY OF NEW JAPAN AND THE WAR WITH CHINA",
+    "TWENTIETH CENTURY JAPAN AND THE WAR WITH RUSSIA",
+    "THE WAR WITH RUSSIA, AND JAPAN A WORLD POWER"
+  ],
+  "introduction": "In the preparation of the following Work the Author has to acknowledge the assistance which he has received from a Japanese gentleman in Yokohama, whose name, for obvious reasons, it is prudent not to mention.\n\nWith his knowledge of the history and institutions of his country, the Author was able to fill up the blanks in short notices of history contained in elementary Japanese books. He was further enabled to go over the red-books of the empire, which enter into the details of the pedigrees of illustrious families, and into the minutiæ of Government offices.\n\nThe supposed unalterable character of these institutions induces those who have any pretensions to learning in China and Japan to master and retain by memory the names and duties of the different offices in the various departments of Government; and they are frequently found to be good authorities upon questions upon which there is no published information.\n\nIn the history of the intercourse of the Jesuits with Japan, the letters of the fathers have been almost the only authorities relied upon; while in the more recent events contemporary publications have been used.\n\nIn taking notes from the conversation of a Japanese who could speak but little English, in too many cases they were written down in what is known in China as “pigeon English”; and the Author has to acknowledge and regret that in many cases the cramped nature of the notes has not been entirely removed, and for such instances he craves the indulgence of the reader.",
+  "passages": [
+    "Ben-gwang, seven officers, all Koongay--a higher office than the preceding. Two head men, left and right, Sa and Oo dai ben. This is a very responsible office; all the business of the board passes through the hands of the officers. They superintend and set apart to each of the minor offices their business.",
+    "1564. Nobu nanga killed his father-in-law Seito Do Sang, the lord of Mino, and seized all his territory, and changed his own residence, which had been hitherto in Nagoya in Owarri, to Gifoo in Mino.",
+    "The governors at the same time ordered all persons in his army to return to their posts or homes on the penalty of punishment falling on their relatives and property. This order brought about the death of a Christian lady, Grace, wife of Itowo Tango no kami, one of the commanders in the army of Iyeyas, of whom the Jesuits speak as a miracle of beauty and piety.",
+    "All these compulsory measures of vassalage in Yedo have tended to keep up in the Daimios a feeling of inferiority to the family in power, and are liable, when the influence of this family wanes, to become very irksome.",
+    "Nikko boonio.--At Nikko Hill is buried To sho goo, or Iyeyas, the first of the dynasty, and a fine temple (Chiu senji) is erected near the tomb. The actual tombs of heroes and great men in Japan, as has been said, seem to be generally very modest and unassuming memorials. From the roof of the temple at Nikko is hung a large chandelier presented by the Dutch.",
+    "These men had acted as the judges in the Hio jo sho, and had awarded the punishments to the accused. Itakura was degraded because he would not act as the tool of the Regent in executing his vengeance."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

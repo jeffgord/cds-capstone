@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 31407,
+  "title": "Delco Radio Owner's Manual Model 633; Delcotron Generator Installation",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Delco-Remy Corporation",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2010-02-26",
+  "description": "\"Delco Radio Owner's Manual Model 633; Delcotron Generator Installation\" is a technical manual produced by Gerard Arthus and Meredith Bach, likely in the mid-20th century. This book serves as an instructional guide aimed primarily at automotive enthusiasts and professionals, detailing the installation and operation of the Delco Model 633 radio and Delcotron generator. It provides readers with essential operational insights into early automotive radio technology and generator systems.  The manual is divided into two sections. The first section focuses on the Delco Model 633 radio, explaining its features, installation procedures, and operational controls, including tuning instructions and adjustments to enhance performance. The second part outlines the steps for installing the Delcotron generator, offering technical specifications and cautions to ensure proper assembly and functioning. Overall, this manual serves as a crucial resource for users aiming to successfully install and utilize vintage automotive radio and generator systems.",
+  "subjects": [
+    "Technology",
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Radio -- Receivers and reception -- Handbooks, manuals, etc."
+  ],
+  "locc": [
+    "TK"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/31407",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "If a six-volt storage battery is available, check the receiver for normal operation before permanently installing it on the car. The antenna lead and control unit may be temporarily connected for this test.",
+    "By means of a small screw driver inserted in the hole which was covered by the small cap, adjust the Delco Syncro-Tuning condenser unit for maximum output in the speaker. Remaining on same station, readjust station selector for maximum volume and readjust the Delco Syncro-Tuning Condenser unit for maximum output.",
+    "The tone control is located on the lower, right front corner of the receiver case. This control is to be adjusted at the operator's will. However, most experienced operators prefer to set it for maximum treble response when the car is operated at high speeds.",
+    "\"The manufacturer warrants each new radio receiving set manufactured by it to be free from defects in material and workmanship under normal use and service, its obligation under this warranty being limited to making good at its factory or designated Branches any part or parts thereof which shall within ninety (90) days or 4,000 miles whichever expires first, after installation of such auto radio",
+    "\"The manufacturer warrants each new radio receiving set manufactured by it to be free from defects in material and workmanship under normal use and service, its obligation under this warranty being limited to making good at its factory or designated Branches any part or parts thereof which shall within ninety (90) days or 4,000 miles whichever expires first, after installation of such auto radio",
+    "\"The manufacturer warrants each new radio receiving set manufactured by it to be free from defects in material and workmanship under normal use and service, its obligation under this warranty being limited to making good at its factory or designated Branches any part or parts thereof which shall within ninety (90) days or 4,000 miles whichever expires first, after installation of such auto radio"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,49 @@
+{
+  "gutenberg_id": 44341,
+  "title": "Minimum Gauge Railways",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Heywood, Arthur Percival, Sir, bart., 1849-1916",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2013-12-03",
+  "description": "\"Minimum Gauge Railways\" by Sir Arthur Percival Heywood is a technical account concerning the application, construction, and operation of narrow gauge railways written in the late 19th century. The book details the author's experiments with a 15-inch gauge railway at Duffield Bank, near Derby, and provides insights into the engineering principles and practicalities involved in constructing such lines. It aims to offer a reliable examination of their utility in transport, especially for light traffic where traditional railways may be too costly.  The opening of the work begins with a preface by the author, detailing his motivations for creating a pamphlet that outlines his experiences and work related to narrow gauge railways. Heywood shares his journey from a young boy fascinated by machines to a self-taught mechanic who has spent years perfecting designs for small locomotives and rail systems. He emphasizes the need for innovation in railway design, particularly for smaller gauges, and sets the stage for his detailed examination of the specific lines he constructed, including those at Duffield and Eaton Hall. The opening focuses on defining the objectives behind the 15-inch gauge, acknowledging the unique conditions and considerations that distinguish narrow gauge railways from standard ones.",
+  "subjects": [
+    "Engineering & Technology"
+  ],
+  "topic_subjects": [
+    "Railroads, Local and light -- England"
+  ],
+  "locc": [
+    "TF"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/44341",
+  "table_of_contents": [
+    "PREFACE 5",
+    "INTRODUCTION",
+    "OBJECTS OF THE 15 IN. GAUGE",
+    "CONSTRUCTION OF THE DUFFIELD BANK LINE",
+    "DETAILS OF THE EATON HALL LINE",
+    "LOCOMOTIVES",
+    "WAGONS AND CARS",
+    "THE DUFFIELD BANK WORKSHOPS",
+    "SCIENTIFIC CONSIDERATIONS",
+    "REMARKS ON NARROW GAUGE RAILWAYS",
+    "APPENDIX"
+  ],
+  "introduction": "AT the outset I must offer an apology for making use, throughout this pamphlet, of the first person. I do so partly for convenience of expression, and partly because almost all that I have to advance is derived from my own experience. In doing so I am far from desiring to undervalue the work of others in the same direction. I have, however, little hesitation in saying that, with the exception of the late Mr. Charles Spooner, the able Engineer of the Festiniog Railway, most of those, so far as I know, who are responsible for the design of plant for these small lines have been manufacturers whose productions, though often of fair workmanship, are clearly indicative of a failure to grasp many of the leading principles involved. This shortcoming is the natural result of a want of sufficient time for the consideration of details, and a consequent tendency to imitate established customs in regard to railway work which by no means apply with equal advantage to very narrow gauges, where the conditions involved are wholly different. This is especially true of small locomotive building, the specimens of which evidence in their design not only ignorance on important points, but also a deplorable absence of the sense of well-balanced proportion.\n\nI venture to think that, in the twenty-five years during which I have devoted much of my time to the subject, I have succeeded in bringing to considerable perfection both permanent way and rolling stock suitable for these diminutive lines, and more especially the locomotives, which are probably, for their weight, the most powerful and flexible ever built to work by simple adhesion. Whether this conceit be well founded or no I leave to the judgment of those who may be at the pains to acquaint themselves with the details and result of my work, which has been undertaken wholly as a labour of love with the sole desire to promote improvement in what I believe to be an entirely special branch of engineering. I have never wasted my money on patents, and, so long as my designs are not imitated in a bungling manner, I am glad to see them made use of by anyone to whom they may be of service.",
+  "passages": [
+    "I have employed a rail-press fitted up on a wagon, specially arranged with drilling machine for fish bolt holes, with tool boxes, and a brake. The screw works horizontally, and the rail runs on adjustable rollers at each end of the wagon. The amount of curve is thus readily appreciated by the eye as the process proceeds, while with a vertical screw it is scarcely possible to judge correctly.",
+    "The amount per mile to which the above works out has already been given. I am unable to give the cost of the coal store at Eaton, and of the engine and wagon sheds, although I designed them. They were executed by the estate, and being, for the most part, of the excellence and solidity of the neighbouring buildings, were doubtless somewhat expensive.",
+    "There was no heating of any part during the trials, nor failure of any kind. After eight years’ work, chiefly on gradients of 1 in 10 to 1 in 12, where sand has to be used freely, the engine came into the shops to be overhauled.",
+    "For carrying timber or other lengthy loads swivelling carriers can be placed on any two wagons; and if a greater length is required, these two wagons can be set a distance apart, with or without other wagons placed between them. By adopting the flat wagon as a standard, it is possible to adapt each one to any class of work, without the necessity of keeping a large variety for various purposes.",
+    "That the rolling wheel and rail do actually interlock was demonstrated by Sir Douglas Galton in his experiments on the retarding power of brakes, when he pointed out that, on a wheel becoming skidded, the rack and pinion motion was converted into a series of jumps of the wheel across the microscopic teeth of the rack, with a consequent reduction in adhesion proportionate to the sliding speed.",
+    "2. The failure to appreciate that a scheme which is good for one locality is not of necessity the best for all.\n\n3. The apparently meagre acquaintance on the part of those who state their views with the practical working of any but the standard railways of the country."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

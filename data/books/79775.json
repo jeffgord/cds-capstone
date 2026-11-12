@@ -1,0 +1,65 @@
+{
+  "gutenberg_id": 79775,
+  "title": "Picture logic",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Swinburne, Alfred James, 1847?-1915",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2026-10-13",
+  "description": "",
+  "subjects": [],
+  "topic_subjects": [
+    "Logic"
+  ],
+  "locc": [
+    "BC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/79775",
+  "table_of_contents": [
+    "INTRODUCTION v",
+    "WHAT IS SCIENCE?",
+    "WHAT IS ART?",
+    "LOGIC IS A SCIENCE AND AN ART",
+    "FORM AND MATTER OF THOUGHT",
+    "THE RECONCILIATION, AND ALSO HOW LOGIC IS MORE OF A",
+    "SCIENCE THAN AN ART",
+    "LOGIC THE SCIENCE OF SCIENCES AND ART OF ARTS",
+    "THE RELATION OF LOGIC TO LANGUAGE",
+    "ALL THOUGHT IS COMPARISON",
+    "THE TERM",
+    "CONNOTATION AND DENOTATION",
+    "PROPOSITIONS",
+    "DISTRIBUTION OF TERMS IN A PROPOSITION",
+    "HEADS OF PREDICABLES",
+    "DEFINITION",
+    "DIVISION",
+    "INFERENCE",
+    "SYLLOGISM",
+    "SYLLOGISM",
+    "SYLLOGISM--CANON OF FIRST FIGURE--REDUCTION",
+    "TRAINS OF REASONING--SORITES",
+    "HYPOTHETICAL SYLLOGISMS",
+    "PROBABLE REASONING",
+    "THE FALLACIES",
+    "APPENDIX A",
+    "APPENDIX B",
+    "APPENDIX C",
+    "A LIST OF USEFUL FACTS IN LOGIC"
+  ],
+  "introduction": "It was at the beginning of a certain Long Vacation when my father sent for me and delivered himself of the following remarks: ‘My son, your scores at cricket, your racquets, your prowess in the hunting-field and in your college steeple-chases, your numberless invitations and popularity, to you doubtless appear all that can be desired; to me, Sir, they are nothing--nay more--they are even positively harmful, seeing that by their fascinating brightness men are blinded to all sense of their true interests and aim--viz., to secure their degree as soon as possible with a view to a start in life.’ Upon my replying to my father to the effect that every allowance was to be made for him--as having left college five-and-twenty years--if, as in the present instance, he manifested lamentable ignorance of the whole state of the University at the present day, and that his milk-and-water reading man would certainly be regarded with loathing and abhorrence by all ‘our fellows’ and all the best men at Oxford, and consequently, sinking into obscurity, would be ruined for life, and upon my making many other similar assertions, my father, with much warmth, commanded me to be silent, and then asked me if I expected I was to live a life of slothful ease, because I was a rich man’s son; with several other questions which were not meant to be answered; finally becoming so excited as to refer me to his own university career, a subject which he quickly dropped, remembering how often he had told me stories of his undergraduate days before I was sent to college. The result was that I was ordered to select a tutor for two months in the Long Vacation and pass my moderations in the following term, or for ever be condemned to the backless slippery heights of office stools. The awful thought of ‘wasting my sweetness’ and withering in such a dry and uncongenial soil nerved me for a desperate effort. Of a restless and excitable disposition I was for some time after haunted by dreams of men with pens in their ears, and ledgers with columns of figures to add, so lofty that their bases were on the earth while their summits were lost in the clouds.",
+  "passages": [
+    "The warmth of this reply quite restored my confidence in our good tutor, and it was entertaining too, as we knew he himself had lately lost some of his money in the Peruvian Stocks; and this is why Dyver’s illustration came home to him so well.",
+    "‘(3.) Lastly, the syllogism is a result of the comparison of two propositions. When the child upon being told to open its spelling book says “nasty,” and further, upon being asked why he thinks the book nasty, replies “all books are nasty,” he has given utterance to a syllogism which in its full form would read “All books are nasty; this is a book; therefore it is nasty.”",
+    "SUBSTANCE (or thing) | --------------------------------------------- | | Corporeal Incorporeal substance substance = BODY (as air) | --------------------------------------------- | | Animate Inanimate body body = LIVING BEING (stones) | --------------------------------------------- | | Sensible Insensible living being living being = ANIMAL (plants) | ---------------------------------------------",
+    "Some investments are made with risk, ∴ Some investments are not made without risk. Some investments are not made without risk, ∴ Some investments are made with risk.\n\n‘Where it is plain that no part of the included class man can be outside the class mortals: ∴ No men are immortal.\n\n‘No cowards are good soldiers; they are two separate classes, and ∴ All cowards are not good (i.e. bad) soldiers.",
+    "Propositions | +------------+---------------+ | | Complex or Simple or categorical hypothetical (of which we have | already spoken). | +-----+-------+ | | Conjunctive Disjunctive.",
+    "‘How wretched must all men } { Fig. iii. under petticoat government be! } {I. Some henpecked men are miserable. For all henpecked men are under} = {A. All henpecked men are under petticoat government, and how } { petticoat government. miserable are some henpecked } {∴ All under petticoat government men!’ } { are miserable."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,52 @@
+{
+  "gutenberg_id": 70091,
+  "title": "Six metaphysical meditations",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Descartes, René, 1596-1650",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Hobbes, Thomas, 1588-1679",
+      "role": "Contributor",
+      "order": 2
+    },
+    {
+      "name": "Molyneux, William, 1656-1698",
+      "role": "Translator",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2023-02-20",
+  "description": "\"Six metaphysical meditations\" by René Descartes is a philosophical treatise first published in Latin in 1641. Descartes systematically discards all beliefs that aren't absolutely certain, then attempts to establish what can be known for sure. Written as if meditated over six days, the work explores fundamental questions about the existence of God and the nature of the soul. Through first-person reflection, Descartes builds a new foundation for knowledge from the ground up, creating one of the most influential philosophical texts ever written.",
+  "subjects": [
+    "Philosophy & Ethics"
+  ],
+  "topic_subjects": [
+    "Knowledge, Theory of",
+    "Metaphysics",
+    "First philosophy",
+    "God -- Proof, Ontological",
+    "Methodology",
+    "Descartes, René, 1596-1650"
+  ],
+  "locc": [
+    "B"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70091",
+  "table_of_contents": [],
+  "introduction": "Had honor or applause and not the publick advantage of English Readers been the design of this Undertaking, the consideration of the common Fate of Translations had discouraged Me from permitting this even to have seen the light; for meer Versions do alwayes carry with them this Property, that if not well done they may much disgrace, but if well, not much commend the doers.\n\nAnd certainly I might well have expected the same chance, had this been the Translation of an History, Play or Romance; wherein there is requisite not onely a bare version but a conformation of Idiom and language, manner and customary expression; But the nature of this present Work will not admit of the like liberty, and therefore, I hope, amongst Judicious Readers it may be exempt from the common Fate of Translations; for if we look upon it as a Philosophical or Metaphysical Tract, or rather as (really it is) a Physico-Mathematical Argumentation, we shall find that a great strictness of Expression is requisite to be observed therein. So that had a Translator taken upon him to use his own liberty of Phrase, he would thereby have endanger’d the sense and force of the Arguments; for Politeness of language might as well be expected in a Translation of ~Euclide~ as in this. And all that are acquainted with this famous Authors design, do very well know, that it was his intention in these Meditations ~Mathematically to demonstrate~, that there is a ~God~, and that mans ~mind~ is ~incorporeal~. And it was his opinion, that metaphysicks may as clearly be demonstrated as mathematicks, as witness his expression in the Dedicatory Epistle of this Work to the ~Sorbone~ Doctors, ~Eas~ (Rationes scilicet) ~quibus hic utor certitudine & evidentiâ Geometricas æquare, vel etiam superare existimem~; That he reputed his Arguments used in these Meditations, to equal if not excell Geometrical certainty.\n\nAnd this, I suppose, is sufficient to make the Reader, not expect herein any smoothness of phrase or quaintness of Expression; what is here delivered in English is immediately taken, as it is naturally in the Original. The words, we hope, may be apposite enough, and fit to express what is here designed, and I think it a derogation from the Authors skill to draw the Picture of his mind in any other Colours, than what his own Copy expresses.",
+  "passages": [
+    "3. Doubt. But perhaps God wills not that I should be deceived, for he is said to be Infinitely Good.",
+    "Wherefore That this Hindrance may be taken away, When I have time I ought to Enquire, Whether there Be a God, And if there be One, Whether he can be a Deceiver, For whilst I am Ignorant of this, I cannot possibly be fully Certain of any Other thing.",
+    "Neither can it be supposed that many partial Causes have concurred to the making Me, and that I received the Idea of one of Gods perfections from One of them, and from an other of them the Idea of an other; and that therefore all these Perfections are to be found scattered in the World, but not all of them Joyn’d in any one which may Be God.",
+    "And now I have sufficiently Demonstrated, that what I clearly perceive, is True; And tho I had not demonstrated it, yet such is the Nature of my Mind, that I could not but give my Assent to what I so perceive, at least, as long as I so perceive it; and I remember (heretofore when I most of all relied on sensible Objects) that I held those Truths for the most certain which I evidently perceived,",
+    "Moreover I find in my self some Faculties endow’d with certain peculiar waies of thinking, such as the Faculty of Imagination, the Faculty of Perception or sense; without which I can conceive my whole self clearly and distinctly, but (changing the phrase) I cannot conceive those Faculties without conceiving My self, that is, an understanding substance in which they are; for none of them in their",
+    "Wherefore D.Cartes Concludes that an Understanding Thing and Intellection (which is the Act of an Understanding Thing) are the same; or at least that an Understanding Thing and the Intellect (which is the Power of an Understanding Thing) are the same; And yet all Philosophers distinguish the subject from its Faculties and Acts, that is, from its Properties and Essence, for the Thing it self is"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

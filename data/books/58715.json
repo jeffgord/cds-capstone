@@ -1,0 +1,46 @@
+{
+  "gutenberg_id": 58715,
+  "title": "Drawings of Old London",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Norman, Philip, 1842-1931",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Smith, Cecil Harcourt-, Sir, 1859-1944",
+      "role": "Author of introduction, etc.",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2019-01-17",
+  "description": "\"Drawings of Old London\" by Philip Norman is a historical account written in the early 20th century. This work serves as a catalog of architectural drawings that document characteristic examples of old London architecture, primarily focusing on inns and public houses that have largely been lost to time. It provides valuable insights into the history and design of various buildings in London, making it a rich resource for both historians and architecture enthusiasts.  The opening of the text introduces readers to the purpose of the compilation, emphasizing its significance as a record of structures that have either been demolished or significantly altered. It describes how these drawings were created directly from the buildings themselves, providing a visual documentation of London's architectural heritage. The initial portion outlines various notable inns, such as the infamous Elephant and Castle and the White Hart, detailing their historical relevance, architectural features, and anecdotes that contribute to their charm and significance in the cultural fabric of London. Still, these landmarks reflect a London that has largely transformed, positioning the work as an essential reflection on the city's architectural evolution.",
+  "subjects": [
+    "History - British",
+    "Architecture",
+    "Art"
+  ],
+  "topic_subjects": [
+    "Drawing -- England -- London -- Catalogs",
+    "London (England) -- Pictorial works -- Catalogs"
+  ],
+  "locc": [
+    "DA",
+    "NC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/58715",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "This inn was originally the Pope's Head, and the name was changed at the time of the Reformation. In 1534 the Abbot of Waverley, whose town house was not far off, writes, apparently on business, that he will be \"at the Pope's Head in Southwark.\" This was the very year of the separation of the Church of England from Papal headship.",
+    "When this view was taken, the passage from Bishopsgate Street to Great St. Helen's passed under old buildings which had escaped the Great Fire. The structure on spectator's right was Sir Andrew Judd's almshouse, founded by him in 1551, and rebuilt by the Skinners' Company in 1729.",
+    "This was formerly the place to which stray horses or cattle found in the City were taken for safe custody. It is stated in an Act of Parliament, May, 1765, that \"The Commissioners appointed to remove nuisances may seize the waggon, cart, dray, or other carriage so placed, together with the horse or horses, etc., etc., and to remove the same to the Common Pound of the City, commonly called the",
+    "The spectator may here suppose himself to be standing near the site of Paul's Wharf, which Stow describes as \"a large landing place with a common stair upon the river Thames, at the end of a street called Paul's Wharf Hill, which runneth down from Paul's Chain.\" The bridge in the middle distance is Southwark Bridge.",
+    "The hall, still in existence, is only 36 feet long by 22 feet in width, and faces the narrow passage by which one enters from Holborn. It certainly dates from the foundation of the building in the fifteenth century, but has been altered and renovated from time to time.",
+    "Schomberg House, Nos. 81 and 82, on the south side of Pall Mall, is an interesting specimen of a nobleman's mansion in the late seventeenth century, though its symmetry has been spoiled by the destruction of the east wing, about the year 1850."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

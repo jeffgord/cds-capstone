@@ -1,0 +1,41 @@
+{
+  "gutenberg_id": 49212,
+  "title": "The Warfare of Science",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "White, Andrew Dickson, 1832-1918",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2015-06-14",
+  "description": "\"The Warfare of Science\" by Andrew Dickson White is a historical account written in the late 19th century. The book explores the historical conflicts between scientific inquiry and religious dogma, illustrating how the struggles over scientific truths have shaped both fields. Through a series of historical examples, the narrative illustrates the detrimental impact of religious interference on scientific progress.  At the start, the author lays out his thesis: religious interference in the name of preserving dogma has consistently led to negative outcomes for both science and religion. He introduces significant historical figures, such as Galileo, and recounts their battles against ecclesiastical authorities who sought to suppress scientific findings that contradicted scriptural interpretations. The opening emphasizes the intrinsic link between the pursuit of scientific knowledge and the eventual benefits it brings to human understanding and spirituality, laying the groundwork for further exploration of the ongoing conflict between these two domains.",
+  "subjects": [
+    "History - Modern (1750+)",
+    "History - Religious",
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Religion and science",
+    "Science -- History",
+    "Religion and science -- History"
+  ],
+  "locc": [
+    "BL"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/49212",
+  "table_of_contents": [],
+  "introduction": "In its earlier abridged form this address was given as a Phi Beta Kappa oration at Brown University, and, as a lecture, at New York, Boston, New Haven, Ann Arbor, and elsewhere. In that form, substantially, it was published in THE POPULAR SCIENCE MONTHLY. I have now given it careful revision, correcting some errors, and extending it largely by presenting new facts and developing various points of interest in the general discussion. Among the subjects added or rewrought are: in Astronomy, the struggle of Galileo and the retreat of the Church after its victory; in Chemistry and Physics, the compromise between Science and Theology made by Thomas Aquinas, and the unfortunate route taken by Science in consequence; in Anatomy and Medicine, the earlier growth of ecclesiastical distrust of these sciences; in Scientific Education, the dealings of various European universities with scientific studies; in Political and Social Science, a more complete statement of the opposition of the Church, on Scriptural grounds, to the taking of interest for money; and, in the conclusion, a more careful summing up. If I have seemed to encumber the text with notes, it has been in the intention to leave no important assertion unsupported; and in the hope that others--less engrossed with administrative care than myself--may find in them indications for more extended studies in various parts of the struggle which I have but sketched.\n\nI purpose to present an outline of the great, sacred struggle for the liberty of science--a struggle which has lasted for so many centuries, and which yet continues. A hard contest it has been; a war waged longer, with battles fiercer, with sieges more persistent, with strategy more shrewd than in any of the comparatively transient warfare of Cæsar or Napoleon or Moltke.\n\nI shall ask you to go with me through some of the most protracted sieges, and over some of the hardest-fought battle-fields of this war. We will look well at the combatants; we will listen to the battle-cries; we will note the strategy of leaders, the cut and thrust of champions, the weight of missiles, the temper of weapons; we will look also at the truces and treaties, and note the delusive impotency of all compromises in which the warriors for scientific truth have consented to receive direction or bias from the best of men uninspired by the scientific spirit, or unfamiliar with scientific methods.",
+  "passages": [
+    "In vain did he try to prove the existence of satellites by showing them to the doubters through his telescope. They either declared it impious to look, or, if they did see them, denounced them as illusions from the devil. Good Father Clavius declared that to \"see satellites of Jupiter, men had to make an instrument which would create them.\"[39]",
+    "When Gassendi attempted to raise the point that the decision was not sanctioned by the Church as such, a great theological authority, Father Lecazre, rector of the College of Dijon, publicly contradicted him, and declared that it \"was not certain cardinals, but the supreme authority of the Church,\" that had condemned Galileo; and to this statement the pope and the Church gave consent, either",
+    "Here, then, we have this great man indulging in that very mixture of literal Scriptural interpretation and scientific thought which he had condemned, and therefrom evidently deducing the conclusion that these great voyages and discoveries, which were the beginning of a new world in thought and action, were the end of all things.",
+    "To sustain this \"Scriptural view,\" so called, efforts were put forth absolutely herculean, both by Catholics and Protestants. Mazurier declared certain fossil remains of a mammoth, discovered in France, to be bones of giants mentioned in Scripture. Father Torrubia did the same thing in Spain. Increase Mather sent similar remains, discovered in America, to England, with a similar statement.",
+    "A siege was begun in due form. A young physician was sent by the cardinal's party into the heterodox camp as a spy. Having heard one lecture of Prof. See, he returned with information that seemed to promise easy victory to the besieging party. He brought a terrible statement, one that seemed enough to overwhelm See, Vulpian, Duruy, and the whole hated system of public instruction in France.",
+    "[48] For curious exemplification of the way in which these weapons have been hurled, see lists of persons charged with \"infidelity\" and \"atheism,\" in Le Dictionnaire des Athées, Paris, An. viii. Also, Lecky, History of Rationalism, vol. ii., p. 50. For case of Descartes, see Saisset, Descartes et ses précurseurs, pp. 103, 110."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

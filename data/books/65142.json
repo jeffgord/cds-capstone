@@ -1,0 +1,61 @@
+{
+  "gutenberg_id": 65142,
+  "title": "Barbarossa",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Kühn, Franz",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Upton, George P. (George Putnam), 1834-1919",
+      "role": "Translator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2021-04-22",
+  "description": "\"Barbarossa\" by Franz Kühn is a historical account written in the early 20th century. The book details the life and exploits of Frederick I, known as Barbarossa, a significant figure in the Holy Roman Empire and a notable leader during the Crusades. It captures the heroism and challenges faced by Barbarossa and his knights, particularly through their adventures during the Third Crusade in an era marked by conflict against the Turks and political turmoil in Europe.  The opening of the narrative sets the stage following the Second Crusade, highlighting the disastrous toll it took on the returning knights and their realms. It introduces the character of Conrad of Feuchtwangen, a noble knight, who is anxiously awaited at his castle by his family and retainers after his return from the crusade. The scene paints a vivid picture of both the joy and dread surrounding the aftermath of war, establishing the emotional stakes and intertwining the fates of various characters as they navigate the treacherous landscape of loyalties and battles, setting a dramatic tone for the events that will ensue.",
+  "subjects": [
+    "History - European",
+    "History - Medieval/Middle Ages",
+    "History - Royalty",
+    "History - Warfare"
+  ],
+  "topic_subjects": [
+    "Frederick I, Holy Roman Emperor, approximately 1123-1190",
+    "Germany -- History -- Frederick I, 1152-1190"
+  ],
+  "locc": [
+    "DD"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/65142",
+  "table_of_contents": [
+    "Return of the Crusaders",
+    "Frederick Ascends the Throne",
+    "The Italian Campaigns",
+    "The Mayence Festival and Tournament",
+    "Life in the Castle",
+    "The Third Crusade",
+    "Conrad’s Victory in the Valley",
+    "Raymond’s Heroic Ride",
+    "Conrad’s Death",
+    "Capture of the Brothers",
+    "The Brothers’ Ordeal",
+    "The Emperor to the Rescue",
+    "Barbarossa’s Victory and Death",
+    "Appendix"
+  ],
+  "introduction": null,
+  "passages": [
+    "There was little sincerity in the protestations of loyalty which the Italian cities made to the Emperor; indeed their disrespect for him was soon openly displayed. Milan defied his authority with contemptuous arrogance. Tortoria,[10] which had been destroyed by Frederick, was rebuilt under Milan’s protection.",
+    "Their father sought to cultivate their minds and impress them with the importance of the duties of life. He enriched their knowledge of nature. He explained to them what the relations of one human being to another should be, and told them that every one has his duties as well as his rights, and that while they had duties toward the animals, their highest and most sacred duties were to their",
+    "Thus matters continued day after day, and each morning brought more enemies, weakened their own numbers, and increased the need of subsistence. The Turks destroyed everything they could not take with them, and filled up or polluted the wells. The scanty supplies furnished by the Greeks were insufficient for the main army, and nothing reached the vanguard from that source.",
+    "The real fighting began when the first valley was reached. The knights fought with all their remaining strength, and many a Turk, brought to bay, was slain. They entered the narrow pass, where Raymond had made his victorious fight, with grave apprehensions.",
+    "They soon discovered that they had fallen into the hands of the Sultan, and that it was he who had rescued them from instant death. But alas! they feared that they had only been spared to gratify his revenge by some painful mode of torture.",
+    "“You could not have struck me a harder blow than this, cruel Sultan,” he said, grimly. “You were cunning enough to know how dear those boys are to me. A fine proof of your courage this is, you coward, who shun open battle face to face, who can only succeed with overwhelming numbers, who lie in wait and strike your foeman in the back!”"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

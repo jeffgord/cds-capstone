@@ -1,0 +1,51 @@
+{
+  "gutenberg_id": 75464,
+  "title": "Principles of electricity",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Shipley, Maynard, 1872-1934",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Haldeman-Julius, E. (Emanuel), 1888-1951",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2025-02-25",
+  "description": "\"Principles of Electricity\" by Maynard Shipley is a scientific publication written during the early 20th century. This book aims to explain the fundamental principles of electricity and magnetism, exploring concepts from basic definitions to the relationships between various electrical phenomena and their historical context.  In the book, Shipley begins with a clear definition of electricity and its nature as a form of energy. He discusses the historical perspectives of early philosophers and scientists like Thales and Faraday, tracing the development of theories relating to electricity and magnetism. Key concepts covered include electrostatics, magnetic phenomena, and the pioneering experiments that led to the advancement of wireless telegraphy, ultimately explaining how electricity functions and its various applications. The text also delves into the contributions made to electromagnetic theory by notable figures from history while addressing contemporary understanding—and ongoing questions—about the nature of electricity.",
+  "subjects": [
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Electricity"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/75464",
+  "table_of_contents": [
+    "Chapter Page",
+    "“What Is Electricity?”",
+    "Magnetic Phenomena",
+    "Pioneers in Electromagnetic Theory",
+    "Theories of Electricity",
+    "Modern Magnetic Theory",
+    "Proofs that Electrons Are Atoms of Electricity",
+    "The Discovery of Wireless Telegraphy"
+  ],
+  "introduction": null,
+  "passages": [
+    "[1] If a light piece of iron is placed near a magnet, it moves to the magnet and clings to it; but if the magnet is the lighter of the two bodies, it moves toward the piece of iron.",
+    "In 1820, while lecturing before his class, he became convinced that the apparatus he was then using could be made to demonstrate the correctness of his views. He asked his pupils to accompany him to his laboratory, where, as he predicted, a slight deflection of the magnetic needle, turned at right angles to the electric current, was shown when placed close to the copper wire.",
+    "At the absolute zero of temperature, it is supposed that the orbits of electrons in atoms are perfect circles, whatever their paths may be at measurable temperatures. This motion of the electrons remains when all heat has disappeared, since it is not this motion of the revolution of the electrons in their orbits that is associated with the energy of heat.",
+    "We have seen that there are two types of charged bodies, of which charged glass and charged silk are familiar examples. It was Dufay (1699-1739) who discovered that there were two kinds of electricity, one of which he called vitreous (from glass) and the other resinous (from resin—amber).",
+    "Dr. Le Bon finds the exhaustless source of electricity in the interior of atoms. The atoms in one pound of earth contain enough energy to run all the factories, mills, railroads, etc., and light all the cities and villages of the United States, for a month, Steinmetz tells us.",
+    "More recently (October, 1922), Hale, Ellerman and Nicholson, all of the Mount Wilson Observatory, have detected invisible sun-spots by searching for evidences of the Zeeman effect in promising regions, such as areas of flocculi following a large spot."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

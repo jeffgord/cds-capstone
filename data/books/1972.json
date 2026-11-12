@@ -1,0 +1,46 @@
+{
+  "gutenberg_id": 1972,
+  "title": "History of the Britons (Historia Brittonum)",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Nennius, active 796",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Giles, J. A. (John Allen), 1808-1884",
+      "role": "Translator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2006-02-26",
+  "description": "\"History of the Britons (Historia Brittonum)\" by Nennius is a historical account written in the early medieval period, specifically during the late 8th century. The book primarily discusses the history and origins of the Britons, including their interactions with other groups such as the Saxons, Scots, and Picts. It serves as an essential source for understanding early British history and the cultural and political landscape of Britain following the Roman withdrawal.  In this work, Nennius presents a mixture of myth, tradition, and historical accounts, outlining the arrival of various peoples in Britain, particularly focusing on the Britons' legendary ancestor, Brutus of Troy. The narrative includes significant figures such as King Arthur and various battles against invading forces, notably the Saxons. Nennius aims to preserve the history of his people amidst what he sees as a decline in their glorious past, attributing Britain's early governance and conflicts to divine providence while also highlighting the need for unity and piety in the face of external threats. His compilation draws from several sources, blending oral history with written records to craft a cohesive account of Britain's early narrative.",
+  "subjects": [
+    "Arthurian Legends",
+    "Mythology, Legends & Folklore",
+    "History - British",
+    "History - Medieval/Middle Ages"
+  ],
+  "topic_subjects": [
+    "Great Britain -- History -- Roman period, 55 B.C.-449 A.D.",
+    "Britons"
+  ],
+  "locc": [
+    "DA"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/1972",
+  "table_of_contents": [],
+  "introduction": "1. Nennius, the lowly minister and servant of the servants of God, by the grace of God, disciple of St. Elbotus,* to all the followers of truth sendeth health.\n\n* Or Elvod, bishop of Bangor, A.D. 755, who first adopted in the Cambrian church the new cycle for regulating Easter.",
+  "passages": [
+    "Aeneas, after the Trojan war, arrived with his son in Italy; and Having vanquished Turnus, married Lavinia, the daughter of king Latinus, who was the son of Faunus, the son of Picus, the son of Saturn. After the death of Latinus, Aeneas obtained the kingdom Of the Romans, and Lavinia brought forth a son, who was named Silvius. Ascanius founded Alba, and afterwards married.",
+    "19.* The Romans, having obtained the dominion of the world, sent legates or deputies to the Britons to demand of them hostages and tribute, which they received from all other countries and islands; but they, fierce, disdainful, and haughty, treated the legation with contempt.",
+    "31. After the above-said war between the Britons and Romans, the assassination of their rulers, and the victory of Maximus, who slew Gratian, and the termination of the Roman power in Britain, they were in alarm forty years.",
+    "(2) Some MSS. add, \"beyond the Frenesic, Fresicum (or Fresic) sea,\" i.e. which is between us and the Scotch. The sea between Scotland and Ireland. Camden translates it \"beyond the Frith;\" Langhorne says, \"Solway Frith.\"",
+    "(1) Some MSS. here add, \"This Vortimer, the son of Vortigern, in a synod held at Guartherniaun, after the wicked king, on account of the incest committed with his daughter, fled from the face of Germanus and the British clergy, would not consent to his father's wickedness; but returning to St.",
+    "(3) Not a river, but an isolated rock in the Frith of Forth, near the town of North Berwick, called \"The Bass.\" Some think it is the river Lusas, in Hampshire.\n\n(5) Variously supposed to be in Cornwall, or Binchester in Durham, but most probably the Roman station of Garionenum, near Yarmouth, in Norfolk."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

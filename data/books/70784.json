@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 70784,
+  "title": "Money and trade considered",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Law, John, 1671-1729",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2023-05-17",
+  "description": "\"Money and Trade Considered: With a Proposal for Supplying the Nation with Money\" by John Law of Lauriston is an economics text published in 1705. Law proposes replacing Scotland's silver currency with paper money backed by land values, arguing that metal currency has become unstable due to New World silver flooding Europe. The work introduces groundbreaking economic concepts that would later influence Adam Smith and John Maynard Keynes. Though Scotland rejected his proposal, Law implemented his ideas in France, creating a spectacular financial bubble that ultimately collapsed.",
+  "subjects": [
+    "Economics"
+  ],
+  "topic_subjects": [
+    "Currency question -- Great Britain",
+    "Banks and banking -- Scotland"
+  ],
+  "locc": [
+    "DA",
+    "HG"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70784",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "If East-India goods that sell for a 1000 lib. in England, are only worth abroad 800 lib, the duty payed at their entry being return’d, and more given as a draw-back to encourage the export, their vent abroad will be more profitable than in England.",
+    "Besides, lowering the money may not lower the prices abroad. for, as when money was raised, goods may have rose in proportion, or have been made worse; so as a 100 lib. after the money is lower’d will have 33 crowns and 1/8 more silver in it, than a 100 lib. had before; so a greater quantity of goods may be bought with a 100 lib.",
+    "France and Holland are given as examples of raising and allaying the money. in France the money is higher in the denomination than in other countries, but that does not hinder the money of France to be exported.",
+    "The difference of the prices of most goods, from changes in their quantity, or in the demand for them, would be much prevented, if magazines were kept; but the difference in their prices from the greater or lesser quantity of, or demand for money; cannot be prevented so long as silver is the money.",
+    "These bills are propos’d to be repay’d and cancell’d in a term of years, without paying any interest, but only so much as would defray the charges of the office, which would not be above one half per cent.",
+    "The silver money being to fall betwixt 8 and 9 per cent in 3 months, it is not to be suppos’d that silver will be prefer’d to paper money; since the notes of the bank, which is paper upon the same fund, went at the ordinary interest: and tho’ the receiver was not certain of the money at the time it was promised, or that the person he was owing to would receive it."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,88 @@
+{
+  "gutenberg_id": 41697,
+  "title": "Merck's 1899 Manual of the Materia Medica",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Merck & Co.",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-12-24",
+  "description": "\"Merck's 1899 Manual of the Materia Medica\" by Merck & Co. is a scientific publication written in the late 19th century. This manual serves as a comprehensive resource for practicing physicians, providing essential information about various drugs and chemicals commonly used in medical practice. It encompasses the names, therapeutic uses, modes of administration, dosages, and potential antidotes of these substances within the scope of modern medicine.  The opening of the manual introduces its purpose, emphasizing the need for a ready-reference guide to assist physicians in recalling medicinal options during patient care. It outlines the structure of the manual, which includes a complete survey of the Materia Medica, therapeutic indications arranged by pathologic conditions, and a classification of medicaments according to their physiological actions. The introduction assures physicians that this resource is curated from authoritative sources, intending to refresh their memories and streamline decision-making, thus aiming to improve patient care through better access to medicinal knowledge.",
+  "subjects": [
+    "Health & Medicine",
+    "Drugs/Alcohol/Pharmacology",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Materia medica -- Handbooks, manuals, etc.",
+    "Therapeutics -- Handbooks, manuals, etc.",
+    "Pharmacology -- Handbooks, manuals, etc.",
+    "Drugs -- Handbooks, manuals, etc."
+  ],
+  "locc": [
+    "RC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/41697",
+  "table_of_contents": [
+    "~Pages 9 to 82.~",
+    "~Part First.--THE MATERIA MEDICA, as in actual use to-day by American",
+    "Physicians.~ (Alphabetically arranged.)",
+    "THIS PART EMBRACES all those Simple Medicinal Substances (that",
+    "is, drugs and chemicals) which are in current and well-established use",
+    "in the medical practice of this country; or which, if too recently",
+    "introduced to be as yet in general use, are vouched for by eminent",
+    "authorities in medical science;--also, the medicinally employed",
+    "Pharmaceutic Preparations recognized by the United States",
+    "Pharmacopoeia",
+    "(Added thereto, for the convenience of those practitioners who",
+    "prescribe them, are Medicamentous Mixtures advertised only to the",
+    "Profession, but whose composition or mode of manufacture has not",
+    "been made known with sufficient completeness or exactness to",
+    "satisfy all members of the Profession. In the selection the",
+    "publishers have been guided solely by the recognition accorded the",
+    "various preparations by the Profession, according to the best",
+    "information obtained.)",
+    "There has also been included, under the title of \"Foods and Dietetic",
+    "Preparations,\" a list of such preparations as are frequently prescribed",
+    "for infants' diet, or for the sick or convalescent",
+    "OMITTED from the Materia Medica chapter are: Medicaments that",
+    "have become obsolete, or that are too rarely used to be of general",
+    "interest; and such new remedies as are not yet safely accredited on",
+    "reliable authority; also those galenic preparations (syrups, extracts,",
+    "pills, essences, elixirs, wines, emulsions, etc.) which are not",
+    "standardized according to the U.S. Pharmacopoeia; likewise all",
+    "articles that are put up and advertised for self-medication by the",
+    "lay public",
+    "SEPARATE TITLES in the alphabetic series are accorded, as a rule,",
+    "to the botanical drugs and other pharmaceutical mother-substances,",
+    "to proximate principles (alkaloids, glucosides, organic acids, etc.),",
+    "and to chemical compounds (salts, \"synthetics,\" etc.); while the",
+    "official galenic preparations, solutions and dilutions, derived",
+    "from them, are mostly mentioned under the titles of their respective",
+    "mother-substances. (Thus, for instance, \"Dover's Powder\" will be",
+    "found under \"Opium,\" while \"Morphine\" is described under its own",
+    "title.)",
+    "(Smaller type has been employed--in order to economize",
+    "space--for botanic drugs, gums, and some others of the older drugs",
+    "and preparations which are so long and well known that but little",
+    "reference will need be made to them.)",
+    "(Those substances of the Materia Medica which can be had of the",
+    "MERCK brand are--for the convenience of prescribers--so",
+    "designated)"
+  ],
+  "introduction": null,
+  "passages": [
+    "Not completely defined.--(Stated: \"Each fl. dr. contains 1/100 grn. phosphorus, 1/6 grn. iodine, 1/6 grn. bromine.--Alterative, Anticatarrhal.--USES: Chronic bronchitis, phthisis, catarrh, etc.--~Dose:~ 1--2 fl. drs., before meals.\")",
+    "White powd.; blackens on exposure to light.--SOL. in ammonia, potassium thiosulphate, potassium cyanide.--Antiseptic, Nerve-sedative.--USES: Chorea, gastralgia, epilepsy, pertussis, diarrhea, and various neuroses.--~Dose:~ ½--1-½ grn., in pills.--MAX. D.: 3 grn.",
+    "Amyl Nitrite: sometimes checks paroxysm in spasmodic asthma and dyspnea due to cardiac hypertrophy. Must not be given in chronic bronchitis and emphysema.\n\nArsenic: in small doses in cases associated with bronchitis or simulating hay fever, or in the bronchitis of children, or in the dyspeptic asthma. Inhaled as cigarettes with caution.",
+    "Sanguinaria: a good emetic; take syrup ipecac, 2 fl. oz.; pulv. sanguin., 20 grn.; pulv. ipecac, 5 grn.; give a teaspoonful every quarter-hour till emesis, then half a teaspoonful every hour.\n\nCantharides or Cantharidin: in small doses long continued, where there is a constant desire to micturate, associated with much pain and strain.",
+    "Sodium Bicarbonate: with bitters before meals in frontal headache at the junction of hairy scalp and forehead, or pain in upper part of forehead without constipation. As wash to the mouth when headache depends on decayed teeth.\n\nIodoform or Iodoformogen: dissolved in collodion, or as ointment to neck and head; along with small doses of calomel as enemata.",
+    "Glycerin: as nutrient in place of cod-liver oil, locally to mouth in the last stages to relieve dryness and pain.\n\nIodine: liniment as a counter-irritant to remove the consolidation in early stage, and to remove pain and cough later; as inhalation to lessen cough and expectoration."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

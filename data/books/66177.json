@@ -1,0 +1,83 @@
+{
+  "gutenberg_id": 66177,
+  "title": "Half hours with modern scientists",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Huxley, Thomas Henry, 1825-1895",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Barker, George F. (George Frederick), 1835-1910",
+      "role": "Author",
+      "order": 2
+    },
+    {
+      "name": "Cope, E. D. (Edward Drinker), 1840-1897",
+      "role": "Author",
+      "order": 3
+    },
+    {
+      "name": "Stirling, James Hutchison, 1820-1909",
+      "role": "Author",
+      "order": 4
+    },
+    {
+      "name": "Tyndall, John, 1820-1893",
+      "role": "Author",
+      "order": 5
+    },
+    {
+      "name": "Porter, Noah, 1811-1892",
+      "role": "Author of introduction, etc.",
+      "order": 6
+    }
+  ],
+  "language": "en",
+  "issued": "2021-08-30",
+  "description": "\"Half Hours With Modern Scientists: Lectures and Essays\" by Thomas Henry Huxley et al. is a collection of scientific essays and lectures published in the late 19th century. The work compiles insights from multiple authors, primarily focusing on various aspects of physical and vital forces, and their interrelationship, along with discussions on the methodologies underpinning scientific inquiry. It targets readers interested in understanding modern scientific thought and its implications for both philosophy and religion.  At the start of this collection, the general introduction outlines the purpose and significance of the essays that follow, explaining that \"scientist\" as a term refers to those devoted to physical sciences and posits a need for concise communication of scientific principles to a lay audience. The introduction presents Huxley’s essay on \"The Physical Basis of Life,\" highlighting the importance of protoplasm as a matter common to all living beings, establishing a threefold unity across life forms. Through engaging language, it emphasizes the interconnectedness of life and matter while introducing the complexities and nuances inherent in scientific examination, paving the way for deeper explorations into the nature of existence and our scientific understanding.",
+  "subjects": [
+    "Essays, Letters & Speeches",
+    "Science - Physics",
+    "Science - Biology",
+    "Philosophy & Ethics"
+  ],
+  "topic_subjects": [
+    "Science"
+  ],
+  "locc": [
+    "Q"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/66177",
+  "table_of_contents": [
+    "GENERAL INTRODUCTION. BY PREST. PORTER, v",
+    "ON THE PHYSICAL BASIS OF LIFE",
+    "PROF. T. H. HUXLEY,",
+    "CORRELATION OF VITAL AND PHYSICAL",
+    "FORCES",
+    "PROF. G. F. BARKER, M.D.,",
+    "AS REGARDS PROTOPLASM—REPLY TO HUXLEY",
+    "JAMES HUTCHISON STIRLING,",
+    "ON THE HYPOTHESIS OF EVOLUTION",
+    "PROF. E. D. COPE,",
+    "SCIENTIFIC ADDRESSES",
+    "ON THE METHODS AND TENDENCIES OF",
+    "PHYSICAL INVESTIGATION,",
+    "ON HAZE AND DUST",
+    "ON THE SCIENTIFIC USE OF THE",
+    "IMAGINATION,",
+    "PROF. JOHN TYNDALL, LL.D., F.R.S"
+  ],
+  "introduction": "The title of this Series of Essays—Half Hours with Modern Scientists—suggests a variety of thoughts, some of which may not be inappropriate for a brief introduction to a new edition. Scientist is a modern appellation which has been specially selected to designate a devotee to one or more branches of physical science. Strictly interpreted it might properly be applied to the student of any department of knowledge when prosecuted in a scientific method, but for convenience it is limited to the student of some branch of physics. It is not thereby conceded that nature, i.e., physical or material nature is any more legitimately or exclusively the field for scientific enquiries than spirit, or that whether the objects of science are material or spiritual, the assumptions and processes of science themselves should not be subjected to scientific analysis and justification. There are so-called philosophers who adopt both these conclusions. There are those who reason and dogmatize as though nature were synonymous with matter, or as though spirit, if there be such an essence, must be conceived and explained after the principles and analogies of matter;—others assume that a science of scientific method can be nothing better than the mist or moonshine which they vilify by the name of metaphysics. But unfortunately for such opinions the fact is constantly forced upon the attention of scientists of every description, that the agent by which they examine matter is more than matter, and that this agent, whatever be its substance, asserts its prerogatives to determine the conceptions which the scientist forms of matter as well as to the methods by which he investigates material properties. Even the positivist philosopher who not only denounces metaphysics as illegitimate, but also contends that the metaphysical era of human inquiry, has in the development of scientific progress been outgrown like the measles, which is experienced but once in a life-time; finds when his positivist theory is brought to the test that positivism itself in its very problem and its solutions, is but the last adopted metaphysical theory of science.",
+  "passages": [
+    "In the Syracusan Poecile, says Alexander von Humboldt in his beautiful little allegory of the Rhodian Genius, hung a painting, which, for full a century, had continued to attract the attention of every visitor. In the foreground of this picture a numerous company of youths and maidens of earthly and sensuous appearance gazed fixedly upon a haloed Genius who hovered in their midst.",
+    "Demurring, then, to Mr. Huxley’s opinion on this matter, and postponing remark on the doctrines to which he alludes, I must express a hearty concurrence with every word he utters on Comte. In him I too “find little or nothing of any scientific value.” I too have been lost in the mere mirage and sands of “those dreary and verbose pages;” and I acknowledge in Mr.",
+    "But this force is a rational unity, and that is an idea; and this I would point to as a second form of the addition to the chemistry and physics of protoplasm. We have just seen, it is true, that an idea may be found in inorganic matter, as in the solar and sidereal systems generally.",
+    "The lowest forms of the Molluscs and Articulates are scarcely distinguishable from each other, so far as adhesion to the “plan” is concerned, and some of the latter division are very near certain Echinodermata. As we approach the boundary-lines of the two lowest divisions, the approaches become equally close, and the boundaries very obscure.",
+    "From the first we see in history a slow advance as knowledge gained by the accumulation of tradition and by improvements in habit based on experience; but how slow was this advance while the use of the metals was still unknown! The iron age brought with it not only new conveniences, but increased means of future progress; and here we have an acceleration in the rate of advance.",
+    "Now there is nothing in this process which necessarily eludes the power of mind as we know it. An intellect the same kind as our own, would, if only sufficiently expanded, be able to follow the whole process from beginning to end. No entirely new intellectual faculty would be needed for this purpose."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

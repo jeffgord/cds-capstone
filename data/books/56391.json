@@ -1,0 +1,35 @@
+{
+  "gutenberg_id": 56391,
+  "title": "The Little London Directory of 1677",
+  "subtitle": "The oldest printed list of the merchants and bankers of London",
+  "contributors": [
+    {
+      "name": "Lee, Samuel, active 1677-1695",
+      "role": "Publisher",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2018-01-18",
+  "description": "\"The Little London Directory of 1677\" by Samuel Lee is a historical account written in the late 19th century. This work serves as a reproduction of a rare original document listing the merchants and bankers of London from the year 1677, aiming to provide insight into the commercial landscape of the time. The directory highlights significant family names linked to social progress, shedding light on the early banking system and the identity of influential merchants in London during the second half of the seventeenth century.  The opening of the directory includes an introduction that contextualizes the importance of merchant lists throughout history, connecting them to various aspects of social and economic development. It notes that the original catalogue demonstrates the origins of modern banking, particularly focusing on the role of goldsmiths who functioned as early bankers. The text references several prominent names and addresses of merchants from 1677, inviting readers to explore the connections between these individuals and the broader narrative of London's commercial evolution. This beginning establishes the relevance of the directory as a vital historical resource for understanding commerce in early modern London.",
+  "subjects": [
+    "History - British",
+    "History - Early Modern (c. 1450-1750)",
+    "Economics"
+  ],
+  "topic_subjects": [
+    "London (England) -- Directories"
+  ],
+  "locc": [
+    "DA"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/56391",
+  "table_of_contents": [],
+  "introduction": "This little book might easily, by a competent pen, be made the text to a volume, as large, if not as useful, as the huge “Post Office Directory,” of which it was the modest precursor. No such ambitious object as the production of a volume of that class is to be here indulged in. On the contrary, the purpose of the present short introduction is to offer a few suggestions upon topics obviously belonging to the contents of this commercial record of the merchants and goldsmiths of London in the second half of the seventeenth century. It will be found to demonstrate the value of not a few family names as significant elements of the history of social progress.\n\nIt has, indeed, been so in all time. From Homer’s catalogues down to the knightly nomenclature of the “Roman de la Rose,” and other long-breathed poems of the middle ages; from the Battle-abbey Roll of the conqueror’s chiefs at Hastings, and from that of King Henry’s army at Agincourt to our modern musters, such documents elucidate acceptably the course of military heroism. The conjecture is as ingenious, as it is just, lately made about Shakespeare’s early life, that the Admiralty books, with their myriad of seamens’ names, may give his in some royal ship, and so account for his perfect sea phrases.\n\nThe most interesting manuscript lists are those of the notabilities present at the Preston Guild for more than 500 years; and that of the founders of a Library in Hereford 200 years ago. The Guild is in existence still. The books given to the library by Viscount Scudamore, and some hundreds of the county people, were rotting on a damp floor not long since. It may be hoped they are now better cared for.\n\nEqually attractive are the lists still preserved of the zealous contributors to public loans to meet a national crisis. John Locke and Somers were among the first proprietors of the Bank of England. Those of the East India Company, or the like Stocks were the leading Tories.\n\nThe founders of our early colonies--holders of even five-shilling shares--have thus their enduring record; and a diligent collector may enrich his library of tracts with the printed names of all the graduates of old Harvard College in New England in the seventeenth century--so zealously did the Puritans ground their sons in learning.",
+  "passages": [
+    "The homes of many of the merchants named in this list were in the suburbs of London, and there they seem to have transacted their business, not in the City. We find them at Highgate, so well known before as the residence of the philosophic Earl of Arundel, where Lord Bacon died,--at Newington Green, Islington, Clerkenwell Green, Hackney, Hogsden, Bethnall Green, Kingsland, Moorfields,",
+    "A few instances of a clearly incorrect punctuation mark have been silently changed, for example ‘Mr,’ was changed to ‘Mr.’ Many instances of a missing comma, for example after the surname, have not been altered."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

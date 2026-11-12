@@ -1,0 +1,40 @@
+{
+  "gutenberg_id": 4742,
+  "title": "TrendSiters Digital Content and Web Technologies",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Vaknin, Samuel, 1961-",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Rangelovska, Lidija",
+      "role": "Editor",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2003-12-01",
+  "description": "",
+  "subjects": [
+    "Project Gutenberg"
+  ],
+  "topic_subjects": [
+    "Internet",
+    "Electronic books",
+    "World Wide Web"
+  ],
+  "locc": [
+    "TK",
+    "Z"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/4742",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "Please see the corresponding RTF file for this eBook. RTF is Rich Text Format, and is readable in nearly any modern word processing program."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

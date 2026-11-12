@@ -1,0 +1,77 @@
+{
+  "gutenberg_id": 49667,
+  "title": "Linotype Manual",
+  "subtitle": "Giving Detailed Instructions of the Proper Adjustment and Care of the Linotype",
+  "contributors": [
+    {
+      "name": "Various",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2015-08-10",
+  "description": "\"Linotype Manual\" by Various is a technical guide written in the late 19th century. This publication serves as a detailed manual for the operation, adjustment, and maintenance of the Linotype machine, a groundbreaking device in typesetting during that era. The book is likely targeted towards printers, operators, and technicians familiar with the printing trade, providing comprehensive guidance to ensure optimal performance of the Linotype machine.  The content of the book systematically covers a wide range of topics vital to the successful operation of the Linotype, including the proper setup and placement of the machine, temperature management of the metal, gas connections, and various machine adjustments. Each section provides clear instructions on how to care for and adjust different components of the Linotype, with illustrations to aid understanding. The manual emphasizes the importance of regular maintenance in preventing operational issues such as \"squirts\" during metal casting and includes troubleshooting advice for common problems encountered by operators. Overall, it serves as an essential resource for anyone working with the Linotype, helping to preserve the quality and efficiency of typesetting in printing.",
+  "subjects": [
+    "Engineering & Technology",
+    "How To ..."
+  ],
+  "topic_subjects": [
+    "Linotype"
+  ],
+  "locc": [
+    "Z"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/49667",
+  "table_of_contents": [
+    "BEST METHOD OF PLACING MACHINE",
+    "LINOTYPE MOTOR",
+    "THE MACHINE AS IT COMES FROM THE FACTORY",
+    "AND HOW TO ERECT IT",
+    "TEMPERATURE OF THE METAL",
+    "THE GAS CONNECTIONS AND GOVERNOR",
+    "PURIFYING THE METAL",
+    "FORMATION OF DROSS UPON THE SURFACE OF",
+    "LINOTYPE METAL",
+    "CARE OF FRICTION CLUTCH",
+    "TO ADJUST NEW STYLE AUTOMATIC STOP",
+    "TO SET VISE AUTOMATIC",
+    "TO PREVENT TRANSPOSITION OF MATRICES",
+    "THE ASSEMBLER STAR AND FRICTION SPRING",
+    "TO SET DISTRIBUTER BAR",
+    "TO SET THE MAGAZINE",
+    "TO SET DISTRIBUTER BOX LIFT",
+    "TO REMOVE SIDE OF KEYBOARD TO CLEAN",
+    "CAMS",
+    "THE DISTRIBUTER BOX AND RAILS",
+    "THE SPACEBAND BOX AND PAWLS",
+    "KEYBOARD, MAGAZINE AND CONNECTIONS",
+    "THE METAL POT",
+    "CAUSES OF SQUIRTS",
+    "DIRECTIONS FOR FACING MOUTHPIECE",
+    "CARE OF MATRICES, SPACEBANDS AND MAGAZINE",
+    "LAPPING AND CLEANING MOLDS",
+    "ADJUSTABLE MOLDS AND LINERS",
+    "THE SPACE BANDS",
+    "POINT SYSTEM OF THE MERGENTHALER LINOTYPE",
+    "MATRIX HAIR SPACES",
+    "ADJUSTMENT OF MOLD SLIDE AND DISK",
+    "DIRECTIONS FOR PUTTING IN A NEW VERGE",
+    "ALIGNMENT OF FACES",
+    "KEYBOARDS",
+    "SUPPLIES WHICH SHOULD BE KEPT IN STOCK",
+    "NUMBERS AND SIZES OF CHANNELS—SIZES OF",
+    "VERGES, PAWLS AND EARS OF MATRICES"
+  ],
+  "introduction": "The object in view in compiling this book is to show by means of cuts and detail drawings the different adjustments and how to make same.\n\nHow to keep metal in good condition to obtain best results, and other instructions that will tend to the successful operation of the Linotype.\n\nThe machine complete and ready for operation weighs 1,925 pounds. In operation there is no vibration, and the machine may be safely placed in any building of ordinary strength.\n\nEach machine requires somewhat less than one-quarter of a horsepower to drive it, but the allowance of one-half horsepower is recommended to insure steadiness of motion.\n\nIn placing machines allowance must be made for space sufficient to pass around and between them, and for seat of operator in front. A liberal allowance is 7x10 feet.\n\nThe driving pulley of the machine is 14½ inches in diameter and should be driven at about 62 revolutions per minute. Never to exceed 66. Any arrangement of shafting and pulleys which will secure this speed will answer.\n\nThe Linotype Company has recently had a specially designed electric motor built which is adapted for speedy application to Linotype machines. These motors are cheap, compact, reliable and pleasing in appearance. Their application demands no change in the machine except to remove the driving pulley and substitute a gear wheel furnished with the motor.\n\nThe only connection required is the extension of a wire to an ordinary incandescent lamp socket or other suitable source of electric power. The use of these motors avoid the necessity for countershafts, pulleys and belts, and greatly improve the appearance of the office.\n\nIn shipping the machine the base and heavy parts, such as column, metal pot, cams, vise, etc., are assembled. The base being bolted with lag screws to three skids and boxed up, with the distributer bracket and step cleated in the top.\n\nA second box, 20x24x18 inches, contains the key-board and reeds, intermediate bracket, channel-plate support, and all the small parts, such as vise-locking screws, flexible front, pi box and tube, second elevator, distributer box, keyboard rod guide assembled, all carriages, etc.\n\nA third box, 44x26x16 inches, contains face plate assembled, magazine, set of matrices, two small boxes, one containing large and small assembler glasses, the other the magazine entrance.",
+  "passages": [
+    "For one machine use a ½-inch supply pipe, and increase about ¼-inch for each additional machine, a 2-inch pipe being sufficient for a plant of twelve machines. A ½-inch feed pipe should be run to each machine.",
+    "The spaceband buffer F should be adjusted so that each band as it falls into the line will be supported by the buffer, with its ear about 1-32 inch above the top of the assembler rail.\n\nThe buffer wire should have a slight inclination downward toward the left, so that the ears of the bands will settle down as the line is assembled.",
+    "If the rails M (Fig. 26) and N (Fig. 27) are badly worn on the top 2 (Fig. 26) and 4 (Fig. 27) a matrix is liable to leave the box and enter on the distributer-bar diagonally, and if the distributer-box is not set properly the same thing will occur.",
+    "In many instances a machine will squirt metal back of the disk if the metal is very hot. As a general thing, this is laid to the gas, but in nearly every instance it will be found that it is caused by the mouthpiece not being true with the back of the mold.",
+    "Both sides of the spaceband slide 1 and 2 should measure the same at top and bottom, but side 1 should never be thicker than side 2. On the other hand, if side 2 be .001 thicker it will insure a better lockup of the matrices.",
+    "It will be found a great convenience, as well as a saving, to keep the following list of supplies on hand, so that if any of these parts should break or wear out they could be renewed at once and machine would not have to stand idle until they could be procured from factory or stock rooms."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

@@ -1,0 +1,39 @@
+{
+  "gutenberg_id": 65710,
+  "title": "A Synopsis of the British Mosses",
+  "subtitle": "Containing Descriptions of All the Genera and Species, (With Localities of the Rarer Ones) Found in Great Britain and Ireland, Based Upon Wilson's \"Bryologia Britannica,\" Schimper's \"Synopsis,\" Etc.",
+  "contributors": [
+    {
+      "name": "Hobkirk, Charles C. P. (Charles Codrington Pressick), 1837-1902",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-06-27",
+  "description": "\"A Synopsis of the British Mosses\" by Charles C. P. Hobkirk is a scientific publication written in the late 19th century. This comprehensive work aims to provide detailed descriptions of all the genera and species of mosses found in Great Britain and Ireland, focusing on the rarer varieties. The manual serves as a practical guide for both experienced bryologists and novices, facilitating the study and identification of these plants.  The opening of the volume introduces the author’s intentions, emphasizing that the manual should be regarded as a succinct reference for moss collectors and enthusiasts. It outlines the book's dual nature as both an original examination and a compilation, depending on works from respected sources such as Wilson's \"Bryologia Britannica.\" The preface thanks various contributors for their support while inviting ongoing collaboration from fellow collectors to enrich future publications regarding the geographical distribution of British mosses. Overall, it sets a scholarly tone for the meticulous descriptions of individual moss species that will follow throughout the work.",
+  "subjects": [
+    "Science - Biology",
+    "Nature/Gardening/Animals",
+    "Encyclopedias/Dictionaries/Reference"
+  ],
+  "topic_subjects": [
+    "Mosses -- Great Britain"
+  ],
+  "locc": [
+    "QK"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/65710",
+  "table_of_contents": [],
+  "introduction": "It is not my desire that this little volume should be looked upon as anything more than what is expressed in the title, simply “A SYNOPSIS OF THE BRITISH MOSSES,” and as a kind of vade-mecum to the working Bryologist, as well as a guide to beginners. It is not altogether an original work, nor yet is it a mere compilation, for nearly every species has been carefully examined under the microscope before being described, and then the diagnoses compared with other works, principally that great text-book of British Bryologists, “Wilson’s Bryologia Britannica.” Besides this work, I have also largely consulted, and drawn from, Bruch and Schimper’s “Bryologia Europæa,” Schimper’s “Synopsis,” Dr. Mueller’s “Synopsis,” the Proceedings of the Linnean Society, the Bulletins of the Royal Botanical Societies of France and of Belgium; and last, but not least, the valuable papers recently contributed by Dr. Braithwaite to “Journal of Botany,” “Grevillea,” and the “Monthly Microscopical Journal,” and also some papers by Mr. Mitten in the first-named publication.\n\nIn the general arrangement of the genera and species, I have mainly followed the “Bryologia Britannica,” as I did not consider myself justified in departing widely from it, although many of our principal Muscologists look upon it as very faulty; but I did not hold my authority sufficient to alter what has become a classical arrangement amongst us: and more particularly as both Dr. Braithwaite and the Rev. J. Fergusson are engaged upon more critical examinations, prior to the publication of new and more natural arrangements. The Analysis of the Genera is principally founded upon the same part from Wilson, and is intended not as an arrangement, but merely a key.\n\nIn the “Appendix” will be found a few omitted species, and alterations of nomenclature, as well as a few errata, which should be noted in the margin at their proper places.\n\nI much regret that, by an oversight, I have omitted to insert var. δ squarrosulum under Sphagnum cymbifolium, gathered by my friend Mr. Bagnall, in Sutton Park, Birmingham; and the same locality should be added after Hypnum aduncum, H. Sendtneri, and H. intermedium.",
+  "passages": [
+    "17. S. RECURVUM. P. Beauv. “Distinguished from the last by its branch leaves, recurved when dry, elliptical, not attenuated towards the apex; usually growing out of the water, whilst S. cuspidatum is almost submerged.”—G. E. Hunt.",
+    "111. C. SWARTZII. Schpr. Tufts dense soft yellowish green, brownish below, without radicles. St. 2–3in. slender; l. erecto-patent, straight or slightly secund, lowest lanceolate, upper lanceolate-subulate, entire at apex, base somewhat sheathing, auricles hyaline inflated decurrent. Nerve two-thirds of base, finely sulcate at back towards apex.",
+    "205. G. MUHLENBECKII. Schpr. Loosely pulvinate and cæspitose; st. tall erect or procumbent dichotomous and rooting at base; l. densely crowded, patulous, erect when dry, elongate-lanceolate, keeled with the strong nerve, margin plane, lower with a short, upper with a long, rough hair point with recurved teeth; basal cells elongate, upper rounded quadrate; caps.",
+    "297. (6) B. ANNOTINUM. Hed. St. ½–1in. cæspitose; l. lower lanceolate erecto-patent entire, upper longer, serrulate at apex, margins reflexed below; caps. narrow pyriform, with a long tapering neck; lid conical pointed; barren fl. terminal; inner perist. with cilia; annulus distinct compound.",
+    "406. L SCIUROIDES. Schw. St. or branches 1in. from a creeping rhizome; l. imbricate, ovate, entire, tapering to a point, plicate, somewhat secund; per. l. longer, all nerveless; caps. long elliptical erect; lid conical beaked.",
+    "This name has been wrongly given to some half-dozen different species; but I am informed by Dr. Braithwaite (in lit. 29, Mch. 1872), that he has recently consulted the original specimen of Dillenius on which Linnæus founded the species, and from his examination the synonymy of this group must be altered as above."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

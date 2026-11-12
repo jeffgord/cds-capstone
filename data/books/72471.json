@@ -1,0 +1,59 @@
+{
+  "gutenberg_id": 72471,
+  "title": "The Fayûm and Lake Mœris",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Brown, R. H. (Robert Hanbury), 1849-1926",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Scott-Moncrieff, Colin Campbell, Sir, 1836-1916",
+      "role": "Author of introduction, etc.",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2023-12-21",
+  "description": "\"The Fayûm and Lake Mœris\" by Major R. H. Brown is a scientific publication written in the late 19th century. The book delves into the intricacies of Egypt’s irrigation systems, particularly focusing on the historic region of the Fayûm and the elusive Lake Mœris. It aims to provide a detailed technical analysis of irrigation practices, the geographical, and historical significance of these areas, while exploring past theories and evidence regarding the existence and location of Lake Mœris.  At the start of the work, Brown sets the context for his investigation by discussing the changes made to the irrigation system in the Fayûm over the past nine years, highlighting his firsthand experience in the region. He introduces the ancient significance of Lake Mœris and the mysteries surrounding it as reflected through historical accounts, especially those of Herodotus. The opening also outlines the structure of the forthcoming chapters, indicating a methodical approach to exploring the province's modern state, ancient testimonies concerning the lake, and the various theories attempting to ascertain its original location and features. Brown demonstrates a clear intent to contribute valuable insights into an important subject of both practical and historical relevance in Egypt.",
+  "subjects": [
+    "History - Ancient",
+    "Science - Earth/Agricultural/Farming",
+    "Environmental Issues"
+  ],
+  "topic_subjects": [
+    "Fayyum (Egypt) -- Description and travel",
+    "Moeris, Lake (Egypt)"
+  ],
+  "locc": [
+    "DT"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/72471",
+  "table_of_contents": [
+    "INTRODUCTION",
+    "THE FAYÛM OF TO-DAY",
+    "ANCIENT TESTIMONY ABOUT LAKE MŒRIS",
+    "THEORIES AS TO WHERE AND WHAT LAKE MŒRIS WAS",
+    "GENERAL REMARKS, 25 — LINANT THEORY, 28 — COPE WHITEHOUSE",
+    "THEORY, 40 — LINANT’S OBJECTIONS TO THEORY FAVOURED, 48",
+    "W. M. F. PETRIE’S VIEWS",
+    "HISTORY OF THE FAYÛM PROVINCE",
+    "THE FAYÛM BEFORE LAKE MŒRIS, 61 — THE FAYÛM AS LAKE",
+    "MŒRIS, 69 — TRANSFORMATION OF LAKE MŒRIS TO THE FAYÛM",
+    "OF TO-DAY",
+    "THE FAYÛM IN THE FUTURE, AND POSSIBLE UTILISATION OF",
+    "THE WADI RAIÂN"
+  ],
+  "introduction": "During the last nine years it has fallen to the honourable lot of a small band of English engineers, most of them trained in India, to effect a revolution in the irrigation system of old Egypt, and thereby materially to improve the wealth and agricultural prosperity of the country. This is not the place, nor would it be becoming on my part to tell what has been effected. We had the happy fortune to find things at their lowest ebb. We could hardly make a change without making an improvement. In all these improvements Major Robert Hanbury Brown, R.E., has from the first occupied a conspicuous place. Few Englishmen have gone through so many summer seasons as he has, in the blazing heat of Upper Egypt. For that has been his field of labour, and of that field the fertile, abnormal, neglected, quaint old Province of the Fayûm forms a part. Truly, an old world province! whose historical roll carries us back to very early days, before that venerable Sheikh Abraham had made his emigration from Assyrian Haran—a province abundantly watered, and therefore rich, and highly prized by Pharaoh and Ptolemy, Cæsar and Arab Khalif, until Mameluke misrule and Turkish brutish ignorance let it fall into decay.\n\nIt has fallen to Major Brown to help to restore the Fayûm, and he has thus obtained a very intimate knowledge of it. He is not the first author on this subject. Learned Germans and brilliant Frenchmen have already written on the Fayûm. Major Brown pretends neither to the learning of the one, nor to the brilliancy of the other, but he has, what neither one nor the other ever had, an accurate knowledge of the levels of the country. This information is quite indispensable to the hydraulic engineer, and it is strange that that distinguished Frenchman M. Linant de Bellefonds, who devoted so many years to the physical improvement of Egypt, should have been evidently without it.\n\nOf course Major Brown could not write of the Fayûm without introducing the mystic Lake Mœris. Herodotus does not lie when he tells of the things he has actually seen, and he says he saw Lake Mœris. So it must have existed. But where was it? That is the question that has been asked from one generation to another.\n\nIn the following pages Major Brown, in simple, straightforward language, gives his opinion, and the reader may be sure that he does not talk of what he does not know. Whether his conclusions are correct or not, this account of the Fayûm is an important addition to our knowledge of the subject.",
+  "passages": [
+    "The pair of wheels shown on this Plate raise the water 4·50 metres, and are worked by a total fall of water of 0·55 metres.\n\nThe saqya mawâshi (saqya worked by cattle) and the shadûf are also employed to a small extent, as elsewhere in Egypt, but only for small areas.",
+    "Such a peculiar arrangement of land and water as that supposed, would scarcely have been passed without notice by those who visited and described Lake Mœris. The Arsinoïte Nome would have been in some way described as being between two lakes, with a mass of water impending over it. The danger of such an arrangement in case of a breach would have been surely noted.",
+    "The depth assigned to Lake Mœris also gives rise to the following remarks, which will afford the means of judging of the value of M. Linant’s arguments. He states that Herodotus gives the depth of the lake at 92 metres, and remarks that if the whole Fayûm had been filled to form the lake, its dimensions would have surpassed by ten times the greatest given for it.",
+    "It will be as well to determine, before going further, whether the present volumes of the Nile flood would suffice to fill the Lake Fayûm to the level of R.L. 25·00, which I have assumed it must have reached to account for the Nile deposits on its borders at R.L. 24·50.",
+    "There now remains to be calculated the discharge that this reservoir would give back to the Nile during the low water months.",
+    "In this same paper, from which I am quoting, this further passage also occurs, which agrees with what I have imagined to have been the early history of the town, on part of the ruins of which Medineh now stands."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

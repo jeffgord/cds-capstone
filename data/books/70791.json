@@ -1,0 +1,38 @@
+{
+  "gutenberg_id": 70791,
+  "title": "The highest aim of the physicist",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Rowland, Henry Augustus, 1848-1901",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2023-05-18",
+  "description": "\"The Highest Aim of the Physicist\" by Henry Augustus Rowland is a scientific publication composed as an address given to the Physical Society of America in the late 19th century. The book explores the fundamental principles of physics, discussing the nature of matter, ethereal forces, and the laws governing interactions in the universe. It reflects Rowland's efforts to elevate the dignity and intellectual pursuits of physicists, arguing against the framework that prioritizes practical applications over theoretical understanding.  In this address, Rowland emphasizes the importance of pure science and the pursuit of knowledge for its own sake, rather than for immediate practical benefits. He scrutinizes the limits of current scientific understanding, especially regarding gravity, matter, and electricity, pointing out gaps and assumptions in accepted laws. Rowland also highlights societal neglect of scientific research funding, urging the scientific community to strive for clarity and rigor in investigation. Ultimately, he calls for a collective effort to further humanity's knowledge of the universe while maintaining integrity in the scientific endeavor, believing that such pursuits contribute to the greater good of society.",
+  "subjects": [
+    "Essays, Letters & Speeches",
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Physics"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/70791",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "But I know, when I look in the faces of those before me, where the eager intellect and high purpose sit enthroned on bodies possessing the vigor and strength of youth, that the writer of a hundred years hence can no longer throw such a reproach upon our country. Nor can we blame those who have gone before us. The progress of every science shows us the condition of its growth.",
+    "Again, that portion of the law which says that gravitational attraction is proportional to the quantity of matter, which is the same as saying that the attraction of one body by another is not affected by the presence of a third, the feeble proof that we give by weighing bodies in a balance in different positions with respect to each other cannot be accepted on a larger scale.",
+    "Then as to electricity, the subtile spirit of the amber, the demon who reached out his gluttonous arms to draw in the light bodies within his reach, the fluid which could run through metals with the greatest ease but could be stopped by a frail piece of glass! Where is it now? Vanished, thrown on the waste heap of our discarded theories to be replaced by a far nobler and exalted one of action in",
+    "At the present time, through the labors of Maxwell supplemented by those of Hertz and others, we have arrived at the great generalization that all wave disturbances in the ether are electromagnetic in their nature.",
+    "How is it, then, that we hear physicists and others constantly stating what will happen beyond these limits? Take velocities, for instance, such as that of a material body moving with the velocity of light. There is no known process by which such a velocity can be obtained even though the body fell from an infinite distance upon the largest aggregation of matter in the Universe.",
+    "So the law of gravitation within planetary distances is far toward absolute truth, but may still need amending before it is advanced farther in that direction."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

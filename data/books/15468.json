@@ -1,0 +1,52 @@
+{
+  "gutenberg_id": 15468,
+  "title": "Lectures on popular and scientific subjects",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Caithness, James Sinclair, 14th earl of, 1821-1881",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2005-03-26",
+  "description": "\"Lectures on Popular and Scientific Subjects\" by the Earl of Caithness is a collection of lectures that explore various scientific and practical topics, likely written in the late 19th century. The book addresses important subjects such as coal and coal-mining, the application of science to art, and the economic implications of seemingly trivial costs, shedding light on the value of resources and advancements in technology during that time.   The opening of this work begins with a discussion on coal and coal-mining, revealing the significance of coal as a vital resource for England's industrial power and economic prosperity. The Earl examines the history and extent of coal production, detailing statistics on extraction rates, the growth of collieries, and the geographical distribution of coalfields. He highlights the laborious and hazardous processes involved in mining, as well as the impact of these operations on various aspects of society, emphasizing the contribution of coal to the nation’s wealth while acknowledging the challenges faced by miners in their daily work.",
+  "subjects": [
+    "History - Modern (1750+)",
+    "Science - Earth/Agricultural/Farming",
+    "Engineering & Technology",
+    "Environmental Issues",
+    "Economics"
+  ],
+  "topic_subjects": [
+    "Science",
+    "Industrial arts"
+  ],
+  "locc": [
+    "Q"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/15468",
+  "table_of_contents": [
+    "COAL AND COAL MINES",
+    "SCIENCE APPLIED TO ART",
+    "A PENNY'S WORTH; OR, \"TAKE CARE OF THE PENCE, AND",
+    "THE POUNDS WILL TAKE CARE OF THEMSELVES\"",
+    "PAST AND PRESENT MEANS OF COMMUNICATION",
+    "THE STEAM-ENGINE",
+    "ON ATTRACTION",
+    "THE OIL FROM LINSEED",
+    "HODGE-PODGE; OR, WHAT'S INTILT"
+  ],
+  "introduction": null,
+  "passages": [
+    "I think it is now time to conclude this most interesting subject, for though I have by no means exhausted it, yet I fear I have said as much as a lecture will warrant. The subject shows us how mindful a kind Providence has been of man, and to this nation in particular, for to our coal we in a measure owe much of our greatness.",
+    "The chemist deals with the various substances brought under his notice, thereby acquiring a knowledge of their properties, enabling him to produce results which are truly beneficial. This knowledge is power.\n\nThe painter makes the features of Nature his study, and by his brush delineates them on the canvas, and thus by knowledge of art he exhibits power.",
+    "Suez Canal.--There is an all-absorbing topic now before the public, and it is one that brings strikingly before us the thirst for communication of both body and mind to and from distant parts of our globe. It is one of deep importance to all who take an interest in the advancement of science--I mean the Suez Canal.",
+    "Savory's engine consisted of two steam vessels connected to a boiler by tubes; a suction pipe, or that pipe which leads from a pump of the present day to the well, and communicating with each of the steam vessels by valves opening upwards; a pipe going from these steam vessels to any required height to which the water is to be raised.",
+    "Having now, to the best of my power, so far as a single lecture will permit, brought the steam-engine from 120 B.C. to the present time, it only remains for me to say, that it shows how actively the mind of man has been permitted to work to bring it to perfection by the direction of an all-wise Providence, \"who knows our necessities before we ask, and our ignorance in asking.\" A traveller by rail",
+    "The magnet acts through media and at a distance, as well as in contact; and it has an especial attraction for iron, the more so when the conducting medium is solid, such as a table; and so when the magnet is horizontally suspended, or poised, in the vicinity of iron, its tendency to point north and south is seriously disturbed."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

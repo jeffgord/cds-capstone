@@ -1,0 +1,51 @@
+{
+  "gutenberg_id": 31458,
+  "title": "Additional Records and Extensions of Known Ranges of Mammals from Utah",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Durrant, Stephen David, 1902-1975",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Hansen, Richard M.",
+      "role": "Author",
+      "order": 2
+    },
+    {
+      "name": "Lee, M. Raymond",
+      "role": "Author",
+      "order": 3
+    }
+  ],
+  "language": "en",
+  "issued": "2010-03-01",
+  "description": "\"Additional Records and Extensions of Known Ranges of Mammals from Utah\" by Stephen D. Durrant, M. Raymond Lee, and Richard M. Hansen is a scientific publication written in the mid-20th century. This work primarily focuses on the documentation and analysis of mammal distribution in Utah, presenting new findings and expanding the known ranges of various mammal species within the state.  The text details the discovery and identification of several mammalian species previously unrecorded in Utah and updates the geographic ranges of various others. The authors provide specific locations and conditions under which specimens were found, outlining the significance of these findings in the context of Utah's ecological studies. Among the species explored are the Dusky Shrew, Water Shrew, various bats, and the Yellow-bellied Marmot, with each entry including notes on previously existing knowledge, the relevance of the findings, and implications for understanding wildlife distribution across diverse habitats. The publication emphasizes the importance of continued research and monitoring of wildlife as a means to enhance conservation efforts and ecological knowledge.",
+  "subjects": [
+    "Animal",
+    "Animals-Wild-Mammals",
+    "Science - Biology",
+    "Nature/Gardening/Animals",
+    "Environmental Issues"
+  ],
+  "topic_subjects": [
+    "Mammals -- Utah"
+  ],
+  "locc": [
+    "QH"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/31458",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "=Myotis subulatus melanorhinus= (Merriam). Small-footed Myotis.--This bat previously was known from only seven localities in Utah, which indicated that it occurred in only the western and southern areas of the state.",
+    "=Marmota flaviventer nosophora= Howell. Yellow-bellied Marmot.--Durrant (1952:101) did not indicate that any species of the genus Marmota occurred on the mountains within the basin of Pleistocene Lake Bonneville. Furthermore, he commented (op. cit.:502) upon the dearth of sciurids within this basin. One specimen, No. 10,905, of the subspecies M. f.",
+    "=Eutamias umbrinus umbrinus= (J. A. Allen). Uinta Chipmunk.--Two specimens, numbers 10,236 and 10,237, from the junction of Argyle and Minnie Maud creeks, Carbon County, prove that members of this subspecies occur on the West Tavaputs Plateau, which is outside the range ascribed to this subspecies by White (1953:572) and by Durrant (1952:142).",
+    "=Reithrodontomys megalotis megalotis= (Baird). Western Harvest Mouse.--Durrant (1952:295) reported no harvest mice from the Uinta Basin in northeastern Utah. One specimen, No. 10,239, was obtained from two miles east of Duchesne, Duchesne County. This specimen extends the known range in Utah 50 miles northward, and indicates that the harvest mouse of the subspecies R. m.",
+    "=Phenacomys intermedius intermedius= Merriam. Heather Vole.--The heather vole, while not rare, is uncommon in Utah. Durrant (1952:360) had but eight specimens from various localities in Summit, Wasatch, Salt Lake and Utah counties and supposed that the species was restricted to the western Uinta Mountains and southern Wasatch Mountains.",
+    "=Urocyon cinereoargenteus scottii= Mearns. Gray Fox.--One skull, No. 10,240, from mouth of Birch Creek, Deep Creek Mountains, Juab County, extends the known geographic range 50 miles east from Cherry Creek Canyon, Nevada (see Hall, 1946:241)."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

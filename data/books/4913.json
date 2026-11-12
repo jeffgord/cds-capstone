@@ -1,0 +1,78 @@
+{
+  "gutenberg_id": 4913,
+  "title": "Chess and Checkers : the Way to Mastership",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Lasker, Edward, 1885-1981",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2004-01-01",
+  "description": "\"Chess and Checkers: The Way to Mastership\" by Edward Lasker is a comprehensive instructional guide on the games of chess and checkers, likely written in the early 20th century. The work serves both as a manual for beginners, offering clear instructions on the rules and tactics of chess and checkers, as well as valuable insights and strategies for more advanced players. The book emphasizes the enjoyable nature of both games while also highlighting their strategic depths.  The opening of the text sets the stage for an exploration of chess and checkers, beginning with a preface that discusses the historical context of chess, especially its rise in popularity during challenging times, such as wartime. Lasker discusses the parallels between chess and military strategy, emphasizing how playing the game sharpens logical thinking and concentration. He also outlines the structure of the manual, which includes rules, tactics, strategies, and illustrative games, aiming to make the teachings accessible and engaging for learners at all levels. This initial section indicates a strong educational focus, aiming to dispel myths about the complexity of chess while providing a solid foundation for mastering both games.",
+  "subjects": [
+    "How To ...",
+    "Sports/Hobbies"
+  ],
+  "topic_subjects": [
+    "Chess",
+    "Checkers"
+  ],
+  "locc": [
+    "GV"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/4913",
+  "table_of_contents": [
+    "INFORMATION ABOUT THIS E-TEXT EDITION",
+    "INTRODUCTION",
+    "THE HISTORY OF CHESS",
+    "THE HISTORY OF CHECKERS",
+    "THE GAME OF CHESS",
+    "THE RULES OF THE GAME",
+    "Board and men",
+    "The moves of the men",
+    "Special terms",
+    "Symbols for moves",
+    "Chess laws",
+    "ELEMENTARY TACTICS",
+    "Fundamental endings",
+    "Relative value of the men",
+    "How the different men cooperate",
+    "Sacrificing",
+    "GENERAL PRINCIPLES OF CHESS STRATEGY",
+    "King's Pawn openings",
+    "Queen's Pawn openings",
+    "The middle game",
+    "ILLUSTRATIVE GAMES",
+    "Game No. 1: Jackson Showalter vs. Edward Lasker,",
+    "Lexington, Ky",
+    "Game No. 2: Edward Lasker vs. Jose R. Capablanca,",
+    "New York",
+    "PROBLEMS",
+    "THE GAME OF CHECKERS",
+    "THE RULES OF THE GAME",
+    "ELEMENTARY TACTICS",
+    "THE FIVE FUNDAMENTAL POSITIONS",
+    "The first position",
+    "The second position",
+    "The change of the move",
+    "The third position",
+    "The fourth position",
+    "The fifth position",
+    "GENERAL PRINCIPLES AND ILLUSTRATIVE GAMES",
+    "PROBLEMS"
+  ],
+  "introduction": "The present world war has given great impetus to the game of Chess. In the prison camps, in the field hospitals, in the training camps and even in the trenches Chess has become a favorite occupation in hours of leisure, not only because it offers a most fascinating pastime, but mainly because it serves beyond any doubt to develop what is now the most interesting study for every soldier--the grasp of the principles underlying military strategy and the ability to conceive and to carry out military operations on a large scale.\n\nFrederick the Great, Napoleon and Moltke, the great scientists of war, had a decided liking for the game of Chess and owed to it many an inspiration which helped them in laying out their military plans. Indeed, no other game exists which offers such complete analogies to war.\n\nTwo armies oppose each other on the Chess board, composed of different units which may well be compared with infantry, cavalry and artillery.\n\nThe success of the operations on the board, which represents the battlefield, does not depend upon any element of chance, but solely upon the ingenuity and the skill of the players who are the commanders-in-chief of the forces.\n\nAlthough a Chess game differs from a battle in that the material strength of the opponents is equal, the order of events is the same in Chess as in war. The troops are first mobilized and made ready for action with utmost speed, then important positions are occupied which give the troops freedom of action and insure safe lines of retreat and, finally, when the formation of the enemy is known, the strategic plan is made which the generals try to carry out by means of different tactical maneuvers.\n\nConsidering this similarity of Chess and war it is not surprising that Chess has gained greatly in popularity among all those whose work or thought is more than superficially influenced by the present war.\n\nNo special inducement, however, would be necessary to learn the game, were it more generally known that great advantage is to be derived from the study of Chess, quite apart from the cultivation of strategic ability.\n\nThe faculty which is developed by playing Chess is useful wherever logical thinking and concentration are needed, and it cannot be denied that these qualities are most desirable in the every day struggle in which mental work has so largely superseded manual labor.",
+  "passages": [
+    "It is clear that in order to checkmate the lone King it is necessary to attack the square on which he stands as well as all adjacent squares to which he could escape. The most unfavorable position for the King is, of course, a corner of the board as there he has only three squares to go to while in the middle of the board eight squares are accessible to him.",
+    "Another square which after castling on the King side is often the mark of attack for the Queen in connection with either Knight or Bishop, is the one immediately in front of the King in the Knight's file. Diagram 26 illustrates several possibilities of this kind. White, on the move, can play (1) Q-g5, attacking for the second time the Pawn g7 which is only once protected.",
+    "In trying to place the pieces on squares where they have as much mobility as possible individual thought is required with each new game as it depends altogether upon the moves of the opponent which lines can be opened for Bishops, Rooks and Queen and where a good field of action can be secured for the Knights.",
+    "However, in the position resulting after these moves (Diagram 47) White gets the upper hand because he is one move ahead in the attack on the opposing King's Knight. The danger of the concentration of two pieces on this Knight lies in the fact that Black is obliged to retake with the g-Pawn in case White exchanges on f6 and that thereby the squares f6 and h6 lose their natural protection.",
+    "+---------------------------------------+ 8 | #R | | | #Q | | #R | #K | | |---------------------------------------| 7 | #P | #B | #P | | | #P | #P | #P | |---------------------------------------| 6 | | | | #B | | | | | |---------------------------------------| 5 | | | #P | | | | | | |---------------------------------------| 4 | | | | | ^Kt| | | | |---------------------------------------| 3 | | |",
+    "A favorite trick with composers is to provide a stalemate which they relieve by obstructing the way of one of the pieces involved in the stalemate. The move which is thereby allowed Black's King exposes him to a discovered mate. The key move of problem No.3 is P-g8 (becomes Knight)."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

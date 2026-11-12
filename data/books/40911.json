@@ -1,0 +1,61 @@
+{
+  "gutenberg_id": 40911,
+  "title": "The Ether of Space",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Lodge, Oliver, Sir, 1851-1940",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2012-10-02",
+  "description": "\"The Ether of Space\" by Sir Oliver Lodge is a scientific publication written in the early 20th century. The work explores the concept of the ether as a medium essential for the propagation of light and other phenomena. Lodge delves into various aspects of physics related to this medium, illustrating its vital role in the structure of the universe and in the behavior of light.  The opening of the book introduces the author's fascination with the ether of space, positing it as a fundamental yet often overlooked aspect of physics. Lodge references historical figures like Newton and Maxwell to emphasize the ether's interconnectedness with light, electricity, and magnetism. He outlines his intent to make his conclusions accessible to a wider audience, suggesting that the ether is not only a theoretical construct but a reality that pervades the universe. The introduction sets the stage for a detailed examination of the ether's properties, including its elasticity and inertia, and how these characteristics enable it to support wave phenomena like light.",
+  "subjects": [
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Ether (Space)"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/40911",
+  "table_of_contents": [
+    "CHAPTER PAGE",
+    "INTRODUCTION. GENERAL AND HISTORICAL xi",
+    "THE LUMINIFEROUS ETHER AND THE",
+    "MODERN THEORY OF LIGHT",
+    "THE INTERSTELLAR ETHER AS A CONNECTING",
+    "MEDIUM",
+    "INFLUENCE OF MOTION ON VARIOUS",
+    "PHENOMENA",
+    "EXPERIMENTS ON THE ETHER",
+    "SPECIAL EXPERIMENT ON ETHERIAL",
+    "VISCOSITY",
+    "ETHERIAL DENSITY",
+    "FURTHER EXPLANATIONS CONCERNING",
+    "THE DENSITY AND ENERGY OF THE ETHER",
+    "ETHER AND MATTER",
+    "STRENGTH OF THE ETHER",
+    "GENERAL THEORY OF ABERRATION",
+    "APPENDIX 1. ON GRAVITY AND ETHERIAL",
+    "TENSION",
+    "APPENDIX 2. CALCULATIONS IN CONNEXION",
+    "WITH ETHER DENSITY",
+    "APPENDIX 3. FRESNEL'S LAW A SPECIAL CASE",
+    "OF A UNIVERSAL POTENTIAL FUNCTION"
+  ],
+  "introduction": "Investigation of the nature and properties of the Ether of Space has long been for me the most fascinating branch of Physics, and I welcome the opportunity of attempting to make generally known the conclusions to which I have so far been led on this great and perhaps inexhaustible subject.\n\nTO THE FOUNDERS OF UNIVERSITY COLLEGE, LIVERPOOL, ESPECIALLY TO THOSE BEARING THE NAMES OF RATHBONE AND OF HOLT THIS BOOK IS INSCRIBED\n\n\"Ether or Æther (αιθηρ probably from αιθω I burn,) a material substance of a more subtle kind than visible bodies, supposed to exist in those parts of space which are apparently empty.\"\n\nThe derivation of the word seems to indicate some connexion in men's minds with the idea of Fire: the other three \"elements,\" Earth, Water, Air, representing the solid, liquid, and gaseous conditions of ordinary matter respectively. The name Æther suggests a far more subtle or penetrating and ultra-material kind of substance.\n\nNewton employs the term for the medium which fills space--not only space which appears to be empty, but space also which appears to be full; for the luminiferous ether must undoubtedly penetrate between the atoms--must exist in the pores so to speak--of every transparent substance, else light could not travel through it. The following is an extract from Newton's surmises concerning this medium:--",
+  "passages": [
+    "Still, it is open to a physicist to state how the universe appears to him, in its broad character and physical aspect. If I were to make the attempt I should find it necessary for the sake of clearness to begin with the simplest and most fundamental ideas; in order to illustrate, by facts and notions in universal knowledge, the kind of process which essentially occurs in connection with the",
+    "The case of a revolving lighthouse, emitting long parallel beams of light and brandishing them rapidly round, is rather interesting. Fig. 3 may assist the thinking out of this case. Successive disturbances A, B, C, D, lie along a spiral curve, the spiral of Archimedes; and this is the shape of the beams, as seen illuminating the dust particles, though the pitch of the spiral is too gigantic to be",
+    "{ An apparent change of wave-length. { An apparent error in direction. Receiver alone { No change of phase or of intensity, moving produces { except that appropriate { to different virtual { velocity of light.",
+    "The result was again negative; that is to say, a magnetic field causes no perceptible acceleration in a beam of light sent along the lines of force. The extra velocity that could have been observed would have been 1/9th of a millimetre per second, or 16 miles per hour, for each C.G.S. unit of field intensity.",
+    "When a steel spring is bent or distorted, what is it that is really strained? Not the atoms--the atoms are only displaced; it is the connecting links that are strained--the connecting medium--the ether. Distortion of a spring is really distortion of the ether. All stress exists in the ether. Matter can only be moved.",
+    "But it is not to be supposed that the transmission of any of these forces gives the ether the slightest trouble, or strains it to anywhere near the limits of its capacity. Such forces must be transmitted with perfect ease, for there are plenty of cases where the force of gravitation is vastly greater than that."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

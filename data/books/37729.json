@@ -1,0 +1,43 @@
+{
+  "gutenberg_id": 37729,
+  "title": "A Discourse Presented to the Most Serene Don Cosimo II., Great Duke of Tuscany, Concerning the Natation of Bodies Vpon, and Submersion In, the Water.",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Galilei, Galileo, 1564-1642",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Salusbury, Thomas",
+      "role": "Translator",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2011-10-12",
+  "description": "\"A Discourse Presented to the Most Serene Don Cosimo II., Great Duke of Tuscany\" by Galileo Galilei is a scientific treatise written in the early 17th century. The work delves into the principles of buoyancy and the reasons behind the floating and sinking of solid bodies in water, offering a detailed analysis and challenging Aristotelian concepts about gravity and density.   The opening of this discourse sets the stage for a rigorous examination of the scientific theories behind the natation (floating) and submersion of bodies in water. Galileo introduces the subject by addressing Don Cosimo II and discusses his previous astronomical observations, before delving into a debate with learned men about the nature of gravity and buoyancy. He posits that the weight of a solid relative to the density of water determines its behavior in water, suggesting that figure or shape does not inherently affect a body's ability to float or sink. Through definitions and axioms, he outlines his intention to provide a logical and mathematical foundation for the observations, framing his discourse as a more effective means of argumentation compared to verbal disputes.",
+  "subjects": [
+    "Science - Physics"
+  ],
+  "topic_subjects": [
+    "Hydrostatics",
+    "Specific gravity"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/37729",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "When in one of the above said Vessels, of what ever breadth, whether wide or narrow, there is placed such a Prisme or Cylinder, inviron'd with Water, if we elevate that Solid perpendicularly, the Water circumfused shall abate, and the Abatement of the Water, shall have the same proportion to the Elevation of the Prisme, as one of the Bases of the Prisme, hath to the Surface of the Water",
+    "The third difficulty in the doctrine of Archimedes was, that he could not render a reason whence it arose, that a piece of Wood, and a Vessell of Wood, which otherwise floats, goeth to the bottom, if filled with Water.",
+    "But let us proceed to evince, that the water yields and suffers it self to be penetrated by every the lightest Body; and therewithall demonstrate, how, even by Matters that submerge not, we may come to know that Figure operates nothing about the going or not going to the Bottom, seeing that the water suffers it self to be penetrated equally by every Figure.",
+    "Now, pursuing my purpose, I say; that it needs not, that we have recourse to the Tenacity, that the parts of the water have amongst themselves, by which they resist and oppose Division, Distraction, and Seperation, because there is no such Coherence and Resistance of Division for if there were, it would be no less in the internall parts than in those nearer the superiour or externall Surface, so",
+    "All sorts of Figures of whatsoever Matter, albeit more grave than the Water, do by Benefit of the said Rampart, not only float, but some Figures, though of the gravest Matter, do stay wholly above Water, wetting only the inferiour Surface that toucheth the Water.",
+    "I have said all that I could at present think of, to maintain the Assertion I have undertook. It remains, that I examine that which Aristotle hath writ of this matter towards the end of his Book De Caelo[79]; wherein I shall note two things: the one that it being true as hath been demonstrated, that Figure hath nothing to do about the moving or not moving it self upwards or downwards, its seemes"
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

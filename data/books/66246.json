@@ -1,0 +1,79 @@
+{
+  "gutenberg_id": 66246,
+  "title": "Our Atomic World: The Story of Atomic Energy",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Craven, C. Jackson (Claude Jackson), 1908-1988",
+      "role": "Author",
+      "order": 1
+    }
+  ],
+  "language": "en",
+  "issued": "2021-09-08",
+  "description": "\"Our Atomic World: The Story of Atomic Energy\" by C. Jackson Craven is a scientific publication that was likely written during the early to mid-20th century. This informative text delves into the history and significance of atomic energy, tracing its development from ancient philosophical inquiries about the nature of matter to contemporary applications in energy production and scientific research. The book aims to educate readers about the principles of atomic science and the implications of nuclear energy for society.  The narrative begins with the exploration of atomic theory from ancient Greek philosophers and moves through significant scientific advancements, including the discoveries of electrons, radioactivity, and nuclear fission. Craven explains how these scientific milestones culminated in the development of nuclear energy and weapons, particularly emphasizing the consequences of the Manhattan Project and the ushering in of the Nuclear Age. The book also discusses the potential of nuclear power for future energy needs, addressing both the benefits and challenges associated with the peaceful use of atomic energy. Throughout, Craven underscores the importance of understanding atomic energy's role in modern civilization, encouraging responsible awareness among readers.",
+  "subjects": [
+    "History - Modern (1750+)",
+    "Science - Physics",
+    "Environmental Issues"
+  ],
+  "topic_subjects": [
+    "Nuclear energy -- Popular works"
+  ],
+  "locc": [
+    "QC"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/66246",
+  "table_of_contents": [
+    "THE GREEKS WERE CURIOUS ABOUT MATTER",
+    "THE ATOMIC THEORY IS CONFIRMED",
+    "CATHODE RAYS SHOW ATOMS CONTAIN SMALLER PARTS",
+    "RADIOACTIVE ATOMS DISCOVERED",
+    "RUTHERFORD FINDS THE ATOMIC NUCLEUS",
+    "THE PROTON IS RECOGNIZED",
+    "ISOTOPES ARE DISCOVERED",
+    "THE ALCHEMISTS’ DREAM COMES TRUE",
+    "SOME PARTICLES HAVE NO ELECTRIC CHARGE",
+    "MATTER IS ENERGY; ENERGY IS MATTER",
+    "NUCLEI CONTAIN ENERGY",
+    "CHRONOLOGY",
+    "FISSION IS EXPLAINED",
+    "THE FISSION BOMB IS EXPLODED",
+    "NUCLEAR ENERGY IS NEEDED FOR THE FUTURE",
+    "FUSION HAS POTENTIAL",
+    "ISOTOPES HAVE MANY USES",
+    "RADIOISOTOPES AT WORK",
+    "THE ATOMIC ENERGY COMMISSION",
+    "TOWARD AN INTERNATIONAL ATOM",
+    "SUGGESTED REFERENCES",
+    "United States Atomic Energy Commission",
+    "Division of Technical Information",
+    "Library of Congress Catalog Card Number",
+    "1963; 1964 (Rev.)",
+    "JACKSON CRAVEN is a teacher’s teacher as well as a student’s teacher,",
+    "and has had an active career aiding understanding of atomic energy as a",
+    "member of the University of Tennessee faculty and on the staff of the",
+    "Oak Ridge Institute of Nuclear Studies. He has conducted short courses",
+    "to instruct groups of high school science teachers in nuclear energy,",
+    "and has served in a key capacity in training Institute",
+    "demonstration-lecturers who visit high schools throughout the nation",
+    "Dr. Craven worked during World War II for the Manhattan Project, which",
+    "built the first atomic bomb. He earned bachelor’s and graduate degrees",
+    "at the University of North Carolina, and later taught physics and",
+    "mathematics at Delta State Teachers College and at Furman and Emory",
+    "Universities",
+    "His research interests include infrared spectroscopy, gaseous diffusion",
+    "through porous media, and the physical properties of fibers"
+  ],
+  "introduction": null,
+  "passages": [
+    "Although no one realized it at the time, Becquerel had discovered that atoms of some elements will at random times transform themselves into atoms of a different element by emitting certain extremely high-speed charged particles. Atoms that can do this are said to be radioactive, and it was the radiation from transforming uranium atoms that darkened Becquerel’s photographic plate.",
+    "What Thomson and Aston had done was to show that the stable element neon is a mixture of two isotopes. A device that can do what their apparatus did is called a mass spectrograph. (See Figure 3.) Since their time, instruments of this type have shown that more than three-fourths of the stable chemical elements are mixtures of two or more stable isotopes; in fact, there are about 300 such isotopes",
+    "One more piece of information must be fitted into the story of the atom before it becomes clear why some people began to realize during the 1920s that atomic nuclei contain vast stores of energy that might some day revolutionize civilization. This last item has to do with a nuclear phenomenon known as the packing fraction.",
+    "In some cases the absorption of a neutron by a nucleus was followed by the emission of a negative electron (beta particle). This produced an atom whose nuclear positive charge had been increased by one unit and which therefore belonged at the next higher place on the periodic table.",
+    "The next great source of energy will probably be nuclear reactors, in which controlled chain reactions release energy from the large store of fissionable materials in the world.[5]",
+    "As a consequence, a scientist’s ability to synthesize scarce chemicals is being increased. The exact role of numerous essential trace elements in the growth and metabolism of living things, including people, is being studied by the use of tagged atoms."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}

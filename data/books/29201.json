@@ -1,0 +1,44 @@
+{
+  "gutenberg_id": 29201,
+  "title": "Comments on the Taxonomy and Geographic Distribution of North American Microtines",
+  "subtitle": "",
+  "contributors": [
+    {
+      "name": "Hall, E. Raymond (Eugene Raymond), 1902-1986",
+      "role": "Author",
+      "order": 1
+    },
+    {
+      "name": "Cockrum, E. Lendell, 1920-2009",
+      "role": "Author",
+      "order": 2
+    }
+  ],
+  "language": "en",
+  "issued": "2009-06-22",
+  "description": "\"Comments on the Taxonomy and Geographic Distribution of North American Microtines\" by E. Raymond Hall and E. Lendell Cockrum is a scientific publication written in the early 1950s. The book focuses on the classification and geographic ranges of North American microtines, a group of small rodent-like mammals, particularly voles and lemmings. It reflects a meticulous examination of existing literature and specimens to resolve discrepancies in microtine taxonomy.  In their work, Hall and Cockrum systematically review various subspecies of microtines, sharing their findings on several species such as Synaptomys cooperi and Clethrionomys gapperi. They analyze taxonomic classifications, document specimen measurements, and provide geographic distribution data to clarify the relationships and range of these rodents. Ultimately, the publication offers valuable insights into the complexities of microtine taxonomy and biology, serving as a crucial resource for researchers in mammalogy and related fields.",
+  "subjects": [
+    "Science - Biology",
+    "Nature/Gardening/Animals"
+  ],
+  "topic_subjects": [
+    "Voles",
+    "Lemmings"
+  ],
+  "locc": [
+    "QH"
+  ],
+  "url": "https://www.gutenberg.org/ebooks/29201",
+  "table_of_contents": [],
+  "introduction": null,
+  "passages": [
+    "In view of the taxonomic treatment accorded by Bole and Moulthrop (Sci. Publs. Cleveland Mus. Nat. Hist, 5:149-151, September 11, 1942) to the lemming mice of the species Synaptomys cooperi, as explained in the preceding account, it has seemed desirable to examine Iowan specimens of this species. Hall and Kelson examined the necessary material and made the following conclusions.",
+    "When Dalquest (op. cit.:344) arranged occidentalis and californicus as subspecies of the same species, he used the name combination Clethrionomys californicus occidentalis because he ignored, or was unaware of, the page priority of occidentalis over californicus.",
+    "When Swarth (loc. cit.) named the red-backed mouse of the mainland of southern Alaska as a new subspecies, he characterized it as \"Size rather large. Differs from E. [= Clethrionomys] wrangeli, nearest it geographically, in cranial characters and in much longer tail; from E. caurinus, the species to the southward in British Columbia, in larger size and longer tail.\" He remarked (loc.",
+    "Diagnosis.--A short-tailed, dark-colored member of the gapperi group. Dorsal stripe wide, between Chestnut and Bay (capitalized color terms after Ridgway: Color Standards and Color Nomenclature. Washington, D. C., 1912), with slight mixture of black-tipped hairs; sides and venter heavily washed with Ochraceous-Tawny.",
+    "Remarks.--Morphologically C. g. stikinensis shows greater resemblance to C. g. solus of Revillagigedo Island, than to the geographically adjacent subspecies C. g. wrangeli and C. g. phaeus. Possibly the original stock of C. g. solus was rafted to Revillagigedo Island from the Cleveland Peninsula.",
+    "The cranial differences that exist between these two forms (narrower nasals, slightly longer interparietal, slightly longer and narrower skull in aztecus) are evident only as averages. Although geographically intermediate specimens are lacking, the morphological differences between the two kinds of animals are of the degree and kind that separate subspecies, rather than species."
+  ],
+  "conclusion": null,
+  "index_terms": []
+}
