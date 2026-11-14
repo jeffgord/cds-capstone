@@ -1,0 +1,1880 @@
+{
+  "purpose": "Pilot development pool; no human judgments or held-out test results yet",
+  "git_commit": "52726acea182ba9645c9f6104b318b62380fc8d3",
+  "searcher": {
+    "searcher": "langchain-faiss",
+    "model": "BAAI/bge-base-en-v1.5",
+    "index_dir": "/Users/georgebuck/Documents/NYU/26Fall/cds-capstone/gutenberg_faiss_test",
+    "n_vectors": 6896,
+    "score_kind": "cosine",
+    "query_prefix": null
+  },
+  "dataset_sha256": "cbae3ea9ec307c4c11f84f88ce3f18143526a7690a45e783f3fa945e526a965b",
+  "index_sha256": "856e00a71ffad5c00c00bbe2e790e81c9f466eea7e41bc4e2236c4c8177f339f",
+  "candidate_count": 20,
+  "shuffle_seed": 20261113,
+  "queries": [
+    {
+      "query_id": "q01",
+      "topic": "American history",
+      "query_type": "topical",
+      "intent_group": "abolition",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How did people argue for and against abolishing slavery in the United States?",
+      "intent": "Find substantive accounts of abolition debates and the arguments used by supporters or opponents. Merely mentioning slavery is insufficient."
+    },
+    {
+      "query_id": "q02",
+      "topic": "Biology",
+      "query_type": "topical",
+      "intent_group": "adaptation",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do animals adapt to their environment over generations?",
+      "intent": "Find explanations of evolutionary adaptation or evidence about inherited changes. Individual training or short-term adjustment alone does not meet the request."
+    },
+    {
+      "query_id": "q03",
+      "topic": "History of medicine",
+      "query_type": "topical",
+      "intent_group": "historical_remedies",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "What did households use as remedies before modern medicine?",
+      "intent": "Find historical descriptions of domestic remedies and how they were used. Judge historical usefulness rather than treating the book as current medical advice."
+    },
+    {
+      "query_id": "q04",
+      "topic": "Gardening",
+      "query_type": "topical",
+      "intent_group": "vegetable_gardening",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How can a beginner grow vegetables in a home garden?",
+      "intent": "Find practical guidance on starting or maintaining a vegetable garden. General praise of gardens or flower-only advice is insufficient."
+    },
+    {
+      "query_id": "q05",
+      "topic": "Engineering",
+      "query_type": "topical",
+      "intent_group": "steam_engines",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do steam engines turn heat into mechanical work?",
+      "intent": "Find explanations of steam-engine mechanisms or operating principles. A travel account that merely mentions a steamship or railway is insufficient."
+    },
+    {
+      "query_id": "q06",
+      "topic": "Religion",
+      "query_type": "topical",
+      "intent_group": "afterlife",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do different religions explain what happens after death?",
+      "intent": "Find substantive accounts of afterlife beliefs. A detailed account of one tradition can be useful as one source for comparison; passing references to death are insufficient."
+    },
+    {
+      "query_id": "q07",
+      "topic": "Finance",
+      "query_type": "polysemy",
+      "intent_group": "banks",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do banks lend money and handle deposits?",
+      "intent": "Find explanations of financial banking practices or institutions. River banks do not satisfy this request."
+    },
+    {
+      "query_id": "q08",
+      "topic": "Earth science",
+      "query_type": "polysemy",
+      "intent_group": "banks",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do rivers erode their banks and reshape the surrounding land?",
+      "intent": "Find explanations or substantive observations of river erosion and landform changes. Financial banks and incidental references to walking along a river are insufficient."
+    },
+    {
+      "query_id": "q09",
+      "topic": "Music",
+      "query_type": "polysemy",
+      "intent_group": "pitch",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How are musical instruments tuned to the right pitch?",
+      "intent": "Find explanations or practical guidance about musical pitch and tuning. Shipbuilding materials and sales pitches do not satisfy this request."
+    },
+    {
+      "query_id": "q10",
+      "topic": "Maritime history",
+      "query_type": "polysemy",
+      "intent_group": "pitch",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How was pitch or tar used to waterproof wooden ships?",
+      "intent": "Find explanations or substantive accounts of ship waterproofing using pitch or tar. Musical pitch and incidental mentions of ships are insufficient."
+    },
+    {
+      "query_id": "q11",
+      "topic": "Modern computing",
+      "query_type": "no_answer_candidate",
+      "intent_group": "modern_ml",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do I fine-tune a transformer language model using PyTorch?",
+      "intent": "Find instructions specifically about transformer language models and PyTorch. General mathematics or historical electrical transformers do not meet the request. Absence of a useful book is a hypothesis to check."
+    },
+    {
+      "query_id": "q12",
+      "topic": "Modern computing",
+      "query_type": "no_answer_candidate",
+      "intent_group": "phone_security",
+      "split": "pilot_dev",
+      "status": "draft",
+      "query": "How do I configure two-factor authentication on an iPhone?",
+      "intent": "Find instructions specifically for iPhone two-factor authentication. General discussions of privacy or historical telephones do not meet the request. Absence of a useful book is a hypothesis to check."
+    }
+  ],
+  "runs": [
+    {
+      "query_id": "q01",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 38716,
+          "score": 0.6597318947315216,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 18618,
+          "score": 0.6494155526161194,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 11728,
+          "score": 0.6457951366901398,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 74463,
+          "score": 0.6366368234157562,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 15698,
+          "score": 0.6319021582603455,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 69256,
+          "score": 0.6227455139160156,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 48364,
+          "score": 0.6222181916236877,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 14458,
+          "score": 0.6073964238166809,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 28278,
+          "score": 0.6060262024402618,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 11454,
+          "score": 0.603857010602951,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 30150,
+          "score": 0.6018592417240143,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 34979,
+          "score": 0.6011785268783569,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 39915,
+          "score": 0.5987248122692108,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 34839,
+          "score": 0.5965484976768494,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 37704,
+          "score": 0.593944787979126,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 354,
+          "score": 0.5913117825984955,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 60854,
+          "score": 0.5910205543041229,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 15086,
+          "score": 0.5892294645309448,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 70613,
+          "score": 0.5890287756919861,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 79759,
+          "score": 0.5887754559516907,
+          "doc_type": "passage",
+          "passage_index": 4
+        }
+      ]
+    },
+    {
+      "query_id": "q02",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 52273,
+          "score": 0.6133739352226257,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 61363,
+          "score": 0.6121180057525635,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 26438,
+          "score": 0.6091896295547485,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 39910,
+          "score": 0.6090056300163269,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 31280,
+          "score": 0.6069356501102448,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 26313,
+          "score": 0.6050562858581543,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 27933,
+          "score": 0.6039214134216309,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 73009,
+          "score": 0.6019629240036011,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 44472,
+          "score": 0.6004574000835419,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 33721,
+          "score": 0.5998313426971436,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 2921,
+          "score": 0.5977051258087158,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 62918,
+          "score": 0.5935488045215607,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 33434,
+          "score": 0.5895527303218842,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 18911,
+          "score": 0.5885947942733765,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 30563,
+          "score": 0.5873646140098572,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 2931,
+          "score": 0.5868097543716431,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 59106,
+          "score": 0.5859981775283813,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 43090,
+          "score": 0.5843214392662048,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 48678,
+          "score": 0.5839336216449738,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 73427,
+          "score": 0.583167552947998,
+          "doc_type": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q03",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 38757,
+          "score": 0.6664064824581146,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 49527,
+          "score": 0.6331159472465515,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 33503,
+          "score": 0.606768786907196,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 6598,
+          "score": 0.6045635044574738,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 70350,
+          "score": 0.6022776067256927,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 46836,
+          "score": 0.6003467440605164,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 67736,
+          "score": 0.5945060551166534,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 15019,
+          "score": 0.5938048362731934,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 66970,
+          "score": 0.5914024114608765,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 41697,
+          "score": 0.5905974805355072,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 48151,
+          "score": 0.589181125164032,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 40424,
+          "score": 0.5862419903278351,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 63007,
+          "score": 0.5817537307739258,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 45641,
+          "score": 0.5779759287834167,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 15517,
+          "score": 0.5777924060821533,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 59607,
+          "score": 0.5768256783485413,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 19924,
+          "score": 0.5739213228225708,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 19667,
+          "score": 0.5716038346290588,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 75063,
+          "score": 0.5704925656318665,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 67936,
+          "score": 0.5680528283119202,
+          "doc_type": "passage",
+          "passage_index": 4
+        }
+      ]
+    },
+    {
+      "query_id": "q04",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 4512,
+          "score": 0.6428248584270477,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 6598,
+          "score": 0.61849445104599,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 78314,
+          "score": 0.6065447330474854,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 27548,
+          "score": 0.6061639189720154,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 31643,
+          "score": 0.5916914343833923,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 61720,
+          "score": 0.5880175530910492,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 36943,
+          "score": 0.5762015581130981,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 23682,
+          "score": 0.5707219243049622,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 47727,
+          "score": 0.5678550601005554,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 22973,
+          "score": 0.5634371340274811,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 52716,
+          "score": 0.5577745139598846,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 25373,
+          "score": 0.5570157766342163,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 48678,
+          "score": 0.5517591238021851,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 36279,
+          "score": 0.547956109046936,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 18913,
+          "score": 0.5479300618171692,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 2355,
+          "score": 0.5478852689266205,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 43200,
+          "score": 0.5449792146682739,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 63007,
+          "score": 0.5409811437129974,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 59106,
+          "score": 0.5308974087238312,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 8554,
+          "score": 0.5292379260063171,
+          "doc_type": "passage",
+          "passage_index": 3
+        }
+      ]
+    },
+    {
+      "query_id": "q05",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 28553,
+          "score": 0.6698498725891113,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 10998,
+          "score": 0.6518502831459045,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 64856,
+          "score": 0.6482728719711304,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 46836,
+          "score": 0.6311001777648926,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 20146,
+          "score": 0.6309271454811096,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 15468,
+          "score": 0.6231156289577484,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 44341,
+          "score": 0.6185013055801392,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 73790,
+          "score": 0.5944446623325348,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 36936,
+          "score": 0.5930927395820618,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 73090,
+          "score": 0.5908777415752411,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 38583,
+          "score": 0.5905547738075256,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 45269,
+          "score": 0.5896601676940918,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 52439,
+          "score": 0.5869560837745667,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 75464,
+          "score": 0.5826494097709656,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 44585,
+          "score": 0.5813993811607361,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 25544,
+          "score": 0.5804911553859711,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 25269,
+          "score": 0.5792456865310669,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 66406,
+          "score": 0.5754422247409821,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 53458,
+          "score": 0.5726690888404846,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 42951,
+          "score": 0.5698543190956116,
+          "doc_type": "passage",
+          "passage_index": 3
+        }
+      ]
+    },
+    {
+      "query_id": "q06",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 60750,
+          "score": 0.715887725353241,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 17611,
+          "score": 0.6405362188816071,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 51888,
+          "score": 0.6377286314964294,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 16996,
+          "score": 0.634070634841919,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 9199,
+          "score": 0.6310003697872162,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 17607,
+          "score": 0.6298633813858032,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 7026,
+          "score": 0.6267625689506531,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 12353,
+          "score": 0.623163104057312,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 18369,
+          "score": 0.6218051910400391,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 52768,
+          "score": 0.6213074624538422,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 20312,
+          "score": 0.6212967336177826,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 35537,
+          "score": 0.6191161870956421,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 52896,
+          "score": 0.6190890669822693,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 38134,
+          "score": 0.6177657246589661,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 70790,
+          "score": 0.6171189248561859,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 37292,
+          "score": 0.6138831973075867,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 30061,
+          "score": 0.6137101650238037,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 40978,
+          "score": 0.6130893230438232,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 36216,
+          "score": 0.6123020052909851,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 66406,
+          "score": 0.610571563243866,
+          "doc_type": "passage",
+          "passage_index": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q07",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 6167,
+          "score": 0.6229357421398163,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 70784,
+          "score": 0.596865713596344,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 59016,
+          "score": 0.5926174521446228,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 17374,
+          "score": 0.5886836349964142,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 65278,
+          "score": 0.5641113221645355,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 29070,
+          "score": 0.5408560633659363,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 75418,
+          "score": 0.5395698845386505,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 77728,
+          "score": 0.5384376347064972,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 75063,
+          "score": 0.5369308590888977,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 61086,
+          "score": 0.5320162177085876,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 28575,
+          "score": 0.5302484631538391,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 55279,
+          "score": 0.5295065641403198,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 33946,
+          "score": 0.5240651071071625,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 57760,
+          "score": 0.5213468670845032,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 48819,
+          "score": 0.5202146172523499,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 77781,
+          "score": 0.5197958052158356,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 33975,
+          "score": 0.5176881551742554,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 67844,
+          "score": 0.5175440013408661,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 11376,
+          "score": 0.5175256133079529,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 69922,
+          "score": 0.5168570876121521,
+          "doc_type": "passage",
+          "passage_index": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q08",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 44228,
+          "score": 0.6182571053504944,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 43826,
+          "score": 0.5928425788879395,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 57971,
+          "score": 0.5852798819541931,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 70648,
+          "score": 0.5815757215023041,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 72882,
+          "score": 0.5758556127548218,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 30563,
+          "score": 0.5747148394584656,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 48678,
+          "score": 0.5734288990497589,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 44884,
+          "score": 0.5723808407783508,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 31383,
+          "score": 0.5712422728538513,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 4032,
+          "score": 0.5680071711540222,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 76057,
+          "score": 0.566279798746109,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 18031,
+          "score": 0.5655295848846436,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 50879,
+          "score": 0.5654670000076294,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 73427,
+          "score": 0.5639488995075226,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 2355,
+          "score": 0.5633718073368073,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 25373,
+          "score": 0.5630387663841248,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 72471,
+          "score": 0.5591024160385132,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 59690,
+          "score": 0.5574674904346466,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 56560,
+          "score": 0.556549072265625,
+          "doc_type": "summary",
+          "passage_index": null
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 51116,
+          "score": 0.5546092689037323,
+          "doc_type": "passage",
+          "passage_index": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q09",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 39690,
+          "score": 0.6868951320648193,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 18284,
+          "score": 0.5863025188446045,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 73991,
+          "score": 0.5835770070552826,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 19116,
+          "score": 0.5750682950019836,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 65146,
+          "score": 0.5700545907020569,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 53039,
+          "score": 0.5699710249900818,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 31407,
+          "score": 0.5579143464565277,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 33936,
+          "score": 0.5545085966587067,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 28553,
+          "score": 0.5402944684028625,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 20069,
+          "score": 0.5275379419326782,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 16459,
+          "score": 0.5275216102600098,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 37298,
+          "score": 0.5211420059204102,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 49667,
+          "score": 0.5161280035972595,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 66616,
+          "score": 0.5085512399673462,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 4681,
+          "score": 0.5077598392963409,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 46836,
+          "score": 0.5039601624011993,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 53458,
+          "score": 0.5005235373973846,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 22422,
+          "score": 0.4984806776046753,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 75464,
+          "score": 0.4977412819862366,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 44585,
+          "score": 0.49578750133514404,
+          "doc_type": "passage",
+          "passage_index": 3
+        }
+      ]
+    },
+    {
+      "query_id": "q10",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 57148,
+          "score": 0.6331409215927124,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 33098,
+          "score": 0.6301511526107788,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 26014,
+          "score": 0.6244767606258392,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 74360,
+          "score": 0.6184021234512329,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 29691,
+          "score": 0.59922194480896,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 44228,
+          "score": 0.5969131588935852,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 29685,
+          "score": 0.5896573066711426,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 40109,
+          "score": 0.5885254144668579,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 31383,
+          "score": 0.5853376388549805,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 44585,
+          "score": 0.5848137438297272,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 65791,
+          "score": 0.5788100361824036,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 71736,
+          "score": 0.5767196714878082,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 66670,
+          "score": 0.5737874507904053,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 10998,
+          "score": 0.5721619427204132,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 21717,
+          "score": 0.5715332925319672,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 20195,
+          "score": 0.5704355239868164,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 18676,
+          "score": 0.5684088170528412,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 52324,
+          "score": 0.566718578338623,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 78974,
+          "score": 0.5658275187015533,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 43090,
+          "score": 0.5645781755447388,
+          "doc_type": "passage",
+          "passage_index": 3
+        }
+      ]
+    },
+    {
+      "query_id": "q11",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 74966,
+          "score": 0.5474230051040649,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 31407,
+          "score": 0.5349885523319244,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 55279,
+          "score": 0.5284612476825714,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 42154,
+          "score": 0.5262992978096008,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 57943,
+          "score": 0.5248457193374634,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 36943,
+          "score": 0.5221055150032043,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 65146,
+          "score": 0.5208779871463776,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 7058,
+          "score": 0.5182556807994843,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 34979,
+          "score": 0.5099913477897644,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 79775,
+          "score": 0.507809042930603,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 20069,
+          "score": 0.5059966742992401,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 63237,
+          "score": 0.5044611096382141,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 41248,
+          "score": 0.5029081404209137,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 49667,
+          "score": 0.5019212961196899,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 72747,
+          "score": 0.5010240077972412,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 72471,
+          "score": 0.5008147060871124,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 26014,
+          "score": 0.500750869512558,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 58663,
+          "score": 0.5004380643367767,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 46779,
+          "score": 0.5001407563686371,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 73090,
+          "score": 0.5000391006469727,
+          "doc_type": "passage",
+          "passage_index": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q12",
+      "hits": [
+        {
+          "rank": 1,
+          "gutenberg_id": 65507,
+          "score": 0.5298201143741608,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 2,
+          "gutenberg_id": 55279,
+          "score": 0.5210153162479401,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 3,
+          "gutenberg_id": 43515,
+          "score": 0.49524009227752686,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 4,
+          "gutenberg_id": 49667,
+          "score": 0.4939776659011841,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 5,
+          "gutenberg_id": 47727,
+          "score": 0.49182575941085815,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 6,
+          "gutenberg_id": 60503,
+          "score": 0.4837433099746704,
+          "doc_type": "passage",
+          "passage_index": 1
+        },
+        {
+          "rank": 7,
+          "gutenberg_id": 52324,
+          "score": 0.48119086027145386,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 8,
+          "gutenberg_id": 57943,
+          "score": 0.4806480407714844,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 9,
+          "gutenberg_id": 12029,
+          "score": 0.479314923286438,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 10,
+          "gutenberg_id": 33287,
+          "score": 0.47836780548095703,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 11,
+          "gutenberg_id": 14511,
+          "score": 0.47729551792144775,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 12,
+          "gutenberg_id": 22190,
+          "score": 0.4770643711090088,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 13,
+          "gutenberg_id": 65146,
+          "score": 0.47509050369262695,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 14,
+          "gutenberg_id": 52538,
+          "score": 0.4748842716217041,
+          "doc_type": "passage",
+          "passage_index": 3
+        },
+        {
+          "rank": 15,
+          "gutenberg_id": 58057,
+          "score": 0.47457438707351685,
+          "doc_type": "passage",
+          "passage_index": 2
+        },
+        {
+          "rank": 16,
+          "gutenberg_id": 42073,
+          "score": 0.47400569915771484,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 17,
+          "gutenberg_id": 6167,
+          "score": 0.47366636991500854,
+          "doc_type": "passage",
+          "passage_index": 4
+        },
+        {
+          "rank": 18,
+          "gutenberg_id": 19104,
+          "score": 0.47272539138793945,
+          "doc_type": "passage",
+          "passage_index": 0
+        },
+        {
+          "rank": 19,
+          "gutenberg_id": 36943,
+          "score": 0.47196507453918457,
+          "doc_type": "passage",
+          "passage_index": 5
+        },
+        {
+          "rank": 20,
+          "gutenberg_id": 60074,
+          "score": 0.4713183641433716,
+          "doc_type": "passage",
+          "passage_index": 0
+        }
+      ]
+    }
+  ]
+}

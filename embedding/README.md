@@ -123,6 +123,8 @@ Rank the complete shortlist before paging, and preserve that ordering across pag
 
 ### Evaluate before selecting a cutoff
 
+See [evaluation/README.md](../evaluation/README.md) for the starter query set, blank candidate-labeling worksheet, and step-by-step grading instructions.
+
 Start with 40–60 queries spanning subjects actually present in the corpus, including clear topical queries, ambiguous terms with disambiguating context, and queries with no useful answer in this 1,000-book subset. Pool candidate books from the compared systems, hide system identity/order, and assign book-level judgments: 0 = irrelevant, 1 = tangential, 2 = useful. Agree what counts as useful with the team; double-label a subset to catch disagreements.
 
 Compare the current baseline, contents-only enrichment, introduction-only enrichment, reranking alone, and the best enrichment plus reranking. Track candidate Recall@20 against the known judged relevant books (not exhaustive corpus recall), Precision@5, graded nDCG@10, and query latency. Also record how often a no-answer query displays any result. Do not inject known relevant books into the reranker's candidate list: retrieval misses must remain misses in the end-to-end evaluation.
