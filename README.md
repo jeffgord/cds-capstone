@@ -4,12 +4,12 @@ Semantic search over Project Gutenberg books, modelled on NYU Libraries' [OpenSq
 
 ## Setup
 
-Clone with `--recurse-submodules`, or `opensquare-reference/` will be an empty folder.
+Use Python 3.13 for the setup below. Clone with `--recurse-submodules`, or `opensquare-reference/` will be an empty folder.
 
 ```sh
 git clone --recurse-submodules https://github.com/jeffgord/cds-capstone.git   # or, after a plain clone: git submodule update --init
 cd cds-capstone
-python3 -m venv .venv
+python3.13 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -24,8 +24,9 @@ See [ingestion/README.md](ingestion/README.md) for what each field contains and 
 
 ```sh
 pip install -r api/requirements.txt
-python test_script.py          # build the index once (~1 minute)
+python test_script.py          # build once; first run also downloads the embedding model
+python search_test.py          # try the example query in the terminal
 uvicorn api.app:app            # open http://localhost:8000
 ```
 
-See [api/README.md](api/README.md) for the API and how to plug in a different index, [web/README.md](web/README.md) for the UI and its visual guideline, and [docs/](docs/) for the plan, decisions and TODO.
+See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index, [web/README.md](web/README.md) for the UI, and [docs/](docs/) for the plan, decisions and TODO.

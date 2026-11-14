@@ -12,7 +12,7 @@ Owners are suggestions. Check items off with the date and move them to Done.
 
 ## Notes for the index team (found while wiring the API, not fixed here)
 
-- [ ] The root `requirements.txt` is `pip list` output ("faiss-cpu   1.16.0"), so `pip install -r` fails. It needs `==` pins. `embedding/extract_locc.py` also needs `requests` and `pdfplumber`, which aren't listed. (Estee)
+- [ ] The optional `embedding/extract_locc.py` outline scraper needs explicit `requests` and `pdfplumber` dependencies. The existing outline is committed, so this script isn't needed to build or search the index. (Estee)
 - [ ] BGE-base expects the query prefix "Represent this sentence for searching relevant passages: " for short queries. It's a free experiment: `SEARCH_QUERY_PREFIX=... uvicorn api.app:app`, then compare the example queries. (Estee or George)
 - [ ] `search_test.search_books` over-fetches `top_k * 5` chunks, which can return fewer than k books. The API's dedupe already handles this, so only the script is affected. (Estee)
 - [ ] `preprocess._extract_locc_label` leaves `label` unbound when a code isn't in the map (crash), and only uses the top class, so "BV" embeds as "Philosophy. Psychology. Religion". It could reuse `api.books.lcc_label`, which has the subclass supplement. (Estee)
@@ -37,6 +37,7 @@ Owners are suggestions. Check items off with the date and move them to Done.
 
 ## Done
 
+- [x] 2026-11-13: Local setup on George's Mac: corrected requirement pin syntax without changing versions, installed into Python 3.13 `.venv`, built 6,896 vectors, passed 29 tests, and verified CLI/API parity for all four example queries. Saved an ignored local baseline; retrieval code is unchanged. (George)
 - [x] 2026-11-12: Cloned `jeffgord/cds-capstone`, created branch `api-ui`, built Estee's index locally (6,896 vectors, ~1 min). (Cedric)
 - [x] 2026-11-12: API (`api/`): health, search with book-level dedupe and paging, book detail, background model load, no-index state. Same books and scores as `search_test.py` for "peaceful diplomacy without military conflict". (Cedric)
 - [x] 2026-11-12: UI (`web/`): Gutenberg-based visual guideline, search guide, result rows, "Why this book", detail panel, recent searches, URL state, and all error states. Screenshots checked at 1280px and 390px. (Cedric)
