@@ -6,7 +6,7 @@
 const PAGE_SIZE = 10;
 const RECENT_KEY = "gss.recent";
 const RECENT_MAX = 6;
-// Checked against Estee's BGE-base index on 2026-11-15: each returns an on-topic top 3.
+// Checked against the BGE-base index on 2026-11-15: each returns an on-topic top 3.
 // Recheck whenever the index changes.
 const EXAMPLES = [
   "peaceful diplomacy without military conflict",

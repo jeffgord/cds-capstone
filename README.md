@@ -39,4 +39,4 @@ uvicorn api.app:app            # open http://127.0.0.1:8000
 3. **Each search** embeds only the query, with the same model. FAISS finds the closest documents, the API keeps each book's best match, and the result cards come from `data/books/`, not from the index.
 4. **"Why this book"** runs the model again when you open it. It scores each sentence of the matched text and the book's title, subjects, summary and passages one at a time. The index only holds whole documents, so these smaller pieces aren't in it.
 
-See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index and [web/README.md](web/README.md) for the UI.
+See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index, [web/README.md](web/README.md) for the UI, and [docs/](docs/) for the decision log and open work.

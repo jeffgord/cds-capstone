@@ -54,7 +54,7 @@ The server starts in about a second and loads the model in the background. Until
 | Field | Meaning |
 |---|---|
 | `score` | Similarity from the backend, higher is closer. With the current index it's cosine similarity. It's only comparable within one search. |
-| `matched_via` | The kind of chunk that matched: `"summary"` or `"passage"` in Estee's index, or `null` if the index doesn't say. |
+| `matched_via` | The kind of chunk that matched: `"summary"` or `"passage"` in the current index, or `null` if the index doesn't say. |
 | `passage_index` | Which entry of the book's `passages` matched, if the chunk was one. |
 | `snippet` | Text to quote in "Why this book". It's the book's own text, never the embedded string with its "Title: ... \| Excerpt:" header. |
 | `added_year` | Year of the Gutenberg release (`issued`), not the original publication. |

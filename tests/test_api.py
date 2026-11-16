@@ -11,7 +11,7 @@ IDS = sorted(BOOKS)
 
 
 class FakeSearcher:
-    """Returns several chunks per book (like Estee's summary + passage docs), best first."""
+    """Returns several chunks per book (like the index's summary + passage docs), best first."""
 
     def __init__(self, n_books=40):
         self.hits = []

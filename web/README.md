@@ -2,11 +2,7 @@
 
 One page (`index.html`, `style.css`, `app.js`), plain HTML/CSS/JS with no build step, served by the API at `/`. It only talks to `/api/*` (see `api/README.md`). To host it on its own, set `apiBase` in `config.js` (see "Hosting the UI separately" in `api/README.md`). Run `uvicorn api.app:app` from the repo root and open http://127.0.0.1:8000.
 
-This file is the visual guideline and the record of UI decisions. Each decision cites the critique it answers, from our own docs:
-- **[Bench]** `Homework 10_26: Competitive Benchmarking`, the library search benchmarks
-- **[Bench-slides]** `Homework 10_12` slides
-- **[App]** `Semantic Book Search App Feedback`, our OpenSquare app critique
-- **[Recs]** `Capstone Meeting Notes 11_3`, the team recs and Charlene's asks
+This file is the visual guideline and the record of UI decisions. Each rule says which common problem in library search interfaces it avoids. Dated decisions are in `docs/decisions.md`.
 
 ## Brand
 
@@ -17,7 +13,7 @@ This file is the visual guideline and the record of UI decisions. Each decision 
 - the red library section headings
 - bold title, author, gray extra line in results
 
-Users of the corpus already know that language. What we change is what our critiques found wrong with library search UIs: summaries in the results, explanations for matches, no walls of text.
+Users of the corpus already know that language. What we change is what's often wrong with library search interfaces: summaries in the results, explanations for matches, no walls of text.
 
 **Name and attribution.** "Gutenberg Semantic Search" is a working name, set as a plain text wordmark. We don't use the Project Gutenberg logo. "Project Gutenberg" is a trademark and we're not affiliated, and the footer says so. Book data and covers link back to gutenberg.org.
 
@@ -62,30 +58,30 @@ Spacing scale: 4, 8, 12, 16, 24 and 32px (`--s1` to `--s6`). Radii: 12px cards, 
 
 ## Layout and components
 
-- **Search first [Bench-slides: OpenSquare "should have a clearly visible search bar on top"].** The pill search is the first thing under the header band, with no hero or featured carousel above it.
-- **Two columns at 1024px and up [Recs: "use whitespace on the right"].** Results sit on the left (up to 640px) and a sticky detail panel on the right. Before you pick a book, the panel says what it will show, so it's never a blank hole. Below 1024px there's one column, and the panel opens as a full-screen sheet with a close button.
-- **Home guide is always visible [Recs: Charlene, "Put search guide in home page"; Bench-slides: Stanford's "search tips visible on landing page", MIT's "Not sure where to start"].** It holds one sentence on how to search, four example queries checked against the index, and one honest line on weak spots.
-- **Result row [Bench: "results do not include summary", Charlene's "brief summary in the short display"; App: "subjects should show somewhere"].**
+- **Search first.** The search box should be the most visible thing on the page. The pill search is the first thing under the header band, with no hero or featured carousel above it.
+- **Two columns at 1024px and up,** so wide screens don't waste the right side. Results sit on the left (up to 640px) and a sticky detail panel on the right. Before you pick a book, the panel says what it will show, so it's never a blank hole. Below 1024px there's one column, and the panel opens as a full-screen sheet with a close button.
+- **Home guide is always visible,** because semantic search works differently from the keyword search people expect. It holds one sentence on how to search, four example queries checked against the index, and one honest line on weak spots.
+- **Result row.** Enough to judge a book without opening it: a summary and the subjects, not just a title.
   - Cover, title, authors with display names and roles ("edited by", "translated by").
   - Added year and LCC label with code.
-  - Summary clamped to 2 lines with More/Less, plus a native `title` tooltip for Charlene's mouse-over ask. It's never hover-only.
-  - Up to 4 subject tags plus "+N" [Bench: Columbia's "wall-of-text results"]. Tags wrap and never side-scroll [Bench: BU's sideways-scrolling subjects].
-- **Score + "Why this book" is one real button [App: "Icon for relevance gives off the impression that it's clickable", "doesn't provide a reasoning why these books are chosen"; Recs: "which phrases matched, which metadata field"].**
+  - Summary clamped to 2 lines with More/Less, plus a native `title` tooltip on mouse-over. It's never hover-only.
+  - Up to 4 subject tags plus "+N", so a row never becomes a wall of text. Tags wrap and never side-scroll.
+- **Score + "Why this book" is one real button.** A relevance score that looks clickable should be, and a ranked list should explain why each book is there.
   - The raw score sits on the button. It opens a tinted box with which part of the book matched and the matched text. On first open it calls `/api/books/{id}/why`: the search model scores each sentence of that text, and the closest one is highlighted. It also scores the title, subjects, summary and closest passage on their own, so you can see what drove the match. A one-line note says how to read the score.
-  - The raw score stays, with no percentage and no cutoff [Recs: Charlene, "score transparency is intentional for Phase 2"]. Scores aren't calibrated across queries (George's gibberish query scored 0.38 on OpenSquare), so a percentage or threshold would claim more than we know.
-- **Detail panel [Bench: UMich "tabular format on book info easy to read"].** A key/value table (authors and roles, LCSH subjects, bookshelves, classification, added, link), then the full summary, contents and an introduction excerpt. Esc and the close button close it, and focus returns to the title that opened it. Nothing auto-pops [Bench: Columbia "popups don't auto-close"].
-- **Paging [Recs: "Results page picker seems redundant", Jeff/Cedric "show n and paginate"].** 10 results and a "Show more" button. There's no count picker.
-- **History [App: "no option to go back to previous search", "query doesn't clear out properly"; Recs: "recent searches dropdown"].**
+  - The raw score stays, with no percentage and no cutoff. Scores aren't calibrated across queries (a nonsense query can still score around 0.4), so a percentage or threshold would claim more than we know.
+- **Detail panel.** A key/value table, which is easier to read than a paragraph of metadata: (authors and roles, LCSH subjects, bookshelves, classification, added, link), then the full summary, contents and an introduction excerpt. Esc and the close button close it, and focus returns to the title that opened it. Nothing pops up on its own.
+- **Paging.** 10 results and a "Show more" button. There's no count picker.
+- **History.** Going back to a previous search must work, and the box must always show the query on screen.
   - The URL (`?q=&book=`) is the one source of truth. Every search and every opened book writes it, and rendering reads it, so back and forward work, links can be shared, and the box always shows the query on screen.
   - Recent searches (up to 6, in this browser only) drop down from the search box, with keyboard support and a clear button.
-- **No gate before search [Recs: "Do not force users to give feedback before running a search", "What best describes... should show up after search"].** There's no intent question and no feedback widget yet.
+- **No gate before search.** Nobody has to answer a question or give feedback before searching. There's no intent question and no feedback widget yet.
 - **Every state has a box.** Loading the model, no index (with the build command), API not running (with the start command), searching, no results, missing summary, and no extracted text.
 
 ## Interaction and accessibility
 
 - `/` focuses the search box. Esc closes the panel or the recent list. Arrow keys move through recent searches.
 - Everything clickable is a real `button` or `a`, focusable, with a 2px teal focus ring and hit targets of at least 24px.
-- Nothing is hover-only. Secondary text uses `--ink-2` or `--muted`, never opacity [App: "Hard to see the optional text"].
+- Nothing is hover-only. Secondary text uses `--ink-2` or `--muted`, never opacity, so secondary text stays readable.
 - Result counts are announced once per search through a polite live region.
 - `prefers-reduced-motion` turns off the chevron transition.
 
