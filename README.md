@@ -29,4 +29,14 @@ python search_cli.py "query"  # search from the terminal (same code as the API)
 uvicorn api.app:app            # open http://127.0.0.1:8000
 ```
 
+### How search works
+
+1. **Build the index once.** `build_index.py` turns each book into text documents, embeds them with `BAAI/bge-base-en-v1.5`, and saves the 6,896 vectors to `gutenberg_faiss_test/` (about a minute). Rerun it only when the data or what gets embedded changes.
+   - 1 summary document per book: title, authors, subjects (bookshelves and LCSH), LCC class and Gutenberg's summary.
+   - Up to 6 passage documents per book: title, bookshelves and ~400 characters of the book's text.
+   - Not embedded: table of contents, introduction, conclusion, index terms.
+2. **Start the server.** `uvicorn` loads the model and the saved index into memory. Nothing is re-embedded at startup.
+3. **Each search** embeds only the query, with the same model. FAISS finds the closest documents, the API keeps each book's best match, and the result cards come from `data/books/`, not from the index.
+4. **"Why this book"** runs the model again when you open it. It scores each sentence of the matched text and the book's title, subjects, summary and passages one at a time. The index only holds whole documents, so these smaller pieces aren't in it.
+
 See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index and [web/README.md](web/README.md) for the UI.
