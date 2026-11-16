@@ -108,3 +108,12 @@ The adapter converts scores from the store's distance strategy. Inner product is
 For anything else (a different vector store, a reranker, hybrid search later), write a class with `search()` and `info()` and return it from `load_searcher()`.
 
 The index is a pickle, so `load_local` runs with `allow_dangerous_deserialization=True`. Only load indexes you built yourself. The folder is gitignored, so in this repo that's always the case.
+
+## Hosting the UI separately
+
+Locally one `uvicorn` process serves both the API and `web/`, so there's no CORS and one command to run. For a deployment, the two can be split, e.g. the UI on Cloudflare Pages and the API wherever a Python process with the model can run:
+
+- **UI:** upload `web/` as static files and set `apiBase` in `web/config.js` to the API's URL.
+- **API:** set `CORS_ORIGINS` to the UI's origin (comma-separated for several), e.g. `CORS_ORIGINS=https://our-site.pages.dev uvicorn api.app:app --host 0.0.0.0`. Without it, no CORS headers are sent. The API still serves `web/` at `/` either way.
+- The host needs about 2 GB of RAM (PyTorch plus BGE-base) and the index folder. The index is gitignored, so build it on the host with `python test_script.py` or copy it there.
+

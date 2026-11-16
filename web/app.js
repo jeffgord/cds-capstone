@@ -148,8 +148,11 @@ function pickRecent(text) {
 }
 
 // ---------- API ----------
+// Empty means same origin (the API serves this page). config.js sets it when the UI is hosted separately.
+const API_BASE = (window.GSS_CONFIG && window.GSS_CONFIG.apiBase || "").replace(/\/$/, "");
+
 async function api(path) {
-  const res = await fetch(path, { headers: { Accept: "application/json" } });
+  const res = await fetch(API_BASE + path, { headers: { Accept: "application/json" } });
   const body = await res.json().catch(() => ({}));
   if (!res.ok) { const err = new Error(body.detail || res.statusText); err.status = res.status; throw err; }
   return body;

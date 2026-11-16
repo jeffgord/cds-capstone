@@ -1,6 +1,6 @@
 # Web UI
 
-One page (`index.html`, `style.css`, `app.js`), plain HTML/CSS/JS with no build step, served by the API at `/`. It only talks to `/api/*` (see `api/README.md`). Run `uvicorn api.app:app` from the repo root and open http://127.0.0.1:8000.
+One page (`index.html`, `style.css`, `app.js`), plain HTML/CSS/JS with no build step, served by the API at `/`. It only talks to `/api/*` (see `api/README.md`). To host it on its own, set `apiBase` in `config.js` (see "Hosting the UI separately" in `api/README.md`). Run `uvicorn api.app:app` from the repo root and open http://127.0.0.1:8000.
 
 This file is the visual guideline and the record of UI decisions. Each decision cites the critique it answers, from our own docs:
 - **[Bench]** `Homework 10_26: Competitive Benchmarking`, the library search benchmarks

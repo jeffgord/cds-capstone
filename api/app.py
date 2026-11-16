@@ -1,10 +1,12 @@
 """Search API + UI server. Run from the repo root:  uvicorn api.app:app --reload
 The contract lives in api/README.md; the UI in web/ only talks to the /api routes."""
+import os
 import threading
 import time
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from api import books as B
@@ -35,6 +37,11 @@ class SearcherSlot:
 
 def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, load_in_background: bool = True) -> FastAPI:
     app = FastAPI(title="Gutenberg Semantic Search API")
+    # Locally the API serves web/ itself (same origin). When the UI is hosted elsewhere, e.g. Cloudflare
+    # Pages, list its origin here: CORS_ORIGINS=https://our-site.pages.dev
+    origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()]
+    if origins:
+        app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["GET"], allow_headers=["Accept"])
     books = B.load_books(books_dir)
     outline = B.load_lcc()
     slot = SearcherSlot()

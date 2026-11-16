@@ -155,3 +155,12 @@ def test_sentences():
     assert B.sentences(f"{long} {long}  {long}") == [long] * 3
     assert B.sentences(f"{long} (Dr. A. M. Hale, 1890.) {long}") == [long, "(Dr. A. M. Hale, 1890.)", long]
     assert B.sentences(f"{long} The problem...") == [long, "The problem..."]
+
+
+def test_cors_only_when_configured(monkeypatch):
+    origin = {"Origin": "https://ui.example.org"}
+    plain = TestClient(create_app(searcher=FakeSearcher()))
+    assert "access-control-allow-origin" not in plain.get("/api/health", headers=origin).headers
+    monkeypatch.setenv("CORS_ORIGINS", "https://ui.example.org")
+    split = TestClient(create_app(searcher=FakeSearcher()))
+    assert split.get("/api/health", headers=origin).headers["access-control-allow-origin"] == "https://ui.example.org"
