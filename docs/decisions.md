@@ -81,3 +81,13 @@ Sources:
 **Work lives on branch `api-ui`, not main.**
 - **Why:** Estee is committing to main, and George may add his own API. Everything new sits in `api/`, `web/`, `docs/` and `tests/`, plus a few lines in `AGENTS.md` and the root README, so merging is trivial.
 - **Gave up:** teammates getting it on `git pull` until it's merged.
+
+## 2026-11-15
+
+**The API and UI went to main without a PR, and `api-ui` stays the working branch.**
+- **Why:** Teammates needed it on `git pull` to try it before Tuesday, and nobody else had touched `api/`, `web/` or `tests/`, so there was nothing to review a merge against. This replaces the 2026-11-12 "work lives on `api-ui`, not main" entry.
+- **Gave up:** a PR review step. New work still goes on `api-ui` first and lands on main when it works.
+
+**Docs use `http://127.0.0.1:8000`, not `localhost`.**
+- **Why:** On Cedric's Mac `localhost:8000` resolved to a Docker container instead of uvicorn. `127.0.0.1` always hits the uvicorn default bind.
+- **Gave up:** nothing.

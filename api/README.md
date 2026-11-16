@@ -9,7 +9,7 @@ From the repo root, with the virtual environment active:
 ```sh
 pip install -r api/requirements.txt   # plus the root requirements for the index (faiss-cpu, langchain-*, sentence-transformers)
 python test_script.py                 # builds gutenberg_faiss_test/ once (~1 minute, 6,896 vectors)
-uvicorn api.app:app --reload          # http://localhost:8000
+uvicorn api.app:app --reload          # http://127.0.0.1:8000
 python -m pytest tests/               # no model or index needed
 ```
 

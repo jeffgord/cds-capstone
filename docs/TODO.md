@@ -5,10 +5,13 @@ Owners are suggestions. Check items off with the date and move them to Done.
 ## Now (before Tue Nov 17)
 
 - [ ] Agree the API contract with Estee and George. Confirm every index keeps `gutenberg_id` in chunk metadata and decide whether to keep `doc_type` / `passage_index`. (Cedric, Estee, George)
-- [ ] Push branch `api-ui` and open a PR to main once the team's had a look. (Cedric)
 - [ ] Fresh-clone dry run on a teammate's laptop: README steps, build the index, `uvicorn api.app:app`, the four example queries. (Cedric + one teammate)
 - [ ] Write the UI/API section of the weekend writeup for Charlene, drawing on `docs/decisions.md`. Cover the contract, why it's embedding-agnostic, why the raw score is kept, the labeling decisions, and the open questions below. (Cedric)
 - [ ] Recheck `EXAMPLES` in `web/app.js` after any index change. (whoever changes the index)
+- [ ] One slide on the API + UI for Tuesday: what's different from OpenSquare (embedding-agnostic API, cards from `data/books/`, "Why this book", URL state, faster load). Draft by midday Mon Nov 16. (Cedric)
+- [ ] Run the live demo. Restart the laptop first and check the demo works from a cold start. Prep demo queries ahead, from Estee's test set and `evaluation/queries.csv`. (Cedric)
+- [ ] "Why this book" was flagged as misleading at the team sync: "Your words also appear in" is literal word overlap, and next to a semantic score it reads like the model's reason. Decide whether to cut it, relabel it, or replace it with something semantic. (Cedric)
+- [ ] Optional: deploy on Cloudflare free tier so Charlene can try it before Tuesday. Not promised. (team)
 
 ## Notes for the index team (found while wiring the API, not fixed here)
 
@@ -37,6 +40,7 @@ Owners are suggestions. Check items off with the date and move them to Done.
 
 ## Done
 
+- [x] 2026-11-15: API + UI pushed straight to main instead of a PR (58b4a80, 52726ac), and `api-ui` synced with main. Docs now say `127.0.0.1:8000`, since `localhost:8000` can collide with Docker. (Cedric)
 - [x] 2026-11-13: Local setup on George's Mac: corrected requirement pin syntax without changing versions, installed into Python 3.13 `.venv`, built 6,896 vectors, passed 29 tests, and verified CLI/API parity for all four example queries. Saved an ignored local baseline; retrieval code is unchanged. (George)
 - [x] 2026-11-12: Cloned `jeffgord/cds-capstone`, created branch `api-ui`, built Estee's index locally (6,896 vectors, ~1 min). (Cedric)
 - [x] 2026-11-12: API (`api/`): health, search with book-level dedupe and paging, book detail, background model load, no-index state. Same books and scores as `search_test.py` for "peaceful diplomacy without military conflict". (Cedric)

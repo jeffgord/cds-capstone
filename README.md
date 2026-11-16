@@ -26,7 +26,7 @@ See [ingestion/README.md](ingestion/README.md) for what each field contains and 
 pip install -r api/requirements.txt
 python test_script.py          # build once; first run also downloads the embedding model
 python search_test.py          # try the example query in the terminal
-uvicorn api.app:app            # open http://localhost:8000
+uvicorn api.app:app            # open http://127.0.0.1:8000
 ```
 
 See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index, [web/README.md](web/README.md) for the UI, and [docs/](docs/) for the plan, decisions and TODO.
