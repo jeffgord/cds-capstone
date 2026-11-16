@@ -29,4 +29,4 @@ python search_test.py          # try the example query in the terminal
 uvicorn api.app:app            # open http://127.0.0.1:8000
 ```
 
-See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index, [web/README.md](web/README.md) for the UI, and [docs/](docs/) for the plan, decisions and TODO.
+See [embedding/README.md](embedding/README.md) for the pipeline, [api/README.md](api/README.md) for the API and how to plug in a different index and [web/README.md](web/README.md) for the UI.

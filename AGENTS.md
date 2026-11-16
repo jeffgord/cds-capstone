@@ -11,7 +11,6 @@
 
 - `api/` — FastAPI server (`uvicorn api.app:app`): `/api/health`, `/api/search`, `/api/books/{id}`, and serves `web/` at `/`. Embedding-agnostic: a backend in `api/searchers.py` returns chunk hits (`gutenberg_id`, score, optional `doc_type`/`passage_index`/`text`); the API dedupes by book, pages, and builds every card from `data/books/` (`api/books.py`). Index location and model via `SEARCH_INDEX_DIR`, `SEARCH_MODEL`, `SEARCH_QUERY_PREFIX`. Contract in `api/README.md`.
 - `web/` — the UI: one page, vanilla HTML/CSS/JS, no build step, talks only to `/api`. Visual guideline (based on gutenberg.org's own stylesheet, light mode only for now) and UI decisions in `web/README.md`. Never write a color outside the `:root` tokens in `style.css`; data strings go in via `textContent` only. The URL (`?q=&book=`) is the single source of truth for what's on screen.
-- `docs/` — `ui-api-plan.md` (the plan), `decisions.md` (dated decisions: why, what was given up, source critique), `TODO.md` (now/next/later with owners, including notes for the index team). Add a decision entry when you change something a teammate or Charlene would ask "why?" about.
 - `tests/` — `python -m pytest tests/`; uses a fake searcher, so no model or index is needed.
 
 ## Ingestion decisions and gotchas
