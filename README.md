@@ -24,8 +24,8 @@ See [ingestion/README.md](ingestion/README.md) for what each field contains and 
 
 ```sh
 pip install -r api/requirements.txt
-python test_script.py          # build once; first run also downloads the embedding model
-python search_test.py          # try the example query in the terminal
+python build_index.py          # build once; first run also downloads the embedding model
+python search_cli.py "query"  # search from the terminal (same code as the API)
 uvicorn api.app:app            # open http://127.0.0.1:8000
 ```
 

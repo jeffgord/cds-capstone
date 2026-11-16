@@ -6,7 +6,7 @@
 
 ### Pipeline architecture
 
-The diagram shows the current implementation. The dataset is committed; normal setup starts with `test_script.py`, without rerunning ingestion. Index construction happens once per dataset or embedding-format change; query embedding happens on every search.
+The diagram shows the current implementation. The dataset is committed; normal setup starts with `build_index.py`, without rerunning ingestion. Index construction happens once per dataset or embedding-format change; query embedding happens on every search.
 
 ```mermaid
 flowchart TB
@@ -17,7 +17,7 @@ flowchart TB
         source --> ingest --> books
     end
 
-    subgraph build["Index build - python test_script.py"]
+    subgraph build["Index build - python build_index.py"]
         documents["build_documents()<br/>embedding/create_embed_document.py"]
         summary["format_book() in preprocess.py<br/>1 metadata + summary document per book"]
         passages["Up to 6 passage documents per book<br/>Title + bookshelves + excerpt"]
@@ -28,20 +28,21 @@ flowchart TB
         embed --> index
     end
 
-    subgraph search["Search - existing CLI and API paths"]
-        query["Query from search_test.py or GET /api/search"]
+    subgraph search["Search - CLI and API share one path"]
+        query["Query from search_cli.py or GET /api/search"]
         query_vector["Same BGE model + normalization<br/>768-dimensional query vector"]
         retrieve["FAISS IndexFlatL2 search<br/>Rank chunks by squared L2 distance"]
         hits["Chunk hits + provenance<br/>Cosine score = 1 - distance / 2"]
-        cli["search_test.search_books()<br/>Fetch top_k * 5 chunks; dedupe by book"]
-        terminal["Print up to top_k books + matched snippets"]
-        api["api/app.py<br/>Keep each book's best hit<br/>Request more chunks if the page is short"]
+        dedupe["best_per_book() in api/searchers.py<br/>Keep each book's best hit<br/>Request more chunks if short"]
+        terminal["search_cli.py<br/>Print top_k books + matched snippets"]
+        api["api/app.py<br/>Page the ranked books"]
         cards["Page ranked books; build cards + snippets<br/>api/books.py reads the book records"]
         ui["API JSON response → web/ UI"]
         query --> query_vector --> retrieve --> hits
-        hits --> cli --> terminal
-        hits --> api --> cards --> ui
-        api -.->|"expand chunk request if needed"| retrieve
+        hits --> dedupe
+        dedupe --> terminal
+        dedupe --> api --> cards --> ui
+        dedupe -.->|"expand chunk request if needed"| retrieve
     end
 
     books --> documents
@@ -58,10 +59,10 @@ Each book JSON in `data/books/` is expanded into up to **7 dense vector document
 
 ### 2. Embedding & Vector Store Setup
 * **Model:** `BAAI/bge-base-en-v1.5` (upgraded from `all-MiniLM-L6-v2`'s 384 dimensions to 768 dimensions, 512-token context window) with L2 normalization enabled (`normalize_embeddings=True`).
-* **Index Persistence:** Built once via `test_script.py` and saved locally to `gutenberg_faiss_test/`. `search_test.py` and the API reuse that index; each process still loads the embedding model at startup.
+* **Index Persistence:** Built once via `build_index.py` and saved locally to `gutenberg_faiss_test/`. `search_cli.py` and the API reuse that index; each process still loads the embedding model at startup.
 
 ### 3. Book-Level Deduplication & Similarity Scoring
-* **Deduplication (`search_books`):** Fetches `top_k * 5` candidate vectors from FAISS and filters duplicate `gutenberg_id` hits so multiple passages from the *same* book do not crowd out distinct books covering the same topic. If that leaves fewer than `top_k` books, it doubles the pool and tries again, like the API.
+* **Deduplication (`best_per_book` in `api/searchers.py`):** Keeps each book's best chunk so multiple passages from the *same* book do not crowd out distinct books covering the same topic. If that leaves too few books, it asks FAISS for more chunks. The CLI and the API share this function.
 * **Similarity Readout:** Converts FAISS squared L2 distances on unit vectors into cosine similarity scores (`1.0 - l2_distance / 2.0`), ranked highest first. Cosine similarity ranges from `-1.0` to `1.0`; it is not a probability of relevance.
 * **Provenance Tracking:** Displays whether each result matched via `summary` or `passage`, along with the triggering snippet.
 
@@ -78,13 +79,13 @@ Each book JSON in `data/books/` is expanded into up to **7 dense vector document
 │   ├── extract_locc.py            # Optional: rebuilds lcc_outline.json (needs `pip install requests pdfplumber`)
 │   └── create_embed_document.py   # Builds summary + passage LangChain Documents
 ├── gutenberg_faiss_test/          # Saved FAISS vector index (6,896 vectors)
-├── test_script.py                 # Builds and saves the FAISS index from data/books/
-└── search_test.py                 # Loads FAISS index and runs deduplicated semantic queries
+├── build_index.py                 # Builds and saves the FAISS index from data/books/
+└── search_cli.py                  # Terminal search through the API's code (api/searchers.py)
 ```
 
 ## Local setup and baseline
 
-Follow the root [README](../README.md) to create `.venv` and install the dependencies. Run `python test_script.py` once, then `python search_test.py`; edit `query` in the latter to try another search. The first build downloads the model into the Hugging Face cache. Subsequent builds reuse it. After that download, `HF_HUB_OFFLINE=1` can be set when running either script or the API to use the cached model without network checks.
+Follow the root [README](../README.md) to create `.venv` and install the dependencies. Run `python build_index.py` once, then `python search_cli.py "your query"` to search from the terminal. The first build downloads the model into the Hugging Face cache. Subsequent builds reuse it. After that download, `HF_HUB_OFFLINE=1` can be set when running either script or the API to use the cached model without network checks.
 
 Verified on 2026-11-13 with Python 3.13.5 on an Apple Silicon Mac: 1,000 books produce 6,896 normalized, 768-dimensional vectors, using PyTorch's MPS device. All 29 API tests pass. The CLI and live API agree on the top five books and scores for all four UI example queries; API pagination and book details also pass smoke checks. The local comparison results are saved in gitignored `data/raw/search-baseline-2026-11-13.json`, with resolved package versions in `.venv/requirements-resolved.txt`. These are behavior checks, not relevance judgments.
 

@@ -28,7 +28,7 @@ def main():
         distance_strategy=DistanceStrategy.COSINE,
     )
 
-    # 4. Save the index to disk so search_test.py can load it instantly
+    # 4. Save the index to disk so the API and search_cli.py can load it instantly
     vectorstore.save_local(str(INDEX_DIR))
     print(f"Saved FAISS index to {INDEX_DIR}")
 

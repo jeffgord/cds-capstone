@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from api import books as B
-from api.searchers import Searcher, load_searcher
+from api.searchers import Searcher, best_per_book, load_searcher
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 MAX_K = 50
@@ -76,19 +76,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         want = offset + k + 1  # one extra book tells us whether there's a next page
         started = time.perf_counter()
 
-        # Backends return chunks; several can belong to one book. Keep each book's best chunk, and ask
-        # for more chunks if dedupe left us short (each book has up to 7 vectors in Estee's index).
-        n_chunks = max(200, want * 8)
-        while True:
-            hits = slot.searcher.search(query, n_chunks)
-            best = {}
-            for hit in hits:
-                if hit.gutenberg_id in books and hit.gutenberg_id not in best:
-                    best[hit.gutenberg_id] = hit
-            if len(best) >= want or len(hits) < n_chunks:
-                break
-            n_chunks *= 2
-        ranked = list(best.values())
+        ranked = best_per_book(slot.searcher, query, want, keep=lambda gid: gid in books)
         page = ranked[offset:offset + k]
 
         results = []

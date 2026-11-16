@@ -34,7 +34,7 @@ class Searcher(Protocol):
 
 class LangChainFaissSearcher:
     """Any index saved with LangChain's FAISS.save_local, as long as each Document's metadata has
-    `gutenberg_id`. Reads `doc_type` and `passage_index` when they're there (Estee's test_script.py
+    `gutenberg_id`. Reads `doc_type` and `passage_index` when they're there (build_index.py
     writes both)."""
 
     def __init__(self, index_dir: Path, model_name: str, query_prefix: str = ""):
@@ -91,9 +91,25 @@ def load_searcher() -> Searcher:
     if not index_dir.is_absolute():
         index_dir = ROOT_DIR / index_dir
     if not (index_dir / "index.faiss").exists():
-        raise FileNotFoundError(f"No index at {index_dir.name}/. Build it with: python test_script.py")
+        raise FileNotFoundError(f"No index at {index_dir.name}/. Build it with: python build_index.py")
     return LangChainFaissSearcher(
         index_dir,
         model_name=os.getenv("SEARCH_MODEL", "BAAI/bge-base-en-v1.5"),
         query_prefix=os.getenv("SEARCH_QUERY_PREFIX", ""),
     )
+
+
+def best_per_book(searcher: Searcher, query: str, n_books: int, keep=lambda gutenberg_id: True) -> list[ChunkHit]:
+    """Each book's best chunk, best first, with at least n_books books if the index has them. Backends
+    return chunks and several can belong to one book (up to 7 in the current index), so this asks for
+    more chunks until dedupe leaves enough books. The API and search_cli.py both rank through here."""
+    n_chunks = max(200, n_books * 8)
+    while True:
+        hits = searcher.search(query, n_chunks)
+        best = {}
+        for hit in hits:
+            if keep(hit.gutenberg_id) and hit.gutenberg_id not in best:
+                best[hit.gutenberg_id] = hit
+        if len(best) >= n_books or len(hits) < n_chunks:
+            return list(best.values())
+        n_chunks *= 2

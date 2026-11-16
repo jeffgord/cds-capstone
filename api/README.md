@@ -8,7 +8,7 @@ From the repo root, with the virtual environment active:
 
 ```sh
 pip install -r api/requirements.txt   # plus the root requirements for the index (faiss-cpu, langchain-*, sentence-transformers)
-python test_script.py                 # builds gutenberg_faiss_test/ once (~1 minute, 6,896 vectors)
+python build_index.py                 # builds gutenberg_faiss_test/ once (~1 minute, 6,896 vectors)
 uvicorn api.app:app --reload          # http://127.0.0.1:8000
 python -m pytest tests/               # no model or index needed
 ```
@@ -103,7 +103,7 @@ For a LangChain FAISS index, nothing needs code. Point the env vars at it:
 | `SEARCH_MODEL` | `BAAI/bge-base-en-v1.5` | Must be the model the index was built with |
 | `SEARCH_QUERY_PREFIX` | empty | Prepended to every query. BGE recommends `"Represent this sentence for searching relevant passages: "` for short queries (untested here) |
 
-The adapter converts scores from the store's distance strategy. Inner product is already a similarity. Euclidean, and LangChain's `COSINE` (which it also stores as an L2 index), return squared L2 distance, which on normalized vectors is `2 - 2cos`, so the score becomes `1 - d/2`. That's the same conversion `search_test.py` uses, and the API returns the same books and scores as that script.
+The adapter converts scores from the store's distance strategy. Inner product is already a similarity. Euclidean, and LangChain's `COSINE` (which it also stores as an L2 index), return squared L2 distance, which on normalized vectors is `2 - 2cos`, so the score becomes `1 - d/2`. `search_cli.py` searches through the same code, so the terminal and the API always agree.
 
 For anything else (a different vector store, a reranker, hybrid search later), write a class with `search()` and `info()` and return it from `load_searcher()`.
 
@@ -115,5 +115,5 @@ Locally one `uvicorn` process serves both the API and `web/`, so there's no CORS
 
 - **UI:** upload `web/` as static files and set `apiBase` in `web/config.js` to the API's URL.
 - **API:** set `CORS_ORIGINS` to the UI's origin (comma-separated for several), e.g. `CORS_ORIGINS=https://our-site.pages.dev uvicorn api.app:app --host 0.0.0.0`. Without it, no CORS headers are sent. The API still serves `web/` at `/` either way.
-- The host needs about 2 GB of RAM (PyTorch plus BGE-base) and the index folder. The index is gitignored, so build it on the host with `python test_script.py` or copy it there.
+- The host needs about 2 GB of RAM (PyTorch plus BGE-base) and the index folder. The index is gitignored, so build it on the host with `python build_index.py` or copy it there.
 
