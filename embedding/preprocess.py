@@ -8,6 +8,7 @@ with LOCC_PATH.open("r", encoding="utf-8") as f:
     LOCC_MAP = json.load(f)
 
 def _extract_locc_label(entry) -> str:
+    label = ""  # codes missing from the outline (entry is None) get no label instead of crashing
     if isinstance(entry, str):
         label = entry
     if isinstance(entry, dict):

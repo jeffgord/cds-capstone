@@ -6,24 +6,29 @@ ROOT_DIR = Path(__file__).resolve().parent
 INDEX_DIR = ROOT_DIR / "gutenberg_faiss_test"
 
 def search_books(vectorstore, query: str, top_k: int = 5):
-    # Fetch extra candidates in case multiple passages from the same book score high
-    candidates = vectorstore.similarity_search_with_score(query, k=top_k * 5)
+    # Fetch extra candidates in case multiple passages from the same book score high. If dedupe still
+    # leaves fewer than top_k books, fetch twice as many and try again (up to the whole index).
+    n = top_k * 5
+    while True:
+        candidates = vectorstore.similarity_search_with_score(query, k=n)
 
-    seen_book_ids = set()
-    results = []
-    for doc, l2_distance in candidates:
-        book_id = doc.metadata["gutenberg_id"]
-        if book_id in seen_book_ids:
-            continue  # skip duplicate hits from the exact same book
-        seen_book_ids.add(book_id)
+        seen_book_ids = set()
+        results = []
+        for doc, l2_distance in candidates:
+            book_id = doc.metadata["gutenberg_id"]
+            if book_id in seen_book_ids:
+                continue  # skip duplicate hits from the exact same book
+            seen_book_ids.add(book_id)
 
-        # Convert L2 squared distance to cosine similarity (0.0 to 1.0, higher = better)
-        similarity = 1.0 - (float(l2_distance) / 2.0)
-        results.append((doc, similarity))
-        if len(results) == top_k:
-            break
+            # Convert L2 squared distance to cosine similarity (0.0 to 1.0, higher = better)
+            similarity = 1.0 - (float(l2_distance) / 2.0)
+            results.append((doc, similarity))
+            if len(results) == top_k:
+                return results
 
-    return results
+        if len(candidates) < n:  # the whole index was searched
+            return results
+        n *= 2
 
 def main():
     embeddings = HuggingFaceEmbeddings(

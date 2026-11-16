@@ -61,7 +61,7 @@ Each book JSON in `data/books/` is expanded into up to **7 dense vector document
 * **Index Persistence:** Built once via `test_script.py` and saved locally to `gutenberg_faiss_test/`. `search_test.py` and the API reuse that index; each process still loads the embedding model at startup.
 
 ### 3. Book-Level Deduplication & Similarity Scoring
-* **Deduplication (`search_books`):** Fetches `top_k * 5` candidate vectors from FAISS and filters duplicate `gutenberg_id` hits so multiple passages from the *same* book do not crowd out distinct books covering the same topic.
+* **Deduplication (`search_books`):** Fetches `top_k * 5` candidate vectors from FAISS and filters duplicate `gutenberg_id` hits so multiple passages from the *same* book do not crowd out distinct books covering the same topic. If that leaves fewer than `top_k` books, it doubles the pool and tries again, like the API.
 * **Similarity Readout:** Converts FAISS squared L2 distances on unit vectors into cosine similarity scores (`1.0 - l2_distance / 2.0`), ranked highest first. Cosine similarity ranges from `-1.0` to `1.0`; it is not a probability of relevance.
 * **Provenance Tracking:** Displays whether each result matched via `summary` or `passage`, along with the triggering snippet.
 
@@ -75,6 +75,7 @@ Each book JSON in `data/books/` is expanded into up to **7 dense vector document
 │   └── books/                     # 1,000 pre-ingested Project Gutenberg JSON records
 ├── embedding/
 │   ├── preprocess.py              # LoCC mapping and format_book() metadata formatter
+│   ├── extract_locc.py            # Optional: rebuilds lcc_outline.json (needs `pip install requests pdfplumber`)
 │   └── create_embed_document.py   # Builds summary + passage LangChain Documents
 ├── gutenberg_faiss_test/          # Saved FAISS vector index (6,896 vectors)
 ├── test_script.py                 # Builds and saves the FAISS index from data/books/
@@ -91,7 +92,7 @@ Before changing retrieval:
 
 * `table_of_contents`, `introduction`, `conclusion`, and `index_terms` are currently not embedded. Displaying contents and introductions in the UI does not make them searchable.
 * The model truncates input at 512 tokens. Tokenizing the current documents found no over-limit inputs, but the longest summary uses 507 tokens (median 282); passages peak at 357. Adding fields requires a token budget or additional documents so the new content is actually embedded.
-* The CLI deduplicates a fixed `top_k * 5` chunk pool, which can yield fewer than `top_k` books. The API expands its pool until it can fill the requested page. A reranker needs 15–20 **unique books** before rescoring, and both entry points need to use the same ranking behavior.
+* The CLI and the API both expand their chunk pool until they have `top_k` unique books. A reranker needs 15–20 **unique books** before rescoring, and both entry points need to use the same ranking behavior.
 * Keep any relevance cutoff dependent on labeled evaluation results; cosine scores alone do not establish a useful threshold.
 
 ## Proposed experiments (not implemented)
