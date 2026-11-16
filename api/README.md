@@ -34,12 +34,11 @@ The server starts in about a second and loads the model in the background. Until
 ```json
 {
   "query": "home remedies and herbal medicine", "k": 10, "offset": 0, "took_ms": 19,
-  "has_more": true, "score_kind": "cosine", "highlight_terms": ["home", "remedi", "herbal", "medicine"],
+  "has_more": true, "score_kind": "cosine",
   "results": [{
     "rank": 1, "gutenberg_id": 12345, "score": 0.6671,
     "matched_via": "passage", "passage_index": 2, "n_passages": 6,
     "snippet": "text from the book that matched...",
-    "fields_matched": [{"field": "title", "terms": ["remedies"]}],
     "book": {
       "title": "...", "subtitle": null,
       "authors": [{"name": "Sylvain, Adrien, 1826-1914", "display": "Adrien Sylvain (1826-1914)", "role": "Author"}],
@@ -58,8 +57,6 @@ The server starts in about a second and loads the model in the background. Until
 | `matched_via` | The kind of chunk that matched: `"summary"` or `"passage"` in Estee's index, or `null` if the index doesn't say. |
 | `passage_index` | Which entry of the book's `passages` matched, if the chunk was one. |
 | `snippet` | Text to quote in "Why this book". It's the book's own text, never the embedded string with its "Title: ... \| Excerpt:" header. |
-| `fields_matched` | Card fields that literally contain a query word (crude stemming). This is word overlap, not the model's reasoning, and the UI labels it that way. |
-| `highlight_terms` | Word stems the UI highlights in snippets, using the same rule as `fields_matched`. |
 | `added_year` | Year of the Gutenberg release (`issued`), not the original publication. |
 | `description` | Gutenberg's auto-generated summary, or `null` (16 books have none). |
 | `locc` | LoC classification code and readable label. Subclass labels come from `embedding/lcc_outline.json` plus `LCC_SUPPLEMENT` in `books.py` for subclasses the outline scrape missed. |
@@ -67,6 +64,21 @@ The server starts in about a second and loads the model in the background. Until
 ### `GET /api/books/{id}`
 
 The card fields plus `table_of_contents`, `introduction`, `passages` and `has_text` (false for the 7 books with no extracted text). 404 for an unknown id.
+
+### `GET /api/books/{id}/why?q=&matched_via=&passage_index=`
+
+The evidence behind "Why this book", computed when the box is opened so search stays fast (about 80 to 300 ms per book on CPU). Pass `matched_via` and `passage_index` from the search result. The search model scores each sentence of the result's `snippet`, and each part of the record on its own, against the query.
+
+```json
+{ "gutenberg_id": 12345, "query": "women fighting for the right to vote", "took_ms": 183, "n_passages": 6,
+  "sentences": [{"text": "If the adult citizen, male or female, has a right to vote...", "score": 0.649}],
+  "parts": [{"part": "passage", "passage_index": 2, "score": 0.629}, {"part": "title", "score": 0.439},
+            {"part": "summary", "score": 0.439}, {"part": "subjects", "score": 0.400}] }
+```
+
+- `sentences` joined with spaces give back the `snippet`, so the UI can highlight the best one in place.
+- `parts` is sorted best first: title (with subtitle), subjects (LCSH plus bookshelves), summary, and only the closest passage. Each is scored alone, so these won't equal the result's `score`, which came from the indexed chunk (title and subjects plus the text).
+- 400 for an empty `q`, 404 for an unknown id, 503 while the model loads, and 501 if the backend has no `similarity()`.
 
 ## Plugging in a different index
 
@@ -80,6 +92,7 @@ def info(self) -> dict: ...                                     # shown by /api/
 `ChunkHit(gutenberg_id, score, doc_type=None, passage_index=None, text=None)`:
 - **Required:** `gutenberg_id` and a `score` where higher is better. This is the one rule for index builders. If your chunks can't be mapped back to a book id, the API can't show them.
 - **Optional:** `doc_type`, `passage_index` and `text` make the "Why this book" box more specific.
+- **Optional method:** `similarity(query, texts) -> list[float]`, the same score as `search` for each text. With it, `/api/books/{id}/why` works; without it, the UI shows the matched text without the breakdown. The LangChain adapter uses the index's own embedding model.
 - Return raw chunk hits. **The API dedupes by book** (the best chunk wins) and asks for more chunks if dedupe leaves a page short, so backends don't need any dedupe logic.
 
 For a LangChain FAISS index, nothing needs code. Point the env vars at it:
@@ -88,7 +101,7 @@ For a LangChain FAISS index, nothing needs code. Point the env vars at it:
 |---|---|---|
 | `SEARCH_INDEX_DIR` | `gutenberg_faiss_test` | Folder with `index.faiss` + `index.pkl`, relative to the repo root |
 | `SEARCH_MODEL` | `BAAI/bge-base-en-v1.5` | Must be the model the index was built with |
-| `SEARCH_QUERY_PREFIX` | empty | Prepended to every query. BGE recommends `"Represent this sentence for searching relevant passages: "` for short queries (untested here, see `docs/TODO.md`) |
+| `SEARCH_QUERY_PREFIX` | empty | Prepended to every query. BGE recommends `"Represent this sentence for searching relevant passages: "` for short queries (untested here) |
 
 The adapter converts scores from the store's distance strategy. Inner product is already a similarity. Euclidean, and LangChain's `COSINE` (which it also stores as an L2 index), return squared L2 distance, which on normalized vectors is `2 - 2cos`, so the score becomes `1 - d/2`. That's the same conversion `search_test.py` uses, and the API returns the same books and scores as that script.
 

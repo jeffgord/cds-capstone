@@ -11,16 +11,6 @@ LCC_PATH = ROOT_DIR / "embedding" / "lcc_outline.json"
 COVER_URL = "https://www.gutenberg.org/cache/epub/{id}/pg{id}.cover.medium.jpg"
 SNIPPET_CHARS = 320
 
-# Small on purpose: it only decides which query words count as "shared words" in the UI.
-STOPWORDS = set("""
-a about above after again against all also am an and any are as at be because been before being
-below between both but by can could did do does doing down during each few for from further had has
-have having he her here hers him his how i if in into is it its itself just me more most my no nor
-not of off on once only or other our out over own same she should so some such than that the their
-them then there these they this those through to too under until up very was we were what when where
-which while who whom why will with would you your book books about want looking find something like
-""".split())
-
 # Subclasses missing or cut off in embedding/lcc_outline.json, which was scraped from the first page
 # of each LoC outline PDF. Values from the LoC Classification Outline.
 LCC_SUPPLEMENT = {
@@ -181,39 +171,30 @@ def snippet(record: dict, doc_type: str | None, passage_index: int | None, text:
     return _shorten("; ".join(toc)) if toc else None
 
 
-def query_terms(query: str) -> list[str]:
-    words = re.findall(r"[a-z0-9']+", query.lower())
-    return list(dict.fromkeys(w.strip("'") for w in words if len(w) > 2 and w not in STOPWORDS))
-
-
-def stem(term: str) -> str:
-    # Crude on purpose ("immigrants" matches "immigrant"); this is word overlap, not the model. The UI
-    # highlights words that start with the stem, so "studi" catches study and studies.
-    if term.endswith("ies") and len(term) > 4:
-        return term[:-3] + "i"
-    if re.search(r"(ss|us|is)$", term):  # glass, census, analysis
-        return term
-    if re.search(r"(x|z|ch|sh|ss)es$", term):  # boxes, churches
-        return term[:-2]
-    if term.endswith("s") and len(term) > 3:
-        return term[:-1]
-    return term
-
-
-def fields_matched(record: dict, query: str) -> list[dict]:
-    """Which card fields literally contain a query word. Shown as "Your words also appear in", never as
-    the model's reason for the match."""
-    fields = {
-        "title": " ".join(filter(None, [record.get("title"), record.get("subtitle")])),
-        "author": " ".join(c["name"] for c in record.get("contributors") or []),
-        "subjects": " ".join((record.get("subjects") or []) + (record.get("topic_subjects") or [])),
-        "summary": record.get("description") or "",
-    }
-    terms = query_terms(query)
+def sentences(text: str) -> list[str]:
+    """Splits a snippet into sentences so "Why this book" can point at the closest one."""
     out = []
-    for field, value in fields.items():
-        value = value.lower()
-        hits = [t for t in terms if re.search(r"\b" + re.escape(stem(t)), value)]
-        if hits:
-            out.append({"field": field, "terms": hits})
+    for piece in re.split(r"(?:(?<=[.!?;])|(?<=[.!?;][)\]\"']))\s+(?=[\"'(\[A-Z0-9])", " ".join(text.split())):
+        # Abbreviations and initials ("Dr.", "St.", "A. M.") split too early; glue those back together.
+        if out and re.search(r"\b[A-Z][a-z]{0,2}\.$", out[-1]):
+            out[-1] += " " + piece
+        elif piece:
+            out.append(piece)
     return out
+
+
+def why_parts(record: dict) -> list[dict]:
+    """The parts of a book's record that "Why this book" scores against the query, one at a time."""
+    parts = []
+    title = ": ".join(filter(None, [record.get("title"), record.get("subtitle")]))
+    subjects = list(dict.fromkeys((record.get("topic_subjects") or []) + (record.get("subjects") or [])))
+    description = (record.get("description") or "").strip()
+    if title:
+        parts.append({"part": "title", "text": title})
+    if subjects:
+        parts.append({"part": "subjects", "text": "; ".join(subjects)})
+    if description:
+        parts.append({"part": "summary", "text": description})
+    for i, passage in enumerate(record.get("passages") or []):
+        parts.append({"part": "passage", "passage_index": i, "text": passage})
+    return parts

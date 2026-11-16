@@ -6,7 +6,7 @@
 const PAGE_SIZE = 10;
 const RECENT_KEY = "gss.recent";
 const RECENT_MAX = 6;
-// Checked against Estee's BGE-base index on 2026-11-12 (docs/decisions.md): each returns an on-topic top 3.
+// Checked against Estee's BGE-base index on 2026-11-15: each returns an on-topic top 3.
 // Recheck whenever the index changes.
 const EXAMPLES = [
   "peaceful diplomacy without military conflict",
@@ -26,7 +26,7 @@ const els = {
   more: $("more"), panel: $("panel"), panelEmpty: $("panel-empty"), panelBody: $("panel-body"),
 };
 
-const state = { query: "", results: [], hasMore: false, terms: [], health: null, searchToken: 0, bookToken: 0 };
+const state = { query: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
 
 // ---------- small DOM helpers (text goes in via textContent only; data is never parsed as HTML) ----------
 function h(tag, attrs = {}, ...children) {
@@ -54,23 +54,6 @@ function svgChevron() {
   p.setAttribute("stroke-width", "1.6");
   svg.append(p);
   return svg;
-}
-
-// Wrap query-word matches in <mark> without ever touching innerHTML.
-function highlighted(text, terms) {
-  const frag = document.createDocumentFragment();
-  if (!text) return frag;
-  const usable = terms.filter((t) => t.length > 2).map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  if (!usable.length) { frag.append(text); return frag; }
-  const re = new RegExp(`\\b(${usable.join("|")})\\w*`, "gi");
-  let last = 0;
-  for (const m of text.matchAll(re)) {
-    if (m.index > last) frag.append(text.slice(last, m.index));
-    frag.append(h("mark", {}, m[0]));
-    last = m.index + m[0].length;
-  }
-  if (last < text.length) frag.append(text.slice(last));
-  return frag;
 }
 
 function cover(book, id) {
@@ -214,18 +197,54 @@ function matchedIn(r) {
   return "Matched in the book's indexed text";
 }
 
+const PART_LABEL = { title: "Title", subjects: "Subjects", summary: "Summary" };
+
+function partLabel(p, nPassages) {
+  if (p.part === "passage") return `Closest passage (${p.passage_index + 1} of ${nPassages})`;
+  return PART_LABEL[p.part] || p.part;
+}
+
+// The box opens with the matched text right away, then asks the API to score it with the search model:
+// the closest sentence gets highlighted and each part of the record gets its own score.
 function whyBox(r, id) {
-  const shared = r.fields_matched.length
-    ? h("p", {}, "Your words also appear in: ",
-        r.fields_matched.map((f) => `${f.field} (${f.terms.join(", ")})`).join("; "))
-    : h("p", {}, "No shared words: this matched on meaning.");
-  return h("div", { class: "why", id, hidden: true },
+  const quote = r.snippet ? h("blockquote", {}, r.snippet) : null;
+  const detail = h("div", { class: "why-detail" }, h("p", { class: "why-loading" }, "Scoring each part of this book..."));
+  const box = h("div", { class: "why", id, hidden: true },
     h("p", { class: "why-source" }, matchedIn(r)),
-    r.snippet ? h("blockquote", {}, highlighted(r.snippet, state.terms)) : null,
-    shared,
+    quote,
+    detail,
     h("p", { class: "why-note" },
-      "The score is the cosine similarity between your query and this text. Higher is closer. Compare scores only within one search."),
+      `The score is the cosine similarity between your search and the matched text, from the search model. Higher is closer. Compare scores only within one search.`),
   );
+  let loaded = false;
+  box.load = async () => {
+    if (loaded) return;
+    loaded = true;
+    const params = { q: state.query };
+    if (r.matched_via) params.matched_via = r.matched_via;
+    if (r.passage_index !== null) params.passage_index = r.passage_index;
+    try {
+      const d = await api(`/api/books/${r.gutenberg_id}/why?${new URLSearchParams(params)}`);
+      if (quote && d.sentences.length > 1) {
+        const best = d.sentences.reduce((a, b) => (b.score > a.score ? b : a));
+        quote.replaceChildren(...d.sentences.flatMap((sent, i) => [
+          i ? " " : "", sent === best ? h("mark", {}, sent.text) : sent.text,
+        ]));
+      }
+      detail.replaceChildren(
+        quote && d.sentences.length > 1 ? h("p", { class: "why-caption" }, "Highlighted: the sentence closest to your search.") : null,
+        h("p", { class: "why-parts-title" }, "How close each part of the book is on its own"),
+        h("table", { class: "why-parts" }, h("tbody", {}, d.parts.map((p) => h("tr", {},
+          h("th", { scope: "row" }, partLabel(p, d.n_passages)),
+          h("td", { class: "score" }, p.score.toFixed(3)))))),
+      );
+    } catch (err) {
+      loaded = false;
+      detail.replaceChildren(h("p", { class: "why-loading" },
+        err.status === 501 ? "This search backend can't score the parts of a book." : "Couldn't score this book right now."));
+    }
+  };
+  return box;
 }
 
 function resultItem(r) {
@@ -246,6 +265,7 @@ function resultItem(r) {
       const open = whyButton.getAttribute("aria-expanded") !== "true";
       whyButton.setAttribute("aria-expanded", String(open));
       why.hidden = !open;
+      if (open) why.load();
     },
   }, h("span", { class: "score" }, r.score.toFixed(3)), h("span", {}, "Why this book"), svgChevron());
 
@@ -305,7 +325,6 @@ async function runSearch(q) {
     if (token !== state.searchToken) return;
     state.results = data.results;
     state.hasMore = data.has_more;
-    state.terms = data.highlight_terms || [];
     setStatus(data.results.length
       ? h("span", { class: "visually-hidden" }, `${data.results.length} results`)
       : statusBox("No books matched. Try describing the topic another way."));

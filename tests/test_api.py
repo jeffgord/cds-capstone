@@ -23,6 +23,10 @@ class FakeSearcher:
     def search(self, query, n):
         return self.hits[:n]
 
+    def similarity(self, query, texts):
+        # Longer texts score higher, so tests can tell which one should win.
+        return [min(len(t) / 1000, 1.0) for t in texts]
+
     def info(self):
         return {"searcher": "fake", "model": "none", "n_vectors": len(self.hits), "score_kind": "cosine"}
 
@@ -43,10 +47,9 @@ def test_search_contract(client):
     assert body["has_more"] is True
     assert len(body["results"]) == 5
     r = body["results"][0]
-    assert {"rank", "gutenberg_id", "score", "matched_via", "passage_index", "snippet", "fields_matched", "book"} <= r.keys()
+    assert {"rank", "gutenberg_id", "score", "matched_via", "passage_index", "snippet", "book"} <= r.keys()
     assert {"title", "authors", "added_year", "description", "subjects", "topic_subjects", "locc", "url", "cover_url"} <= r["book"].keys()
     assert [x["rank"] for x in body["results"]] == [1, 2, 3, 4, 5]
-    assert body["highlight_terms"] == ["bee", "honey"]
 
 
 def test_one_result_per_book_and_pages_dont_overlap(client):
@@ -125,7 +128,30 @@ def test_lcc_label(code, label):
     assert B.lcc_label(code, B.load_lcc()) == label
 
 
-def test_fields_matched_is_literal_overlap():
-    rec = {"title": "Bees, Shown to the Children", "contributors": [], "subjects": [], "topic_subjects": ["Bees"], "description": ""}
-    assert B.fields_matched(rec, "books about bees") == [{"field": "title", "terms": ["bees"]}, {"field": "subjects", "terms": ["bees"]}]
-    assert B.fields_matched(rec, "honey") == []
+def test_why_scores_sentences_and_parts(client):
+    gid = next(g for g in IDS[:40] if BOOKS[g].get("passages") and BOOKS[g].get("description"))
+    body = client.get(f"/api/books/{gid}/why", params={"q": "x", "matched_via": "passage", "passage_index": 0}).json()
+    assert body["sentences"] and " ".join(x["text"] for x in body["sentences"]) == B.snippet(BOOKS[gid], "passage", 0, None)
+    kinds = [p["part"] for p in body["parts"]]
+    assert kinds.count("passage") == 1 and "summary" in kinds
+    assert [p["score"] for p in body["parts"]] == sorted((p["score"] for p in body["parts"]), reverse=True)
+    best = max(range(len(BOOKS[gid]["passages"])), key=lambda i: len(BOOKS[gid]["passages"][i]))
+    assert next(p for p in body["parts"] if p["part"] == "passage")["passage_index"] == best
+
+
+def test_why_errors(client):
+    assert client.get(f"/api/books/{IDS[0]}/why", params={"q": " "}).status_code == 400
+    assert client.get("/api/books/999999999/why", params={"q": "x"}).status_code == 404
+
+    class NoScorer:
+        def search(self, query, n): return []
+        def info(self): return {}
+    c = TestClient(create_app(searcher=NoScorer()))
+    assert c.get(f"/api/books/{IDS[0]}/why", params={"q": "x"}).status_code == 501
+
+
+def test_sentences():
+    long = "This sentence is long enough to stand alone."
+    assert B.sentences(f"{long} {long}  {long}") == [long] * 3
+    assert B.sentences(f"{long} (Dr. A. M. Hale, 1890.) {long}") == [long, "(Dr. A. M. Hale, 1890.)", long]
+    assert B.sentences(f"{long} The problem...") == [long, "The problem..."]

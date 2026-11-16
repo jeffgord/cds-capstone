@@ -20,6 +20,9 @@ class ChunkHit:
 
 
 class Searcher(Protocol):
+    """`similarity(query, texts) -> list[float]` is optional: with it, "Why this book" scores each
+    sentence and each part of a book against the query with the search model itself."""
+
     def search(self, query: str, n: int) -> list[ChunkHit]:
         """Up to n chunk hits, best first. Several hits per book are fine."""
         ...
@@ -43,6 +46,7 @@ class LangChainFaissSearcher:
         self.model_name = model_name
         self.query_prefix = query_prefix
         embeddings = HuggingFaceEmbeddings(model_name=model_name, encode_kwargs={"normalize_embeddings": True})
+        self.embeddings = embeddings
         # The index is a pickle: only load one you built yourself (it's gitignored, so it always is).
         self.store = FAISS.load_local(str(index_dir), embeddings, allow_dangerous_deserialization=True)
         # LangChain returns raw FAISS scores. Inner product is already a similarity; every other strategy
@@ -64,6 +68,11 @@ class LangChainFaissSearcher:
                 text=doc.page_content,
             ))
         return hits
+
+    def similarity(self, query: str, texts: list[str]) -> list[float]:
+        """Cosine similarity of the query to each text, with the model the index was built with."""
+        q = self.embeddings.embed_query(self.query_prefix + query)
+        return [sum(a * b for a, b in zip(q, d)) for d in self.embeddings.embed_documents(texts)]
 
     def info(self) -> dict:
         return {

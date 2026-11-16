@@ -95,7 +95,6 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
                 "passage_index": hit.passage_index,
                 "n_passages": len(record.get("passages") or []),
                 "snippet": B.snippet(record, hit.doc_type, hit.passage_index, hit.text),
-                "fields_matched": B.fields_matched(record, query),
                 "book": B.card(record, outline),
             })
         return {
@@ -105,8 +104,6 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             "took_ms": round((time.perf_counter() - started) * 1000),
             "has_more": len(ranked) > offset + k,
             "score_kind": slot.searcher.info().get("score_kind"),
-            # Word stems the UI highlights in snippets ("immigrants" -> "immigrant"); same rule as fields_matched.
-            "highlight_terms": [B.stem(t) for t in B.query_terms(query)],
             "results": results,
         }
 
@@ -116,6 +113,42 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         if record is None:
             raise HTTPException(404, "No such book")
         return B.detail(record, outline)
+
+    @app.get("/api/books/{gutenberg_id}/why")
+    def why(gutenberg_id: int, q: str = "", matched_via: str | None = None, passage_index: int | None = None):
+        """Semantic evidence for one result: the search model scores each sentence of the matched text
+        and each part of the record (title, subjects, summary, passages) against the query on its own."""
+        query = " ".join(q.split())
+        record = books.get(gutenberg_id)
+        if not query:
+            raise HTTPException(400, "Empty query")
+        if record is None:
+            raise HTTPException(404, "No such book")
+        if slot.searcher is None:
+            raise HTTPException(503, slot.error or "The search model is still loading")
+        if not hasattr(slot.searcher, "similarity"):
+            raise HTTPException(501, "This search backend can't score text")
+        started = time.perf_counter()
+        quote = B.snippet(record, matched_via, passage_index, None)
+        sents = B.sentences(quote) if quote else []
+        parts = B.why_parts(record)
+        scores = slot.searcher.similarity(query, sents + [p["text"] for p in parts])
+        sent_scores, part_scores = scores[:len(sents)], scores[len(sents):]
+        for p, score in zip(parts, part_scores):
+            p["score"] = round(score, 4)
+            del p["text"]
+        passages = [p for p in parts if p["part"] == "passage"]
+        parts = [p for p in parts if p["part"] != "passage"]
+        if passages:  # six passage rows would drown the rest; keep the closest one
+            parts.append(max(passages, key=lambda p: p["score"]))
+        return {
+            "gutenberg_id": gutenberg_id,
+            "query": query,
+            "took_ms": round((time.perf_counter() - started) * 1000),
+            "sentences": [{"text": t, "score": round(sc, 4)} for t, sc in zip(sents, sent_scores)],
+            "parts": sorted(parts, key=lambda p: -p["score"]),
+            "n_passages": len(passages),
+        }
 
     if WEB_DIR.exists():
         app.mount("/", StaticFiles(directory=WEB_DIR, html=True), name="web")
