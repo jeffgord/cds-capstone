@@ -163,10 +163,11 @@ button { font: inherit; color: inherit; }
   font-size: 12px; line-height: 1.4; padding: 1px 8px; border-radius: var(--pill);
   border: 1px solid var(--band-line); background: var(--page); color: var(--ink-2);
 }
-.chip-class { border-color: var(--accent-soft); background: var(--accent-soft); color: var(--accent-strong); }
+.chip-class { border-radius: var(--radius-button); }  /* squarer than the bookshelf pills, same colors */
 button.chip { font-family: inherit; cursor: pointer; }
 button.chip:hover { border-color: var(--accent); color: var(--accent-strong); }
-.chip.is-active { border-color: var(--accent); color: var(--accent-strong); font-weight: 600; cursor: default; }
+/* Blue only ever means "this filter is on". */
+.chip.is-active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; cursor: default; }
 
 .filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); margin: 0 0 var(--s3); font-size: 13px; color: var(--muted); }
 .filter-item { display: inline-flex; align-items: center; gap: var(--s2); }
