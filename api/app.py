@@ -54,6 +54,15 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         slot.error = "No searcher configured"
     app.state.slot = slot
 
+    @app.middleware("http")
+    async def revalidate_ui_files(request, call_next):
+        """Make browsers check for a new index.html, app.js and style.css on every load (a cheap 304
+        when unchanged). Without this they guess a cache lifetime and can mix old and new files."""
+        response = await call_next(request)
+        if not request.url.path.startswith(("/api/", "/covers/")):
+            response.headers["Cache-Control"] = "no-cache"
+        return response
+
     @app.get("/api/health")
     def health():
         info = slot.searcher.info() if slot.searcher else {}
@@ -134,6 +143,8 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             "sentences": [{"text": t, "score": round(sc, 4)} for t, sc in zip(sents, scores)],
         }
 
+    if B.COVERS_DIR.exists():
+        app.mount("/covers", StaticFiles(directory=B.COVERS_DIR), name="covers")
     if WEB_DIR.exists():
         app.mount("/", StaticFiles(directory=WEB_DIR, html=True), name="web")
     return app

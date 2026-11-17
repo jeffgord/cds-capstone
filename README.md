@@ -25,6 +25,7 @@ See [ingestion/README.md](ingestion/README.md) for what each field contains and 
 ```sh
 pip install -r api/requirements.txt
 python build_index.py          # build once; first run also downloads the embedding model
+python ingestion/download_covers.py  # optional: save covers locally (~11 min, ~18 MB)
 python search_cli.py "query"  # search from the terminal (same code as the API)
 uvicorn api.app:app            # open http://127.0.0.1:8000
 ```

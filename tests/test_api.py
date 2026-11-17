@@ -160,3 +160,16 @@ def test_cors_only_when_configured(monkeypatch):
     monkeypatch.setenv("CORS_ORIGINS", "https://ui.example.org")
     split = TestClient(create_app(searcher=FakeSearcher()))
     assert split.get("/api/health", headers=origin).headers["access-control-allow-origin"] == "https://ui.example.org"
+
+
+def test_cover_prefers_local_copy(tmp_path):
+    rec = BOOKS[IDS[0]]
+    assert B.card(rec, {}, covers_dir=tmp_path)["cover_url"].startswith("https://www.gutenberg.org/")
+    (tmp_path / f"{IDS[0]}.jpg").write_bytes(b"jpg")
+    assert B.card(rec, {}, covers_dir=tmp_path)["cover_url"] == f"/covers/{IDS[0]}.jpg"
+
+
+def test_ui_files_are_revalidated(client):
+    assert client.get("/app.js").headers["cache-control"] == "no-cache"
+    assert "cache-control" not in client.get("/api/health").headers
+

@@ -45,7 +45,7 @@ The server starts in about a second and loads the model in the background. Until
       "added_year": 2009, "description": "...", "subjects": ["..."], "topic_subjects": ["..."],
       "locc": [{"code": "BV", "label": "Practical Theology"}],
       "url": "https://www.gutenberg.org/ebooks/12345",
-      "cover_url": "https://www.gutenberg.org/cache/epub/12345/pg12345.cover.medium.jpg"
+      "cover_url": "/covers/12345.jpg"
     }
   }]
 }
@@ -60,6 +60,7 @@ The server starts in about a second and loads the model in the background. Until
 | `added_year` | Year of the Gutenberg release (`issued`), not the original publication. |
 | `description` | Gutenberg's auto-generated summary, or `null` (16 books have none). |
 | `locc` | LoC classification code and readable label. Subclass labels come from `embedding/lcc_outline.json` plus `LCC_SUPPLEMENT` in `books.py` for subclasses the outline scrape missed. |
+| `cover_url` | `/covers/{id}.jpg` when the cover was saved with `ingestion/download_covers.py`, otherwise the gutenberg.org URL. The UI falls back to Gutenberg's mirror, then a letter placeholder. |
 
 ### `GET /api/books/{id}`
 

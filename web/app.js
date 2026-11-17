@@ -60,11 +60,13 @@ function cover(book, id) {
   const box = h("div", { class: "cover", "aria-hidden": "true" });
   const fallback = () => { box.textContent = (book.title || "?").trim().charAt(0).toUpperCase(); };
   if (!book.cover_url) { fallback(); return box; }
-  const img = h("img", { src: book.cover_url, alt: "", loading: "lazy", decoding: "async", width: 56, height: 84 });
+  // A local cover ("/covers/...") lives on the API, which may be on another host than this page.
+  const src = book.cover_url.startsWith("/") ? API_BASE + book.cover_url : book.cover_url;
+  const img = h("img", { src, alt: "", loading: "lazy", decoding: "async", width: 56, height: 84 });
   // gutenberg.org goes down for maintenance now and then; its official mirror serves the same covers.
   const mirror = book.cover_url.replace("https://www.gutenberg.org/", "https://gutenberg.pglaf.org/");
   img.addEventListener("error", () => {
-    if (img.src !== mirror) { img.src = mirror; return; }
+    if (img.src !== mirror && mirror !== book.cover_url) { img.src = mirror; return; }
     img.remove();
     fallback();
   });

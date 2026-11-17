@@ -35,9 +35,9 @@ This file records the main design decisions behind the API and UI: what, why, an
 - **Why:** Kept simple for the first version. Tokens are on `:root`, so dark mode is one more token block.
 - **Gave up:** dark mode for now.
 
-**Covers are hotlinked from gutenberg.org.**
-- **Why:** Covers make results easy to scan. About 10 lazy images per page is ordinary browsing traffic.
-- **Gave up:** offline covers (the letter fallback covers that case) and a calmer page. The auto-generated pattern covers are loud.
+**Covers are served from our own copy, with gutenberg.org as a fallback.**
+- **Why:** Covers make results easy to scan, and gutenberg.org goes down for maintenance now and then. `ingestion/download_covers.py` saves every cover once from Gutenberg's mirror to `data/raw/covers/` (not committed, about 18 MB), and the API serves them at `/covers/{id}.jpg`. Without that folder, covers load from gutenberg.org, then its mirror.
+- **Gave up:** a calmer page (the auto-generated pattern covers are loud). The letter placeholder covers books with no cover.
 
 **Vanilla HTML/CSS/JS served by FastAPI.**
 - **Why:** No build step, one command (`uvicorn api.app:app`), same origin so no CORS. It's small enough (~500 lines of JS) that a framework would add more than it saves. Streamlit was ruled out because it reruns the script on every click and makes hover, focus and URL state hard.

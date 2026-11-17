@@ -7,6 +7,8 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 BOOKS_DIR = ROOT_DIR / "data" / "books"
 LCC_PATH = ROOT_DIR / "embedding" / "lcc_outline.json"
+# Saved by ingestion/download_covers.py; served by the API at /covers/{id}.jpg.
+COVERS_DIR = ROOT_DIR / "data" / "raw" / "covers"
 
 COVER_URL = "https://www.gutenberg.org/cache/epub/{id}/pg{id}.cover.medium.jpg"
 SNIPPET_CHARS = 320
@@ -108,7 +110,7 @@ def lcc_label(code: str, outline: dict) -> str:
     return label.rstrip(" ,.")
 
 
-def card(record: dict, outline: dict) -> dict:
+def card(record: dict, outline: dict, covers_dir: Path = COVERS_DIR) -> dict:
     """The fields a result row shows. Every result in /api/search carries one of these."""
     gid = int(record["gutenberg_id"])
     issued = record.get("issued") or ""
@@ -127,7 +129,8 @@ def card(record: dict, outline: dict) -> dict:
         "topic_subjects": record.get("topic_subjects") or [],
         "locc": [{"code": c, "label": lcc_label(c, outline)} for c in record.get("locc") or [] if c],
         "url": record.get("url") or f"https://www.gutenberg.org/ebooks/{gid}",
-        "cover_url": COVER_URL.format(id=gid),
+        # Our own copy when it was downloaded, so covers don't depend on gutenberg.org being up.
+        "cover_url": f"/covers/{gid}.jpg" if (covers_dir / f"{gid}.jpg").exists() else COVER_URL.format(id=gid),
     }
 
 
