@@ -103,6 +103,12 @@ function shelfChips(b) {
       `Show books on the "${s}" bookshelf`, () => setFilters({ shelf: s }))));
 }
 
+// "Technology (T) › Home economics (TX)": the main class on the result chip, then the book's own call number.
+function classPath(l, classes) {
+  const main = l.code.length > 1 ? classes.find((c) => c.code === l.code[0]) : null;
+  return main ? `${main.label} (${main.code}) › ${l.label} (${l.code})` : `${l.label} (${l.code})`;
+}
+
 // Change the filter, keep the search, and start again at the top like a new search. Only one filter at a
 // time: picking a class clears the bookshelf and the other way round.
 function setFilters(changes) {
@@ -476,7 +482,7 @@ function renderBook(d) {
       factRow("Authors", d.authors.map((a) => (a.role === "Author" ? a.display : `${a.display}, ${a.role.toLowerCase()}`))),
       factRow("Subjects", d.topic_subjects),
       factRow("Bookshelves", d.subjects),
-      factRow("Classification", d.locc.map((l) => `${l.label} (${l.code})`)),
+      factRow("Classification", d.locc.map((l) => classPath(l, d.classes))),
       factRow("Added to Gutenberg", d.added_year ? String(d.added_year) : null),
       factRow("Gutenberg ID", h("a", { href: d.url, target: "_blank", rel: "noopener" }, `#${d.gutenberg_id}, read or download`)),
     )),
