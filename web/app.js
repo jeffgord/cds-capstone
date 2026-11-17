@@ -463,7 +463,9 @@ function renderBook(d) {
     onclick: (e) => { introP.textContent = intro; e.currentTarget.remove(); },
   }, "Show the whole excerpt") : null;
 
-  els.panelBody.replaceChildren(
+  // Built inside h() so the optional sections (arrays or null) are flattened and skipped; the DOM's own
+  // replaceChildren would print them as "[object HTMLHeadingElement]" and "null".
+  els.panelBody.replaceChildren(h("div", {},
     h("div", { class: "panel-top" },
       cover(d, d.gutenberg_id),
       h("div", {},
@@ -483,7 +485,7 @@ function renderBook(d) {
     toc.length ? [h("h3", {}, "Contents"), tocList, tocMore] : null,
     intro ? [h("h3", {}, "From the introduction"), introP, introMore] : null,
     !d.has_text ? h("p", {}, "No text was extracted from this book, only its catalog record.") : null,
-  );
+  ));
   els.panelBody.hidden = false;
 }
 
