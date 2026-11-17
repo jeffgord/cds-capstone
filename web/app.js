@@ -103,9 +103,11 @@ function shelfChips(b) {
       `Show books on the "${s}" bookshelf`, () => setFilters({ shelf: s }))));
 }
 
-// Change the bookshelf or class filter, keep the search, and start again at the top like a new search.
+// Change the filter, keep the search, and start again at the top like a new search. Only one filter at a
+// time: picking a class clears the bookshelf and the other way round.
 function setFilters(changes) {
-  writeUrl({ q: state.query, shelf: state.shelf, lcc: state.lcc, book: null, ...changes });
+  const only = changes.lcc ? { shelf: "" } : changes.shelf ? { lcc: "" } : {};
+  writeUrl({ q: state.query, shelf: state.shelf, lcc: state.lcc, book: null, ...changes, ...only });
   render();
   window.scrollTo({ top: 0 });
 }
