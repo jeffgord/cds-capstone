@@ -59,15 +59,15 @@ Spacing scale: 4, 8, 12, 16, 24 and 32px (`--s1` to `--s6`). Radii: 12px cards, 
 ## Layout and components
 
 - **Search first.** The search box should be the most visible thing on the page. The pill search is the first thing under the header band, with no hero or featured carousel above it.
-- **Two columns at 1024px and up,** so wide screens don't waste the right side. Results sit on the left (up to 640px) and a sticky detail panel on the right. Before you pick a book, the panel says what it will show, so it's never a blank hole. Below 1024px there's one column, and the panel opens as a full-screen sheet with a close button.
+- **Two columns at 1024px and up,** so wide screens don't waste the right side. Results sit on the left (up to 640px) and a sticky detail panel on the right. The panel only appears once you pick a book. Below 1024px there's one column, and the panel opens as a full-screen sheet with a close button.
 - **Home guide is always visible,** because semantic search works differently from the keyword search people expect. It holds one sentence on how to search, four example queries checked against the index, and one honest line on weak spots.
 - **Result row.** Enough to judge a book without opening it: a summary and the subjects, not just a title.
   - Cover, title, authors with display names and roles ("edited by", "translated by").
   - Added year and LCC label with code.
   - Summary clamped to 2 lines with More/Less, plus a native `title` tooltip on mouse-over. It's never hover-only.
-  - Up to 4 subject tags plus "+N", so a row never becomes a wall of text. Tags wrap and never side-scroll.
+  - Up to 4 subject tags plus a "+N" button that shows the rest, so a row never becomes a wall of text. Tags wrap and never side-scroll.
 - **Score + "Why this book" is one real button.** A relevance score that looks clickable should be, and a ranked list should explain why each book is there.
-  - The raw score sits on the button. It opens a tinted box with which part of the book matched and the matched text. On first open it calls `/api/books/{id}/why`: the search model scores each sentence of that text, and the closest one is highlighted. It also scores the title, subjects, summary and closest passage on their own, so you can see what drove the match. A one-line note says how to read the score.
+  - The raw score sits on the button. It opens a tinted box with the matched text. On first open it calls `/api/books/{id}/why`: the search model scores each sentence of that text, and the closest one is highlighted when the scores arrive. A one-line note says how to read the score.
   - The raw score stays, with no percentage and no cutoff. Scores aren't calibrated across queries (a nonsense query can still score around 0.4), so a percentage or threshold would claim more than we know.
 - **Detail panel.** A key/value table, which is easier to read than a paragraph of metadata: (authors and roles, LCSH subjects, bookshelves, classification, added, link), then the full summary, contents and an introduction excerpt. Esc and the close button close it, and focus returns to the title that opened it. Nothing pops up on its own.
 - **Paging.** 10 results and a "Show more" button. There's no count picker.

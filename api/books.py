@@ -181,20 +181,3 @@ def sentences(text: str) -> list[str]:
         elif piece:
             out.append(piece)
     return out
-
-
-def why_parts(record: dict) -> list[dict]:
-    """The parts of a book's record that "Why this book" scores against the query, one at a time."""
-    parts = []
-    title = ": ".join(filter(None, [record.get("title"), record.get("subtitle")]))
-    subjects = list(dict.fromkeys((record.get("topic_subjects") or []) + (record.get("subjects") or [])))
-    description = (record.get("description") or "").strip()
-    if title:
-        parts.append({"part": "title", "text": title})
-    if subjects:
-        parts.append({"part": "subjects", "text": "; ".join(subjects)})
-    if description:
-        parts.append({"part": "summary", "text": description})
-    for i, passage in enumerate(record.get("passages") or []):
-        parts.append({"part": "passage", "passage_index": i, "text": passage})
-    return parts

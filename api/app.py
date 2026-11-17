@@ -112,7 +112,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
     @app.get("/api/books/{gutenberg_id}/why")
     def why(gutenberg_id: int, q: str = "", matched_via: str | None = None, passage_index: int | None = None):
         """Semantic evidence for one result: the search model scores each sentence of the matched text
-        and each part of the record (title, subjects, summary, passages) against the query on its own."""
+        against the query, so the UI can highlight the closest one."""
         query = " ".join(q.split())
         record = books.get(gutenberg_id)
         if not query:
@@ -126,23 +126,12 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         started = time.perf_counter()
         quote = B.snippet(record, matched_via, passage_index, None)
         sents = B.sentences(quote) if quote else []
-        parts = B.why_parts(record)
-        scores = slot.searcher.similarity(query, sents + [p["text"] for p in parts])
-        sent_scores, part_scores = scores[:len(sents)], scores[len(sents):]
-        for p, score in zip(parts, part_scores):
-            p["score"] = round(score, 4)
-            del p["text"]
-        passages = [p for p in parts if p["part"] == "passage"]
-        parts = [p for p in parts if p["part"] != "passage"]
-        if passages:  # six passage rows would drown the rest; keep the closest one
-            parts.append(max(passages, key=lambda p: p["score"]))
+        scores = slot.searcher.similarity(query, sents) if sents else []
         return {
             "gutenberg_id": gutenberg_id,
             "query": query,
             "took_ms": round((time.perf_counter() - started) * 1000),
-            "sentences": [{"text": t, "score": round(sc, 4)} for t, sc in zip(sents, sent_scores)],
-            "parts": sorted(parts, key=lambda p: -p["score"]),
-            "n_passages": len(passages),
+            "sentences": [{"text": t, "score": round(sc, 4)} for t, sc in zip(sents, scores)],
         }
 
     if WEB_DIR.exists():

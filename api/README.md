@@ -67,17 +67,14 @@ The card fields plus `table_of_contents`, `introduction`, `passages` and `has_te
 
 ### `GET /api/books/{id}/why?q=&matched_via=&passage_index=`
 
-The evidence behind "Why this book", computed when the box is opened so search stays fast (about 80 to 300 ms per book on CPU). Pass `matched_via` and `passage_index` from the search result. The search model scores each sentence of the result's `snippet`, and each part of the record on its own, against the query.
+The evidence behind "Why this book", computed when the box is opened so search stays fast (well under a second per book on CPU). Pass `matched_via` and `passage_index` from the search result. The search model scores each sentence of the result's `snippet` against the query.
 
 ```json
-{ "gutenberg_id": 12345, "query": "women fighting for the right to vote", "took_ms": 183, "n_passages": 6,
-  "sentences": [{"text": "If the adult citizen, male or female, has a right to vote...", "score": 0.649}],
-  "parts": [{"part": "passage", "passage_index": 2, "score": 0.629}, {"part": "title", "score": 0.439},
-            {"part": "summary", "score": 0.439}, {"part": "subjects", "score": 0.400}] }
+{ "gutenberg_id": 12345, "query": "women fighting for the right to vote", "took_ms": 60,
+  "sentences": [{"text": "If the adult citizen, male or female, has a right to vote...", "score": 0.649}] }
 ```
 
 - `sentences` joined with spaces give back the `snippet`, so the UI can highlight the best one in place.
-- `parts` is sorted best first: title (with subtitle), subjects (LCSH plus bookshelves), summary, and only the closest passage. Each is scored alone, so these won't equal the result's `score`, which came from the indexed chunk (title and subjects plus the text).
 - 400 for an empty `q`, 404 for an unknown id, 503 while the model loads, and 501 if the backend has no `similarity()`.
 
 ## Plugging in a different index

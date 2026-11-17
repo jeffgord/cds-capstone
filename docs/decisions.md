@@ -59,8 +59,8 @@ This file records the main design decisions behind the API and UI: what, why, an
 - **Gave up:** nothing. The raw `name` is still in the API.
 
 **"Why this book" is semantic, not word overlap.**
-- **Why:** Now the search model itself scores each sentence of the matched text (best one highlighted) and the title, subjects, summary and closest passage on their own. It's computed on open via `/api/books/{id}/why`, so search stays ~20 ms. Example: "Liberalism" for "women fighting for the right to vote" ranks on passage 3 (0.629) while its title scores 0.439.
-- **Gave up:** `fields_matched` and `highlight_terms` in the API (removed, nothing else used them), and an instant box: it now takes 80 to 300 ms on CPU to fill in. Backends without `similarity()` get no breakdown.
+- **Why:** Now the search model itself scores each sentence of the matched text and highlights the closest one. It's computed on open via `/api/books/{id}/why`, so search stays ~20 ms.
+- **Gave up:** `fields_matched` and `highlight_terms` in the API (removed, nothing else used them), and an instant highlight: it appears a moment after the box opens. Backends without `similarity()` show the plain quote.
 
 **The UI can be hosted apart from the API; locally it's still one process.**
 - **Why:** We plan to put the UI on Cloudflare, and the free Cloudflare tiers can't run a Python process with PyTorch and BGE. So the UI goes on Pages and the API somewhere else. That needs `apiBase` in `web/config.js` and `CORS_ORIGINS` on the API (~20 lines). Same origin serving stays the default for local runs: one command, no CORS.

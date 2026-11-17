@@ -23,7 +23,7 @@ const $ = (id) => document.getElementById(id);
 const els = {
   form: $("search-form"), q: $("q"), recent: $("recent"), guide: $("guide"), examples: $("examples"),
   status: $("status"), section: $("results-section"), title: $("results-title"), results: $("results"),
-  more: $("more"), panel: $("panel"), panelEmpty: $("panel-empty"), panelBody: $("panel-body"),
+  more: $("more"), panel: $("panel"), panelBody: $("panel-body"),
 };
 
 const state = { query: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
@@ -61,7 +61,13 @@ function cover(book, id) {
   const fallback = () => { box.textContent = (book.title || "?").trim().charAt(0).toUpperCase(); };
   if (!book.cover_url) { fallback(); return box; }
   const img = h("img", { src: book.cover_url, alt: "", loading: "lazy", decoding: "async", width: 56, height: 84 });
-  img.addEventListener("error", () => { img.remove(); fallback(); }, { once: true });
+  // gutenberg.org goes down for maintenance now and then; its official mirror serves the same covers.
+  const mirror = book.cover_url.replace("https://www.gutenberg.org/", "https://gutenberg.pglaf.org/");
+  img.addEventListener("error", () => {
+    if (img.src !== mirror) { img.src = mirror; return; }
+    img.remove();
+    fallback();
+  });
   box.append(img);
   return box;
 }
@@ -191,63 +197,50 @@ async function checkHealth() {
 }
 
 // ---------- results ----------
-function matchedIn(r) {
-  if (r.matched_via === "summary") return "Matched in the catalog summary";
-  if (r.matched_via === "passage" && r.passage_index !== null) {
-    return `Matched in passage ${r.passage_index + 1} of ${r.n_passages || "?"} from the book`;
-  }
-  if (r.matched_via === "passage") return "Matched in a passage from the book";
-  return "Matched in the book's indexed text";
-}
-
-const PART_LABEL = { title: "Title", subjects: "Subjects", summary: "Summary" };
-
-function partLabel(p, nPassages) {
-  if (p.part === "passage") return `Closest passage (${p.passage_index + 1} of ${nPassages})`;
-  return PART_LABEL[p.part] || p.part;
-}
-
-// The box opens with the matched text right away, then asks the API to score it with the search model:
-// the closest sentence gets highlighted and each part of the record gets its own score.
+// The box shows the matched text right away. Then it asks the API to score each sentence with the
+// search model and highlights the closest one; if that fails, the plain quote stays.
 function whyBox(r, id) {
   const quote = r.snippet ? h("blockquote", {}, r.snippet) : null;
-  const detail = h("div", { class: "why-detail" }, h("p", { class: "why-loading" }, "Scoring each part of this book..."));
+  const caption = h("p", { class: "why-caption", hidden: true }, "Highlighted: the sentence closest to your search.");
   const box = h("div", { class: "why", id, hidden: true },
-    h("p", { class: "why-source" }, matchedIn(r)),
     quote,
-    detail,
+    caption,
     h("p", { class: "why-note" },
-      `The score is the cosine similarity between your search and the matched text, from the search model. Higher is closer. Compare scores only within one search.`),
+      "The score is the cosine similarity between your search and the matched text, from the search model. Higher is closer. Compare scores only within one search."),
   );
   let loaded = false;
   box.load = async () => {
-    if (loaded) return;
+    if (loaded || !quote) return;
     loaded = true;
     const params = { q: state.query };
     if (r.matched_via) params.matched_via = r.matched_via;
     if (r.passage_index !== null) params.passage_index = r.passage_index;
     try {
       const d = await api(`/api/books/${r.gutenberg_id}/why?${new URLSearchParams(params)}`);
-      if (quote && d.sentences.length > 1) {
-        const best = d.sentences.reduce((a, b) => (b.score > a.score ? b : a));
-        quote.replaceChildren(...d.sentences.flatMap((sent, i) => [
-          i ? " " : "", sent === best ? h("mark", {}, sent.text) : sent.text,
-        ]));
-      }
-      detail.replaceChildren(
-        quote && d.sentences.length > 1 ? h("p", { class: "why-caption" }, "Highlighted: the sentence closest to your search.") : null,
-        h("p", { class: "why-parts-title" }, "How close each part of the book is on its own"),
-        h("table", { class: "why-parts" }, h("tbody", {}, d.parts.map((p) => h("tr", {},
-          h("th", { scope: "row" }, partLabel(p, d.n_passages)),
-          h("td", { class: "score" }, p.score.toFixed(3)))))),
-      );
+      if (d.sentences.length < 2) return;  // highlighting the whole quote says nothing
+      const best = d.sentences.reduce((a, b) => (b.score > a.score ? b : a));
+      quote.replaceChildren(...d.sentences.flatMap((sent, i) => [
+        i ? " " : "", sent === best ? h("mark", {}, sent.text) : sent.text,
+      ]));
+      caption.hidden = false;
     } catch (err) {
-      loaded = false;
-      detail.replaceChildren(h("p", { class: "why-loading" },
-        err.status === 501 ? "This search backend can't score the parts of a book." : "Couldn't score this book right now."));
+      loaded = false;  // try again next time the box opens
     }
   };
   return box;
+}
+
+// Up to 4 subject tags; "+N" is a button that shows the rest in place.
+function tagList(subjects, max = 4) {
+  const list = h("ul", { class: "tags", "aria-label": "Subjects" }, subjects.slice(0, max).map((s) => h("li", { class: "tag" }, s)));
+  if (subjects.length > max) {
+    const more = h("li", {}, h("button", {
+      type: "button", class: "tag tag-more", "aria-label": `Show ${subjects.length - max} more subjects`,
+      onclick: () => more.replaceWith(...subjects.slice(max).map((s) => h("li", { class: "tag" }, s))),
+    }, `+${subjects.length - max}`));
+    list.append(more);
+  }
+  return list;
 }
 
 function resultItem(r) {
@@ -298,9 +291,7 @@ function resultItem(r) {
       h("p", { class: "authors" }, authorLine(b.authors)),
       meta.length ? h("p", { class: "meta" }, meta.map((m) => h("span", {}, m))) : null,
       summary,
-      subjects.length ? h("ul", { class: "tags", "aria-label": "Subjects" },
-        subjects.slice(0, 4).map((s) => h("li", { class: "tag" }, s)),
-        subjects.length > 4 ? h("li", { class: "tag" }, `+${subjects.length - 4}`) : null) : null,
+      subjects.length ? tagList(subjects) : null,
       actions,
       why,
     ),
@@ -426,7 +417,6 @@ function renderBook(d) {
     intro ? [h("h3", {}, "From the introduction"), introP, introMore] : null,
     !d.has_text ? h("p", {}, "No text was extracted from this book, only its catalog record.") : null,
   );
-  els.panelEmpty.hidden = true;
   els.panelBody.hidden = false;
 }
 
@@ -435,7 +425,6 @@ async function showBook(id) {
   els.panel.classList.add("is-open");
   document.body.classList.toggle("sheet-open", isNarrow());
   els.panel.setAttribute("aria-labelledby", "panel-title");
-  els.panelEmpty.hidden = true;
   els.panelBody.hidden = false;
   els.panelBody.replaceChildren(h("p", {}, "Loading..."));
   try {
@@ -459,7 +448,6 @@ function hideBook() {
   document.body.classList.remove("sheet-open");
   els.panel.removeAttribute("aria-labelledby");
   els.panelBody.hidden = true;
-  els.panelEmpty.hidden = false;
   markOpen();
 }
 

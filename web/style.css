@@ -162,6 +162,8 @@ button { font: inherit; color: inherit; }
   font-size: 12px; line-height: 1.4; padding: 2px 8px; border-radius: var(--pill);
   background: var(--band); color: var(--ink-2);
 }
+.tag-more { border: 0; font-family: inherit; cursor: pointer; min-height: 24px; }
+.tag-more:hover { background: var(--accent-soft); color: var(--ink); }
 
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); margin-top: var(--s3); }
 .text-button {
@@ -184,17 +186,11 @@ button { font: inherit; color: inherit; }
   background: var(--tint); border: 1px solid var(--tint-line); border-radius: var(--radius-card);
   font-size: 14px;
 }
-.why-source { margin: 0 0 var(--s2); font-weight: 600; }
 .why blockquote {
   margin: 0 0 var(--s2); padding-left: var(--s3); border-left: 3px solid var(--accent); color: var(--ink);
 }
 .why p { margin: 0 0 var(--s1); }
-.why .why-caption, .why .why-loading { color: var(--muted); font-size: 13px; }
-.why .why-parts-title { margin-top: var(--s3); font-weight: 600; }
-.why-parts { border-collapse: collapse; font-size: 13px; }
-.why-parts th { text-align: left; font-weight: 400; color: var(--ink-2); padding: 2px var(--s4) 2px 0; }
-.why-parts td { padding: 2px 0; }
-.why-parts .score { font-variant-numeric: tabular-nums; font-weight: 600; }
+.why .why-caption { color: var(--muted); font-size: 13px; }
 .why .why-note { color: var(--muted); font-size: 13px; margin: var(--s2) 0 0; }
 mark { background: var(--accent-soft); color: inherit; padding: 0 2px; border-radius: 2px; }
 
@@ -211,6 +207,7 @@ mark { background: var(--accent-soft); color: inherit; padding: 0 2px; border-ra
   padding: var(--s4) var(--s5);
 }
 .panel:focus { outline: none; }
+.panel:not(.is-open) { display: none; }  /* nothing to show until a book is picked */
 @media (min-width: 1024px) {
   .panel { position: sticky; top: var(--s4); max-height: calc(100vh - 2 * var(--s4)); overflow-y: auto; }
 }
@@ -222,7 +219,6 @@ mark { background: var(--accent-soft); color: inherit; padding: 0 2px; border-ra
   }
   body.sheet-open { overflow: hidden; }
 }
-.panel-empty p { margin: 0; color: var(--muted); font-size: 14px; }
 .panel-top { display: flex; gap: var(--s4); align-items: flex-start; }
 .panel-top .cover { width: 88px; font-size: 32px; flex-shrink: 0; }
 .panel-title { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.3; }

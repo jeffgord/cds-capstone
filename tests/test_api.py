@@ -128,15 +128,11 @@ def test_lcc_label(code, label):
     assert B.lcc_label(code, B.load_lcc()) == label
 
 
-def test_why_scores_sentences_and_parts(client):
+def test_why_scores_each_sentence(client):
     gid = next(g for g in IDS[:40] if BOOKS[g].get("passages") and BOOKS[g].get("description"))
     body = client.get(f"/api/books/{gid}/why", params={"q": "x", "matched_via": "passage", "passage_index": 0}).json()
     assert body["sentences"] and " ".join(x["text"] for x in body["sentences"]) == B.snippet(BOOKS[gid], "passage", 0, None)
-    kinds = [p["part"] for p in body["parts"]]
-    assert kinds.count("passage") == 1 and "summary" in kinds
-    assert [p["score"] for p in body["parts"]] == sorted((p["score"] for p in body["parts"]), reverse=True)
-    best = max(range(len(BOOKS[gid]["passages"])), key=lambda i: len(BOOKS[gid]["passages"][i]))
-    assert next(p for p in body["parts"] if p["part"] == "passage")["passage_index"] == best
+    assert all(isinstance(x["score"], float) for x in body["sentences"])
 
 
 def test_why_errors(client):
