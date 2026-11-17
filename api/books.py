@@ -66,7 +66,8 @@ def display_name(catalog_name: str) -> str:
     'Thomas, Aquinas, Saint, 1225?-1274' -> 'Saint Thomas Aquinas (1225?-1274)'. No comma: unchanged.
     Cases come from the 1,206 contributor names in the 1,000-book dataset (see tests/test_api.py)."""
     catalog_name = re.sub(r"[​-‏]", "", catalog_name)  # stray direction marks ('Wycliffe, John‏')
-    parts = [p.strip() for p in catalog_name.split(",") if p.strip()]
+    # Commas inside parentheses aren't name parts: 'McCormick & Co. (Baltimore, Md.)' stays as it is.
+    parts = [p.strip() for p in re.split(r",(?![^()]*\))", catalog_name) if p.strip()]
     if len(parts) < 2:
         return catalog_name.strip()
     surname = parts[0]

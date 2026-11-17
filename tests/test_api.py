@@ -115,6 +115,8 @@ def test_book_detail(client):
     ("Bull, Thomas, -1858", "Thomas Bull (died 1858)"),
     ("Black, Madeleine, 1873-", "Madeleine Black (born 1873)"),
     ("Intercollegiate Peace Association", "Intercollegiate Peace Association"),
+    ("McCormick & Co. (Baltimore, Md.)", "McCormick & Co. (Baltimore, Md.)"),
+    ("Brooklyn (New York, N.Y.). Committee of Ten", "Brooklyn (New York, N.Y.). Committee of Ten"),
 ])
 def test_display_name(raw, shown):
     assert B.display_name(raw) == shown
