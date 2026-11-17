@@ -63,8 +63,8 @@ Spacing scale: 4, 8, 12, 16, 24 and 32px (`--s1` to `--s6`). Radii: 12px cards, 
 - **Home guide is always visible,** because semantic search works differently from the keyword search people expect. It holds one sentence on how to search, four example queries checked against the index, and one honest line on weak spots.
 - **Result row.** Enough to judge a book without opening it: a summary and the subjects, not just a title.
   - Cover, title, authors with display names and roles ("edited by", "translated by").
-  - Added year and LCC label with code.
-  - Summary clamped to 2 lines with More/Less, plus a native `title` tooltip on mouse-over. It's never hover-only.
+  - Chips for the LCC class with its code (teal outline) and the Gutenberg bookshelves (plain outline). The Gutenberg release year is only in the detail panel, since it isn't the publication date.
+  - Summary clamped to 2 lines, with a More/Less button right under it and a native `title` tooltip on mouse-over. It's never hover-only.
   - Up to 4 subject tags plus a "+N" button that shows the rest, so a row never becomes a wall of text. Tags wrap and never side-scroll.
 - **Score + "Why this book" is one real button.** A relevance score that looks clickable should be, and a ranked list should explain why each book is there.
   - The raw score sits on the button. It opens a tinted box with the matched text. On first open it calls `/api/books/{id}/why`: the search model scores each sentence of that text, and the closest one is highlighted when the scores arrive. A one-line note says how to read the score.

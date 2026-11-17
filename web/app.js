@@ -88,6 +88,14 @@ function lccText(locc) {
   return locc.map((l) => `${l.label} (${l.code})`).join(", ");
 }
 
+// Library of Congress class (teal outline) and Gutenberg bookshelves (plain outline), under the author.
+function shelfChips(b) {
+  if (!b.locc.length && !b.subjects.length) return null;
+  return h("ul", { class: "chips", "aria-label": "Classification and bookshelves" },
+    b.locc.map((l) => h("li", { class: "chip chip-class", title: "Library of Congress classification" }, `${l.label} (${l.code})`)),
+    b.subjects.map((s) => h("li", { class: "chip", title: "Gutenberg bookshelf" }, s)));
+}
+
 // ---------- URL state ----------
 function readUrl() {
   const p = new URLSearchParams(location.search);
@@ -249,8 +257,7 @@ function resultItem(r) {
   const b = r.book;
   const whyId = `why-${r.gutenberg_id}`;
   const summaryId = `summary-${r.gutenberg_id}`;
-  const subjects = b.topic_subjects.length ? b.topic_subjects : b.subjects;
-  const meta = [b.added_year ? `Added to Gutenberg ${b.added_year}` : null, b.locc.length ? lccText(b.locc) : null].filter(Boolean);
+  const subjects = b.topic_subjects;
 
   const summary = b.description
     ? h("p", { class: "summary clamped", id: summaryId, title: b.description }, b.description)
@@ -268,9 +275,10 @@ function resultItem(r) {
   }, h("span", { class: "score" }, r.score.toFixed(3)), h("span", {}, "Why this book"), svgChevron());
 
   const actions = h("div", { class: "actions" }, whyButton);
+  let more = null;
   if (b.description && b.description.length > 180) {
-    const more = h("button", {
-      type: "button", class: "text-button", "aria-controls": summaryId, "aria-expanded": "false",
+    more = h("button", {
+      type: "button", class: "text-button summary-toggle", "aria-controls": summaryId, "aria-expanded": "false",
       onclick: () => {
         const el = $(summaryId);
         const open = el.classList.toggle("clamped") === false;
@@ -278,7 +286,6 @@ function resultItem(r) {
         more.setAttribute("aria-expanded", String(open));
       },
     }, "More");
-    actions.append(more);
   }
   actions.append(h("a", { class: "read-link", href: b.url, target: "_blank", rel: "noopener" }, "Read on Gutenberg"));
 
@@ -291,8 +298,9 @@ function resultItem(r) {
           onclick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openBook(r.gutenberg_id); },
         }, b.title)),
       h("p", { class: "authors" }, authorLine(b.authors)),
-      meta.length ? h("p", { class: "meta" }, meta.map((m) => h("span", {}, m))) : null,
+      shelfChips(b),
       summary,
+      more,
       subjects.length ? tagList(subjects) : null,
       actions,
       why,

@@ -157,6 +157,14 @@ button { font: inherit; color: inherit; }
 .summary.clamped { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .summary-missing { font-style: italic; color: var(--muted); }
 
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--s2) 0 0; padding: 0; list-style: none; }
+.chip {
+  font-size: 12px; line-height: 1.4; padding: 1px 8px; border-radius: var(--pill);
+  border: 1px solid var(--band-line); background: var(--page); color: var(--ink-2);
+}
+.chip-class { border-color: var(--accent); color: var(--accent-strong); }
+.summary-toggle { display: block; margin-top: 2px; }
+
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--s2) 0 0; padding: 0; list-style: none; }
 .tag {
   font-size: 12px; line-height: 1.4; padding: 2px 8px; border-radius: var(--pill);
