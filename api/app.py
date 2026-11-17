@@ -75,17 +75,23 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         }
 
     @app.get("/api/search")
-    def search(q: str = "", k: int = Query(10, ge=1), offset: int = Query(0, ge=0)):
+    def search(q: str = "", shelf: str = "", k: int = Query(10, ge=1), offset: int = Query(0, ge=0)):
+        """Semantic search, optionally only among books on one Gutenberg bookshelf. With a shelf and
+        no query, it lists that shelf's books by title (no scores), for browsing."""
         query = " ".join(q.split())
-        if not query:
+        shelf = shelf.strip()
+        if not query and not shelf:
             raise HTTPException(400, "Empty query")
+        k = min(k, MAX_K)
+        started = time.perf_counter()
+        on_shelf = lambda gid: gid in books and (not shelf or shelf in (books[gid].get("subjects") or []))
+        if not query:
+            return browse_shelf(shelf, on_shelf, k, offset, started)
         if slot.searcher is None:
             raise HTTPException(503, slot.error or "The search model is still loading")
-        k = min(k, MAX_K)
         want = offset + k + 1  # one extra book tells us whether there's a next page
-        started = time.perf_counter()
 
-        ranked = best_per_book(slot.searcher, query, want, keep=lambda gid: gid in books)
+        ranked = best_per_book(slot.searcher, query, want, keep=on_shelf)
         page = ranked[offset:offset + k]
 
         results = []
@@ -103,12 +109,33 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             })
         return {
             "query": query,
+            "shelf": shelf or None,
             "k": k,
             "offset": offset,
             "took_ms": round((time.perf_counter() - started) * 1000),
             "has_more": len(ranked) > offset + k,
             "score_kind": slot.searcher.info().get("score_kind"),
             "results": results,
+        }
+
+    def browse_shelf(shelf: str, on_shelf, k: int, offset: int, started: float) -> dict:
+        """All books on one bookshelf, by title. There's no query, so there are no scores."""
+        ids = sorted((gid for gid in books if on_shelf(gid)), key=lambda gid: (books[gid].get("title") or "").lower())
+        page = ids[offset:offset + k]
+        return {
+            "query": "",
+            "shelf": shelf,
+            "k": k,
+            "offset": offset,
+            "took_ms": round((time.perf_counter() - started) * 1000),
+            "has_more": len(ids) > offset + k,
+            "total": len(ids),
+            "score_kind": None,
+            "results": [{
+                "rank": offset + i + 1, "gutenberg_id": gid, "score": None, "matched_via": None,
+                "passage_index": None, "n_passages": len(books[gid].get("passages") or []), "snippet": None,
+                "book": B.card(books[gid], outline),
+            } for i, gid in enumerate(page)],
         }
 
     @app.get("/api/books/{gutenberg_id}")

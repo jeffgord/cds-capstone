@@ -65,3 +65,7 @@ This file records the main design decisions behind the API and UI: what, why, an
 **The UI can be hosted apart from the API; locally it's still one process.**
 - **Why:** We plan to put the UI on Cloudflare, and the free Cloudflare tiers can't run a Python process with PyTorch and BGE. So the UI goes on Pages and the API somewhere else. That needs `apiBase` in `web/config.js` and `CORS_ORIGINS` on the API (~20 lines). Same origin serving stays the default for local runs: one command, no CORS.
 - **Gave up:** nothing for local use. A deployment needs two hosts to keep in sync.
+
+**Bookshelves are a filter, not a keyword search.**
+- **Why:** Clicking a Gutenberg bookshelf narrows the results to books on that shelf, using the catalog's own shelf list. With a search, the shelf's books are still ranked by the semantic score; without one, they're listed by title. Search itself stays purely semantic.
+- **Gave up:** nothing. The same `keep` filter in `best_per_book()` can later serve LCC or subject filters.

@@ -159,10 +159,20 @@ button { font: inherit; color: inherit; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--s2) 0 0; padding: 0; list-style: none; }
 .chip {
+  display: inline-flex; align-items: center; min-height: 24px;
   font-size: 12px; line-height: 1.4; padding: 1px 8px; border-radius: var(--pill);
   border: 1px solid var(--band-line); background: var(--page); color: var(--ink-2);
 }
-.chip-class { border-color: var(--accent); color: var(--accent-strong); }
+.chip-class { border-color: var(--accent-soft); background: var(--accent-soft); color: var(--accent-strong); }
+.chip-shelf { font-family: inherit; cursor: pointer; min-height: 24px; }
+.chip-shelf:hover { border-color: var(--accent); color: var(--accent-strong); }
+
+.filter-bar { display: flex; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font-size: 13px; color: var(--muted); }
+.chip-active { display: inline-flex; align-items: center; gap: 4px; border-color: var(--accent); color: var(--accent-strong); }
+.chip-remove {
+  border: 0; background: none; color: inherit; font-size: 15px; line-height: 1; cursor: pointer;
+  padding: 0 2px; min-width: 24px; min-height: 24px;
+}
 .summary-toggle { display: block; margin-top: 2px; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--s2) 0 0; padding: 0; list-style: none; }

@@ -23,10 +23,10 @@ const $ = (id) => document.getElementById(id);
 const els = {
   form: $("search-form"), q: $("q"), recent: $("recent"), guide: $("guide"), examples: $("examples"),
   status: $("status"), section: $("results-section"), title: $("results-title"), results: $("results"),
-  more: $("more"), panel: $("panel"), panelBody: $("panel-body"),
+  more: $("more"), filter: $("filter"), panel: $("panel"), panelBody: $("panel-body"),
 };
 
-const state = { query: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
+const state = { query: "", shelf: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
 
 // ---------- small DOM helpers (text goes in via textContent only; data is never parsed as HTML) ----------
 function h(tag, attrs = {}, ...children) {
@@ -88,24 +88,32 @@ function lccText(locc) {
   return locc.map((l) => `${l.label} (${l.code})`).join(", ");
 }
 
-// Library of Congress class (teal outline) and Gutenberg bookshelves (plain outline), under the author.
+// Library of Congress class (filled) and Gutenberg bookshelves (outlined buttons that open the shelf).
 function shelfChips(b) {
   if (!b.locc.length && !b.subjects.length) return null;
   return h("ul", { class: "chips", "aria-label": "Classification and bookshelves" },
     b.locc.map((l) => h("li", { class: "chip chip-class", title: "Library of Congress classification" }, `${l.label} (${l.code})`)),
-    b.subjects.map((s) => h("li", { class: "chip", title: "Gutenberg bookshelf" }, s)));
+    b.subjects.map((s) => h("li", {}, h("button", {
+      type: "button", class: "chip chip-shelf", title: `Show books on the "${s}" bookshelf`, onclick: () => openShelf(s),
+    }, s))));
+}
+
+function openShelf(shelf) {
+  writeUrl({ q: state.query, shelf, book: null });
+  render();
 }
 
 // ---------- URL state ----------
 function readUrl() {
   const p = new URLSearchParams(location.search);
   const book = Number.parseInt(p.get("book") || "", 10);
-  return { q: (p.get("q") || "").trim(), book: Number.isFinite(book) ? book : null };
+  return { q: (p.get("q") || "").trim(), shelf: (p.get("shelf") || "").trim(), book: Number.isFinite(book) ? book : null };
 }
 
-function writeUrl({ q, book }, push = true) {
+function writeUrl({ q, shelf, book }, push = true) {
   const p = new URLSearchParams();
   if (q) p.set("q", q);
+  if (shelf) p.set("shelf", shelf);
   if (book) p.set("book", String(book));
   const url = `${location.pathname}${p.toString() ? `?${p}` : ""}`;
   if (url === `${location.pathname}${location.search}`) return;
@@ -216,7 +224,7 @@ function whyBox(r, id) {
     quote,
     caption,
     h("p", { class: "why-note" },
-      "The score is the cosine similarity between your search and the matched text, from the search model. Higher is closer. Compare scores only within one search."),
+      "The score is the cosine similarity between your search and the matched text. Higher is closer."),
   );
   let loaded = false;
   box.load = async () => {
@@ -263,8 +271,10 @@ function resultItem(r) {
     ? h("p", { class: "summary clamped", id: summaryId, title: b.description }, b.description)
     : h("p", { class: "summary summary-missing" }, "No summary in the catalog.");
 
-  const why = whyBox(r, whyId);
-  const whyButton = h("button", {
+  // Browsing a shelf without a search has no scores, so there's nothing to explain.
+  const hasScore = r.score !== null;
+  const why = hasScore ? whyBox(r, whyId) : null;
+  const whyButton = hasScore ? h("button", {
     type: "button", class: "why-button", "aria-expanded": "false", "aria-controls": whyId,
     onclick: () => {
       const open = whyButton.getAttribute("aria-expanded") !== "true";
@@ -272,7 +282,7 @@ function resultItem(r) {
       why.hidden = !open;
       if (open) why.load();
     },
-  }, h("span", { class: "score" }, r.score.toFixed(3)), h("span", {}, "Why this book"), svgChevron());
+  }, h("span", { class: "score" }, r.score.toFixed(3)), h("span", {}, "Why this book"), svgChevron()) : null;
 
   const actions = h("div", { class: "actions" }, whyButton);
   let more = null;
@@ -294,10 +304,11 @@ function resultItem(r) {
     h("div", { class: "result-body" },
       h("h3", { class: "result-title" },
         h("a", {
-          href: `?${new URLSearchParams({ q: state.query, book: r.gutenberg_id })}`,
+          href: `?${new URLSearchParams({ ...(state.query && { q: state.query }), ...(state.shelf && { shelf: state.shelf }), book: r.gutenberg_id })}`,
           onclick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openBook(r.gutenberg_id); },
         }, b.title)),
       h("p", { class: "authors" }, authorLine(b.authors)),
+      b.added_year ? h("p", { class: "meta" }, `Added to Gutenberg ${b.added_year}`) : null,
       shelfChips(b),
       summary,
       more,
@@ -308,24 +319,48 @@ function resultItem(r) {
   );
 }
 
+function countText() {
+  const n = `${state.results.length}${state.hasMore ? "+" : ""} books`;
+  if (state.query && state.shelf) return `${n} for "${state.query}" on this bookshelf`;
+  return state.query ? `${n} for "${state.query}"` : `${n} on this bookshelf`;
+}
+
+function renderFilter() {
+  els.filter.hidden = !state.shelf;
+  if (!state.shelf) { els.filter.replaceChildren(); return; }
+  els.filter.replaceChildren(
+    h("span", { class: "filter-label" }, "Bookshelf:"),
+    h("span", { class: "chip chip-active" }, state.shelf,
+      h("button", {
+        type: "button", class: "chip-remove", "aria-label": `Remove the "${state.shelf}" bookshelf filter`,
+        onclick: () => { writeUrl({ q: state.query, shelf: "", book: null }); render(); },
+      }, "\u00d7")),
+  );
+}
+
 function renderResults() {
   els.section.hidden = false;
-  els.title.replaceChildren("Results", h("span", { class: "count" },
-    state.results.length ? `${state.results.length}${state.hasMore ? "+" : ""} books for "${state.query}"` : ""));
+  renderFilter();
+  els.title.replaceChildren("Results", h("span", { class: "count" }, state.results.length ? countText() : ""));
   els.results.replaceChildren(...state.results.map(resultItem));
   els.more.hidden = !state.hasMore;
   markOpen();
 }
 
-async function runSearch(q) {
+function searchParams(offset) {
+  return new URLSearchParams({ ...(state.query && { q: state.query }), ...(state.shelf && { shelf: state.shelf }), k: PAGE_SIZE, offset });
+}
+
+async function runSearch(q, shelf) {
   const token = ++state.searchToken;
   state.query = q;
+  state.shelf = shelf;
   els.q.value = q;
   els.guide.hidden = true;
   els.results.setAttribute("aria-busy", "true");
   setStatus(document.createTextNode("Searching..."));
   try {
-    const data = await api(`/api/search?${new URLSearchParams({ q, k: PAGE_SIZE, offset: 0 })}`);
+    const data = await api(`/api/search?${searchParams(0)}`);
     if (token !== state.searchToken) return;
     state.results = data.results;
     state.hasMore = data.has_more;
@@ -347,13 +382,13 @@ async function showMore() {
   els.more.disabled = true;
   els.more.textContent = "Loading...";
   try {
-    const data = await api(`/api/search?${new URLSearchParams({ q: state.query, k: PAGE_SIZE, offset: state.results.length })}`);
+    const data = await api(`/api/search?${searchParams(state.results.length)}`);
     const seen = new Set(state.results.map((r) => r.gutenberg_id));
     const fresh = data.results.filter((r) => !seen.has(r.gutenberg_id));
     state.results.push(...fresh);
     state.hasMore = data.has_more;
     els.results.append(...fresh.map(resultItem));
-    els.title.querySelector(".count").textContent = `${state.results.length}${state.hasMore ? "+" : ""} books for "${state.query}"`;
+    els.title.querySelector(".count").textContent = countText();
     els.more.hidden = !state.hasMore;
     setStatus(h("span", { class: "visually-hidden" }, `${fresh.length} more results`));
     markOpen();
@@ -368,6 +403,7 @@ async function showMore() {
 function showHome() {
   state.searchToken++;
   state.query = "";
+  state.shelf = "";
   state.results = [];
   els.q.value = "";
   els.guide.hidden = false;
@@ -462,13 +498,13 @@ function hideBook() {
 }
 
 function openBook(id) {
-  writeUrl({ q: state.query, book: id });
+  writeUrl({ q: state.query, shelf: state.shelf, book: id });
   render();
 }
 
 function closeBook() {
-  const { q, book } = readUrl();
-  writeUrl({ q, book: null });
+  const { q, shelf, book } = readUrl();
+  writeUrl({ q, shelf, book: null });
   render();
   // Return focus to the title that opened the panel, so keyboard users don't lose their place.
   const link = els.results.querySelector(`[data-id="${CSS.escape(String(book))}"] .result-title a`);
@@ -478,10 +514,11 @@ function closeBook() {
 // ---------- render from URL ----------
 let lastBook = null;
 async function render() {
-  const { q, book } = readUrl();
-  if (!q) showHome();
-  else if (q !== state.query || !state.results.length) {
-    if (state.health && state.health.ready) await runSearch(q);
+  const { q, shelf, book } = readUrl();
+  if (!q && !shelf) showHome();
+  else if (q !== state.query || shelf !== state.shelf || !state.results.length) {
+    // Browsing a shelf needs no model, so it doesn't wait for the search model to load.
+    if (!q || (state.health && state.health.ready)) await runSearch(q, shelf);
     else { els.q.value = q; els.guide.hidden = true; }
   }
   if (book && book !== lastBook) showBook(book);
@@ -494,7 +531,7 @@ function submit(q) {
   if (!q) { els.q.focus(); return; }
   saveRecent(q);
   hideRecent();
-  writeUrl({ q, book: null });
+  writeUrl({ q, shelf: readUrl().shelf, book: null });  // a new search stays inside the open bookshelf
   state.query = ""; // force a fresh search even when the query is unchanged
   render();
 }

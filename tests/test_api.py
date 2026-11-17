@@ -173,3 +173,19 @@ def test_ui_files_are_revalidated(client):
     assert client.get("/app.js").headers["cache-control"] == "no-cache"
     assert "cache-control" not in client.get("/api/health").headers
 
+
+def test_search_within_a_bookshelf(client):
+    shelf = next(s for gid in IDS[:40] for s in BOOKS[gid]["subjects"])
+    body = client.get("/api/search", params={"q": "x", "shelf": shelf, "k": 50}).json()
+    assert body["shelf"] == shelf and body["results"]
+    assert all(shelf in r["book"]["subjects"] for r in body["results"])
+
+
+def test_browse_a_bookshelf_without_a_query():
+    c = TestClient(create_app(load_in_background=False))  # browsing needs no model
+    shelf = next(s for gid in IDS for s in BOOKS[gid]["subjects"])
+    body = c.get("/api/search", params={"shelf": shelf, "k": 5}).json()
+    titles = [r["book"]["title"].lower() for r in body["results"]]
+    assert titles == sorted(titles) and all(r["score"] is None for r in body["results"])
+    assert body["total"] == sum(shelf in BOOKS[g]["subjects"] for g in IDS)
+

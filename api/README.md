@@ -25,9 +25,11 @@ The server starts in about a second and loads the model in the background. Until
   "n_vectors": 6896, "score_kind": "cosine", "query_prefix": null }
 ```
 
-### `GET /api/search?q=&k=10&offset=0`
+### `GET /api/search?q=&shelf=&k=10&offset=0`
 
-- `q` is trimmed and whitespace-collapsed; an empty `q` is a 400.
+- `q` is trimmed and whitespace-collapsed.
+- `shelf` (optional) is a Gutenberg bookshelf name, e.g. `Politics`. With `q`, the semantic results are limited to books on that shelf. Without `q`, it lists the shelf's books by title, with `score: null`, `snippet: null` and a `total` count; this works even while the model is loading.
+- An empty `q` without a `shelf` is a 400.
 - `k` is 1 to 50 (larger values are clamped to 50). `offset` pages through results.
 - Returns 503 while the model loads or when there's no index.
 

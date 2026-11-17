@@ -17,8 +17,8 @@ Open work on the search app. Reasons and history are in `decisions.md`.
 
 ## Next
 
-- [ ] Filters by bookshelf and LCC class.
-- [ ] Browse by bookshelf on the home page.
+- [ ] Filter by LCC class.
+- [ ] Browse bookshelves from the home page (clicking a bookshelf on a result already works).
 - [ ] "Useful / not useful" feedback on results, saved as evaluation data.
 - [ ] Dark mode.
 - [ ] Decide whether to show a relevance cutoff (needs evaluation data first).
