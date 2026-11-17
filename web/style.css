@@ -164,10 +164,12 @@ button { font: inherit; color: inherit; }
   border: 1px solid var(--band-line); background: var(--page); color: var(--ink-2);
 }
 .chip-class { border-color: var(--accent-soft); background: var(--accent-soft); color: var(--accent-strong); }
-.chip-shelf { font-family: inherit; cursor: pointer; min-height: 24px; }
-.chip-shelf:hover { border-color: var(--accent); color: var(--accent-strong); }
+button.chip { font-family: inherit; cursor: pointer; }
+button.chip:hover { border-color: var(--accent); color: var(--accent-strong); }
+.chip.is-active { border-color: var(--accent); color: var(--accent-strong); font-weight: 600; cursor: default; }
 
-.filter-bar { display: flex; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font-size: 13px; color: var(--muted); }
+.filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); margin: 0 0 var(--s3); font-size: 13px; color: var(--muted); }
+.filter-item { display: inline-flex; align-items: center; gap: var(--s2); }
 .chip-active { display: inline-flex; align-items: center; gap: 4px; border-color: var(--accent); color: var(--accent-strong); }
 .chip-remove {
   border: 0; background: none; color: inherit; font-size: 15px; line-height: 1; cursor: pointer;

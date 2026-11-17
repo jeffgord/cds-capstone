@@ -26,7 +26,7 @@ const els = {
   more: $("more"), filter: $("filter"), panel: $("panel"), panelBody: $("panel-body"),
 };
 
-const state = { query: "", shelf: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
+const state = { query: "", shelf: "", lcc: "", lccLabel: "", results: [], hasMore: false, health: null, searchToken: 0, bookToken: 0 };
 
 // ---------- small DOM helpers (text goes in via textContent only; data is never parsed as HTML) ----------
 function h(tag, attrs = {}, ...children) {
@@ -88,32 +88,43 @@ function lccText(locc) {
   return locc.map((l) => `${l.label} (${l.code})`).join(", ");
 }
 
-// Library of Congress class (filled) and Gutenberg bookshelves (outlined buttons that open the shelf).
+// Library of Congress main class (filled) and Gutenberg bookshelves (outlined). Both are filter buttons;
+// a chip that matches the active filter is highlighted and does nothing when clicked.
 function shelfChips(b) {
-  if (!b.locc.length && !b.subjects.length) return null;
+  if (!b.classes.length && !b.subjects.length) return null;
+  const chip = (cls, text, active, title, onclick) => h("li", {}, h("button", {
+    type: "button", class: `chip ${cls}${active ? " is-active" : ""}`, title, "aria-pressed": String(active),
+    onclick: active ? null : onclick,
+  }, text));
   return h("ul", { class: "chips", "aria-label": "Classification and bookshelves" },
-    b.locc.map((l) => h("li", { class: "chip chip-class", title: "Library of Congress classification" }, `${l.label} (${l.code})`)),
-    b.subjects.map((s) => h("li", {}, h("button", {
-      type: "button", class: "chip chip-shelf", title: `Show books on the "${s}" bookshelf`, onclick: () => openShelf(s),
-    }, s))));
+    b.classes.map((c) => chip("chip-class", `${c.label} (${c.code})`, c.code === state.lcc,
+      `Show books in Library of Congress class ${c.code}`, () => setFilters({ lcc: c.code }))),
+    b.subjects.map((s) => chip("chip-shelf", s, s === state.shelf,
+      `Show books on the "${s}" bookshelf`, () => setFilters({ shelf: s }))));
 }
 
-function openShelf(shelf) {
-  writeUrl({ q: state.query, shelf, book: null });
+// Change the bookshelf or class filter, keep the search, and start again at the top like a new search.
+function setFilters(changes) {
+  writeUrl({ q: state.query, shelf: state.shelf, lcc: state.lcc, book: null, ...changes });
   render();
+  window.scrollTo({ top: 0 });
 }
 
 // ---------- URL state ----------
 function readUrl() {
   const p = new URLSearchParams(location.search);
   const book = Number.parseInt(p.get("book") || "", 10);
-  return { q: (p.get("q") || "").trim(), shelf: (p.get("shelf") || "").trim(), book: Number.isFinite(book) ? book : null };
+  return {
+    q: (p.get("q") || "").trim(), shelf: (p.get("shelf") || "").trim(), lcc: (p.get("lcc") || "").trim().toUpperCase(),
+    book: Number.isFinite(book) ? book : null,
+  };
 }
 
-function writeUrl({ q, shelf, book }, push = true) {
+function writeUrl({ q, shelf, lcc, book }, push = true) {
   const p = new URLSearchParams();
   if (q) p.set("q", q);
   if (shelf) p.set("shelf", shelf);
+  if (lcc) p.set("lcc", lcc);
   if (book) p.set("book", String(book));
   const url = `${location.pathname}${p.toString() ? `?${p}` : ""}`;
   if (url === `${location.pathname}${location.search}`) return;
@@ -304,7 +315,7 @@ function resultItem(r) {
     h("div", { class: "result-body" },
       h("h3", { class: "result-title" },
         h("a", {
-          href: `?${new URLSearchParams({ ...(state.query && { q: state.query }), ...(state.shelf && { shelf: state.shelf }), book: r.gutenberg_id })}`,
+          href: `?${new URLSearchParams({ ...filterParams(), book: r.gutenberg_id })}`,
           onclick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openBook(r.gutenberg_id); },
         }, b.title)),
       h("p", { class: "authors" }, authorLine(b.authors)),
@@ -321,21 +332,22 @@ function resultItem(r) {
 
 function countText() {
   const n = `${state.results.length}${state.hasMore ? "+" : ""} books`;
-  if (state.query && state.shelf) return `${n} for "${state.query}" on this bookshelf`;
-  return state.query ? `${n} for "${state.query}"` : `${n} on this bookshelf`;
+  return state.query ? `${n} for "${state.query}"` : n;  // the filter bar says which filters apply
 }
 
+// One chip per active filter, each with a × that removes just that filter.
 function renderFilter() {
-  els.filter.hidden = !state.shelf;
-  if (!state.shelf) { els.filter.replaceChildren(); return; }
-  els.filter.replaceChildren(
-    h("span", { class: "filter-label" }, "Bookshelf:"),
-    h("span", { class: "chip chip-active" }, state.shelf,
+  const active = [];
+  if (state.lcc) active.push(["Class", `${state.lccLabel || state.lcc} (${state.lcc})`, { lcc: "" }]);
+  if (state.shelf) active.push(["Bookshelf", state.shelf, { shelf: "" }]);
+  els.filter.hidden = !active.length;
+  els.filter.replaceChildren(...active.map(([kind, text, clear]) => h("span", { class: "filter-item" },
+    h("span", { class: "filter-label" }, `${kind}:`),
+    h("span", { class: "chip chip-active" }, text,
       h("button", {
-        type: "button", class: "chip-remove", "aria-label": `Remove the "${state.shelf}" bookshelf filter`,
-        onclick: () => { writeUrl({ q: state.query, shelf: "", book: null }); render(); },
-      }, "\u00d7")),
-  );
+        type: "button", class: "chip-remove", "aria-label": `Remove the ${kind.toLowerCase()} filter "${text}"`,
+        onclick: () => setFilters(clear),
+      }, "\u00d7")))));
 }
 
 function renderResults() {
@@ -347,14 +359,19 @@ function renderResults() {
   markOpen();
 }
 
-function searchParams(offset) {
-  return new URLSearchParams({ ...(state.query && { q: state.query }), ...(state.shelf && { shelf: state.shelf }), k: PAGE_SIZE, offset });
+function filterParams() {
+  return { ...(state.query && { q: state.query }), ...(state.shelf && { shelf: state.shelf }), ...(state.lcc && { lcc: state.lcc }) };
 }
 
-async function runSearch(q, shelf) {
+function searchParams(offset) {
+  return new URLSearchParams({ ...filterParams(), k: PAGE_SIZE, offset });
+}
+
+async function runSearch(q, shelf, lcc) {
   const token = ++state.searchToken;
   state.query = q;
   state.shelf = shelf;
+  state.lcc = lcc;
   els.q.value = q;
   els.guide.hidden = true;
   els.results.setAttribute("aria-busy", "true");
@@ -364,6 +381,7 @@ async function runSearch(q, shelf) {
     if (token !== state.searchToken) return;
     state.results = data.results;
     state.hasMore = data.has_more;
+    state.lccLabel = data.lcc_label || "";
     setStatus(data.results.length
       ? h("span", { class: "visually-hidden" }, `${data.results.length} results`)
       : statusBox("No books matched. Try describing the topic another way."));
@@ -404,6 +422,7 @@ function showHome() {
   state.searchToken++;
   state.query = "";
   state.shelf = "";
+  state.lcc = "";
   state.results = [];
   els.q.value = "";
   els.guide.hidden = false;
@@ -498,13 +517,13 @@ function hideBook() {
 }
 
 function openBook(id) {
-  writeUrl({ q: state.query, shelf: state.shelf, book: id });
+  writeUrl({ q: state.query, shelf: state.shelf, lcc: state.lcc, book: id });
   render();
 }
 
 function closeBook() {
-  const { q, shelf, book } = readUrl();
-  writeUrl({ q, shelf, book: null });
+  const { q, shelf, lcc, book } = readUrl();
+  writeUrl({ q, shelf, lcc, book: null });
   render();
   // Return focus to the title that opened the panel, so keyboard users don't lose their place.
   const link = els.results.querySelector(`[data-id="${CSS.escape(String(book))}"] .result-title a`);
@@ -514,11 +533,11 @@ function closeBook() {
 // ---------- render from URL ----------
 let lastBook = null;
 async function render() {
-  const { q, shelf, book } = readUrl();
-  if (!q && !shelf) showHome();
-  else if (q !== state.query || shelf !== state.shelf || !state.results.length) {
-    // Browsing a shelf needs no model, so it doesn't wait for the search model to load.
-    if (!q || (state.health && state.health.ready)) await runSearch(q, shelf);
+  const { q, shelf, lcc, book } = readUrl();
+  if (!q && !shelf && !lcc) showHome();
+  else if (q !== state.query || shelf !== state.shelf || lcc !== state.lcc || !state.results.length) {
+    // Browsing by filter needs no model, so it doesn't wait for the search model to load.
+    if (!q || (state.health && state.health.ready)) await runSearch(q, shelf, lcc);
     else { els.q.value = q; els.guide.hidden = true; }
   }
   if (book && book !== lastBook) showBook(book);
@@ -531,7 +550,8 @@ function submit(q) {
   if (!q) { els.q.focus(); return; }
   saveRecent(q);
   hideRecent();
-  writeUrl({ q, shelf: readUrl().shelf, book: null });  // a new search stays inside the open bookshelf
+  const { shelf, lcc } = readUrl();
+  writeUrl({ q, shelf, lcc, book: null });  // a new search keeps the active filters
   state.query = ""; // force a fresh search even when the query is unchanged
   render();
 }

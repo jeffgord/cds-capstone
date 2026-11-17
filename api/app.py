@@ -75,23 +75,31 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         }
 
     @app.get("/api/search")
-    def search(q: str = "", shelf: str = "", k: int = Query(10, ge=1), offset: int = Query(0, ge=0)):
-        """Semantic search, optionally only among books on one Gutenberg bookshelf. With a shelf and
-        no query, it lists that shelf's books by title (no scores), for browsing."""
+    def search(q: str = "", shelf: str = "", lcc: str = "", k: int = Query(10, ge=1), offset: int = Query(0, ge=0)):
+        """Semantic search, optionally only among books on one Gutenberg bookshelf and/or in one Library
+        of Congress main class (a letter, e.g. "J"). With a filter and no query, it lists the matching
+        books by title (no scores), for browsing."""
         query = " ".join(q.split())
         shelf = shelf.strip()
-        if not query and not shelf:
+        lcc = lcc.strip().upper()[:1]
+        if not query and not shelf and not lcc:
             raise HTTPException(400, "Empty query")
         k = min(k, MAX_K)
         started = time.perf_counter()
-        on_shelf = lambda gid: gid in books and (not shelf or shelf in (books[gid].get("subjects") or []))
+
+        def on_filter(gid: int) -> bool:
+            record = books.get(gid)
+            return record is not None \
+                and (not shelf or shelf in (record.get("subjects") or [])) \
+                and (not lcc or any((c or "").startswith(lcc) for c in record.get("locc") or []))
+
         if not query:
-            return browse_shelf(shelf, on_shelf, k, offset, started)
+            return browse(shelf, lcc, on_filter, k, offset, started)
         if slot.searcher is None:
             raise HTTPException(503, slot.error or "The search model is still loading")
         want = offset + k + 1  # one extra book tells us whether there's a next page
 
-        ranked = best_per_book(slot.searcher, query, want, keep=on_shelf)
+        ranked = best_per_book(slot.searcher, query, want, keep=on_filter)
         page = ranked[offset:offset + k]
 
         results = []
@@ -110,6 +118,8 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         return {
             "query": query,
             "shelf": shelf or None,
+            "lcc": lcc or None,
+            "lcc_label": B.LCC_CLASSES.get(lcc) if lcc else None,
             "k": k,
             "offset": offset,
             "took_ms": round((time.perf_counter() - started) * 1000),
@@ -118,13 +128,15 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             "results": results,
         }
 
-    def browse_shelf(shelf: str, on_shelf, k: int, offset: int, started: float) -> dict:
-        """All books on one bookshelf, by title. There's no query, so there are no scores."""
-        ids = sorted((gid for gid in books if on_shelf(gid)), key=lambda gid: (books[gid].get("title") or "").lower())
+    def browse(shelf: str, lcc: str, on_filter, k: int, offset: int, started: float) -> dict:
+        """All books matching the filters, by title. There's no query, so there are no scores."""
+        ids = sorted((gid for gid in books if on_filter(gid)), key=lambda gid: (books[gid].get("title") or "").lower())
         page = ids[offset:offset + k]
         return {
             "query": "",
-            "shelf": shelf,
+            "shelf": shelf or None,
+            "lcc": lcc or None,
+            "lcc_label": B.LCC_CLASSES.get(lcc) if lcc else None,
             "k": k,
             "offset": offset,
             "took_ms": round((time.perf_counter() - started) * 1000),

@@ -189,3 +189,18 @@ def test_browse_a_bookshelf_without_a_query():
     assert titles == sorted(titles) and all(r["score"] is None for r in body["results"])
     assert body["total"] == sum(shelf in BOOKS[g]["subjects"] for g in IDS)
 
+
+def test_filter_by_lcc_class_and_shelf():
+    c = TestClient(create_app(load_in_background=False))
+    body = c.get("/api/search", params={"lcc": "j", "k": 50}).json()
+    assert body["lcc"] == "J" and body["total"] > 0
+    assert all(any(cl["code"] == "J" for cl in r["book"]["classes"]) for r in body["results"])
+    shelf = body["results"][0]["book"]["subjects"][0]
+    both = c.get("/api/search", params={"lcc": "J", "shelf": shelf, "k": 50}).json()
+    assert 0 < both["total"] <= body["total"] and all(shelf in r["book"]["subjects"] for r in both["results"])
+
+
+def test_card_classes_use_main_class_names():
+    rec = {"gutenberg_id": 1, "locc": ["JX", "JZ", "D501"]}
+    assert B.card(rec, {})["classes"] == [{"code": "J", "label": "Political Science"}, {"code": "D", "label": "World History"}]
+

@@ -25,11 +25,12 @@ The server starts in about a second and loads the model in the background. Until
   "n_vectors": 6896, "score_kind": "cosine", "query_prefix": null }
 ```
 
-### `GET /api/search?q=&shelf=&k=10&offset=0`
+### `GET /api/search?q=&shelf=&lcc=&k=10&offset=0`
 
 - `q` is trimmed and whitespace-collapsed.
-- `shelf` (optional) is a Gutenberg bookshelf name, e.g. `Politics`. With `q`, the semantic results are limited to books on that shelf. Without `q`, it lists the shelf's books by title, with `score: null`, `snippet: null` and a `total` count; this works even while the model is loading.
-- An empty `q` without a `shelf` is a 400.
+- `shelf` (optional) is a Gutenberg bookshelf name, e.g. `Politics`. `lcc` (optional) is a Library of Congress main class letter, e.g. `J` for Political Science; it matches every call number starting with that letter. Both filters can be used together.
+- With `q`, the semantic results are limited to books matching the filters. Without `q`, it lists the matching books by title, with `score: null`, `snippet: null` and a `total` count; this works even while the model is loading. The response echoes `shelf`, `lcc` and `lcc_label` (the class name).
+- An empty `q` with no filter is a 400.
 - `k` is 1 to 50 (larger values are clamped to 50). `offset` pages through results.
 - Returns 503 while the model loads or when there's no index.
 
@@ -62,6 +63,7 @@ The server starts in about a second and loads the model in the background. Until
 | `added_year` | Year of the Gutenberg release (`issued`), not the original publication. |
 | `description` | Gutenberg's auto-generated summary, or `null` (16 books have none). |
 | `locc` | LoC classification code and readable label. Subclass labels come from `embedding/lcc_outline.json` plus `LCC_SUPPLEMENT` in `books.py` for subclasses the outline scrape missed. |
+| `classes` | The Library of Congress main classes of the book's call numbers, e.g. `{"code": "J", "label": "Political Science"}`, from `LCC_CLASSES` in `books.py`. Used for the result chips and the `lcc` filter. |
 | `cover_url` | `/covers/{id}.jpg` when the cover was saved with `ingestion/download_covers.py`, otherwise the gutenberg.org URL. The UI falls back to Gutenberg's mirror, then a letter placeholder. |
 
 ### `GET /api/books/{id}`

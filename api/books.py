@@ -15,6 +15,18 @@ SNIPPET_CHARS = 320
 
 # Subclasses missing or cut off in embedding/lcc_outline.json, which was scraped from the first page
 # of each LoC outline PDF. Values from the LoC Classification Outline.
+# The 21 main classes of the Library of Congress Classification Outline (D shortened from "World History
+# and History of Europe, Asia, Africa, Australia, New Zealand, etc."). lcc_outline.json only has
+# subclass labels, so a bare letter there reads wrong ("J" would be "General legislative ...").
+LCC_CLASSES = {
+    "A": "General Works", "B": "Philosophy. Psychology. Religion", "C": "Auxiliary Sciences of History",
+    "D": "World History", "E": "History of the Americas", "F": "History of the Americas",
+    "G": "Geography. Anthropology. Recreation", "H": "Social Sciences", "J": "Political Science", "K": "Law",
+    "L": "Education", "M": "Music", "N": "Fine Arts", "P": "Language and Literature", "Q": "Science",
+    "R": "Medicine", "S": "Agriculture", "T": "Technology", "U": "Military Science", "V": "Naval Science",
+    "Z": "Bibliography. Library Science",
+}
+
 LCC_SUPPLEMENT = {
     "DJ": "Netherlands (Holland)", "DJK": "Eastern Europe (General)",
     "DK": "Russia. Soviet Union. Former Soviet Republics. Poland", "DL": "Northern Europe. Scandinavia",
@@ -128,6 +140,8 @@ def card(record: dict, outline: dict, covers_dir: Path = COVERS_DIR) -> dict:
         "subjects": record.get("subjects") or [],
         "topic_subjects": record.get("topic_subjects") or [],
         "locc": [{"code": c, "label": lcc_label(c, outline)} for c in record.get("locc") or [] if c],
+        # Main classes (first letter), for the result chips and the class filter.
+        "classes": [{"code": l, "label": LCC_CLASSES.get(l, l)} for l in dict.fromkeys(c[0] for c in record.get("locc") or [] if c)],
         "url": record.get("url") or f"https://www.gutenberg.org/ebooks/{gid}",
         # Our own copy when it was downloaded, so covers don't depend on gutenberg.org being up.
         "cover_url": f"/covers/{gid}.jpg" if (covers_dir / f"{gid}.jpg").exists() else COVER_URL.format(id=gid),
