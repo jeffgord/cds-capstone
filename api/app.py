@@ -81,7 +81,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
         books by title (no scores), for browsing."""
         query = " ".join(q.split())
         shelf = shelf.strip()
-        lcc = lcc.strip().upper()[:1]
+        lcc = lcc.strip().upper()
         if not query and not shelf and not lcc:
             raise HTTPException(400, "Empty query")
         k = min(k, MAX_K)
@@ -91,7 +91,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             record = books.get(gid)
             return record is not None \
                 and (not shelf or shelf in (record.get("subjects") or [])) \
-                and (not lcc or any((c or "").startswith(lcc) for c in record.get("locc") or []))
+                and B.locc_matches(record.get("locc") or [], lcc)
 
         if not query:
             return browse(shelf, lcc, on_filter, k, offset, started)
@@ -119,7 +119,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             "query": query,
             "shelf": shelf or None,
             "lcc": lcc or None,
-            "lcc_label": B.LCC_CLASSES.get(lcc) if lcc else None,
+            "lcc_label": B.lcc_filter_label(lcc, outline) if lcc else None,
             "k": k,
             "offset": offset,
             "took_ms": round((time.perf_counter() - started) * 1000),
@@ -136,7 +136,7 @@ def create_app(searcher: Searcher | None = None, books_dir: Path = B.BOOKS_DIR, 
             "query": "",
             "shelf": shelf or None,
             "lcc": lcc or None,
-            "lcc_label": B.LCC_CLASSES.get(lcc) if lcc else None,
+            "lcc_label": B.lcc_filter_label(lcc, outline) if lcc else None,
             "k": k,
             "offset": offset,
             "took_ms": round((time.perf_counter() - started) * 1000),

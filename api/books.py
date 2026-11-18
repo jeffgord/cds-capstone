@@ -6,36 +6,12 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 BOOKS_DIR = ROOT_DIR / "data" / "books"
-LCC_PATH = ROOT_DIR / "embedding" / "lcc_outline.json"
+LCC_PATH = LCC_PATH = ROOT_DIR / "embedding" / "lcc_hierarchy.json"
 # Saved by ingestion/download_covers.py; served by the API at /covers/{id}.jpg.
 COVERS_DIR = ROOT_DIR / "data" / "raw" / "covers"
 
 COVER_URL = "https://www.gutenberg.org/cache/epub/{id}/pg{id}.cover.medium.jpg"
 SNIPPET_CHARS = 320
-
-# Subclasses missing or cut off in embedding/lcc_outline.json, which was scraped from the first page
-# of each LoC outline PDF. Values from the LoC Classification Outline.
-# The 21 main classes of the Library of Congress Classification Outline (D shortened from "World History
-# and History of Europe, Asia, Africa, Australia, New Zealand, etc."). lcc_outline.json only has
-# subclass labels, so a bare letter there reads wrong ("J" would be "General legislative ...").
-LCC_CLASSES = {
-    "A": "General Works", "B": "Philosophy. Psychology. Religion", "C": "Auxiliary Sciences of History",
-    "D": "World History", "E": "History of the Americas", "F": "History of the Americas",
-    "G": "Geography. Anthropology. Recreation", "H": "Social Sciences", "J": "Political Science", "K": "Law",
-    "L": "Education", "M": "Music", "N": "Fine Arts", "P": "Language and Literature", "Q": "Science",
-    "R": "Medicine", "S": "Agriculture", "T": "Technology", "U": "Military Science", "V": "Naval Science",
-    "Z": "Bibliography. Library Science",
-}
-
-LCC_SUPPLEMENT = {
-    "DJ": "Netherlands (Holland)", "DJK": "Eastern Europe (General)",
-    "DK": "Russia. Soviet Union. Former Soviet Republics. Poland", "DL": "Northern Europe. Scandinavia",
-    "DP": "Spain. Portugal", "DQ": "Switzerland", "DR": "Balkan Peninsula", "DS": "Asia", "DT": "Africa",
-    "DU": "Oceania (South Seas)", "DX": "Romanies",
-    "HN": "Social history and conditions. Social problems. Social reform",
-    "KD": "Law of the United Kingdom and Ireland", "KF": "Law of the United States",
-    "Z": "Books (General). Writing. Paleography. Book industries and trade. Libraries. Bibliography",
-}
 
 DATE_PART = re.compile(r"\d")  # "1826-1914", "427? BCE-347? BCE", "active 1700"
 HONORIFICS = {"sir", "dame", "lady", "lord", "mrs.", "mr.", "rev.", "dr.", "saint"}
@@ -102,31 +78,178 @@ def display_name(catalog_name: str) -> str:
         name += f" ({d})"
     return name
 
+def _parse_locc(code: str) -> tuple[str, float | None]:
+    """Splits 'F350.5' -> ('F', 350.5), 'AC1' -> ('AC', 1.0), 'BX' -> ('BX', None)."""
+    m = re.match(r"^([A-Z]{1,3})\s*(\d+(?:\.\d+)?)?", code.strip().upper())
+    if not m:
+        return "", None
+    letters, num = m.group(1), m.group(2)
+    return letters, float(num) if num is not None else None
 
-def lcc_label(code: str, outline: dict) -> str:
-    """Subclass label when the outline has one ('BV' -> 'Practical theology'), else the class title."""
-    if not code:
-        return ""
-    letters = re.match(r"[A-Z]+", code)  # Gutenberg sometimes has full numbers ("D501")
-    entry = outline.get(code[0])
-    if not entry or not letters:
-        return code
-    label = LCC_SUPPLEMENT.get(letters.group()) or entry.get("subclasses", {}).get(letters.group())
-    if not label:
-        title = (entry.get("title") or code).rstrip(" ,.")
-        if title.isupper():  # class titles are upper case in the outline ("PHILOSOPHY. PSYCHOLOGY. RELIGION")
-            small = {"and", "of", "the", "in", "for"}
-            words = title.lower().replace(".", ",").split()
-            title = " ".join(w if w in small and i else w.capitalize() for i, w in enumerate(words))
-        label = title
-    label = re.split(r",?\s+see\s+", label)[0]  # drop outline cross-references ("..., see JZ and KZ")
+def _match_child(children: dict, letters: str, num: float | None) -> tuple[str | None, dict | None]:
+    """Finds the matching child range or exact number at the current tree depth."""
+    if not children or num is None:
+        return None, None
+
+    best_key, best_node = None, None
+    best_span = float("inf")
+
+    for key, node in children.items():
+        m = re.match(rf"^{re.escape(letters)}(\d+(?:\.\d+)?)(?:-(\d+(?:\.\d+)?))?$", key)
+        if not m:
+            continue
+        start = float(m.group(1))
+        end = float(m.group(2)) if m.group(2) is not None else start
+        if start <= num <= end:
+            span = end - start
+            if span < best_span:
+                best_span = span
+                best_key, best_node = key, node
+
+    return best_key, best_node
+
+def _clean_label(raw: str) -> str:
+    label = re.split(r",?\s+see\s+", raw)[0]
     return label.rstrip(" ,.")
+
+def lcc_trail(code: str, outline: dict) -> list[dict]:
+    """Walks as deep as possible from Main Class -> Subclass -> Nested Ranges/Numbers.
+    Examples:
+    - 'BX'  -> [{'code': 'B', 'label': 'Philosophy. Psychology. Religion'}, {'code': 'BX', 'label': 'Christian Denominations'}]
+    - 'B105' -> [{'code': 'B', 'label': 'Philosophy. Psychology. Religion'}, {'code': 'B*', 'label': 'Philosophy (General)'}, ...]
+    - 'AC'  -> [{'code': 'A', 'label': 'General Works'}, {'code': 'AC', 'label': 'Collections. Series. Collected works'}]
+    - 'AC1' -> [{'code': 'A', 'label': 'General Works'}, {'code': 'AC1-999', ...}, {'code': 'AC1-195', ...}, {'code': 'AC1-8', ...}]"""
+    if not code:
+        return []
+    letters, num = _parse_locc(code)
+    if not letters:
+        return [{"code": code, "label": code}]
+
+    trail = []
+
+    def add(c: str, raw_label: str | None):
+        if not c or not raw_label:
+            return
+        label = _clean_label(raw_label)
+        # If two consecutive levels share the exact same title (e.g. Subclass AC and AC1-999),
+        # upgrade the code to the more specific one rather than showing duplicate text.
+        if trail and trail[-1]["label"].lower() == label.lower():
+            trail[-1] = {"code": c, "label": label}
+            return
+        trail.append({"code": c, "label": label})
+
+    # 1. Main class (e.g. "B" -> "Philosophy. Psychology. Religion")
+    main_letter = letters[0]
+    main_node = outline.get(main_letter)
+    if not main_node:
+        return [{"code": code, "label": code}]
+    add(main_letter, main_node.get("title") or main_letter)
+
+    # 2. Subclass (only emit when it's a 2+ letter subclass like "BX";
+    #    single-letter subclasses like "S" duplicate the main class letter)
+    sub_node = (main_node.get("children") or {}).get(letters)
+    if not sub_node:
+        if len(letters) > 1:
+            add(letters, letters)
+        return trail
+
+    if len(letters) > 1:
+        if sub_node.get("title"):
+            add(letters, sub_node["title"])
+        elif num is None:
+            add(letters, letters)
+
+    # 3. Walk down nested ranges/numbers (AC1-999 -> AC1-195 -> AC1-8)
+    curr = sub_node
+    while curr and curr.get("children"):
+        child_key, child_node = _match_child(curr["children"], letters, num)
+        if not child_key or not child_node:
+            break
+        add(child_key, child_node.get("title"))
+        curr = child_node
+
+    return trail
+
+def lcc_filter_label(lcc_filter: str, outline: dict) -> str | None:
+    """Resolves the display label for the active `lcc` filter banner in the UI."""
+    if not lcc_filter:
+        return None
+    flt = lcc_filter.strip().upper()
+    if flt.endswith("*") and len(flt) == 2:
+        sub = ((outline.get(flt[0]) or {}).get("children") or {}).get(flt[0])
+        return _clean_label(sub["title"]) if sub and sub.get("title") else flt[0]
+    main_node = outline.get(flt[0])
+    if len(flt) == 1 and main_node:
+        return _clean_label(main_node.get("title") or flt)
+    probe = flt.split("-", 1)[0]
+    trail = lcc_trail(probe, outline)
+    for item in reversed(trail):
+        if item["code"] == flt:
+            return item["label"]
+    return trail[-1]["label"] if trail else flt
+
+def locc_matches(book_codes: list[str], lcc_filter: str) -> bool:
+    """Checks if any of a book's LoC codes fall under a class ('B'), single-letter subclass ('B*'),
+    multi-letter subclass ('BX'), exact number ('AC200'), or range ('AC1-8') filter."""
+    if not lcc_filter:
+        return True
+    flt = lcc_filter.strip().upper()
+
+    # Exact single-letter subclass filter ("B*" -> only subclass B, not BC/BX)
+    if flt.endswith("*") and len(flt) == 2:
+        target = flt[0]
+        for raw in book_codes or []:
+            b_letters, _ = _parse_locc(raw)
+            if b_letters == target:
+                return True
+        return False
+
+    # Range filter ("AC1-8")
+    range_m = re.match(r"^([A-Z]{1,3})(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)$", flt)
+    if range_m:
+        f_letters, start, end = range_m.group(1), float(range_m.group(2)), float(range_m.group(3))
+        for raw in book_codes or []:
+            b_letters, b_num = _parse_locc(raw)
+            if b_letters == f_letters and b_num is not None and start <= b_num <= end:
+                return True
+        return False
+
+    # Exact number filter ("AC200")
+    num_m = re.match(r"^([A-Z]{1,3})(\d+(?:\.\d+)?)$", flt)
+    if num_m:
+        f_letters, f_num = num_m.group(1), float(num_m.group(2))
+        for raw in book_codes or []:
+            b_letters, b_num = _parse_locc(raw)
+            if b_letters == f_letters and b_num == f_num:
+                return True
+        return False
+
+    # Main class ("B" -> B, BC, BX...) or multi-letter subclass ("BX" -> BX only)
+    for raw in book_codes or []:
+        b_letters, _ = _parse_locc(raw)
+        if len(flt) == 1:
+            if b_letters.startswith(flt):
+                return True
+        else:
+            if b_letters == flt:
+                return True
+    return False
 
 
 def card(record: dict, outline: dict, covers_dir: Path = COVERS_DIR) -> dict:
     """The fields a result row shows. Every result in /api/search carries one of these."""
     gid = int(record["gutenberg_id"])
     issued = record.get("issued") or ""
+    trails = []
+    seen_trails = set()
+    for c in record.get("locc") or []:
+        trail = lcc_trail(c, outline)
+        if not trail:
+            continue
+        sig = tuple(p["code"] for p in trail)
+        if sig not in seen_trails:
+            seen_trails.add(sig)
+            trails.append(trail)
     return {
         "title": record.get("title") or "Untitled",
         "subtitle": record.get("subtitle") or None,
@@ -140,9 +263,11 @@ def card(record: dict, outline: dict, covers_dir: Path = COVERS_DIR) -> dict:
         "description": (record.get("description") or "").strip() or None,
         "subjects": record.get("subjects") or [],
         "topic_subjects": record.get("topic_subjects") or [],
-        "locc": [{"code": c, "label": lcc_label(c, outline)} for c in record.get("locc") or [] if c],
-        # Main classes (first letter), for the result chips and the class filter.
-        "classes": [{"code": l, "label": LCC_CLASSES.get(l, l)} for l in dict.fromkeys(c[0] for c in record.get("locc") or [] if c)],
+        "locc": trails,
+        "classes": [
+            {"code": l, "label": _clean_label(outline[l]["title"]) if outline.get(l, {}).get("title") else l}
+            for l in dict.fromkeys(c[0] for c in record.get("locc") or [] if c)
+        ],
         "url": record.get("url") or f"https://www.gutenberg.org/ebooks/{gid}",
         # Our own copy when it was downloaded, so covers don't depend on gutenberg.org being up.
         "cover_url": f"/covers/{gid}.jpg" if (covers_dir / f"{gid}.jpg").exists() else COVER_URL.format(id=gid),

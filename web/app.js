@@ -88,25 +88,59 @@ function lccText(locc) {
   return locc.map((l) => `${l.label} (${l.code})`).join(", ");
 }
 
+const displayCode = (code) => code.replace(/\*$/, "");
+
+function renderLccTrails(locc) {
+  if (!locc || !locc.length) return [];
+  // Normalize: supports both [[{code, label}, ...]] and flat [{code, label}, ...]
+  const trails = Array.isArray(locc[0]) ? locc : locc.map((item) => [item]);
+
+  return trails.map((trail) =>
+    h("span", { class: "lcc-trail", role: "group", "aria-label": "Classification path" },
+      trail.flatMap((step, i) => {
+        const active = step.code === state.lcc;
+        const btn = h("button", {
+          type: "button",
+          class: `chip chip-class${active ? " is-active" : ""}`,
+          title: `Show books in Library of Congress classification ${displayCode(step.code)}`,
+          "aria-pressed": String(active),
+          onclick: active ? null : () => setFilters({ lcc: step.code }),
+        }, `${step.label} (${displayCode(step.code)})`);
+        return i > 0 ? [h("span", { class: "lcc-sep", "aria-hidden": "true" }, "›"), btn] : [btn];
+      })
+    )
+  );
+}
+
 // Library of Congress main class (filled) and Gutenberg bookshelves (outlined). Both are filter buttons;
 // a chip that matches the active filter is highlighted and does nothing when clicked.
 function shelfChips(b) {
-  if (!b.classes.length && !b.subjects.length) return null;
-  const chip = (cls, text, active, title, onclick) => h("li", {}, h("button", {
-    type: "button", class: `chip ${cls}${active ? " is-active" : ""}`, title, "aria-pressed": String(active),
-    onclick: active ? null : onclick,
-  }, text));
-  return h("ul", { class: "chips", "aria-label": "Classification and bookshelves" },
-    b.classes.map((c) => chip("chip-class", `${c.label} (${c.code})`, c.code === state.lcc,
-      `Show books in Library of Congress class ${c.code}`, () => setFilters({ lcc: c.code }))),
-    b.subjects.map((s) => chip("chip-shelf", s, s === state.shelf,
-      `Show books on the "${s}" bookshelf`, () => setFilters({ shelf: s }))));
+  const trails = b.locc && b.locc.length ? b.locc : (b.classes || []).map((c) => [c]);
+  const hasLcc = trails.length > 0;
+  const hasShelves = b.subjects && b.subjects.length > 0;
+  if (!hasLcc && !hasShelves) return null;
+
+  const lccRow = hasLcc
+    ? h("div", { class: "lcc-row", "aria-label": "Classification" }, renderLccTrails(trails))
+    : null;
+
+  const shelfList = hasShelves
+    ? h("ul", { class: "chips", "aria-label": "Bookshelves" },
+      b.subjects.map((s) => h("li", {}, h("button", {
+        type: "button",
+        class: `chip chip-shelf${s === state.shelf ? " is-active" : ""}`,
+        title: `Show books on the "${s}" bookshelf`,
+        "aria-pressed": String(s === state.shelf),
+        onclick: s === state.shelf ? null : () => setFilters({ shelf: s }),
+      }, s))))
+    : null;
+
+  return h("div", { class: "taxonomy-rows" }, lccRow, shelfList);
 }
 
 // "Technology (T) › Home economics (TX)": the main class on the result chip, then the book's own call number.
-function classPath(l, classes) {
-  const main = l.code.length > 1 ? classes.find((c) => c.code === l.code[0]) : null;
-  return main ? `${main.label} (${main.code}) › ${l.label} (${l.code})` : `${l.label} (${l.code})`;
+function loccPills(locc) {
+  return renderLccTrails(locc);
 }
 
 // Change the filter, keep the search, and start again at the top like a new search. Only one filter at a
@@ -346,7 +380,7 @@ function countText() {
 // One chip per active filter, each with a × that removes just that filter.
 function renderFilter() {
   const active = [];
-  if (state.lcc) active.push(["Class", `${state.lccLabel || state.lcc} (${state.lcc})`, { lcc: "" }]);
+  if (state.lcc) active.push(["Class", `${state.lccLabel || displayCode(state.lcc)} (${displayCode(state.lcc)})`, { lcc: "" }]);
   if (state.shelf) active.push(["Bookshelf", state.shelf, { shelf: "" }]);
   els.filter.hidden = !active.length;
   els.filter.replaceChildren(...active.map(([kind, text, clear]) => h("span", { class: "filter-item" },
@@ -482,7 +516,7 @@ function renderBook(d) {
       factRow("Authors", d.authors.map((a) => (a.role === "Author" ? a.display : `${a.display}, ${a.role.toLowerCase()}`))),
       factRow("Subjects", d.topic_subjects),
       factRow("Bookshelves", d.subjects),
-      factRow("Classification", d.locc.map((l) => classPath(l, d.classes))),
+      factRow("Classification", d.locc.length ? loccPills(d.locc) : null),
       factRow("Added to Gutenberg", d.added_year ? String(d.added_year) : null),
       factRow("Gutenberg ID", h("a", { href: d.url, target: "_blank", rel: "noopener" }, `#${d.gutenberg_id}, read or download`)),
     )),
