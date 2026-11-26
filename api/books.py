@@ -80,7 +80,7 @@ def display_name(catalog_name: str) -> str:
 
 def _parse_locc(code: str) -> tuple[str, float | None]:
     """Splits 'F350.5' -> ('F', 350.5), 'AC1' -> ('AC', 1.0), 'BX' -> ('BX', None)."""
-    m = re.match(r"^([A-Z]{1,3})\s*(\d+(?:\.\d+)?)?", code.strip().upper())
+    m = re.match(r"^([A-Z]{1,3})\s*(\d+(?:\.\d+)?)?", (code or "").strip().upper())  # records can hold null codes
     if not m:
         return "", None
     letters, num = m.group(1), m.group(2)
@@ -182,11 +182,12 @@ def lcc_filter_label(lcc_filter: str, outline: dict) -> str | None:
     if len(flt) == 1 and main_node:
         return _clean_label(main_node.get("title") or flt)
     probe = flt.split("-", 1)[0]
-    trail = lcc_trail(probe, outline)
+    # Unknown codes come back labelled with themselves ("((" -> "(("); drop those so the UI shows no fake name.
+    trail = [t for t in lcc_trail(probe, outline) if t["label"] != t["code"]]
     for item in reversed(trail):
         if item["code"] == flt:
             return item["label"]
-    return trail[-1]["label"] if trail else flt
+    return trail[-1]["label"] if trail else None
 
 def locc_matches(book_codes: list[str], lcc_filter: str) -> bool:
     """Checks if any of a book's LoC codes fall under a class ('B'), single-letter subclass ('B*'),

@@ -122,12 +122,44 @@ def test_display_name(raw, shown):
     assert B.display_name(raw) == shown
 
 
-@pytest.mark.parametrize("code, label", [
-    ("BV", "Practical Theology"), ("DS", "Asia"), ("D501", "History (General)"),
-    ("E151", "History of the Americas"), ("JX", "International law"), ("KF", "Law of the United States"),
+LCC = B.load_lcc()
+
+
+@pytest.mark.parametrize("code, trail", [
+    ("BV", ["B", "BV"]), ("DS", ["D", "DS"]), ("T", ["T"]), ("d501", ["D", "D1-2027", "D501-680"]),
+    ("QA76.73", ["Q", "QA1-939", "QA71-90", "QA75-76.95", "QA75.5-76.95"]),
 ])
-def test_lcc_label(code, label):
-    assert B.lcc_label(code, B.load_lcc()) == label
+def test_lcc_trail_walks_from_main_class_down(code, trail):
+    assert [t["code"] for t in B.lcc_trail(code, LCC)] == trail
+
+
+@pytest.mark.parametrize("code, label", [
+    ("BV", "Practical Theology"), ("DS", "Asia"), ("KF", "Law of the United States"), ("J", "Political Science"),
+    ("D501-680", "World War I (1914-1918)"), ("B*", "Philosophy (General)"),
+])
+def test_lcc_filter_label(code, label):
+    assert B.lcc_filter_label(code, LCC) == label
+
+
+@pytest.mark.parametrize("junk", ["*", "-", "Y", "123", "((", "Ω", ".", "Y12"])
+def test_unknown_lcc_filter_has_no_label(junk):
+    assert B.lcc_filter_label(junk, LCC) is None
+
+
+@pytest.mark.parametrize("codes, flt, hit", [
+    (["BX100"], "B", True), (["BX100"], "BX", True), (["BX100"], "BV", False),
+    (["B105"], "B*", True), (["BX100"], "B*", False),
+    (["D530"], "D501-680", True), (["D700"], "D501-680", False), (["DS10"], "D501-680", False),
+    (["AC200"], "AC200", True), (["AC201"], "AC200", False),
+    ([], "B", False), (["", None], "B", False), (["BX"], "", True),
+])
+def test_locc_matches(codes, flt, hit):
+    assert B.locc_matches(codes, flt) is hit
+
+
+@pytest.mark.parametrize("code", ["", " ", None, "123", "((", "Y12"])
+def test_lcc_trail_never_crashes_on_odd_codes(code):
+    assert isinstance(B.lcc_trail(code, LCC), list)
 
 
 def test_why_scores_each_sentence(client):
@@ -204,5 +236,28 @@ def test_filter_by_lcc_class_and_shelf():
 
 def test_card_classes_use_main_class_names():
     rec = {"gutenberg_id": 1, "locc": ["JX", "JZ", "D501"]}
-    assert B.card(rec, {})["classes"] == [{"code": "J", "label": "Political Science"}, {"code": "D", "label": "World History"}]
+    assert [c["label"] for c in B.card(rec, LCC)["classes"]] == ["Political Science", "World History and History of Europe"]
+
+
+def test_card_skips_empty_codes_and_duplicate_trails():
+    card = B.card({"gutenberg_id": 1, "locc": ["BV", "", None, "BV"]}, LCC)
+    assert [[t["code"] for t in trail] for trail in card["locc"]] == [["B", "BV"]]
+
+
+def test_card_without_outline_falls_back_to_the_letter():
+    assert B.card({"gutenberg_id": 1, "locc": ["JX"]}, {})["classes"] == [{"code": "J", "label": "J"}]
+
+
+@pytest.mark.parametrize("junk", ["*", "((", "Ω", "D680-501", "[A-Z]", "X" * 500])
+def test_junk_lcc_filter_is_an_empty_list_not_an_error(junk):
+    c = TestClient(create_app(load_in_background=False))
+    r = c.get("/api/search", params={"lcc": junk})
+    assert r.status_code == 200 and r.json()["total"] == 0
+
+
+def test_filter_by_lcc_range():
+    c = TestClient(create_app(load_in_background=False))
+    body = c.get("/api/search", params={"lcc": "D501-680", "k": 50}).json()
+    assert body["total"] > 0 and body["lcc_label"] == "World War I (1914-1918)"
+    assert all(any(cl["code"] == "D" for cl in r["book"]["classes"]) for r in body["results"])
 
