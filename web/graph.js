@@ -1,18 +1,35 @@
 // Book graph page. Loads the precomputed variants from graph-data/ (built by graph/export.py) and drives
-// two GraphViews (graph-draw.js). The URL (?model=&measure=&arrange=lcc&compare=1&book=) is the single
+// the drawing in graph-draw.js. The URL (?model=&measure=&arrange=lcc&compare=1&book=) is the single
 // source of truth for what's on screen.
 
 const DATA = "graph-data/";
 const LCC_FILE = "lcc-itself-reference";
-const N_COLORS = 12; // the 12 biggest classes get a colour token each, the rest share --class-other
-const SCORES = [
-  ["p10_class", "of nearest books share the LoC class"],
-  ["p10_sub", "share the LoC subclass"],
-  ["nmi", "community match with LoC classes (NMI)"],
-];
+const N_COLORS = 12; // the 12 biggest classes get a color token each, the rest share --class-other
+
+// Plain-language names and one-line explanations. Keys are the model and measure names in index.json.
+const MODELS = {
+  "bge-base": ["BGE base (our search model)", "The model our search uses. It turns each passage into a list of numbers, so passages about similar things get similar numbers."],
+  "bge-small": ["BGE small", "A smaller, faster version of BGE base, with less detail per passage."],
+  "minilm": ["MiniLM", "A small, fast, widely used model. Quick, but it misses more nuance."],
+  "mpnet": ["MPNet", "A larger model trained to spot sentences that mean the same thing. Slower, usually sharper."],
+  "index summary": ["Search index: summaries", "The vectors already in our search index, made from each book's summary. They include the class name, so this one gets a hint."],
+  "index passages": ["Search index: passages", "Our search index's passage vectors, averaged per book. Each passage also carries the title and Gutenberg shelf."],
+  "TF-IDF word overlap": ["Word overlap (no model)", "No embedding at all: two books are close if they use the same uncommon words. Shows what plain word matching gets you."],
+  "LDA on mpnet (learned from LCC)": ["MPNet, tuned on classes", "MPNet's numbers, adjusted using the known class of 30% of the books. It peeks at the answer, so it's not a fair contest."],
+  "LCC": ["Library classes (the target)", "Books are close if their call numbers share more levels, like D, then DS, then a number range."],
+};
+const MEASURES = {
+  "Cosine": "The standard way: two books are close if their numbers point the same way.",
+  "Whitened cosine": "Cosine after removing the direction every book leans, so real differences stand out.",
+  "CSLS (hub-corrected)": "Cosine with a penalty for books that are close to everything, so they stop crowding every list.",
+  "Shared neighbors": "Two books are close if the same books surround them, like judging friends by mutual friends.",
+  "Chunk max-sim": "Compares passage to passage and keeps the best matches, instead of averaging each book into one point first.",
+};
+const MODEL_INTRO = "A model turns text into a long list of numbers, so texts that mean similar things get similar numbers. That's how it can match \"warfare\" with \"battles\" with no word in common.";
+const MEASURE_INTRO = "Once each book is a point, this decides which books count as close.";
 
 const $ = (id) => document.getElementById(id);
-const state = { index: null, graphs: {}, hover: -1, highlight: "", colorOf: {}, colorVar: {} };
+const state = { index: null, graphs: {}, hover: -1, highlight: "", query: "", colorOf: {}, colorVar: {} };
 
 function h(tag, props = {}, ...kids) {
   const el = document.createElement(tag);
@@ -59,9 +76,17 @@ function current() {
 const book = (i) => state.index.books[i];
 const classOf = (i) => book(i).classes[0] || "";
 const className = (c) => state.index.classes[c] || c;
-// Short names for map labels: "Philosophy. Psychology. Religion" -> "Philosophy",
-// "World History and History of Europe" -> "World History".
+// Short names for map labels: "Philosophy. Psychology. Religion" -> "Philosophy".
 const shortName = (c) => className(c).split(". ")[0].split(" and ")[0];
+const modelName = (m) => MODELS[m]?.[0] || m;
+const variantName = (v) => (v.file === LCC_FILE || !MEASURES[v.measure] ? modelName(v.model) : `${modelName(v.model)} · ${v.measure}`);
+const explain = (v) => [MODELS[v.model]?.[1], MEASURES[v.measure]].filter(Boolean).join(" ");
+
+function matches(i) {
+  if (!state.query) return true;
+  const b = book(i);
+  return b.title.toLowerCase().includes(state.query) || (b.author || "").toLowerCase().includes(state.query);
+}
 
 // ---- views ----
 const viewOpts = {
@@ -69,16 +94,17 @@ const viewOpts = {
   classOf,
   titleOf: (i) => book(i).title,
   classLabel: shortName,
+  matches,
   linkedState: () => ({ hover: state.hover, selected: params().book, highlight: state.highlight }),
   onHover(i, e) {
     if (i !== state.hover) {
       state.hover = i;
       drawAll();
     }
-    showTip(i, e);
+    showBookTip(i, e);
   },
   onSelect(i) {
-    setParams({ book: i === params().book ? -1 : i }, { animate: false });
+    select(i === params().book ? -1 : i);
   },
 };
 const views = { main: new GraphView($("canvas-main"), viewOpts), lcc: new GraphView($("canvas-lcc"), viewOpts) };
@@ -88,36 +114,54 @@ function drawAll() {
   if (params().compare) views.lcc.draw();
 }
 
-function showTip(i, e) {
-  let tip = $("tip");
-  if (!tip) tip = document.body.appendChild(h("div", { id: "tip", className: "graph-tip", hidden: true }));
-  if (i < 0 || params().book >= 0) {
-    tip.hidden = true;
+function select(i, { fly = false } = {}) {
+  setParams({ book: i }, { animate: false });
+  if (fly && i >= 0) views.main.focusOn(i);
+}
+
+// ---- floating tip (books on the map, rows of the leaderboard) ----
+function tip() {
+  return $("tip") || document.body.appendChild(h("div", { id: "tip", className: "graph-tip", hidden: true }));
+}
+
+function placeTip(el, x, y) {
+  el.hidden = false;
+  el.style.left = `${Math.min(x + 14, document.documentElement.clientWidth - el.offsetWidth - 8)}px`;
+  el.style.top = `${y + 14}px`;
+}
+
+function showBookTip(i, e) {
+  const el = tip();
+  if (i < 0 || params().book >= 0 || !e) {
+    el.hidden = true;
     return;
   }
-  tip.replaceChildren(h("strong", { textContent: book(i).title }),
+  el.replaceChildren(h("strong", { textContent: book(i).title }),
     h("span", { textContent: book(i).author || "" }),
-    h("span", { textContent: book(i).classes.map((c) => `${className(c)} (${c})`).join(", ") || "No LoC class" }));
-  tip.hidden = false;
-  tip.style.left = `${Math.min(e.pageX + 14, document.documentElement.clientWidth - tip.offsetWidth - 8)}px`;
-  tip.style.top = `${e.pageY + 14}px`;
+    h("span", { textContent: book(i).classes.map((c) => `${className(c)} (${c})`).join(", ") || "No class" }));
+  placeTip(el, e.pageX, e.pageY);
 }
 
 // ---- controls ----
 function renderControls(cur) {
   const p = params();
-  $("model").replaceChildren(...cur.models.map((m) => h("option", { value: m, textContent: m, selected: m === cur.model })));
+  $("model").replaceChildren(...cur.models.map((m) =>
+    h("option", { value: m, textContent: modelName(m), selected: m === cur.model })));
   $("measure").replaceChildren(...cur.options.map((v) =>
     h("option", { value: v.measure, textContent: v.measure, selected: v === cur.variant })));
   $("measure").disabled = cur.options.length < 2;
+  $("model-tip").replaceChildren(h("span", { textContent: MODEL_INTRO }),
+    h("strong", { textContent: modelName(cur.model) }), h("span", { textContent: MODELS[cur.model]?.[1] || "" }));
+  $("measure-tip").replaceChildren(h("span", { textContent: MEASURE_INTRO }),
+    h("strong", { textContent: cur.variant.measure }), h("span", { textContent: MEASURES[cur.variant.measure] || "" }));
   $("arrange-model").setAttribute("aria-pressed", String(p.arrange !== "lcc"));
   $("arrange-lcc").setAttribute("aria-pressed", String(p.arrange === "lcc"));
   $("compare").setAttribute("aria-pressed", String(p.compare));
   $("compare").classList.toggle("is-active", p.compare);
   $("view-lcc").hidden = !p.compare;
   $("stage").classList.toggle("is-split", p.compare);
-  $("kicker-main").textContent = p.arrange === "lcc" ? "Arranged by LoC classes, linked by" : "Arranged and linked by";
-  $("caption-main").textContent = `${cur.variant.model} · ${cur.variant.measure}`;
+  $("kicker-main").textContent = p.arrange === "lcc" ? "Grouped by library class · links from" : "Grouped by";
+  $("caption-main").textContent = variantName(cur.variant);
 }
 
 function wireControls() {
@@ -126,13 +170,17 @@ function wireControls() {
   $("arrange-model").addEventListener("click", () => setParams({ arrange: "" }));
   $("arrange-lcc").addEventListener("click", () => setParams({ arrange: "lcc" }));
   $("compare").addEventListener("click", () => setParams({ compare: !params().compare }, { animate: false }));
-  $("controls").addEventListener("submit", (e) => e.preventDefault());
-  $("find").addEventListener("change", (e) => {
-    const i = state.index.books.findIndex((b) => b.title === e.target.value);
-    if (i >= 0) {
-      setParams({ book: i }, { animate: false });
-      views.main.focusOn(i);
-    }
+  $("find").addEventListener("input", (e) => {
+    state.query = e.target.value.trim().toLowerCase();
+    const n = state.query ? state.index.books.filter((_, i) => matches(i)).length : 0;
+    $("find-count").textContent = state.query ? (n ? `${n} match${n === 1 ? "" : "es"}` : "No match") : "";
+    if (params().book >= 0) select(-1); // a selected book would hide the matches
+    else drawAll();
+  });
+  $("controls").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const i = state.index.books.findIndex((_, j) => state.query && matches(j));
+    if (i >= 0) select(i, { fly: true });
   });
   document.querySelectorAll("[data-zoom]").forEach((btn) => btn.addEventListener("click", () => {
     const z = btn.dataset.zoom;
@@ -140,9 +188,8 @@ function wireControls() {
     else views.main.zoomBy(z === "in" ? 1.5 : 1 / 1.5);
   }));
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && params().book >= 0) setParams({ book: -1 }, { animate: false });
+    if (e.key === "Escape" && params().book >= 0) select(-1);
   });
-  $("titles").replaceChildren(...state.index.books.map((b) => h("option", { value: b.title })));
 }
 
 // ---- side panel ----
@@ -152,23 +199,23 @@ function dot(c) {
   return el;
 }
 
+function meter(value, text) {
+  const fill = h("span", { className: "graph-meter-fill" });
+  fill.style.width = `${value * 100}%`;
+  return h("li", {}, h("span", { className: "graph-meter-value", textContent: `${Math.round(value * 100)}%` }),
+    h("span", { className: "graph-meter-text", textContent: ` ${text}` }), h("span", { className: "graph-meter" }, fill));
+}
+
 function renderOverview(variant) {
-  const ref = state.index.variants.find((v) => v.file === LCC_FILE)?.scores || {};
   const counts = {};
   for (const b of state.index.books) for (const c of b.classes) counts[c] = (counts[c] || 0) + 1;
   const order = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
   return [
-    h("h2", { className: "graph-side-head", textContent: "How close to LoC?" }),
-    h("ul", { className: "graph-meters" }, SCORES.filter(([k]) => variant.scores[k] != null).map(([k, text]) => {
-      const fill = h("span", { className: "graph-meter-fill" });
-      fill.style.width = `${(variant.scores[k] / (ref[k] || 1)) * 100}%`;
-      return h("li", {},
-        h("span", { className: "graph-meter-value", textContent: `${Math.round(variant.scores[k] * 100)}%` }),
-        h("span", { className: "graph-meter-text", textContent: ` ${text}` }),
-        h("span", { className: "graph-meter" }, fill),
-        h("span", { className: "graph-meter-ref", textContent: `LoC itself: ${Math.round((ref[k] || 0) * 100)}%` }));
-    })),
-    h("h2", { className: "graph-side-head", textContent: "LoC classes" }),
+    h("h2", { className: "graph-side-head", textContent: "Match with library classes" }),
+    h("ul", { className: "graph-meters" },
+      variant.scores.p10_class != null ? meter(variant.scores.p10_class, "of a book's 10 closest books share its class") : null,
+      variant.scores.p10_sub != null ? meter(variant.scores.p10_sub, "share its subclass") : null),
+    h("h2", { className: "graph-side-head", textContent: "Library classes" }),
     h("ul", { className: "graph-legend" }, order.map((c) => {
       const btn = h("button", { type: "button", className: "graph-legend-item", ariaPressed: String(state.highlight === c) },
         dot(c), h("span", { textContent: `${className(c)} (${c})` }), h("span", { className: "graph-count", textContent: counts[c] }));
@@ -187,22 +234,31 @@ function renderBook(i, variant) {
   const nb = state.graphs[variant.file].nb[i];
   const lccNb = new Set(state.graphs[LCC_FILE]?.nb[i] || []);
   const shared = (j) => book(j).classes.some((c) => b.classes.includes(c));
-  const sameClass = nb.filter(shared).length;
-  const agree = nb.filter((j) => lccNb.has(j)).length;
   const img = h("img", { src: b.cover, alt: "", loading: "lazy" });
   img.addEventListener("error", () => img.replaceWith(h("span", { className: "graph-cover-fallback", textContent: b.title[0] })));
-  const list = nb.map((j) => {
-    const btn = h("button", { type: "button", className: "graph-nb" }, dot(classOf(j)),
+  const close = h("button", { type: "button", className: "graph-close", ariaLabel: "Close", textContent: "×" });
+  close.addEventListener("click", () => select(-1));
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "graph-nbhd");
+  svg.setAttribute("aria-label", `${b.title} and its 10 closest books`);
+  const list = nb.map((j, k) => {
+    const btn = h("button", { type: "button", className: "graph-nb" },
+      h("span", { className: "graph-nb-num", textContent: k + 1 }), dot(classOf(j)),
       h("span", { className: "graph-nb-title", textContent: book(j).title }),
-      shared(j) ? h("span", { className: "graph-nb-same", textContent: "same class", title: "Shares an LoC class" }) : null);
-    btn.addEventListener("click", () => {
-      setParams({ book: j }, { animate: false });
-      views.main.focusOn(j);
-    });
+      shared(j) ? h("span", { className: "graph-nb-same", textContent: "same class" }) : null);
+    btn.addEventListener("click", () => select(j, { fly: true }));
+    btn.addEventListener("pointerenter", () => { state.hover = j; drawAll(); });
+    btn.addEventListener("pointerleave", () => { state.hover = -1; drawAll(); });
     return h("li", {}, btn);
   });
-  const close = h("button", { type: "button", className: "graph-close", ariaLabel: "Close", textContent: "×" });
-  close.addEventListener("click", () => setParams({ book: -1 }, { animate: false }));
+  requestAnimationFrame(() => drawNeighborhood(svg, i, nb, (j) => state.graphs[variant.file].nb[j].slice(0, 10), {
+    colorOf: viewOpts.colorOf,
+    titleOf: (j) => book(j).title,
+    onSelect: (j) => select(j, { fly: true }),
+    onHover: (j) => {
+      document.querySelectorAll(".graph-nb").forEach((el, k) => el.classList.toggle("is-hover", nb[k] === j));
+    },
+  }));
   return [
     h("div", { className: "graph-book" }, h("div", { className: "graph-cover" }, img),
       h("div", {}, h("h2", { className: "graph-book-title", textContent: b.title }),
@@ -210,8 +266,10 @@ function renderBook(i, variant) {
         h("p", { className: "graph-book-classes" }, b.classes.map((c) => h("span", { className: "chip chip-class" }, dot(c), ` ${className(c)} (${c})`))),
         h("a", { className: "graph-open", href: `./?book=${b.id}`, textContent: "Open in search →" })),
       close),
-    h("h3", { className: "graph-side-sub", textContent: "Its 10 nearest books" }),
-    h("p", { className: "graph-side-stat", textContent: `${sameClass} of 10 share its LoC class · LoC itself would pick ${agree} of the same 10` }),
+    h("h3", { className: "graph-side-sub", textContent: "10 closest books" }),
+    h("p", { className: "graph-side-stat",
+      textContent: `${nb.filter(shared).length} of 10 share its class. The library classes would pick ${nb.filter((j) => lccNb.has(j)).length} of the same 10.` }),
+    svg,
     h("ol", { className: "graph-nbs" }, list),
   ];
 }
@@ -226,19 +284,26 @@ function renderSide() {
 function renderBars(cur) {
   const rows = state.index.variants.filter((v) => v.scores.p10_class != null)
     .sort((a, b) => b.scores.p10_class - a.scores.p10_class);
-  if (state.index.random) rows.push({ model: "Random links", measure: "", scores: state.index.random, file: "" });
+  if (state.index.random) rows.push({ model: "Random", measure: "", scores: state.index.random, file: "" });
   $("bars").replaceChildren(...rows.map((v) => {
-    const isRef = v.file === LCC_FILE;
+    const isRef = v.file === LCC_FILE || !v.file;
+    const name = v.file ? variantName(v) : "Random links (the floor)";
     const fill = h("span", { className: "graph-bar-fill" });
     fill.style.width = `${v.scores.p10_class * 100}%`;
-    const row = h(v.file && !isRef ? "button" : "div", { className: "graph-bar" + (isRef || !v.file ? " is-reference" : "") },
-      h("span", { className: "graph-bar-name", textContent: (v.measure ? `${v.model} · ${v.measure}` : v.model)
-        + (v.model.includes("learned from LCC") ? " (uses LoC labels)" : "") }),
+    const row = h(isRef ? "div" : "button", { className: "graph-bar" + (isRef ? " is-reference" : "") },
+      h("span", { className: "graph-bar-name", textContent: name }),
       h("span", { className: "graph-bar-track" }, fill),
       h("span", { className: "graph-bar-value", textContent: `${Math.round(v.scores.p10_class * 100)}%` }));
+    const why = v.file ? explain(v) : "Each book linked to 10 books picked at random.";
+    row.addEventListener("pointerenter", (e) => {
+      tip().replaceChildren(h("strong", { textContent: name }), h("span", { textContent: why }));
+      placeTip(tip(), e.pageX, e.pageY);
+    });
+    row.addEventListener("pointerleave", () => { tip().hidden = true; });
     if (v === cur.variant) row.setAttribute("aria-current", "true");
-    if (row.tagName === "BUTTON") {
+    if (!isRef) {
       row.type = "button";
+      row.setAttribute("aria-description", why);
       row.addEventListener("click", () => {
         setParams({ model: v.model, measure: v.measure });
         $("stage").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -269,11 +334,11 @@ async function init() {
   }
   const counts = {};
   for (const b of state.index.books) for (const c of b.classes) counts[c] = (counts[c] || 0) + 1;
+  const style = getComputedStyle(document.documentElement);
   Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach((c, i) => {
     state.colorVar[c] = i < N_COLORS ? `--class-${i + 1}` : "--class-other";
+    state.colorOf[c] = style.getPropertyValue(state.colorVar[c]).trim();
   });
-  const style = getComputedStyle(document.documentElement);
-  for (const [c, v] of Object.entries(state.colorVar)) state.colorOf[c] = style.getPropertyValue(v).trim();
   state.colorOf[""] = style.getPropertyValue("--class-other").trim();
   wireControls();
   await render(false);

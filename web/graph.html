@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book Graph · Gutenberg Semantic Search</title>
-  <meta name="description" content="How 1,000 Project Gutenberg books connect under different embedding models and similarity measures, compared with the Library of Congress classification.">
+  <meta name="description" content="How 1,000 Project Gutenberg books connect under different embedding models, compared with Library of Congress classes.">
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="band">
@@ -23,33 +23,42 @@
     <section class="graph-hero">
       <h1 class="graph-title">How the books connect</h1>
       <p class="graph-intro">Each dot is one of 1,000 books, placed near the books a model finds most similar.
-        Colours are Library of Congress (LoC) classes, which the model never sees. Switch the arrangement to
-        LoC to watch how a librarian would regroup the same books.</p>
+        Colors show each book's Library of Congress class.</p>
     </section>
 
     <form class="graph-toolbar" id="controls" role="search" autocomplete="off">
-      <label class="graph-field">Embedding <select id="model"></select></label>
-      <label class="graph-field">Similarity <select id="measure"></select></label>
       <div class="graph-field">
-        <span id="arrange-label">Arrange by</span>
+        <label for="model">Model</label>
+        <select id="model"></select>
+        <span class="info"><button type="button" class="info-button" aria-describedby="model-tip" aria-label="What is a model?">?</button>
+          <span class="info-tip" role="tooltip" id="model-tip"></span></span>
+      </div>
+      <div class="graph-field">
+        <label for="measure">Similarity</label>
+        <select id="measure"></select>
+        <span class="info"><button type="button" class="info-button" aria-describedby="measure-tip" aria-label="What is similarity?">?</button>
+          <span class="info-tip" role="tooltip" id="measure-tip"></span></span>
+      </div>
+      <div class="graph-field">
+        <span id="arrange-label">Group by</span>
         <div class="segmented" role="group" aria-labelledby="arrange-label">
-          <button type="button" id="arrange-model" aria-pressed="true">This model</button>
-          <button type="button" id="arrange-lcc" aria-pressed="false">LoC classes</button>
+          <button type="button" id="arrange-model" aria-pressed="true">Model</button>
+          <button type="button" id="arrange-lcc" aria-pressed="false">Library class</button>
         </div>
       </div>
       <button type="button" class="chip" id="compare" aria-pressed="false">Side by side</button>
-      <label class="graph-field graph-find">
-        <span class="visually-hidden">Find a book</span>
-        <input id="find" type="search" list="titles" placeholder="Find a book…">
-        <datalist id="titles"></datalist>
-      </label>
+      <div class="graph-field graph-find">
+        <label class="visually-hidden" for="find">Find a book</label>
+        <input id="find" type="search" placeholder="Find a book or author">
+        <span class="graph-find-count" id="find-count" aria-live="polite"></span>
+      </div>
     </form>
 
     <div class="graph-stage" id="stage">
       <figure class="graph-view" id="view-main">
-        <figcaption><span class="graph-view-kicker" id="kicker-main">Arranged by this model</span>
+        <figcaption><span class="graph-view-kicker" id="kicker-main">Grouped by</span>
           <span id="caption-main"></span></figcaption>
-        <canvas id="canvas-main" aria-label="Book graph. Use the Find a book box to pick a book with the keyboard."></canvas>
+        <canvas id="canvas-main" aria-label="Book map. Use Find a book to pick a book with the keyboard."></canvas>
         <div class="graph-zoom" aria-label="Zoom">
           <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
           <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
@@ -57,28 +66,25 @@
         </div>
       </figure>
       <figure class="graph-view" id="view-lcc" hidden>
-        <figcaption><span class="graph-view-kicker">Reference</span> LoC classification network</figcaption>
-        <canvas id="canvas-lcc" aria-label="Book graph from the Library of Congress classification"></canvas>
+        <figcaption><span class="graph-view-kicker">Grouped by</span> Library classes</figcaption>
+        <canvas id="canvas-lcc" aria-label="Book map grouped by Library of Congress class"></canvas>
       </figure>
       <aside class="graph-side" id="side" aria-live="polite"></aside>
     </div>
 
     <section class="graph-board" aria-labelledby="board-title">
-      <h2 class="section-head" id="board-title">Which way of measuring similarity is closest to LoC?</h2>
-      <p class="graph-note">Share of each book's 10 nearest books that are in the same LoC main class, on books
-        held out from any training. Click a row to show it above.</p>
+      <h2 class="section-head" id="board-title">Which method groups books most like the library?</h2>
+      <p class="graph-note">How often a book's 10 closest books share its library class. Hover a row to see what it does.</p>
       <ol class="graph-bars" id="bars"></ol>
     </section>
-
-    <p class="graph-note">Scroll to zoom, drag to pan, click a book to see its neighbours. Scores are exploratory:
-      LoC is one librarian's view of "similar", not a ground truth.</p>
   </main>
 
   <footer class="footer">
     <p>A capstone prototype for NYU Libraries, not affiliated with Project Gutenberg. Book data from
       <a href="https://www.gutenberg.org/">gutenberg.org</a>.</p>
   </footer>
-  <script src="graph-draw.js?v=1"></script>
-  <script src="graph.js?v=2"></script>
+  <script src="vendor/d3.v7.9.0.min.js"></script>
+  <script src="graph-draw.js?v=2"></script>
+  <script src="graph.js?v=3"></script>
 </body>
 </html>

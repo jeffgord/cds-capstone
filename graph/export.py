@@ -27,7 +27,7 @@ from metrics import B, Labels  # noqa: E402
 OUT = HERE.parent / "web" / "graph-data"
 K = 10
 MEASURES = {"cosine": "Cosine", "whitened cosine": "Whitened cosine", "CSLS": "CSLS (hub-corrected)",
-            "shared neighbours": "Shared neighbours", "chunk max-sim": "Chunk max-sim"}
+            "shared neighbours": "Shared neighbors", "chunk max-sim": "Chunk max-sim"}
 
 
 def slug(name: str) -> str:

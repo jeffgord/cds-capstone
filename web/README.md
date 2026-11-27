@@ -95,15 +95,17 @@ Covers hotlink `https://www.gutenberg.org/cache/epub/{id}/pg{id}.cover.medium.jp
 
 ## Book graph page
 
-`graph.html` (`graph.js` for the page, `graph-draw.js` for the canvas) shows the experiment in `graph/`: how the 1,000 books connect under each embedding model and similarity measure, coloured by LoC main class. It reads only `graph-data/`, which `python graph/export.py` builds, so it works without the search model loaded.
+`graph.html` shows the experiment in `graph/`: how the 1,000 books connect under each embedding model and similarity measure, colored by Library of Congress (LoC) main class. `graph.js` runs the page; `graph-draw.js` draws it with D3 (`vendor/d3.v7.9.0.min.js`, saved in the repo so there's no build step or CDN). It reads only `graph-data/`, which `python graph/export.py` builds, so it works without the search model loaded.
 
-- **Map:** each dot is a book, placed by t-SNE on that variant's similarities, with faint links to its 3 nearest books. Class names sit on the islands where at least 8 books of a class cluster. A scattered class gets no label rather than a misleading one.
-- **Arrange by LoC classes:** animates every book to the LoC layout and keeps the model's links. Links that cross between islands are where the model disagrees with LoC. Turned off under `prefers-reduced-motion`.
-- **Side by side:** the LoC reference network next to the model's graph, sharing hover and selection.
-- **A selected book:** its 10 nearest books are labelled on the map and listed in the side panel, with how many share its LoC class and how many LoC itself would pick.
-- **Leaderboard:** every variant ranked by how often a book's 10 nearest books share its LoC class, with LoC itself and random links as the top and bottom references.
+- **Map:** each dot is a book, placed by t-SNE on that variant's similarities and drawn on a canvas, with faint links to its 3 closest books. d3-zoom handles zoom, pan and pinch. Class names sit where at least 8 books of a class cluster; a scattered class gets no label.
+- **Group by library class:** animates every book to the LoC layout and keeps the model's links, so links crossing between clusters show where the model disagrees with LoC. Off under `prefers-reduced-motion`.
+- **Side by side:** the LoC network next to the model's map, sharing hover and selection.
+- **A selected book:** the map flies to it and labels its 10 closest books. The side panel shows a D3 force network of the book and those 10 (numbered to match the list, with links between neighbors that are also each other's neighbors), and how many share its class.
+- **Plain-language notes:** the "?" next to Model and Similarity, and hovering a leaderboard row, explain each option in a sentence or two. The text is in `MODELS` and `MEASURES` in `graph.js`.
+- **Find a book:** a plain search. Typing dims books whose title and author don't match; Enter flies to the first match.
+- **Leaderboard:** every variant ranked by how often a book's 10 closest books share its class, between LoC itself (the target) and random links (the floor).
 - **URL state:** `?model=&measure=&arrange=lcc&compare=1&book=`.
-- **Keyboard:** "Find a book" picks a book, the neighbour list and leaderboard are buttons, and Esc clears the selection. The canvas itself is mouse and touch only.
+- **Keyboard:** the find box, the neighbor list, the numbered dots and the leaderboard all work by keyboard, and Esc clears the selection. The big map itself is mouse and touch only.
 
 ## Before a demo
 

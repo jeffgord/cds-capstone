@@ -69,3 +69,8 @@ This file records the main design decisions behind the API and UI: what, why, an
 **Bookshelves and classes are filters, not a keyword search.**
 - **Why:** Clicking a Gutenberg bookshelf or a Library of Congress class narrows the results to the matching books, using the catalog's own metadata. With a search, they're still ranked by the semantic score; without one, they're listed by title. Search itself stays purely semantic. Classes filter at the main-class letter ("J", Political Science): finer subclasses like "JX" hold a median of 4 of our 1,000 books, too few to browse.
 - **Gave up:** the subclass detail on result chips (it's still in the detail panel).
+
+**The book graph page uses D3, saved in the repo.**
+- **Why:** The graph page needs zoom, pan, pinch, animated moves and a small force-directed network. D3 does these well, and writing them by hand would be more code to maintain. It's a plain script file in `web/vendor/` (D3 7.9.0, ~280 KB), so there's still no build step, and the page works when a CDN is down. Only `graph.html` loads it; the search page stays library-free.
+- **Gave up:** a fully dependency-free UI, and 280 KB on the graph page's first load.
+

@@ -1,6 +1,8 @@
-// Canvas renderer for the book graph page: zoom and pan, animated moves between layouts, class labels
-// on clusters, and a focus mode that labels a book and its neighbours. Knows nothing about the page;
-// graph.js feeds it positions, neighbour lists and colours.
+// Drawing for the book graph page, on D3 (web/vendor/). Two parts:
+// - GraphView: the big map, drawn on a canvas (1,000 dots stay fast), with d3-zoom for zoom, pan and
+//   pinch, animated moves between layouts, class labels on clusters, and a labelled focus mode.
+// - drawNeighborhood: a small force-directed SVG of one book and its 10 closest books.
+// Neither knows about the page; graph.js feeds them positions, neighbor lists and colors.
 
 const TAU = 2 * Math.PI;
 const MORPH_MS = 900;
@@ -10,42 +12,40 @@ function css(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
-const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
-
 class GraphView {
-  // opts: colorOf(i) -> css colour, classOf(i) -> class code, titleOf(i), classLabel(code),
+  // opts: colorOf(i), classOf(i), titleOf(i), classLabel(code), matches(i) -> bool (search),
   //       onHover(i, event), onSelect(i), linkedState() -> {hover, selected, highlight}
   constructor(canvas, opts) {
     this.canvas = canvas;
     this.opts = opts;
-    this.pos = null;      // current positions, Float32Array [x0, y0, x1, y1, ...] in 0..1000
-    this.target = null;
+    this.pos = null; // Float32Array [x0, y0, x1, y1, ...] in 0..1000
     this.nb = [];
-    this.view = { k: 1, x: 0, y: 0 }; // zoom and pan, on top of the fit-to-canvas transform
-    this.frame = 0;
-    this.bindEvents();
+    this.t = d3.zoomIdentity;
+    this.zoom = d3.zoom().scaleExtent([0.6, 14]).on("zoom", (e) => {
+      this.t = e.transform;
+      this.draw();
+    });
+    d3.select(canvas).call(this.zoom);
+    this.bindPointer();
     new ResizeObserver(() => this.draw()).observe(canvas);
   }
 
   setData(pos, nb, animate) {
     const next = Float32Array.from(pos.flat());
     this.nb = nb;
+    this.timer?.stop();
     if (!this.pos || !animate || REDUCED_MOTION) {
       this.pos = next;
       this.draw();
       return;
     }
     const from = this.pos.slice();
-    const start = performance.now();
-    cancelAnimationFrame(this.frame);
-    const step = (now) => {
-      const t = Math.min(1, (now - start) / MORPH_MS);
-      const e = ease(t);
+    this.timer = d3.timer((elapsed) => {
+      const e = d3.easeCubicInOut(Math.min(1, elapsed / MORPH_MS));
       for (let i = 0; i < next.length; i++) this.pos[i] = from[i] + (next[i] - from[i]) * e;
       this.draw();
-      if (t < 1) this.frame = requestAnimationFrame(step);
-    };
-    this.frame = requestAnimationFrame(step);
+      if (elapsed >= MORPH_MS) this.timer.stop();
+    });
   }
 
   // ---- geometry ----
@@ -58,12 +58,13 @@ class GraphView {
     return { w, h, ratio };
   }
 
-  // Layouts are 0..1000 on both axes; they're stretched to fill the canvas (a mild distortion that
-  // beats leaving the sides of a wide canvas empty). The top pad leaves room for the caption.
+  // Layouts are 0..1000 on both axes, stretched to fill the canvas; the top pad leaves room for the caption.
+  base(i, w, h) {
+    return [24 + (this.pos[2 * i] / 1000) * (w - 48), 64 + (this.pos[2 * i + 1] / 1000) * (h - 88)];
+  }
+
   toScreen(i, w, h) {
-    const x = 24 + (this.pos[2 * i] / 1000) * (w - 48);
-    const y = 64 + (this.pos[2 * i + 1] / 1000) * (h - 88);
-    return [(x - w / 2) * this.view.k + w / 2 + this.view.x, (y - h / 2) * this.view.k + h / 2 + this.view.y];
+    return this.t.apply(this.base(i, w, h));
   }
 
   nearest(px, py) {
@@ -79,72 +80,38 @@ class GraphView {
     return best;
   }
 
-  zoomBy(factor, cx, cy) {
-    const { w, h } = this.size();
-    cx ??= w / 2;
-    cy ??= h / 2;
-    const k = Math.max(0.6, Math.min(12, this.view.k * factor));
-    const f = k / this.view.k;
-    this.view.x = cx - w / 2 - (cx - w / 2 - this.view.x) * f;
-    this.view.y = cy - h / 2 - (cy - h / 2 - this.view.y) * f;
-    this.view.k = k;
-    this.draw();
+  zoomBy(factor) {
+    d3.select(this.canvas).transition().duration(250).call(this.zoom.scaleBy, factor);
   }
 
   reset() {
-    this.view = { k: 1, x: 0, y: 0 };
-    this.draw();
+    d3.select(this.canvas).transition().duration(500).call(this.zoom.transform, d3.zoomIdentity);
   }
 
-  // Centres the view on one book, zoomed in enough to read its neighbourhood.
+  // Flies to one book, zoomed in enough to read its neighborhood.
   focusOn(i) {
+    if (!this.pos) return;
     const { w, h } = this.size();
-    const target = Math.max(this.view.k, 2.5);
-    this.view.k = target;
-    this.view.x = 0;
-    this.view.y = 0;
-    const [x, y] = this.toScreen(i, w, h);
-    this.view.x = w / 2 - x;
-    this.view.y = h / 2 - y;
-    this.draw();
+    const [x, y] = this.base(i, w, h);
+    const k = Math.max(this.t.k, 2.5);
+    const target = d3.zoomIdentity.translate(w / 2, h / 2).scale(k).translate(-x, -y);
+    d3.select(this.canvas).transition().duration(REDUCED_MOTION ? 0 : 750).call(this.zoom.transform, target);
   }
 
-  // ---- events ----
-  bindEvents() {
+  // Hover and click; d3-zoom already handles drag, wheel and pinch, and swallows the click after a drag.
+  bindPointer() {
     const c = this.canvas;
-    let drag = null;
-    c.addEventListener("wheel", (e) => {
-      e.preventDefault();
+    const at = (e) => {
       const r = c.getBoundingClientRect();
-      this.zoomBy(Math.exp(-e.deltaY * 0.0015), e.clientX - r.left, e.clientY - r.top);
-    }, { passive: false });
-    c.addEventListener("pointerdown", (e) => {
-      drag = { x: e.clientX, y: e.clientY, vx: this.view.x, vy: this.view.y, moved: false };
-      c.setPointerCapture(e.pointerId);
-    });
+      return this.nearest(e.clientX - r.left, e.clientY - r.top);
+    };
     c.addEventListener("pointermove", (e) => {
-      const r = c.getBoundingClientRect();
-      if (drag) {
-        const dx = e.clientX - drag.x;
-        const dy = e.clientY - drag.y;
-        if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
-        if (drag.moved) {
-          this.view.x = drag.vx + dx;
-          this.view.y = drag.vy + dy;
-          this.draw();
-          return;
-        }
-      }
-      const i = this.nearest(e.clientX - r.left, e.clientY - r.top);
-      c.style.cursor = drag?.moved ? "grabbing" : i >= 0 ? "pointer" : "grab";
+      const i = at(e);
+      c.style.cursor = i >= 0 ? "pointer" : "grab";
       this.opts.onHover(i, e);
     });
-    c.addEventListener("pointerup", (e) => {
-      const r = c.getBoundingClientRect();
-      if (drag && !drag.moved) this.opts.onSelect(this.nearest(e.clientX - r.left, e.clientY - r.top));
-      drag = null;
-    });
     c.addEventListener("pointerleave", (e) => this.opts.onHover(-1, e));
+    c.addEventListener("click", (e) => this.opts.onSelect(at(e)));
   }
 
   // ---- drawing ----
@@ -159,10 +126,10 @@ class GraphView {
     const { hover, selected, highlight } = this.opts.linkedState();
     const focus = selected >= 0 ? selected : hover;
     const near = new Set(focus >= 0 ? [focus, ...this.nb[focus]] : []);
-    const inClass = (i) => !highlight || this.opts.classOf(i) === highlight;
-    const dimmed = (i) => (focus >= 0 && selected >= 0 ? !near.has(i) : !inClass(i));
+    const lit = (i) => (!highlight || this.opts.classOf(i) === highlight) && this.opts.matches(i);
+    const dimmed = (i) => (selected >= 0 ? !near.has(i) : !lit(i));
 
-    // Faint links to each book's 3 nearest, so islands read as connected without a hairball.
+    // Faint links to each book's 3 closest, so clusters read as connected without a hairball.
     ctx.lineWidth = 0.6;
     ctx.strokeStyle = css("--graph-edge");
     ctx.beginPath();
@@ -175,8 +142,7 @@ class GraphView {
     }
     ctx.stroke();
 
-    const r = Math.min(5, 2.4 * Math.sqrt(this.view.k));
-    const halo = css("--page");
+    const r = Math.min(5, 2.4 * Math.sqrt(this.t.k));
     for (let i = 0; i < n; i++) {
       ctx.globalAlpha = dimmed(i) ? 0.12 : 0.92;
       ctx.fillStyle = this.opts.colorOf(i);
@@ -186,8 +152,15 @@ class GraphView {
     }
     ctx.globalAlpha = 1;
 
-    if (focus < 0) this.drawClassLabels(ctx, pts, highlight);
-    else this.drawFocus(ctx, pts, focus, r, halo);
+    if (focus >= 0) this.drawFocus(ctx, pts, focus, r);
+    else this.drawClassLabels(ctx, pts, highlight);
+    if (selected >= 0 && hover >= 0 && hover !== selected) { // a book hovered in the side panel's list
+      ctx.strokeStyle = css("--ink");
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(...pts[hover], r + 6, 0, TAU);
+      ctx.stroke();
+    }
   }
 
   // Names each class where its books cluster most densely, and only if at least 8 of them sit within a
@@ -215,18 +188,19 @@ class GraphView {
       const text = this.opts.classLabel(c);
       const half = ctx.measureText(text).width / 2 + 4;
       const mx = best.reduce((s, p) => s + p[0], 0) / best.length;
-      const cy = best.reduce((s, p) => s + p[1], 0) / best.length - 14; // just above the island
+      const cy = best.reduce((s, p) => s + p[1], 0) / best.length - 14; // just above the cluster
       if (mx < 0 || mx > w || cy < 0 || cy > h) continue;
       const cx = Math.min(Math.max(mx, half), w - half); // keep the whole label on the canvas
-      const box = [cx - ctx.measureText(text).width / 2 - 4, cy - 9, ctx.measureText(text).width + 8, 18];
+      const box = [cx - half, cy - 9, 2 * half, 18];
       if (placed.some((b) => overlaps(b, box))) continue;
       placed.push(box);
       label(ctx, text, cx, cy, css("--ink"), css("--page"));
     }
   }
 
-  // A book and its 10 neighbours: links, rings and readable titles that don't overlap.
-  drawFocus(ctx, pts, focus, r, halo) {
+  // A book and its 10 closest: links, rings and titles that don't overlap or run off the canvas.
+  drawFocus(ctx, pts, focus, r) {
+    const halo = css("--page");
     ctx.strokeStyle = css("--accent");
     ctx.lineWidth = 1.4;
     ctx.beginPath();
@@ -244,6 +218,7 @@ class GraphView {
       ctx.fill();
       ctx.stroke();
     }
+    const { w, h } = this.size();
     const placed = [];
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
@@ -251,13 +226,11 @@ class GraphView {
       ctx.font = j === focus ? "700 13px 'Open Sans', sans-serif" : "12px 'Open Sans', sans-serif";
       const text = shorten(this.opts.titleOf(j), j === focus ? 60 : 38);
       const [x, y] = pts[j];
-      const wText = ctx.measureText(text).width;
-      // Try right, then left, then above and below the dot.
-      const spots = [[x + r + 6, y], [x - r - 6 - wText, y], [x - wText / 2, y - 14], [x - wText / 2, y + 14]];
-      const { w: cw, h: ch } = this.size();
+      const tw = ctx.measureText(text).width;
+      const spots = [[x + r + 6, y], [x - r - 6 - tw, y], [x - tw / 2, y - 14], [x - tw / 2, y + 14]];
       for (const [lx, ly] of spots) {
-        const box = [lx - 2, ly - 8, wText + 4, 16];
-        if (box[0] < 0 || box[0] + box[2] > cw || box[1] < 0 || box[1] + box[3] > ch) continue;
+        const box = [lx - 2, ly - 8, tw + 4, 16];
+        if (box[0] < 0 || box[0] + box[2] > w || box[1] < 0 || box[1] + box[3] > h) continue;
         if (placed.some((b) => overlaps(b, box))) continue;
         placed.push(box);
         label(ctx, text, lx, ly, css(j === focus ? "--ink" : "--ink-2"), halo);
@@ -265,6 +238,59 @@ class GraphView {
       }
     }
   }
+}
+
+// One book in the middle, its 10 closest books around it as numbered dots (matching the list under it),
+// and a link between two neighbors when one is also among the other's 10 closest. The layout is solved
+// up front (300 ticks), so it appears settled instead of wobbling in.
+function drawNeighborhood(svgEl, center, nb, nbOf, opts) {
+  const width = svgEl.clientWidth || 300;
+  const height = 230;
+  const svg = d3.select(svgEl).attr("viewBox", `0 0 ${width} ${height}`);
+  svg.selectAll("*").remove();
+  const ids = [center, ...nb];
+  const nodes = ids.map((id, k) => ({ id, k }));
+  const inSet = new Set(ids);
+  const links = nb.map((id) => ({ source: center, target: id, main: true }));
+  for (const a of nb) {
+    for (const b of nbOf(a)) if (b !== center && inSet.has(b) && a < b) links.push({ source: a, target: b });
+  }
+  d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id((d) => d.id)
+      .distance((l) => (l.main ? 90 : 60)).strength((l) => (l.main ? 0.6 : 0.1)))
+    .force("charge", d3.forceManyBody().strength(-320))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(20))
+    .stop()
+    .tick(300);
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  nodes.forEach((d) => {
+    d.x = clamp(d.x, 14, width - 14);
+    d.y = clamp(d.y, 14, height - 14);
+  });
+
+  svg.append("g").selectAll("line").data(links).join("line")
+    .attr("class", (l) => (l.main ? "nbhd-link is-main" : "nbhd-link"))
+    .attr("x1", (l) => l.source.x).attr("y1", (l) => l.source.y)
+    .attr("x2", (l) => l.target.x).attr("y2", (l) => l.target.y);
+  const node = svg.append("g").selectAll("g").data(nodes).join("g")
+    .attr("class", (d) => (d.k === 0 ? "nbhd-node is-center" : "nbhd-node"))
+    .attr("transform", (d) => `translate(${d.x},${d.y})`)
+    .attr("tabindex", (d) => (d.k === 0 ? null : 0))
+    .attr("role", (d) => (d.k === 0 ? null : "button"))
+    .attr("aria-label", (d) => opts.titleOf(d.id))
+    .on("click", (_, d) => d.k && opts.onSelect(d.id))
+    .on("keydown", (e, d) => {
+      if (d.k && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        opts.onSelect(d.id);
+      }
+    })
+    .on("pointerenter focus", (_, d) => opts.onHover(d.id))
+    .on("pointerleave blur", () => opts.onHover(-1));
+  node.append("title").text((d) => opts.titleOf(d.id));
+  node.append("circle").attr("r", (d) => (d.k === 0 ? 13 : 10)).style("fill", (d) => opts.colorOf(d.id));
+  node.append("text").attr("dy", "0.35em").text((d) => (d.k === 0 ? "" : d.k));
 }
 
 function label(ctx, text, x, y, color, halo) {
@@ -285,3 +311,4 @@ function shorten(text, max) {
 }
 
 window.GraphView = GraphView;
+window.drawNeighborhood = drawNeighborhood;
