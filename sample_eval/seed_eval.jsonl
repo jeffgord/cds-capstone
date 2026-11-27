@@ -1,0 +1,60 @@
+{"query_id": "q_001", "query": "relationship between ancient tradition, mythology, and international natural law", "query_type": "thematic", "expected_gutenberg_ids": [47127]}
+{"query_id": "q_002", "query": "treatise arguing modern society lost touch with historical tradition and legal roots", "query_type": "specific", "expected_gutenberg_ids": [47127]}
+{"query_id": "q_003", "query": "Etruscan origin of Rome and Roman state institutions according to Niebuhr", "query_type": "passage", "expected_gutenberg_ids": [47127]}
+{"query_id": "q_004", "query": "archaeological conclusions independent of history and polyandry progression debate", "query_type": "passage", "expected_gutenberg_ids": [47127]}
+{"query_id": "q_005", "query": "biography of Pythagoras, his ethical teachings, and Pythagorean community", "query_type": "thematic", "expected_gutenberg_ids": [63300]}
+{"query_id": "q_006", "query": "early life, travels, and discussions with philosophers and priests in Egypt", "query_type": "specific", "expected_gutenberg_ids": [63300]}
+{"query_id": "q_007", "query": "lotus leaves folding and expanding with the rising and setting sun", "query_type": "passage", "expected_gutenberg_ids": [63300]}
+{"query_id": "q_008", "query": "temperance precepts and rational vs irrational parts of the soul", "query_type": "passage", "expected_gutenberg_ids": [63300]}
+{"query_id": "q_009", "query": "memoir of ghost hunting investigations and supernatural encounters", "query_type": "thematic", "expected_gutenberg_ids": [50775]}
+{"query_id": "q_010", "query": "celtic background and a terrifying ghost attack in Dublin lodgings", "query_type": "specific", "expected_gutenberg_ids": [50775]}
+{"query_id": "q_011", "query": "secret exhumation finding lead in a father's ear leading to stepmother's arrest", "query_type": "passage", "expected_gutenberg_ids": [50775]}
+{"query_id": "q_012", "query": "man escaping a private home and drowning in a lonely pool near Llanginney", "query_type": "passage", "expected_gutenberg_ids": [50775]}
+{"query_id": "q_013", "query": "guide to crystal gazing, clairvoyance, and scrying visions", "query_type": "thematic", "expected_gutenberg_ids": [26622]}
+{"query_id": "q_014", "query": "seer temperament, environment setup, and interpreting direct vs symbolic visions", "query_type": "specific", "expected_gutenberg_ids": [26622]}
+{"query_id": "q_015", "query": "vision of a judge concealing papers with a snake rising before a deathbed scene", "query_type": "passage", "expected_gutenberg_ids": [26622]}
+{"query_id": "q_016", "query": "dowsing rod turning upward for water and downward for minerals", "query_type": "passage", "expected_gutenberg_ids": [26622]}
+{"query_id": "q_017", "query": "medieval manners, courtly etiquette, and proper behavior for young people", "query_type": "thematic", "expected_gutenberg_ids": [58392]}
+{"query_id": "q_018", "query": "table manners, standing before superiors, and conduct in medieval English households", "query_type": "specific", "expected_gutenberg_ids": [58392]}
+{"query_id": "q_019", "query": "do not carry your knife to your mouth with food or hold meat with your hands", "query_type": "passage", "expected_gutenberg_ids": [58392]}
+{"query_id": "q_020", "query": "enter your lord's place at an easy pace, kneel on one knee, and hold the towel", "query_type": "passage", "expected_gutenberg_ids": [58392]}
+{"query_id": "q_021", "query": "medieval critique of church corruption, simony, and prophecies of antichrist", "query_type": "thematic", "expected_gutenberg_ids": [70258]}
+{"query_id": "q_022", "query": "fourteenth century theological reform call over moral decay and clerical abuses", "query_type": "specific", "expected_gutenberg_ids": [70258]}
+{"query_id": "q_023", "query": "petitions against papal exactions in England and Abbot Joachim on the year 1400 antichrist prophecy", "query_type": "passage", "expected_gutenberg_ids": [70258]}
+{"query_id": "q_024", "query": "fourteenth century Sibylline verses manuscript and objection over children wanting teeth", "query_type": "passage", "expected_gutenberg_ids": [70258]}
+{"query_id": "q_025", "query": "early Latter-day Saint journal recounting missionary work and faith", "query_type": "thematic", "expected_gutenberg_ids": [47519]}
+{"query_id": "q_026", "query": "missionary struggles with local ministers and baptisms in England", "query_type": "specific", "expected_gutenberg_ids": [47519]}
+{"query_id": "q_027", "query": "General Clark marching fifty men into confinement and expulsion from Far West", "query_type": "passage", "expected_gutenberg_ids": [47519]}
+{"query_id": "q_028", "query": "son David Patten born in a log cabin during a thunderstorm and Orson Pratt moving in", "query_type": "passage", "expected_gutenberg_ids": [47519]}
+{"query_id": "q_029", "query": "comparative history of the United States and Russia as river civilizations", "query_type": "thematic", "expected_gutenberg_ids": [78697]}
+{"query_id": "q_030", "query": "comparing geography, climate, serfdom, and frontiers in North America and Russia", "query_type": "specific", "expected_gutenberg_ids": [78697]}
+{"query_id": "q_031", "query": "Boris Godunov chosen by boyars after Ivan's death and Russian autocracy under Catherine", "query_type": "passage", "expected_gutenberg_ids": [78697]}
+{"query_id": "q_032", "query": "toleration of Catholicism under Czar and Bolsheviks versus American mistrust and critique of Tolstoy on art", "query_type": "passage", "expected_gutenberg_ids": [78697]}
+{"query_id": "q_033", "query": "history of the Inca empire, rulers, governance, and Spanish colonization", "query_type": "thematic", "expected_gutenberg_ids": [20218]}
+{"query_id": "q_034", "query": "sixteenth century account of Inca lineage dedicated to King Philip II", "query_type": "specific", "expected_gutenberg_ids": [20218]}
+{"query_id": "q_035", "query": "Chancas marching on Cuzco against Pachacuti Inca Yupanqui and system of mitimaes", "query_type": "passage", "expected_gutenberg_ids": [20218]}
+{"query_id": "q_036", "query": "Mayta Ccapac's birth story and Tucurico Apu provincial governor collecting tribute", "query_type": "passage", "expected_gutenberg_ids": [20218]}
+{"query_id": "q_037", "query": "soil chemistry, plant nutrients, and geology applied to farming", "query_type": "thematic", "expected_gutenberg_ids": [73427]}
+{"query_id": "q_038", "query": "organic and inorganic compounds in soil and plants for agricultural productivity", "query_type": "specific", "expected_gutenberg_ids": [73427]}
+{"query_id": "q_039", "query": "drying soil in an oven and burning to measure organic matter in stiff clays", "query_type": "passage", "expected_gutenberg_ids": [73427]}
+{"query_id": "q_040", "query": "infertile granite soils in Scotland versus fertile trap soils and irrigation as manuring", "query_type": "passage", "expected_gutenberg_ids": [73427]}
+{"query_id": "q_041", "query": "introduction to symphony orchestra instruments and ensemble sections", "query_type": "thematic", "expected_gutenberg_ids": [73991]}
+{"query_id": "q_042", "query": "strings, woodwinds, brass, and percussion working together in a concert hall", "query_type": "specific", "expected_gutenberg_ids": [73991]}
+{"query_id": "q_043", "query": "oboe conical bore and staple reed and violin G D A and E chanterelle tone", "query_type": "passage", "expected_gutenberg_ids": [73991]}
+{"query_id": "q_044", "query": "Lully's orchestra pay of forty men, hearing Beethoven improvise on piano, and Strauss Tchaikovsky Debussy", "query_type": "passage", "expected_gutenberg_ids": [73991]}
+{"query_id": "q_045", "query": "paradox of machines, mechanization, and economic labor in industrial society", "query_type": "thematic", "expected_gutenberg_ids": [75418]}
+{"query_id": "q_046", "query": "how machines meant to escape manual labor trap people in production and consumption", "query_type": "specific", "expected_gutenberg_ids": [75418]}
+{"query_id": "q_047", "query": "sudden return to thrift stopping machines and causing panic on the exchange and bank trouble", "query_type": "passage", "expected_gutenberg_ids": [75418]}
+{"query_id": "q_048", "query": "mechanical beasts in the third kingdom of civilization and symbiotic union vs parasitism", "query_type": "passage", "expected_gutenberg_ids": [75418]}
+{"query_id": "q_049", "query": "post-World War I essay calling for moral and spiritual renewal over materialism", "query_type": "thematic", "expected_gutenberg_ids": [10642]}
+{"query_id": "q_050", "query": "bishop Hacket prayer about shifting from private-mindedness to public souls after war", "query_type": "specific", "expected_gutenberg_ids": [10642]}
+{"query_id": "q_051", "query": "excessive legislation and lawmaking mania in democratic and American governments", "query_type": "passage", "expected_gutenberg_ids": [10642]}
+{"query_id": "q_052", "query": "paraphrase: opposing top-down central control in favor of smaller local communities and denominational schooling", "query_type": "passage", "expected_gutenberg_ids": [10642]}
+{"query_id": "q_053", "query": "status, customs, and notable figures of women in ancient Rome", "query_type": "thematic", "expected_gutenberg_ids": [32356]}
+{"query_id": "q_054", "query": "comparing legendary figures like Rhea Sylvia and Tullia to show constant human nature", "query_type": "specific", "expected_gutenberg_ids": [32356]}
+{"query_id": "q_055", "query": "Caesar explaining why he divorced Pompeia and Roman poetess Sulpicia under Domitian", "query_type": "passage", "expected_gutenberg_ids": [32356]}
+{"query_id": "q_056", "query": "conspirator Epicharis talking with Proculus after an imperial mother's assassination", "query_type": "passage", "expected_gutenberg_ids": [32356]}
+{"query_id": "q_057", "query": "ethics of commerce, business responsibility to society, and public spirit", "query_type": "thematic", "expected_gutenberg_ids": [29641]}
+{"query_id": "q_058", "query": "raising commercial honesty above fraud, deceit, and false weights through education", "query_type": "specific", "expected_gutenberg_ids": [29641]}
+{"query_id": "q_059", "query": "how George Washington's wealth compares to modern capitalized corporations", "query_type": "passage", "expected_gutenberg_ids": [29641]}
+{"query_id": "q_060", "query": "paraphrase: why business leaders should serve the public good like traditional professions", "query_type": "passage", "expected_gutenberg_ids": [29641]}
