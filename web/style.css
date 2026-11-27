@@ -29,6 +29,22 @@
   /* text on --accent, 4.6:1 */
   --shadow: rgba(31, 36, 40, 0.12);
 
+  /* Book graph page: one colour per big LoC main class (Tableau-style, distinct on white), the rest grey. */
+  --class-1: #4e79a7;
+  --class-2: #f28e2b;
+  --class-3: #59a14f;
+  --class-4: #e15759;
+  --class-5: #b07aa1;
+  --class-6: #76b7b2;
+  --class-7: #edc948;
+  --class-8: #9c755f;
+  --class-9: #ff9da7;
+  --class-10: #2f4b7c;
+  --class-11: #8cd17d;
+  --class-12: #d37295;
+  --class-other: #bab0ac;
+  --graph-edge: rgba(31, 36, 40, 0.1);
+
   --radius-card: 12px;
   --radius-input: 6px;
   --radius-button: 4px;
@@ -876,4 +892,201 @@ mark {
   * {
     transition: none !important;
   }
+}
+/* ---- header links between pages ---- */
+.band-nav {
+  display: flex;
+  gap: var(--s4);
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.band-nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---- book graph page ---- */
+.graph-page {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--s5) var(--s4) var(--s6);
+}
+
+.graph-title {
+  margin: 0 0 var(--s2);
+  font-size: 22px;
+}
+
+.graph-intro,
+.graph-note {
+  max-width: 72ch;
+  color: var(--ink-2);
+  margin: 0 0 var(--s4);
+}
+
+.graph-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: var(--s4);
+}
+
+.graph-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s4);
+  margin-bottom: var(--s4);
+}
+
+.graph-controls label {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.graph-controls select {
+  font: inherit;
+  font-size: 14px;
+  padding: var(--s1) var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-input);
+  background: var(--page);
+  color: var(--ink);
+  max-width: 70vw;
+}
+
+.graph-controls .chip {
+  min-height: 32px;
+  font-size: 13px;
+  padding: 2px 12px;
+}
+
+.graph-controls .chip.is-active {
+  cursor: pointer;
+}
+
+.graph-scores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--s3);
+  margin-bottom: var(--s4);
+}
+
+.graph-score {
+  display: flex;
+  flex-direction: column;
+  padding: var(--s3);
+  background: var(--tint);
+  border: 1px solid var(--tint-line);
+  border-radius: var(--radius-card);
+}
+
+.graph-score-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.graph-score-label {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.graph-score-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.graph-views {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* minmax(0, ...) so the canvas's pixel width can't widen the page */
+  gap: var(--s4);
+}
+
+@media (min-width: 900px) {
+  .graph-views.is-split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.graph-view {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: var(--s2);
+  min-width: 0;
+}
+
+.graph-view figcaption {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding: 0 var(--s1) var(--s2);
+}
+
+.graph-view canvas {
+  display: block;
+  width: 100%;
+}
+
+.graph-tip {
+  position: absolute;
+  z-index: 10;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--s2) var(--s3);
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-input);
+  box-shadow: 0 4px 12px var(--shadow);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.graph-tip[hidden] {
+  display: none;
+}
+
+.graph-tip span {
+  color: var(--muted);
+}
+
+.graph-legend {
+  list-style: none;
+  margin: var(--s4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.graph-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background: var(--page);
+  cursor: pointer;
+}
+
+.graph-legend-item[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.graph-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }

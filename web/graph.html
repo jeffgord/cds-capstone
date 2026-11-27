@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Graph · Gutenberg Semantic Search</title>
+  <meta name="description" content="How 1,000 Project Gutenberg books connect under different embedding models and similarity measures, compared with the Library of Congress classification.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <a class="wordmark" href="./">Gutenberg Semantic Search</a>
+      <nav class="band-nav" aria-label="Pages"><a href="./">Search</a><a href="graph.html" aria-current="page">Book graph</a></nav>
+    </div>
+  </header>
+
+  <main class="graph-page">
+    <h1 class="graph-title">Book graph</h1>
+    <p class="graph-intro">Each dot is a book, linked to the 10 books most similar to it. Colours are Library of
+      Congress (LoC) main classes, which are never used to build the graph. If a model groups books the way
+      librarians do, the colours cluster.</p>
+
+    <form class="graph-controls" id="controls">
+      <label>Embedding <select id="model"></select></label>
+      <label>Similarity <select id="measure"></select></label>
+      <button type="button" class="chip" id="compare" aria-pressed="false">Compare with LoC network</button>
+    </form>
+
+    <div class="graph-scores" id="scores" aria-live="polite"></div>
+
+    <div class="graph-views" id="views">
+      <figure class="graph-view">
+        <figcaption id="caption-main"></figcaption>
+        <canvas id="canvas-main" aria-label="Book graph for the chosen model"></canvas>
+      </figure>
+      <figure class="graph-view" id="view-lcc" hidden>
+        <figcaption>LoC classification network (reference)</figcaption>
+        <canvas id="canvas-lcc" aria-label="Book graph from the Library of Congress classification"></canvas>
+      </figure>
+    </div>
+
+    <div class="graph-tip" id="tip" hidden></div>
+    <ul class="graph-legend" id="legend" aria-label="LoC main classes"></ul>
+    <p class="graph-note">Hover a book to see its neighbours (in both graphs when comparing). Click to open it in
+      search. Click a class to highlight it. Scores are on held-out books and exploratory: there are no relevance
+      labels yet.</p>
+  </main>
+
+  <footer class="footer">
+    <p>A capstone prototype for NYU Libraries, not affiliated with Project Gutenberg. Book data from
+      <a href="https://www.gutenberg.org/">gutenberg.org</a>.</p>
+  </footer>
+  <script src="graph.js?v=1"></script>
+</body>
+</html>
