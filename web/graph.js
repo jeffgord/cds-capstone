@@ -6,27 +6,26 @@ const DATA = "graph-data/";
 const LCC_FILE = "lcc-itself-reference";
 const N_COLORS = 12; // the 12 biggest classes get a color token each, the rest share --class-other
 
-// Plain-language names and one-line explanations. Keys are the model and measure names in index.json.
+// Display names and a short note on where each method comes from and how it works. Keys are the model and
+// measure names in index.json.
 const MODELS = {
-  "bge-base": ["BGE base (our search model)", "The model our search uses. It turns each passage into a list of numbers, so passages about similar things get similar numbers."],
-  "bge-small": ["BGE small", "A smaller, faster version of BGE base, with less detail per passage."],
-  "minilm": ["MiniLM", "A small, fast, widely used model. Quick, but it misses more nuance."],
-  "mpnet": ["MPNet", "A larger model trained to spot sentences that mean the same thing. Slower, usually sharper."],
-  "index summary": ["Search index: summaries", "The vectors already in our search index, made from each book's summary. They include the class name, so this one gets a hint."],
-  "index passages": ["Search index: passages", "Our search index's passage vectors, averaged per book. Each passage also carries the title and Gutenberg shelf."],
-  "TF-IDF word overlap": ["Word overlap (no model)", "No embedding at all: two books are close if they use the same uncommon words. Shows what plain word matching gets you."],
-  "LDA on mpnet (learned from LCC)": ["MPNet, tuned on classes", "MPNet's numbers, adjusted using the known class of 30% of the books. It peeks at the answer, so it's not a fair contest."],
+  "bge-base": ["BGE base (our search model)", "From BAAI, the Beijing Academy of AI (2023). Trained on large sets of query and passage pairs, so a search lands next to the passages that answer it."],
+  "bge-small": ["BGE small", "BAAI's smaller BGE: the same training at about a third of the size (33M parameters vs 110M)."],
+  "minilm": ["MiniLM", "all-MiniLM-L6-v2 from the Sentence Transformers project (2021). A 6-layer model distilled from a larger one, then tuned on about 1 billion sentence pairs."],
+  "mpnet": ["MPNet", "all-mpnet-base-v2, also from Sentence Transformers, built on Microsoft's MPNet. Tuned on the same 1 billion sentence pairs to spot sentences that mean the same thing."],
+  "index summary": ["Search index: summaries", "The BGE base vectors already in our search index, one per book summary. The summary text names the class, so this one has a head start."],
+  "index passages": ["Search index: passages", "The BGE base passage vectors from our search index, averaged per book. Each passage also carries the title and Gutenberg shelf."],
+  "TF-IDF word overlap": ["Word overlap (no model)", "TF-IDF, the word weighting behind classic search engines since the 1970s. Books are close if they share the same rare words."],
+  "LDA on mpnet (learned from LCC)": ["MPNet tuned on classes", "MPNet vectors reshaped by linear discriminant analysis, using the known class of 30% of the books. It sees part of the answer key."],
   "LCC": ["Library classes (the target)", "Books are close if their call numbers share more levels, like D, then DS, then a number range."],
 };
 const MEASURES = {
-  "Cosine": "The standard way: two books are close if their numbers point the same way.",
+  "Cosine": "Two books are close if their vectors point the same way.",
   "Whitened cosine": "Cosine after removing the direction every book leans, so real differences stand out.",
-  "CSLS (hub-corrected)": "Cosine with a penalty for books that are close to everything, so they stop crowding every list.",
-  "Shared neighbors": "Two books are close if the same books surround them, like judging friends by mutual friends.",
-  "Chunk max-sim": "Compares passage to passage and keeps the best matches, instead of averaging each book into one point first.",
+  "CSLS (hub-corrected)": "Cosine with a penalty for books that are close to everything. From research on matching words across languages (2018).",
+  "Shared neighbors": "Two books are close if the same books surround them.",
+  "Chunk max-sim": "Compares passage to passage and keeps the best matches, instead of averaging each book into one point.",
 };
-const MODEL_INTRO = "A model turns text into a long list of numbers, so texts that mean similar things get similar numbers. That's how it can match \"warfare\" with \"battles\" with no word in common.";
-const MEASURE_INTRO = "Once each book is a point, this decides which books count as close.";
 
 const $ = (id) => document.getElementById(id);
 const state = { index: null, graphs: {}, hover: -1, highlight: "", query: "", colorOf: {}, colorVar: {} };
@@ -79,7 +78,9 @@ const className = (c) => state.index.classes[c] || c;
 // Short names for map labels: "Philosophy. Psychology. Religion" -> "Philosophy".
 const shortName = (c) => className(c).split(". ")[0].split(" and ")[0];
 const modelName = (m) => MODELS[m]?.[0] || m;
-const variantName = (v) => (v.file === LCC_FILE || !MEASURES[v.measure] ? modelName(v.model) : `${modelName(v.model)} · ${v.measure}`);
+// "MPNet, shared neighbors"; acronyms like CSLS keep their capitals
+const lowerFirst = (s) => (/^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s);
+const variantName = (v) => (v.file === LCC_FILE || !MEASURES[v.measure] ? modelName(v.model) : `${modelName(v.model)}, ${lowerFirst(v.measure)}`);
 const explain = (v) => [MODELS[v.model]?.[1], MEASURES[v.measure]].filter(Boolean).join(" ");
 
 function matches(i) {
@@ -150,17 +151,15 @@ function renderControls(cur) {
   $("measure").replaceChildren(...cur.options.map((v) =>
     h("option", { value: v.measure, textContent: v.measure, selected: v === cur.variant })));
   $("measure").disabled = cur.options.length < 2;
-  $("model-tip").replaceChildren(h("span", { textContent: MODEL_INTRO }),
-    h("strong", { textContent: modelName(cur.model) }), h("span", { textContent: MODELS[cur.model]?.[1] || "" }));
-  $("measure-tip").replaceChildren(h("span", { textContent: MEASURE_INTRO }),
-    h("strong", { textContent: cur.variant.measure }), h("span", { textContent: MEASURES[cur.variant.measure] || "" }));
+  $("model-tip").replaceChildren(h("strong", { textContent: modelName(cur.model) }), h("span", { textContent: MODELS[cur.model]?.[1] || "" }));
+  $("measure-tip").replaceChildren(h("strong", { textContent: cur.variant.measure }), h("span", { textContent: MEASURES[cur.variant.measure] || "" }));
   $("arrange-model").setAttribute("aria-pressed", String(p.arrange !== "lcc"));
   $("arrange-lcc").setAttribute("aria-pressed", String(p.arrange === "lcc"));
   $("compare").setAttribute("aria-pressed", String(p.compare));
   $("compare").classList.toggle("is-active", p.compare);
   $("view-lcc").hidden = !p.compare;
   $("stage").classList.toggle("is-split", p.compare);
-  $("kicker-main").textContent = p.arrange === "lcc" ? "Grouped by library class · links from" : "Grouped by";
+  $("kicker-main").textContent = p.arrange === "lcc" ? "Grouped by library class, links from" : "Grouped by";
   $("caption-main").textContent = variantName(cur.variant);
 }
 

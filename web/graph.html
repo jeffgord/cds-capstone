@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book Graph · Gutenberg Semantic Search</title>
+  <title>Book Graph | Gutenberg Semantic Search</title>
   <meta name="description" content="How 1,000 Project Gutenberg books connect under different embedding models, compared with Library of Congress classes.">
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +30,13 @@
       <div class="graph-field">
         <label for="model">Model</label>
         <select id="model"></select>
-        <span class="info"><button type="button" class="info-button" aria-describedby="model-tip" aria-label="What is a model?">?</button>
+        <span class="info"><button type="button" class="info-button" aria-describedby="model-tip" aria-label="About this model">?</button>
           <span class="info-tip" role="tooltip" id="model-tip"></span></span>
       </div>
       <div class="graph-field">
-        <label for="measure">Similarity</label>
+        <label for="measure">Similarity metric</label>
         <select id="measure"></select>
-        <span class="info"><button type="button" class="info-button" aria-describedby="measure-tip" aria-label="What is similarity?">?</button>
+        <span class="info"><button type="button" class="info-button" aria-describedby="measure-tip" aria-label="About this metric">?</button>
           <span class="info-tip" role="tooltip" id="measure-tip"></span></span>
       </div>
       <div class="graph-field">
@@ -74,7 +74,7 @@
 
     <section class="graph-board" aria-labelledby="board-title">
       <h2 class="section-head" id="board-title">Which method groups books most like the library?</h2>
-      <p class="graph-note">How often a book's 10 closest books share its library class. Hover a row to see what it does.</p>
+      <p class="graph-note">How often a book's 10 closest books share its library class.</p>
       <ol class="graph-bars" id="bars"></ol>
     </section>
   </main>
@@ -85,6 +85,6 @@
   </footer>
   <script src="vendor/d3.v7.9.0.min.js"></script>
   <script src="graph-draw.js?v=2"></script>
-  <script src="graph.js?v=3"></script>
+  <script src="graph.js?v=4"></script>
 </body>
 </html>
