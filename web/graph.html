@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header class="band">
@@ -20,41 +20,65 @@
   </header>
 
   <main class="graph-page">
-    <h1 class="graph-title">Book graph</h1>
-    <p class="graph-intro">Each dot is a book, linked to the 10 books most similar to it. Colours are Library of
-      Congress (LoC) main classes, which are never used to build the graph. If a model groups books the way
-      librarians do, the colours cluster.</p>
+    <section class="graph-hero">
+      <h1 class="graph-title">How the books connect</h1>
+      <p class="graph-intro">Each dot is one of 1,000 books, placed near the books a model finds most similar.
+        Colours are Library of Congress (LoC) classes, which the model never sees. Switch the arrangement to
+        LoC to watch how a librarian would regroup the same books.</p>
+    </section>
 
-    <form class="graph-controls" id="controls">
-      <label>Embedding <select id="model"></select></label>
-      <label>Similarity <select id="measure"></select></label>
-      <button type="button" class="chip" id="compare" aria-pressed="false">Compare with LoC network</button>
+    <form class="graph-toolbar" id="controls" role="search" autocomplete="off">
+      <label class="graph-field">Embedding <select id="model"></select></label>
+      <label class="graph-field">Similarity <select id="measure"></select></label>
+      <div class="graph-field">
+        <span id="arrange-label">Arrange by</span>
+        <div class="segmented" role="group" aria-labelledby="arrange-label">
+          <button type="button" id="arrange-model" aria-pressed="true">This model</button>
+          <button type="button" id="arrange-lcc" aria-pressed="false">LoC classes</button>
+        </div>
+      </div>
+      <button type="button" class="chip" id="compare" aria-pressed="false">Side by side</button>
+      <label class="graph-field graph-find">
+        <span class="visually-hidden">Find a book</span>
+        <input id="find" type="search" list="titles" placeholder="Find a book…">
+        <datalist id="titles"></datalist>
+      </label>
     </form>
 
-    <div class="graph-scores" id="scores" aria-live="polite"></div>
-
-    <div class="graph-views" id="views">
-      <figure class="graph-view">
-        <figcaption id="caption-main"></figcaption>
-        <canvas id="canvas-main" aria-label="Book graph for the chosen model"></canvas>
+    <div class="graph-stage" id="stage">
+      <figure class="graph-view" id="view-main">
+        <figcaption><span class="graph-view-kicker" id="kicker-main">Arranged by this model</span>
+          <span id="caption-main"></span></figcaption>
+        <canvas id="canvas-main" aria-label="Book graph. Use the Find a book box to pick a book with the keyboard."></canvas>
+        <div class="graph-zoom" aria-label="Zoom">
+          <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+          <button type="button" data-zoom="reset" aria-label="Reset view">⟲</button>
+        </div>
       </figure>
       <figure class="graph-view" id="view-lcc" hidden>
-        <figcaption>LoC classification network (reference)</figcaption>
+        <figcaption><span class="graph-view-kicker">Reference</span> LoC classification network</figcaption>
         <canvas id="canvas-lcc" aria-label="Book graph from the Library of Congress classification"></canvas>
       </figure>
+      <aside class="graph-side" id="side" aria-live="polite"></aside>
     </div>
 
-    <div class="graph-tip" id="tip" hidden></div>
-    <ul class="graph-legend" id="legend" aria-label="LoC main classes"></ul>
-    <p class="graph-note">Hover a book to see its neighbours (in both graphs when comparing). Click to open it in
-      search. Click a class to highlight it. Scores are on held-out books and exploratory: there are no relevance
-      labels yet.</p>
+    <section class="graph-board" aria-labelledby="board-title">
+      <h2 class="section-head" id="board-title">Which way of measuring similarity is closest to LoC?</h2>
+      <p class="graph-note">Share of each book's 10 nearest books that are in the same LoC main class, on books
+        held out from any training. Click a row to show it above.</p>
+      <ol class="graph-bars" id="bars"></ol>
+    </section>
+
+    <p class="graph-note">Scroll to zoom, drag to pan, click a book to see its neighbours. Scores are exploratory:
+      LoC is one librarian's view of "similar", not a ground truth.</p>
   </main>
 
   <footer class="footer">
     <p>A capstone prototype for NYU Libraries, not affiliated with Project Gutenberg. Book data from
       <a href="https://www.gutenberg.org/">gutenberg.org</a>.</p>
   </footer>
-  <script src="graph.js?v=1"></script>
+  <script src="graph-draw.js?v=1"></script>
+  <script src="graph.js?v=2"></script>
 </body>
 </html>

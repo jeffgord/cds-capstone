@@ -37,6 +37,9 @@ Never write a color outside the `:root` block in `style.css`. Each token has one
 | `--heading` | `#a01f13` | `--library-txt-color` | section headings and their 2px rule only, never body text |
 | `--on-accent` | `#ffffff` | | text on the teal button (4.6:1) |
 
+| `--class-1` to `--class-12`, `--class-other` | Tableau-style categorical | | book graph only: one colour per big LoC main class, grey for the rest |
+| `--graph-edge` | `rgba(31, 36, 40, 0.1)` | | book graph links |
+
 One accent hue (teal) plus PG's red for section rules. Don't add a color without checking contrast against the surface it sits on.
 
 Spacing scale: 4, 8, 12, 16, 24 and 32px (`--s1` to `--s6`). Radii: 12px cards, 6px inputs, 4px buttons and covers, pills 999px.
@@ -89,6 +92,18 @@ Spacing scale: 4, 8, 12, 16, 24 and 32px (`--s1` to `--s6`). Radii: 12px cards, 
 ## Covers
 
 Covers hotlink `https://www.gutenberg.org/cache/epub/{id}/pg{id}.cover.medium.jpg`, lazy-loaded, about 10 per page. A missing cover shows a parchment box with the title's first letter. Many older books only have Gutenberg's auto-generated patterned covers, which are louder than the rest of the page. We keep them because that's how the books look on gutenberg.org, and they make rows easy to tell apart. For an offline demo, every cover falls back to the letter box.
+
+## Book graph page
+
+`graph.html` (`graph.js` for the page, `graph-draw.js` for the canvas) shows the experiment in `graph/`: how the 1,000 books connect under each embedding model and similarity measure, coloured by LoC main class. It reads only `graph-data/`, which `python graph/export.py` builds, so it works without the search model loaded.
+
+- **Map:** each dot is a book, placed by t-SNE on that variant's similarities, with faint links to its 3 nearest books. Class names sit on the islands where at least 8 books of a class cluster. A scattered class gets no label rather than a misleading one.
+- **Arrange by LoC classes:** animates every book to the LoC layout and keeps the model's links. Links that cross between islands are where the model disagrees with LoC. Turned off under `prefers-reduced-motion`.
+- **Side by side:** the LoC reference network next to the model's graph, sharing hover and selection.
+- **A selected book:** its 10 nearest books are labelled on the map and listed in the side panel, with how many share its LoC class and how many LoC itself would pick.
+- **Leaderboard:** every variant ranked by how often a book's 10 nearest books share its LoC class, with LoC itself and random links as the top and bottom references.
+- **URL state:** `?model=&measure=&arrange=lcc&compare=1&book=`.
+- **Keyboard:** "Find a book" picks a book, the neighbour list and leaderboard are buttons, and Esc clears the selection. The canvas itself is mouse and touch only.
 
 ## Before a demo
 

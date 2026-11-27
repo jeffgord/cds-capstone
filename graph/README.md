@@ -5,7 +5,7 @@ A graph of the 1,000 books where each book links to the books most similar to it
 ```sh
 python graph/features.py      # book vectors from 4 embedding models (~6 min first time), cached in graph/cache/
 python graph/experiments.py   # scores every variant, writes graph/results.md (~2 min)
-python graph/export.py        # graph files for the UI page, web/graph-data/ (~5 min, mostly layouts)
+python graph/export.py        # t-SNE layouts + neighbour lists for web/graph.html, in web/graph-data/ (~5 min)
 ```
 
 ## What's compared
