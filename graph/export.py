@@ -7,7 +7,7 @@
 Positions are t-SNE on that variant's own similarities, so books the variant finds similar sit
 together as islands. The LCC network is exported the same way, as the reference to compare against.
 
-Run: python graph/export.py   (after experiments.py; ~5 min, mostly the t-SNE layouts)
+Run: python graph/export.py   (after experiments.py; under a minute, mostly the t-SNE layouts)
 """
 import json
 import re
@@ -19,15 +19,15 @@ from sklearn.manifold import TSNE
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import learn  # noqa: E402
 import similarity as S  # noqa: E402
-from features import CACHE, MODELS, load_records, mean_by_owner  # noqa: E402
+from features import CACHE, load_records, mean_by_owner  # noqa: E402
 from metrics import B, Labels  # noqa: E402
 
 OUT = HERE.parent / "web" / "graph-data"
 K = 10
-MEASURES = {"cosine": "Cosine", "whitened cosine": "Whitened cosine", "CSLS": "CSLS (hub-corrected)",
-            "shared neighbours": "Shared neighbors", "chunk max-sim": "Chunk max-sim"}
+# The search index's model and the model closest to LCC, with plain cosine and the measure that helped most
+SHOWN_MODELS = ("bge-base", "mpnet")
+MEASURES = {"cosine": "Cosine", "shared neighbours": "Shared neighbors"}
 
 
 def slug(name: str) -> str:
@@ -55,30 +55,20 @@ def neighbours(sim: np.ndarray) -> list[list[int]]:
 
 
 def variants(labels: Labels) -> list[dict]:
-    """(model, measure, key, similarity) for every variant the page offers."""
+    """(model, measure, key, similarity) for every variant the page offers: a short list, since the other
+    models and measures score within a few points of these (graph/results.md has them all)."""
     owner = np.load(CACHE / "owner.npy")
     n = len(labels.primary)
     out = []
-    for short in MODELS:
-        chunks = np.load(CACHE / f"chunks_{short}.npy")
-        x = mean_by_owner(chunks, owner, n)
-        cos = S.cosine(x)
-        sims = {"cosine": cos, "whitened cosine": S.whitened_cosine(x), "CSLS": S.csls(cos),
-                "shared neighbours": S.shared_neighbours(cos), "chunk max-sim": S.chunk_maxsim(chunks, owner, n)}
+    for short in SHOWN_MODELS:
+        cos = S.cosine(mean_by_owner(np.load(CACHE / f"chunks_{short}.npy"), owner, n))
+        sims = {"cosine": cos, "shared neighbours": S.shared_neighbours(cos)}
         out += [{"model": short, "measure": m, "key": f"{short} · {m}", "sim": s} for m, s in sims.items()]
-    for view in ("index_summary", "index_passages"):
-        name = view.replace("_", " ")
-        out.append({"model": name, "measure": "cosine", "key": f"{name} · cosine",
-                    "sim": S.cosine(np.load(CACHE / f"{view}.npy"))})
     texts = json.loads((CACHE / "texts.json").read_text())
     out.append({"model": "TF-IDF word overlap", "measure": "cosine", "key": "TF-IDF word overlap · cosine",
                 "sim": S.tfidf_cosine(texts, owner, n)})
     best = json.loads((CACHE / "results.json").read_text())["best_model"].split(" · ")[0]
     x = mean_by_owner(np.load(CACHE / f"chunks_{best}.npy"), owner, n)
-    y = np.where(labels.primary >= 0, labels.primary, 0)
-    train, _ = next(labels.splits(seeds=(0,)))
-    out.append({"model": f"LDA on {best} (learned from LCC)", "measure": "cosine",
-                "key": "LDA projection (learned from LCC) · cosine", "sim": learn.lda_projection(x, y, train)})
     lcc = S.lcc_similarity(labels.trails)
     # Books with the same call number tie exactly, and t-SNE collapses ties into single dots. For the
     # picture only, a little text similarity spreads them out by content; the neighbour lists stay pure LCC.

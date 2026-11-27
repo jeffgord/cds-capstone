@@ -9,22 +9,14 @@ const N_COLORS = 12; // the 12 biggest classes get a color token each, the rest 
 // Display names and a short note on where each method comes from and how it works. Keys are the model and
 // measure names in index.json.
 const MODELS = {
-  "bge-base": ["BGE base (our search model)", "Trained on large sets of query and passage pairs, so a search lands next to the passages that answer it."],
-  "bge-small": ["BGE small", "The same training as BGE base at about a third of the size."],
-  "minilm": ["MiniLM", "From Sentence Transformers. A small model distilled from a larger one, then tuned on about 1 billion sentence pairs."],
-  "mpnet": ["MPNet", "From Sentence Transformers, built on Microsoft's MPNet. Tuned on the same sentence pairs to spot sentences that mean the same thing."],
-  "index summary": ["Search index: summaries", "The BGE base vectors already in our search index, one per book summary. The summary text names the class, so this one has a head start."],
-  "index passages": ["Search index: passages", "The BGE base passage vectors from our search index, averaged per book. Each passage also carries the title and Gutenberg shelf."],
+  "bge-base": ["BGE base (search)", "Trained on large sets of query and passage pairs, so a search lands next to the passages that answer it."],
+  "mpnet": ["MPNet", "From Sentence Transformers, built on Microsoft's MPNet. Tuned on about 1 billion sentence pairs to spot sentences that mean the same thing."],
   "TF-IDF word overlap": ["Word overlap (no model)", "Books are close if they share the same rare words."],
-  "LDA on mpnet (learned from LCC)": ["MPNet tuned on classes", "MPNet vectors reshaped using the known class of 30% of the books. It sees part of the answer key."],
   "LCC": ["Library classes (the target)", "Books are close if their call numbers share more levels, like D, then DS, then a number range."],
 };
 const MEASURES = {
   "Cosine": "Two books are close if their vectors point the same way.",
-  "Whitened cosine": "Cosine after removing the direction every book leans, so real differences stand out.",
-  "CSLS (hub-corrected)": "Cosine with a penalty for books that are close to everything. From research on translating words between languages.",
   "Shared neighbors": "Two books are close if the same books surround them.",
-  "Chunk max-sim": "Compares passage to passage and keeps the best matches, instead of averaging each book into one point.",
 };
 
 const $ = (id) => document.getElementById(id);

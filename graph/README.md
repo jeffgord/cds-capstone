@@ -5,7 +5,7 @@ A graph of the 1,000 books where each book links to the books most similar to it
 ```sh
 python graph/features.py      # book vectors from 4 embedding models (~6 min first time), cached in graph/cache/
 python graph/experiments.py   # scores every variant, writes graph/results.md (~2 min)
-python graph/export.py        # t-SNE layouts + neighbour lists for web/graph.html, in web/graph-data/ (~5 min)
+python graph/export.py        # t-SNE layouts + neighbour lists for web/graph.html, in web/graph-data/ (<1 min)
 ```
 
 ## What's compared
@@ -22,6 +22,8 @@ python graph/export.py        # t-SNE layouts + neighbour lists for web/graph.ht
 - **Graph construction:** kNN at k = 5, 10 and 20, mutual kNN, and a global similarity threshold.
 - **Learning from labels:** with 30% of books' classes known, an LDA projection learned from LCC, and GCN, GraphSAGE and GAT classifiers against an MLP that sees no graph.
 - **Reference:** the LCC network itself, where books are linked by how many levels of the LCC hierarchy they share.
+
+The UI page shows only a short list, since most variants score within a few points of each other: `bge-base` (the search model), `mpnet` (closest to LCC), each with cosine and shared neighbours, plus TF-IDF and the LCC reference.
 
 ## Scores
 
