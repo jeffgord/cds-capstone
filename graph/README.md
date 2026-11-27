@@ -1,44 +1,43 @@
 # Book graph (experiment)
 
-A graph of the 1,000 books where each book links to the books whose embeddings are closest to it. It's an experiment, separate from the search app: nothing here is used by `api/` or `web/` yet.
-
-The question is whether embedding similarity alone groups books the way librarians do. Library of Congress (LCC) main classes are never used to build the graph, only to test it, the way labels are used in graph ML benchmarks.
+A graph of the 1,000 books where each book links to the books most similar to it. The question is which way of measuring similarity groups books most like the Library of Congress Classification (LCC). LCC is never used to build the graph, only to score it, the way labels are used in graph ML benchmarks. The search app doesn't use any of this. The UI shows it on a separate page, `web/graph.html`.
 
 ```sh
-python graph/features.py     # one vector per book, three ways (~2 min), saved to graph/cache/ (gitignored)
-python graph/evaluate.py     # builds the k-NN graph and scores it against LCC (~10 s); --k sets neighbours
+python graph/features.py      # book vectors from 4 embedding models (~6 min first time), cached in graph/cache/
+python graph/experiments.py   # scores every variant, writes graph/results.md (~2 min)
+python graph/export.py        # graph files for the UI page, web/graph-data/ (~5 min, mostly layouts)
 ```
 
-## Setup
+## What's compared
 
-- **Nodes:** books. **Edges:** each book's k nearest books by cosine similarity, kept if either book picked the other, weighted by the similarity.
-- **Node vectors, three views:**
-  - `summary`: the summary vector from the search index. It embeds the text "Classification: <LCC label>", so scores on it are an upper bound, not a fair test.
-  - `passages`: the mean of the book's passage vectors from the index. Their header includes Gutenberg bookshelves, which overlap with LCC.
-  - `text`: the book's own passages plus Gutenberg's description, re-embedded with no title, subjects or class. **This is the leak-free view.**
-- **Labels:** LCC main class (the first letter of the call number). A book can have several. Classes with under 10 books are left out: 988 books in 18 classes remain.
-- **Task:** node classification. The class is known for 30% of books, stratified, and predicted for the rest. Results are averaged over 5 splits. A prediction counts as right if it's any of the book's classes. Macro-F1 uses the book's first class, so small classes count as much as big ones.
+- **Book text, leak-free:** each book's passages plus Gutenberg's description, embedded with no title, subjects or class. The search index's own summary vectors embed the text "Classification: <LCC label>", so they're included only as a leaky upper bound (`index summary`).
+- **Embedding models:** `bge-base` (the search index's model), `bge-small`, `minilm` (all-MiniLM-L6-v2) and `mpnet` (all-mpnet-base-v2).
+- **Similarity measures:**
+  - cosine
+  - whitened cosine: removes the direction all embeddings share
+  - CSLS: down-weights "hub" books that are close to everything
+  - shared neighbours: two books are close if the same books surround them
+  - chunk max-sim: compares passage to passage instead of averaging first
+  - TF-IDF word overlap, as a baseline only
+- **Graph construction:** kNN at k = 5, 10 and 20, mutual kNN, and a global similarity threshold.
+- **Learning from labels:** with 30% of books' classes known, an LDA projection learned from LCC, and GCN, GraphSAGE and GAT classifiers against an MLP that sees no graph.
+- **Reference:** the LCC network itself, where books are linked by how many levels of the LCC hierarchy they share.
 
-## Results (k = 10)
+## Scores
 
-| | summary (leaky) | passages | text (clean) |
-|---|---|---|---|
-| Linked books share a class | 56% | 53% | 50% |
-| Random pairs share a class | 12% | 12% | 12% |
-| majority, acc / F1 | .246 / .022 | .246 / .022 | .246 / .022 |
-| logreg on the vector, no graph | .731 / .520 | .684 / .458 | .664 / .438 |
-| neighbour vote | .697 / .586 | .661 / .527 | .638 / .510 |
-| label propagation | .621 / .416 | .598 / .360 | .599 / .380 |
-| SGC (2-hop smoothing + logreg) | .645 / .373 | .605 / .332 | .609 / .365 |
+All scores are on held-out books, averaged over 3 stratified splits. That's 988 books in 18 main classes with at least 10 books each.
 
-What it says, with no relevance labels behind it, so treat it as exploratory:
+- `p10_class` / `p10_sub`: of a book's 10 most similar books, the share in the same LCC main class / subclass
+- `edge_class`: the share of graph links that join books of the same main class
+- `nmi`: how well communities found in the graph (Louvain) line up with the main classes
+- `vote_f1`: macro-F1 when a book's class is guessed from its labelled neighbours
 
-- **The graph tracks LCC.** With no metadata at all, two linked books share a main class 50% of the time vs 12% for random pairs, about 4x. The leak in the summary vectors adds only about 6 points.
-- **The neighbour vote is best on small classes.** Macro-F1 is .510 vs .438 for logreg, with slightly lower accuracy (.638 vs .664). Linked books help most where a class has few examples.
-- **Multi-hop methods do worse than one hop.** Label propagation and SGC smooth over several hops, and with 18 unbalanced classes the big classes (D, B, E/F) flood the small ones. They get worse as k grows: propagation F1 is .448 at k = 5 and .250 at k = 20. Homophily drops too (55% at k = 5, 45% at k = 20), so the closest few neighbours carry most of the signal.
+## Findings (full tables in [results.md](results.md))
 
-## Next
+These are exploratory. LCC is one librarian's view of a book, not ground truth for "similar".
 
-- Tune k and alpha, or use a GNN with learned weights, if multi-hop is worth pursuing.
-- Mismatches between the graph and LCC are worth reading by hand. Some will be graph errors, but some will be books that LCC files apart and that really are about the same thing. Those are the interesting ones for discovery.
-- A "related books" list (the top neighbours in the `text` view) is the simplest way to show this in the UI.
+- **Closest to LCC: `mpnet` with shared neighbours.** p10_class is .578, against .990 for LCC itself and .120 for random links. On text alone it beats the leaky summary vectors (.559).
+- **Shared neighbours helps every model,** by 2 to 4 points over plain cosine. CSLS helps a little. Chunk max-sim is mixed. Whitening only ties cosine, and only at 16 dimensions; with more it overfits 1,000 books.
+- **The search index's model (`bge-base`, cosine, .509) barely beats TF-IDF word overlap (.500)** at matching LCC. `mpnet` does better (.538 cosine). Worth trying `mpnet` in the search index.
+- **How the graph is built matters less than the similarity.** A global threshold gives the cleanest links (70% same class) and the best communities (NMI .496), but leaves 10% of books with no links. kNN keeps every book connected.
+- **The graph carries information beyond the vectors.** GraphSAGE reaches macro-F1 .572 against .529 for the same network with no graph. GCN and GAT gain about 2 points. LDA learned from LCC barely moves p10_class (.584) and lowers the subclass score, so it learns the main classes and blurs the finer ones.
